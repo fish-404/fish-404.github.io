@@ -197,19 +197,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Blog-修改站点主题以及站点配置文件]]></title>
-    <url>%2FBlog-change-blog-theme%2F</url>
-    <content type="text"><![CDATA[觉得官方的主题不太好看，Github上，Hexo官网上都有许多可供选择的主题，我这里使用NexT主题，本文介绍了修改主题的方法以及站点配置文件_config.yml的一些相关配置。 改变主题下载主题将需要的主题从Github下载（clone）到你的站点目录中。 1$ git clone https://github.com/iissnan/hexo-theme-next themes/next 修改站点配置文件修改你的站点配置文件_config.yml，找到如下字段，只要将theme后面的主题修改为next即可 1234# Extensions## Plugins: https://hexo.io/plugins/## Themes: https://hexo.io/themes/theme: next 站点配置文件的设置设置个人头像个人头像将显示在侧边栏中。在.\source下创建一个images文件夹，将想要设置为头像的图片放于此文件夹中。修改_config.yml，在其中添加如下代码：12# Head portraitavatar: /images/cat.jpg 设置站点的基本信息在_config.yml中找到如下字段，配置个人站点的基本信息，下面的出现位置举例基于NexT主题。 12345# Sitetitle: （此处为站点名称，即左上角的名称）description: （站点描述，将出现在侧边栏头像下方）author: （作者，将出现在侧边栏头像下方，如果没有修改主题配置文件，同时会出现在网页下方）language: （界面语言，简体字为zh-Hans） 设置置顶文章找到文件node_modules\hexo-generator-index\lib\generator.js，将文件内容修改为：12345678910111213141516171819202122232425262728'use strict';var pagination = require('hexo-pagination');module.exports = function(locals)&#123; var config = this.config; var posts = locals.posts; posts.data = posts.data.sort(function(a, b) &#123; if(a.top &amp;&amp; b.top) &#123; // 两篇文章top都有定义 if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排 else return b.top - a.top; // 否则按照top值降序排 &#125; else if(a.top &amp;&amp; !b.top) &#123; // 以下是只有一篇文章top有定义，那么将有top的排在前面 return -1; &#125; else if(!a.top &amp;&amp; b.top) &#123; return 1; &#125; else return b.date - a.date; // 都没定义按照文章日期降序排 &#125;); var paginationDir = config.pagination_dir || 'page'; return pagination('', posts, &#123; perPage: config.index_generator.per_page, layout: ['index', 'archive'], format: paginationDir + '/%d/', data: &#123; __index: true &#125; &#125;);&#125;; 发布时需要置顶的文章在前面格式处配置，top值越大越前面:123---top: 7--- 修改文章链接格式修改permalink样式可以改变自动生成的博文链接样式：123456# URL## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'url: http://yoursite.comroot: /permalink: :title/permalink_defaults: 参考资料 开始使用-NexT使用文档 hexo的next主题个性化教程：打造酷炫网站|Moorez]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>Blog</tag>
-        <tag>NexT</tag>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Blog-Hexo+Github搭建]]></title>
     <url>%2FBlog-hexo-github-build%2F</url>
     <content type="text"><![CDATA[在查找一些技术资料的时候总会看到一些漂亮的博客，喜欢文字，也想自己搭建起一个博客来。尽管在网上搜索到了许多Github+Hexo的博客搭建教程，但仍然也遇到了不少问题，几经折腾，终于可以使用，于是决定先写一篇我在Win10下的搭建过程作为记录和分享。（也可以参考官方文档，官方文档也写得挺详细。） 环境准备 Node.js环境 Git Node.js环境在官网下载与电脑系统相匹配的Node.js并安装。 也可以前往Nodejs的中文网 Git前往官网下载与你的电脑相对应版本的Git。安装完成后，你将会看到Git Bash在你的右键菜单中。 前往Github官网注册Github帐号，完成后创建一个仓库（New repository）。仓库名为yourgitname.github.io 将电脑中的Git与Github帐号设置一致，配置过程参见文章Git的使用。 安装HEXO在电脑中新建一个文件夹，进入文件夹，右键，选择命令行或者直接选择Git Bash Here ，打开命令行窗口。 使用npm安装Hexo1$ npm install -g hexo-cli 开始搭建Blog新建一个网站安装完成后，初始化文件夹，无参数默认当前路径 1$ hexo init [foldername] 新建一篇文章如果没有设置layout，默认为default_layout 参数（也就是post） 1$ hexo new [layout] &lt;title&gt; 生成静态文件123$ hexo generate#可以简写为$ hexo g 启动服务器默认访问网址为http://localhost:4000/，这时候别人是看不到你的网站的。 1$ hexo server 与Github关联修改站点配置文件打开_config.yml 文件，修改deploy 12345deploy: type: git repo: https://github.com/Yourgitname/your_reperoryname.github.io.git #此处为之前创建仓库的仓库地址，在创建完成后有一个界面可以复制，或者直接复制网址加上.git branch: master 安装Git部署插件1$ npm install hexo-deployer-git --save 部署网站部署成功后，就可以通过yourgitname.github.io这个地址看到自己的博客了。 123$ hexo deploy#可以简写为$ hexo d 参考资料 GitHub+Hexo搭建个人网站详细教程&lt;\a&gt; 建站|Hexo]]></content>
@@ -220,6 +207,19 @@
         <tag>Blog</tag>
         <tag>Hexo</tag>
         <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Blog-修改站点主题以及站点配置文件]]></title>
+    <url>%2FBlog-change-blog-theme%2F</url>
+    <content type="text"><![CDATA[觉得官方的主题不太好看，Github上，Hexo官网上都有许多可供选择的主题，我这里使用NexT主题，本文介绍了修改主题的方法以及站点配置文件_config.yml的一些相关配置。 改变主题下载主题将需要的主题从Github下载（clone）到你的站点目录中。 1$ git clone https://github.com/iissnan/hexo-theme-next themes/next 修改站点配置文件修改你的站点配置文件_config.yml，找到如下字段，只要将theme后面的主题修改为next即可 1234# Extensions## Plugins: https://hexo.io/plugins/## Themes: https://hexo.io/themes/theme: next 站点配置文件的设置设置个人头像个人头像将显示在侧边栏中。在.\source下创建一个images文件夹，将想要设置为头像的图片放于此文件夹中。修改_config.yml，在其中添加如下代码：12# Head portraitavatar: /images/cat.jpg 设置站点的基本信息在_config.yml中找到如下字段，配置个人站点的基本信息，下面的出现位置举例基于NexT主题。 12345# Sitetitle: （此处为站点名称，即左上角的名称）description: （站点描述，将出现在侧边栏头像下方）author: （作者，将出现在侧边栏头像下方，如果没有修改主题配置文件，同时会出现在网页下方）language: （界面语言，简体字为zh-Hans） 设置置顶文章找到文件node_modules\hexo-generator-index\lib\generator.js，将文件内容修改为：12345678910111213141516171819202122232425262728'use strict';var pagination = require('hexo-pagination');module.exports = function(locals)&#123; var config = this.config; var posts = locals.posts; posts.data = posts.data.sort(function(a, b) &#123; if(a.top &amp;&amp; b.top) &#123; // 两篇文章top都有定义 if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排 else return b.top - a.top; // 否则按照top值降序排 &#125; else if(a.top &amp;&amp; !b.top) &#123; // 以下是只有一篇文章top有定义，那么将有top的排在前面 return -1; &#125; else if(!a.top &amp;&amp; b.top) &#123; return 1; &#125; else return b.date - a.date; // 都没定义按照文章日期降序排 &#125;); var paginationDir = config.pagination_dir || 'page'; return pagination('', posts, &#123; perPage: config.index_generator.per_page, layout: ['index', 'archive'], format: paginationDir + '/%d/', data: &#123; __index: true &#125; &#125;);&#125;; 发布时需要置顶的文章在前面格式处配置，top值越大越前面:123---top: 7--- 修改文章链接格式修改permalink样式可以改变自动生成的博文链接样式：123456# URL## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'url: http://yoursite.comroot: /permalink: :title/permalink_defaults: 参考资料 开始使用-NexT使用文档 hexo的next主题个性化教程：打造酷炫网站|Moorez]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>NexT</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
