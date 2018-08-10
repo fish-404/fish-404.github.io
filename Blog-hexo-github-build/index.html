@@ -432,19 +432,19 @@
 <p>前往<a href="https://github.com/" target="_blank" rel="noopener">Github官网</a>注册Github帐号，完成后创建一个仓库（New repository）。仓库名为<code>yourgitname.github.io</code></p>
 <p>将电脑中的Git与Github帐号设置一致，配置过程参见文章Git的使用。</p>
 <h2 id="安装HEXO"><a href="#安装HEXO" class="headerlink" title="安装HEXO"></a>安装HEXO</h2><p>在电脑中新建一个文件夹，进入文件夹，右键，选择命令行或者直接选择<code>Git Bash Here</code> ，打开命令行窗口。</p>
-<h3 id="使用npm安装Hexo"><a href="#使用npm安装Hexo" class="headerlink" title="使用npm安装Hexo"></a>使用npm安装Hexo</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install -g hexo-cli</span></span><br></pre></td></tr></table></figure>
+<h3 id="使用npm安装Hexo"><a href="#使用npm安装Hexo" class="headerlink" title="使用npm安装Hexo"></a>使用npm安装Hexo</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 <h1 id="开始搭建Blog"><a href="#开始搭建Blog" class="headerlink" title="开始搭建Blog"></a>开始搭建Blog</h1><h2 id="新建一个网站"><a href="#新建一个网站" class="headerlink" title="新建一个网站"></a>新建一个网站</h2><p>安装完成后，初始化文件夹，无参数默认当前路径</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo init [foldername]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo init [foldername]</span><br></pre></td></tr></table></figure>
 <h2 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章"></a>新建一篇文章</h2><p>如果没有设置layout，默认为<code>default_layout</code> 参数（也就是<code>post</code>）</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo new [layout] &lt;title&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo generate</span></span><br><span class="line"><span class="meta">#</span><span class="bash">可以简写为</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo g</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo generate</span><br><span class="line"><span class="meta">#</span>可以简写为</span><br><span class="line"><span class="meta">$</span> hexo g</span><br></pre></td></tr></table></figure>
 <h2 id="启动服务器"><a href="#启动服务器" class="headerlink" title="启动服务器"></a>启动服务器</h2><p>默认访问网址为<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>，这时候别人是看不到你的网站的。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo server</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo server</span><br></pre></td></tr></table></figure>
 <h1 id="与Github关联"><a href="#与Github关联" class="headerlink" title="与Github关联"></a>与Github关联</h1><h2 id="修改站点配置文件"><a href="#修改站点配置文件" class="headerlink" title="修改站点配置文件"></a>修改站点配置文件</h2><p>打开<code>_config.yml</code> 文件，修改deploy</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="attr">https://github.com/Yourgitname/your_reperoryname.github.io.git</span></span><br><span class="line">  <span class="comment">#此处为之前创建仓库的仓库地址，在创建完成后有一个界面可以复制，或者直接复制网址加上.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-<h2 id="安装Git部署插件"><a href="#安装Git部署插件" class="headerlink" title="安装Git部署插件"></a>安装Git部署插件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo-deployer-git --save</span></span><br></pre></td></tr></table></figure>
+<h2 id="安装Git部署插件"><a href="#安装Git部署插件" class="headerlink" title="安装Git部署插件"></a>安装Git部署插件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <h2 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h2><p>部署成功后，就可以通过yourgitname.github.io这个地址看到自己的博客了。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo deploy</span></span><br><span class="line"><span class="meta">#</span><span class="bash">可以简写为</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo d</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo deploy</span><br><span class="line"><span class="meta">#</span>可以简写为</span><br><span class="line"><span class="meta">$</span> hexo d</span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">GitHub+Hexo搭建个人网站详细教程&lt;\a&gt;</a></li>
 <li><a href="https://hexo.io/zh-cn/docs/setup.html" target="_blank" rel="noopener">建站|Hexo</a></li>
@@ -483,8 +483,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Blog-change-blog-theme/" rel="next" title="Blog-修改站点主题以及站点配置文件">
-                <i class="fa fa-chevron-left"></i> Blog-修改站点主题以及站点配置文件
+              <a href="/Book-2017-extract/" rel="next" title="书摘-2017读书摘录">
+                <i class="fa fa-chevron-left"></i> 书摘-2017读书摘录
               </a>
             
           </div>
@@ -493,8 +493,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Blog-adjust-sidebar-nextmist-left/" rel="prev" title="Blog-调整NexT主题Mist外观侧边栏在左">
-                Blog-调整NexT主题Mist外观侧边栏在左 <i class="fa fa-chevron-right"></i>
+              <a href="/Blog-change-blog-theme/" rel="prev" title="Blog-修改站点主题以及站点配置文件">
+                Blog-修改站点主题以及站点配置文件 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
