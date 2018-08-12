@@ -12,17 +12,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[书评-学问是靠不住的]]></title>
-    <url>%2Ftitle%2F</url>
-    <content type="text"><![CDATA[1234书名： 冰冷密室与博士们作者： 【日】森博嗣译者： 五科出版社： 凤凰出版传媒集团/江苏文艺出版社 在拜读过森博嗣的《全部成为F》后，就对森博嗣的书怀有特别大的期待，而这本书也没有让我失望。本书是S&amp;M即犀川&amp;萌绘系列的第二本，延续了森博嗣在的理工科风格，让我这个工科生读起来倍感亲切。 其实起这个标题是不太妥当的，它并不能概括这个故事或者说那个绝妙的诡计，但又觉得它很合适，读完整本书的时候我我以为这句话就是真相背后的故事的最好的概括。高学位的学者们的生死角逐，起因让人瞠目结舌，但想想近日多所高校曝出的丑闻，似乎文中的这个故事与现实相比，倒一点也并不夸张，也不知道，这个社会何时才能公平地对待每一位学者，每一位学者，何时才能先学会德行后深究学问。前几日和多年不见的朋友们见面，谈起即使是在我们这一代，品德教育仍是极为缺乏的，虽然小学就有一门课名曰思想品德教育，但真正讲入孩子们心里的又有多少呢？也许是我没有认真听讲，现在回想起来，除了这门课的名字，对它没有一点残留的印象。 知道学问是不可靠的，这才是学问的开始。在考试中取得满分的时候，才知道学问是靠不住的……这正是学问的开始。 因为读过《全部成为F》，心里总是不自觉地会做一个比较。与《全部成为F》（以下以《F》代称），《F》更具有故事性，从头到尾读完会有一种惊叹于整个故事设定而陷入一种我作为读者我并不能做出这样天马行空的想象，但却会为作者的整个讲述所折服。而本书我以为是更侧重诡计的，也就是“密室”，两具尸体几乎是同时被发现在相邻的房间，而房间的状态却令人匪夷所思，在场的聚会又没有任何一个人有时机完成犯罪，是的，又是聚会（笑），迷恋推理小说的读者们都熟悉这样一种模式，但凡聚会，必有死亡。不过这个聚会要更为特别一些，参加的人们本来就是朝夕相处在实验室，并且这样的聚会并不是偶然为之，也即几乎是一种习惯。而这个密室的独特之处在于，由于“极地研”这个研究所是在实验时时处于一种低温状态，对于犯案和判断尸体的死亡时间来说都是个考验，更进一步地是，在聚会前进行的实验完全是在众人的监视下进行，每一步操作都是通过教授们的指令完成，而整个实验过程也由其他人通过监视器进行监视，看起来似乎并没有人由作案的可能。因为以诡计为重，也就注定了这本书的很大一部分的描述是针对于这个密室，同时也针对于不同人在不同的线索发现的前后对这个密室的可能性的猜测，对于寻求答案心切的读者而言，这一部分可能略显枯燥，但对于热衷各种密室诡计的读者而言，恐怕是大饱眼福，自己的内心也在暗暗做一个假设，我的手法是不是可以实现这个密室呢？是不是我的手法可以完成这个诡计呢？ 随着调查的展开，没想到又出现了一具尸体，让整个案情更加扑朔迷离，似乎密室的背后不是那么简单的故事。读到这时，心里也开始有了怀疑对象，但是没有想到的是，这个怀疑对象又成了下一个死者。一切似乎又回到了原点？真的是这样吗？这些在旁人眼里在研究室里做着实验的学者们到底经历了什么，上演着怎样的一出生死戏剧？ 和《F》把故事背景设立在一个几乎是与世隔绝的研究所不同，本书的故事发生在大学的研究所里，这一点让我很自然地会有一种熟悉的感觉，里面的人物设定也容易在生活里找到影子。虽然我还只是个啥都不会的本科生，也没有真正见过研究生的实验和研究究竟是一种怎样的状态，但看到森博嗣对于研究生和教授们的状态的描写还是会有一种深深的共鸣，尤其是在后文作为一条较为关键的线索的UNIX系统ROOT权限归属这对于刚接触Linux系统不久的我来说，读到此处，真是会心一笑。惊讶于森博嗣能用理工科的笔调来描述案情，却同时又以哲学家的深度来揭露社会。而穿插于整个S&amp;M系列的犀川和萌绘二人的关系更是把不善言辞的学者心里的情感描绘得淋漓尽致。 冰冷的密室，冷却不了怒火中烧。学者们的生死戏剧，让人叹惋。 纵使千思万虑，以为万全之策，终难料所有。可亡人不再。]]></content>
-      <categories>
-        <category>书评</category>
-      </categories>
-      <tags>
-        <tag>Book comment</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[算法-二分搜索算法]]></title>
     <url>%2Ftitle%2F</url>
     <content type="text"><![CDATA[算法：二分搜索算法（折半查找算法）时间复杂度：$O(log \; n)$ 二分搜索算法概述 二分搜索算法伪代码 二分搜索算法实现 二分搜索算法概述二分搜索算法，也称折半查找算法，即在一个有序数组中查找某一个特定元素。整个搜索过程从中间开始，如果要查找的元素即中间元素，那么搜索过程结束；反之根据中间元素与要查找元素的关系在数组对应的那一半查找，例如查找元素大于中间元素，则在整个数组较大元素的那一半查找，反复进行这个过程，直到找到元素，或者数组为空，查找不到元素。 二分搜索算法描述给定一个数组A_0,A_1...A_{n-1}， A_0 \le A_1 \le \cdot \le A_{n - 1}，待查找元素为searchnum： 用left，right分别表示左右端点，即要查找的范围； 用middle表示中间点，middle = \lfloor (left + right) / 2 \rfloor； 若left &gt; right，搜索失败； 若A{middle} &gt; searchnum，right = middle - 1，返回3； 若A{middle} &lt; searchnum，left = middle + 1，返回3； 若A{middle} = searchnum，搜索结束，返回middle。 二分搜索算法伪代码while 版本BINARY-SEARCH-WHILE(A, searchnum, left, right)1234567while left &lt;= right middle = (left + right) div 2 case A_middle &lt; searchnum : left = middle + 1 A_middle &gt; searchnum : right = middle - 1 A_middle = searchnum : return middlereturn FAILED 递归版本BINARY-SEARCH-RECURSION(A, searchnum, left, right)123456789if left &lt;= right middle = (left + right) div 2 case A_middle &lt; searchnum : return (A, searchnum, middle + 1, right) A_middle &gt; searchnum : return (A, searchnum, left, middle - 1) A_middle = searchnum : return middle 二分查找算法实现Cwhile 版本1234567891011121314int binarySearch(arrType * a, arrType searchnum, int left, int right)&#123; int middle; while (left &lt;= right) &#123; middle = (left + right) / 2; if (a[middle] &gt; searchnum) right = middle - 1; else if (a[middle] &lt; searchnum) left = middle + 1; else if (a[middle] == searchnum) return middle; &#125; return -1;&#125; 递归版本1234567891011121314int binarySearch(arrType * a, arrType searchnum, int left, int right)&#123; int middle; if (left &lt;= right) &#123; middle = (left + right) / 2; if (a[middle] &gt; searchnum) return binarySearch(a, searchnum, left, middle - 1); else if (a[middle] &lt; searchnum) return binarySearch(a, searchnum, middle + 1, right); else if (a[middle] == searchnum) return middle; &#125; return -1;&#125; Pascal外部定义全局变量：123var a : array[1..n] of integer; searchnum, result :integer; while 版本1234567891011121314151617181920procedure binarySearch(left, right :integer);var middle : integer;begin while (left &lt;= right) do begin middle := (left + right) div 2; if (a[middle] &gt; searchnum) then right := middle - 1 else if (a[middle] &lt; searchnum) then left := middle + 1 else begin result := middle; break; end; end; if left &gt; right then result := -1;end; 递归版本1234567891011121314151617procedure binarySearch(left, right :integer);var middle : integer;begin if left &lt;= right then begin middle := (left + right) div 2; if (a[middle] &gt; searchnum) then binarySearch(left, middle - 1) else if (a[middle] &lt; searchnum) then binarySearch(middle + 1, right) else result := middle; end else result := -1;end; 参考资料 《数据结构基础（C语言版）》第二版 二分搜索算法 - 维基百科，自由的百科全书]]></content>
@@ -32,6 +21,17 @@
       <tags>
         <tag>Algorithms</tag>
         <tag>Search</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[书评-学问是靠不住的]]></title>
+    <url>%2Ftitle%2F</url>
+    <content type="text"><![CDATA[1234书名： 冰冷密室与博士们作者： 【日】森博嗣译者： 五科出版社： 凤凰出版传媒集团/江苏文艺出版社 在拜读过森博嗣的《全部成为F》后，就对森博嗣的书怀有特别大的期待，而这本书也没有让我失望。本书是S&amp;M即犀川&amp;萌绘系列的第二本，延续了森博嗣在的理工科风格，让我这个工科生读起来倍感亲切。 其实起这个标题是不太妥当的，它并不能概括这个故事或者说那个绝妙的诡计，但又觉得它很合适，读完整本书的时候我我以为这句话就是真相背后的故事的最好的概括。高学位的学者们的生死角逐，起因让人瞠目结舌，但想想近日多所高校曝出的丑闻，似乎文中的这个故事与现实相比，倒一点也并不夸张，也不知道，这个社会何时才能公平地对待每一位学者，每一位学者，何时才能先学会德行后深究学问。前几日和多年不见的朋友们见面，谈起即使是在我们这一代，品德教育仍是极为缺乏的，虽然小学就有一门课名曰思想品德教育，但真正讲入孩子们心里的又有多少呢？也许是我没有认真听讲，现在回想起来，除了这门课的名字，对它没有一点残留的印象。 知道学问是不可靠的，这才是学问的开始。在考试中取得满分的时候，才知道学问是靠不住的……这正是学问的开始。 因为读过《全部成为F》，心里总是不自觉地会做一个比较。与《全部成为F》（以下以《F》代称），《F》更具有故事性，从头到尾读完会有一种惊叹于整个故事设定而陷入一种我作为读者我并不能做出这样天马行空的想象，但却会为作者的整个讲述所折服。而本书我以为是更侧重诡计的，也就是“密室”，两具尸体几乎是同时被发现在相邻的房间，而房间的状态却令人匪夷所思，在场的聚会又没有任何一个人有时机完成犯罪，是的，又是聚会（笑），迷恋推理小说的读者们都熟悉这样一种模式，但凡聚会，必有死亡。不过这个聚会要更为特别一些，参加的人们本来就是朝夕相处在实验室，并且这样的聚会并不是偶然为之，也即几乎是一种习惯。而这个密室的独特之处在于，由于“极地研”这个研究所是在实验时时处于一种低温状态，对于犯案和判断尸体的死亡时间来说都是个考验，更进一步地是，在聚会前进行的实验完全是在众人的监视下进行，每一步操作都是通过教授们的指令完成，而整个实验过程也由其他人通过监视器进行监视，看起来似乎并没有人由作案的可能。因为以诡计为重，也就注定了这本书的很大一部分的描述是针对于这个密室，同时也针对于不同人在不同的线索发现的前后对这个密室的可能性的猜测，对于寻求答案心切的读者而言，这一部分可能略显枯燥，但对于热衷各种密室诡计的读者而言，恐怕是大饱眼福，自己的内心也在暗暗做一个假设，我的手法是不是可以实现这个密室呢？是不是我的手法可以完成这个诡计呢？ 随着调查的展开，没想到又出现了一具尸体，让整个案情更加扑朔迷离，似乎密室的背后不是那么简单的故事。读到这时，心里也开始有了怀疑对象，但是没有想到的是，这个怀疑对象又成了下一个死者。一切似乎又回到了原点？真的是这样吗？这些在旁人眼里在研究室里做着实验的学者们到底经历了什么，上演着怎样的一出生死戏剧？ 和《F》把故事背景设立在一个几乎是与世隔绝的研究所不同，本书的故事发生在大学的研究所里，这一点让我很自然地会有一种熟悉的感觉，里面的人物设定也容易在生活里找到影子。虽然我还只是个啥都不会的本科生，也没有真正见过研究生的实验和研究究竟是一种怎样的状态，但看到森博嗣对于研究生和教授们的状态的描写还是会有一种深深的共鸣，尤其是在后文作为一条较为关键的线索的UNIX系统ROOT权限归属这对于刚接触Linux系统不久的我来说，读到此处，真是会心一笑。惊讶于森博嗣能用理工科的笔调来描述案情，却同时又以哲学家的深度来揭露社会。而穿插于整个S&amp;M系列的犀川和萌绘二人的关系更是把不善言辞的学者心里的情感描绘得淋漓尽致。 冰冷的密室，冷却不了怒火中烧。学者们的生死戏剧，让人叹惋。 纵使千思万虑，以为万全之策，终难料所有。可亡人不再。]]></content>
+      <categories>
+        <category>书评</category>
+      </categories>
+      <tags>
+        <tag>Book comment</tag>
       </tags>
   </entry>
   <entry>
@@ -197,19 +197,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Blog-修改站点主题以及站点配置文件]]></title>
-    <url>%2Ftitle%2F</url>
-    <content type="text"><![CDATA[觉得官方的主题不太好看，Github上，Hexo官网上都有许多可供选择的主题，我这里使用NexT主题，本文介绍了修改主题的方法以及站点配置文件_config.yml的一些相关配置。 改变主题下载主题将需要的主题从Github下载（clone）到你的站点目录中。 1$ git clone https://github.com/iissnan/hexo-theme-next themes/next 修改站点配置文件修改你的站点配置文件_config.yml，找到如下字段，只要将theme后面的主题修改为next即可 1234# Extensions## Plugins: https://hexo.io/plugins/## Themes: https://hexo.io/themes/theme: next 站点配置文件的设置设置个人头像个人头像将显示在侧边栏中。在.\source下创建一个images文件夹，将想要设置为头像的图片放于此文件夹中。修改_config.yml，在其中添加如下代码：12# Head portraitavatar: /images/cat.jpg 设置站点的基本信息在_config.yml中找到如下字段，配置个人站点的基本信息，下面的出现位置举例基于NexT主题。 12345# Sitetitle: （此处为站点名称，即左上角的名称）description: （站点描述，将出现在侧边栏头像下方）author: （作者，将出现在侧边栏头像下方，如果没有修改主题配置文件，同时会出现在网页下方）language: （界面语言，简体字为zh-Hans） 设置置顶文章找到文件node_modules\hexo-generator-index\lib\generator.js，将文件内容修改为：12345678910111213141516171819202122232425262728'use strict';var pagination = require('hexo-pagination');module.exports = function(locals)&#123; var config = this.config; var posts = locals.posts; posts.data = posts.data.sort(function(a, b) &#123; if(a.top &amp;&amp; b.top) &#123; // 两篇文章top都有定义 if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排 else return b.top - a.top; // 否则按照top值降序排 &#125; else if(a.top &amp;&amp; !b.top) &#123; // 以下是只有一篇文章top有定义，那么将有top的排在前面 return -1; &#125; else if(!a.top &amp;&amp; b.top) &#123; return 1; &#125; else return b.date - a.date; // 都没定义按照文章日期降序排 &#125;); var paginationDir = config.pagination_dir || 'page'; return pagination('', posts, &#123; perPage: config.index_generator.per_page, layout: ['index', 'archive'], format: paginationDir + '/%d/', data: &#123; __index: true &#125; &#125;);&#125;; 发布时需要置顶的文章在前面格式处配置，top值越大越前面:123---top: 7--- 修改文章链接格式修改permalink样式可以改变自动生成的博文链接样式：123456# URL## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'url: http://yoursite.comroot: /permalink: :title/permalink_defaults: 参考资料 开始使用-NexT使用文档 hexo的next主题个性化教程：打造酷炫网站|Moorez]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>Blog</tag>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Blog-Hexo+Github搭建]]></title>
     <url>%2Ftitle%2F</url>
     <content type="text"><![CDATA[在查找一些技术资料的时候总会看到一些漂亮的博客，喜欢文字，也想自己搭建起一个博客来。尽管在网上搜索到了许多Github+Hexo的博客搭建教程，但仍然也遇到了不少问题，几经折腾，终于可以使用，于是决定先写一篇我在Win10下的搭建过程作为记录和分享。（也可以参考官方文档，官方文档也写得挺详细。） 环境准备 Node.js环境 Git Node.js环境在官网下载与电脑系统相匹配的Node.js并安装。 也可以前往Nodejs的中文网 Git前往官网下载与你的电脑相对应版本的Git。安装完成后，你将会看到Git Bash在你的右键菜单中。 前往Github官网注册Github帐号，完成后创建一个仓库（New repository）。仓库名为yourgitname.github.io 将电脑中的Git与Github帐号设置一致，配置过程参见文章Git的使用。 安装HEXO在电脑中新建一个文件夹，进入文件夹，右键，选择命令行或者直接选择Git Bash Here ，打开命令行窗口。 使用npm安装Hexo1$ npm install -g hexo-cli 开始搭建Blog新建一个网站安装完成后，初始化文件夹，无参数默认当前路径 1$ hexo init [foldername] 新建一篇文章如果没有设置layout，默认为default_layout 参数（也就是post） 1$ hexo new [layout] &lt;title&gt; 生成静态文件123$ hexo generate#可以简写为$ hexo g 启动服务器默认访问网址为http://localhost:4000/，这时候别人是看不到你的网站的。 1$ hexo server 与Github关联修改站点配置文件打开_config.yml 文件，修改deploy 12345deploy: type: git repo: https://github.com/Yourgitname/your_reperoryname.github.io.git #此处为之前创建仓库的仓库地址，在创建完成后有一个界面可以复制，或者直接复制网址加上.git branch: master 安装Git部署插件1$ npm install hexo-deployer-git --save 部署网站部署成功后，就可以通过yourgitname.github.io这个地址看到自己的博客了。 123$ hexo deploy#可以简写为$ hexo d 参考资料 GitHub+Hexo搭建个人网站详细教程&lt;\a&gt; 建站|Hexo]]></content>
@@ -220,6 +207,19 @@
         <tag>Blog</tag>
         <tag>Hexo</tag>
         <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Blog-修改站点主题以及站点配置文件]]></title>
+    <url>%2Ftitle%2F</url>
+    <content type="text"><![CDATA[觉得官方的主题不太好看，Github上，Hexo官网上都有许多可供选择的主题，我这里使用NexT主题，本文介绍了修改主题的方法以及站点配置文件_config.yml的一些相关配置。 改变主题下载主题将需要的主题从Github下载（clone）到你的站点目录中。 1$ git clone https://github.com/iissnan/hexo-theme-next themes/next 修改站点配置文件修改你的站点配置文件_config.yml，找到如下字段，只要将theme后面的主题修改为next即可 1234# Extensions## Plugins: https://hexo.io/plugins/## Themes: https://hexo.io/themes/theme: next 站点配置文件的设置设置个人头像个人头像将显示在侧边栏中。在.\source下创建一个images文件夹，将想要设置为头像的图片放于此文件夹中。修改_config.yml，在其中添加如下代码：12# Head portraitavatar: /images/cat.jpg 设置站点的基本信息在_config.yml中找到如下字段，配置个人站点的基本信息，下面的出现位置举例基于NexT主题。 12345# Sitetitle: （此处为站点名称，即左上角的名称）description: （站点描述，将出现在侧边栏头像下方）author: （作者，将出现在侧边栏头像下方，如果没有修改主题配置文件，同时会出现在网页下方）language: （界面语言，简体字为zh-Hans） 设置置顶文章找到文件node_modules\hexo-generator-index\lib\generator.js，将文件内容修改为：12345678910111213141516171819202122232425262728'use strict';var pagination = require('hexo-pagination');module.exports = function(locals)&#123; var config = this.config; var posts = locals.posts; posts.data = posts.data.sort(function(a, b) &#123; if(a.top &amp;&amp; b.top) &#123; // 两篇文章top都有定义 if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排 else return b.top - a.top; // 否则按照top值降序排 &#125; else if(a.top &amp;&amp; !b.top) &#123; // 以下是只有一篇文章top有定义，那么将有top的排在前面 return -1; &#125; else if(!a.top &amp;&amp; b.top) &#123; return 1; &#125; else return b.date - a.date; // 都没定义按照文章日期降序排 &#125;); var paginationDir = config.pagination_dir || 'page'; return pagination('', posts, &#123; perPage: config.index_generator.per_page, layout: ['index', 'archive'], format: paginationDir + '/%d/', data: &#123; __index: true &#125; &#125;);&#125;; 发布时需要置顶的文章在前面格式处配置，top值越大越前面:123---top: 7--- 修改文章链接格式修改permalink样式可以改变自动生成的博文链接样式：123456# URL## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'url: http://yoursite.comroot: /permalink: :title/permalink_defaults: 参考资料 开始使用-NexT使用文档 hexo的next主题个性化教程：打造酷炫网站|Moorez]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>NexT</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
