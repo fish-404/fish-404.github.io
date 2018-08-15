@@ -90,7 +90,7 @@
 <meta name="keywords" content="Blog,Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Blog-Hexo搭建">
-<meta property="og:url" content="http://fish-404.github.io/Blog-hexo-build/index.html">
+<meta property="og:url" content="https://fish-404.github.io/Blog-hexo-build/index.html">
 <meta property="og:site_name" content="不存在的貓">
 <meta property="og:description" content="在查找一些技术资料的时候总会看到一些漂亮的博客，喜欢文字，也想自己搭建起一个博客来。尽管在网上搜索到了许多Github+Hexo的博客搭建教程，但仍然也遇到了不少问题，几经折腾，终于可以使用，于是决定先写一篇我在Win10下的搭建过程作为记录和分享。（也可以参考官方文档，官方文档也写得挺详细。） 2018.8.13 更新 同时将博客部署到coding">
 <meta property="og:locale" content="zh-Hans">
@@ -290,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fish-404.github.io/Blog-hexo-build/">
+    <link itemprop="mainEntityOfPage" href="https://fish-404.github.io/Blog-hexo-build/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="a cat called fish">
@@ -395,7 +395,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  648
+                  677
                 </span>
               
 
@@ -446,10 +446,11 @@
 <h1 id="与Github关联"><a href="#与Github关联" class="headerlink" title="与Github关联"></a>与Github关联</h1><h2 id="修改站点配置文件"><a href="#修改站点配置文件" class="headerlink" title="修改站点配置文件"></a>修改站点配置文件</h2><p>打开<code>_config.yml</code> 文件，修改deploy</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">- type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="attr">https://github.com/Yourgitname/your_reperoryname.github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br><span class="line">  <span class="comment"># ssh形式</span></span><br><span class="line">  <span class="comment">#repo : git@github.com:yourgitname/yourreperoryname.github.io.git</span></span><br><span class="line">  <span class="comment">#此处为之前创建仓库的仓库地址，在创建完成后有一个界面可以复制，或者直接复制网址加上.git</span></span><br><span class="line"></span><br><span class="line"><span class="attr">- type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="string">git@git.coding.net:codingname/projectname.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">coding-pages</span></span><br></pre></td></tr></table></figure>
 <h2 id="安装Git部署插件"><a href="#安装Git部署插件" class="headerlink" title="安装Git部署插件"></a>安装Git部署插件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<h2 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h2><p>部署成功后，就可以通过yourgitname.github.io这个地址看到自己的博客了。</p>
+<h2 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h2><p>部署成功后，就可以通过yourgitname.github.io这个地址看到自己的博客了。Coding 的地址则是youcodingname.coding.me/projectname</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo deploy</span><br><span class="line"><span class="meta">#</span>可以简写为</span><br><span class="line"><span class="meta">$</span> hexo d</span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">GitHub+Hexo搭建个人网站详细教程&lt;\a&gt;</a></li>
+<li><a href="https://github.com/niices/blog/issues/7" target="_blank" rel="noopener">Hexo部署个人博客到Github Page和Coding Page并绑定域名#7·niices/blog</a> </li>
 <li><a href="https://hexo.io/zh-cn/docs/setup.html" target="_blank" rel="noopener">建站|Hexo</a></li>
 </ul>
 
@@ -580,7 +581,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -591,7 +592,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -602,7 +603,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -681,7 +682,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">68.5k</span>
+    <span title="Site words total count">70.1k</span>
   
 </div>
 

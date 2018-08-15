@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Blog,NexT,Hexo," />
+  <meta name="keywords" content="Blog,Hexo,NexT," />
 
 
 
@@ -87,10 +87,10 @@
 
 
 <meta name="description" content="觉得官方的主题不太好看，Github上，Hexo官网上都有许多可供选择的主题，我这里使用NexT主题，本文介绍了修改主题的方法以及站点配置文件_config.yml的一些相关配置。">
-<meta name="keywords" content="Blog,NexT,Hexo">
+<meta name="keywords" content="Blog,Hexo,NexT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Blog-修改站点主题以及站点配置文件">
-<meta property="og:url" content="http://fish-404.github.io/Blog-change-blog-theme/index.html">
+<meta property="og:url" content="https://fish-404.github.io/Blog-change-blog-theme/index.html">
 <meta property="og:site_name" content="不存在的貓">
 <meta property="og:description" content="觉得官方的主题不太好看，Github上，Hexo官网上都有许多可供选择的主题，我这里使用NexT主题，本文介绍了修改主题的方法以及站点配置文件_config.yml的一些相关配置。">
 <meta property="og:locale" content="zh-Hans">
@@ -290,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fish-404.github.io/Blog-change-blog-theme/">
+    <link itemprop="mainEntityOfPage" href="https://fish-404.github.io/Blog-change-blog-theme/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="a cat called fish">
@@ -423,7 +423,7 @@
         <p>觉得官方的主题不太好看，Github上，Hexo官网上都有许多可供选择的主题，我这里使用<a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT</a>主题，本文介绍了修改主题的方法以及站点配置文件<code>_config.yml</code>的一些相关配置。</p>
 <a id="more"></a>
 <h1 id="改变主题"><a href="#改变主题" class="headerlink" title="改变主题"></a>改变主题</h1><h2 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h2><p>将需要的主题从Github下载（clone）到你的站点目录中。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span></span><br></pre></td></tr></table></figure>
 <h2 id="修改站点配置文件"><a href="#修改站点配置文件" class="headerlink" title="修改站点配置文件"></a>修改站点配置文件</h2><p>修改你的站点配置文件<code>_config.yml</code>，找到如下字段，只要将<code>theme</code>后面的主题修改为<code>next</code>即可</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
 <h1 id="站点配置文件的设置"><a href="#站点配置文件的设置" class="headerlink" title="站点配置文件的设置"></a>站点配置文件的设置</h1><h2 id="设置个人头像"><a href="#设置个人头像" class="headerlink" title="设置个人头像"></a>设置个人头像</h2><p>个人头像将显示在侧边栏中。在<code>.\source</code>下创建一个<code>images</code>文件夹，将想要设置为头像的图片放于此文件夹中。修改<code>_config.yml</code>，在其中添加如下代码：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Head portrait</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">/images/cat.jpg</span></span><br></pre></td></tr></table></figure></p>
@@ -455,9 +455,9 @@
           
             <a href="/tags/Blog/" rel="tag"><i class="fa fa-tag"></i> Blog</a>
           
-            <a href="/tags/NexT/" rel="tag"><i class="fa fa-tag"></i> NexT</a>
-          
             <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+          
+            <a href="/tags/NexT/" rel="tag"><i class="fa fa-tag"></i> NexT</a>
           
         </div>
       
@@ -566,7 +566,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -577,7 +577,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -588,7 +588,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -667,7 +667,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">68.5k</span>
+    <span title="Site words total count">70.1k</span>
   
 </div>
 
