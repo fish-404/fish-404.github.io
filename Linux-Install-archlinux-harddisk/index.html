@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="不存在的貓">
 <meta property="og:description" content="记录在移动硬盘上安装Arch Linux的过程。一部分用作Arch Linux，另一部分则用于日常存储。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-27T16:00:00.000Z">
+<meta property="og:updated_time" content="2018-08-22T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux-在移动硬盘上安装Arch Linux">
 <meta name="twitter:description" content="记录在移动硬盘上安装Arch Linux的过程。一部分用作Arch Linux，另一部分则用于日常存储。">
@@ -335,8 +335,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-07-28T00:00:00+08:00">
-                Jul 28 2018
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-23T00:00:00+08:00">
+                Aug 23 2018
               </time>
             
           </span>
@@ -395,7 +395,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,264
+                  1,350
                 </span>
               
 
@@ -430,17 +430,18 @@
 <p>如果移动硬盘中并不存在分区，则将会出现一个选择菜单”Select label type”，这里我们选择<code>dos</code>，这将会使用MBR方式对硬盘进行分区。之后将显示整个移动硬盘的分区状态，当前显示为<code>Free Space</code>，对此进行分区，根据提示输入分区大小，创建分区后，需要选择<code>Write</code>将分区写入，忽略<code>Write</code>操作分区将并不会被修改，根据自己的需要进行分区。我创建了两个分区用于<code>root</code>，和<code>home</code>，这两个分区的类型为<code>83 Linux</code>，一个分区用于<code>swap</code>，分区类型为<code>82 Linux swap / Solaris</code>，剩下的作为日常存储使用，当然这里我也根据需要进行了一定的分区，分区类型均为<code>7 HPFS/NTFS/exFAT</code>。</p>
 <p>分区完成后可以使用以下命令查看分区情况：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk -l</span><br></pre></td></tr></table></figure></p>
 <p>或者使用命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsblk</span><br></pre></td></tr></table></figure></p>
-<h3 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 /dev/sda1</span><br><span class="line">mkswap /dev/sda3</span><br></pre></td></tr></table></figure>
-<h3 id="设置卷标"><a href="#设置卷标" class="headerlink" title="设置卷标"></a>设置卷标</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e2label /dev/sda1 arch-root</span><br></pre></td></tr></table></figure>
-<h3 id="挂载分区，启用swap"><a href="#挂载分区，启用swap" class="headerlink" title="挂载分区，启用swap"></a>挂载分区，启用swap</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sda1 /mnt</span><br><span class="line">mkdir /mnt/home</span><br><span class="line">mount /dev/sda2 /mnt/home</span><br><span class="line">swapon /dev/sda3</span><br></pre></td></tr></table></figure>
+<h3 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 /dev/sda1</span><br></pre></td></tr></table></figure>
+<h3 id="设置卷标"><a href="#设置卷标" class="headerlink" title="设置卷标"></a>设置卷标</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e2label /dev/sda1 arch</span><br></pre></td></tr></table></figure>
+<h3 id="挂载分区，启用swap"><a href="#挂载分区，启用swap" class="headerlink" title="挂载分区，启用swap"></a>挂载分区，启用swap</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sda1 /mnt</span><br><span class="line">mkdir /mnt/home</span><br><span class="line">mount /dev/sda2 /mnt/home</span><br><span class="line">mkswap /dev/sda3</span><br><span class="line">swapon /dev/sda3</span><br></pre></td></tr></table></figure>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="检查网络连接"><a href="#检查网络连接" class="headerlink" title="检查网络连接"></a>检查网络连接</h2><p>检查网络连接是否正常（此时机器应该时自动连接到网络的），可以使用<code>ping</code>验证连接是否正常：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping -c 3 archlinux.org</span><br></pre></td></tr></table></figure></p>
 <h2 id="选择镜像源"><a href="#选择镜像源" class="headerlink" title="选择镜像源"></a>选择镜像源</h2><p>修改<code>/etc/pacman.d/mirrorlist</code>文件，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></figure></p>
-<p>此文件定义了软件包会从哪个镜像源下载，在列表中越前的镜像在下载软件包时有越高的优先权。可以加入以下两个镜像：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 中科大的</span></span></span><br><span class="line">Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 阿里云的</span></span></span><br><span class="line">Server = https://mirrors.aliyun.com/archlinux/$repo/os/$arch</span><br></pre></td></tr></table></figure></p>
-<h2 id="安装基本系统"><a href="#安装基本系统" class="headerlink" title="安装基本系统"></a>安装基本系统</h2><p>使用<code>pacstrap</code>脚本：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pasctrap -i /mnt base base-devel</span><br></pre></td></tr></table></figure></p>
-<h1 id="配置系统"><a href="#配置系统" class="headerlink" title="配置系统"></a>配置系统</h1><h2 id="Fstab"><a href="#Fstab" class="headerlink" title="Fstab"></a>Fstab</h2><p>生成<code>fstab</code>文件，该文件用于定义磁盘分区，其他块设备和远程文件系统如何装入文件系统：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span><br></pre></td></tr></table></figure></p>
-<h2 id="Chroot"><a href="#Chroot" class="headerlink" title="Chroot"></a>Chroot</h2><p>Change root 到新系统<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-root /mnt</span><br></pre></td></tr></table></figure></p>
-<h2 id="时区"><a href="#时区" class="headerlink" title="时区"></a>时区</h2><p>设置时区：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br><span class="line">hwcloock --systohc</span><br></pre></td></tr></table></figure></p>
-<h2 id="本地化"><a href="#本地化" class="headerlink" title="本地化"></a>本地化</h2><p>在<code>/etc/locale.gen</code>文件中修改需要的本地化类型，移除掉对应行前的注释号即可:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/locale.gen</span><br></pre></td></tr></table></figure></p>
+<p>关于vim的操作，此处不做介绍。<br>此文件定义了软件包会从哪个镜像源下载，在列表中越前的镜像在下载软件包时有越高的优先权。可以加入以下两个镜像：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 中科大的</span></span></span><br><span class="line">Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 阿里云的</span></span></span><br><span class="line">Server = https://mirrors.aliyun.com/archlinux/$repo/os/$arch</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装基本系统"><a href="#安装基本系统" class="headerlink" title="安装基本系统"></a>安装基本系统</h2><p>使用<code>pacstrap</code>脚本，安装<code>base</code>组，和<code>base-devel</code>软件包组，也可以之后再安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pasctrap -i /mnt base base-devel</span><br></pre></td></tr></table></figure></p>
+<h1 id="配置系统"><a href="#配置系统" class="headerlink" title="配置系统"></a>配置系统</h1><h2 id="Fstab"><a href="#Fstab" class="headerlink" title="Fstab"></a>Fstab</h2><p>生成<code>fstab</code>文件，该文件用于定义磁盘分区，其他块设备和远程文件系统如何装入文件系统，<code>-U</code>选项设置使用UUID：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span><br></pre></td></tr></table></figure></p>
+<p>根据 Arch Wiki 的建议， 最好检查一下<code>fstab</code>文件是否正确：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /mnt/etc/fstab</span><br></pre></td></tr></table></figure></p>
+<h2 id="Chroot"><a href="#Chroot" class="headerlink" title="Chroot"></a>Chroot</h2><p>Change root 到新系统<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br></pre></td></tr></table></figure></p>
+<h2 id="时区"><a href="#时区" class="headerlink" title="时区"></a>时区</h2><p>设置时区：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br><span class="line">hwclock --systohc</span><br></pre></td></tr></table></figure></p>
+<h2 id="本地化"><a href="#本地化" class="headerlink" title="本地化"></a>本地化</h2><p>(这里vim可能尚未安装，使用<code>pacman -S vim</code>进行安装）<br>在<code>/etc/locale.gen</code>文件中修改需要的本地化类型，移除掉对应行前的注释号即可:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/locale.gen</span><br></pre></td></tr></table></figure></p>
 <p>执行<code>locale-gen</code>生成locale讯息，使<code>/etc/locale.ben</code>生成指定的本地化文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locale-gen</span><br></pre></td></tr></table></figure></p>
 <p>创建<code>locale.conf</code>并编辑<code>LANG</code>变量：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/locale.conf</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LANG = en_US.UTF-8</span><br></pre></td></tr></table></figure>
@@ -455,7 +456,10 @@
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="https://wiki.archlinux.org/index.php/Installation_guide" target="_blank" rel="noopener">Installation guide - ArchWiki</a></li>
 <li><a href="https://blog.contabo.com/tutorials/mounting-additional-hard-disks-linux/" target="_blank" rel="noopener">Mounting of additional hard disks in Linux | Official Blog - Contabo.com</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/Partitioning" target="_blank" rel="noopener">Partitioning =ArchWiki</a></li>
 <li><a href="https://wiki.archlinux.org/index.php/Fstab" target="_blank" rel="noopener">fstab - ArchWiki</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/Microcode" target="_blank" rel="noopener">Microcode - ArchWiki</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/GRUB" target="_blank" rel="noopener">GRUB - ArchWiki</a></li>
 <li><a href="https://www.cnblogs.com/tsdxdx/p/7215416.html" target="_blank" rel="noopener">Arch Linux 安装记（安装到移动硬盘）- 天下掉下的X - 博客园</a></li>
 <li><a href="https://www.jianshu.com/p/a1c10e6c9eba" target="_blank" rel="noopener">arch linux安装到移动介质-简书</a></li>
 <li><a href="http://smilejay.com/2012/06/swap_size/" target="_blank" rel="noopener">交换分区(SWAP)的大小分配-笑遍世界</a></li>
@@ -502,8 +506,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Book-knowledge-is-insecure/" rel="prev" title="书评-学问是靠不住的">
-                书评-学问是靠不住的 <i class="fa fa-chevron-right"></i>
+              <a href="/Algorithms-binary-search/" rel="prev" title="算法-二分搜索算法">
+                算法-二分搜索算法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -689,7 +693,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">70.1k</span>
+    <span title="Site words total count">70.2k</span>
   
 </div>
 
