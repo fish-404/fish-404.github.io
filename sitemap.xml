@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fish-404.github.io/Bookcomment-touched-by-an-angle/</loc>
+    
+    <lastmod>2018-09-16T16:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fish-404.github.io/Book-2018-extract/</loc>
     
-    <lastmod>2018-09-13T14:02:17.792Z</lastmod>
+    <lastmod>2018-09-13T15:03:04.635Z</lastmod>
     
   </url>
   
@@ -65,14 +72,14 @@
   </url>
   
   <url>
-    <loc>https://fish-404.github.io/Bookcomment-knowledge-is-insecure/</loc>
+    <loc>https://fish-404.github.io/Blog-themes-config/</loc>
     
     <lastmod>2018-07-30T16:00:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://fish-404.github.io/Blog-themes-config/</loc>
+    <loc>https://fish-404.github.io/Bookcomment-knowledge-is-insecure/</loc>
     
     <lastmod>2018-07-30T16:00:00.000Z</lastmod>
     
@@ -107,13 +114,6 @@
   </url>
   
   <url>
-    <loc>https://fish-404.github.io/Blog-change-blog-theme/</loc>
-    
-    <lastmod>2018-07-15T16:00:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://fish-404.github.io/Algorithms-gcd-euclid/</loc>
     
     <lastmod>2018-07-15T16:00:00.000Z</lastmod>
@@ -122,6 +122,13 @@
   
   <url>
     <loc>https://fish-404.github.io/Algorithms-bubble-sort/</loc>
+    
+    <lastmod>2018-07-15T16:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fish-404.github.io/Blog-change-blog-theme/</loc>
     
     <lastmod>2018-07-15T16:00:00.000Z</lastmod>
     
