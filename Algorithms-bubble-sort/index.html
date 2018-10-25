@@ -395,7 +395,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  512
+                  552
                 </span>
               
 
@@ -434,6 +434,8 @@
 <li>持续1-2步骤直至对于每个位置都进行一趟“冒泡”过程为止。</li>
 </ol>
 <h2 id="冒泡排序示例"><a href="#冒泡排序示例" class="headerlink" title="冒泡排序示例"></a>冒泡排序示例</h2><p>未排序：   5 31 16 7 9 10 3<br>第一趟： [<strong>3</strong>] 5 31 16 7 9 10<br>第二趟： [<strong>3 5</strong>] 7 31 16 9 10<br>第三趟： [<strong>3 5 7</strong>] 9 31 16 10<br>第四趟： [<strong>3 5 7 9</strong>] 10 31 16<br>第五趟： [<strong>3 5 7 9 10</strong>] 16 31<br>第六趟： [<strong>3 5 7 9 10 16</strong>] 31<br>第七趟： [<strong>3 5 7 9 10 16 31</strong>]</p>
+<p>冒泡排序的动态演示：</p>
+<p><a href="https://visualgo.net/zh/sorting" target="_blank" rel="noopener">VisuAlgo-排序（冒泡排序，选择排序，插入排序，归并排序，快速排序，基数排序，基数排序）</a></p>
 <h1 id="冒泡排序伪代码"><a href="#冒泡排序伪代码" class="headerlink" title="冒泡排序伪代码"></a>冒泡排序伪代码</h1><p>（引用自《算法导论》）<br>BUBBLESORT(A)<br><figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i = <span class="number">1</span> <span class="keyword">to</span> A.length - <span class="number">1</span></span><br><span class="line">  <span class="keyword">for</span> j = A.length <span class="keyword">downto</span> i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> A[j] &lt; A[j - <span class="number">1</span>]</span><br><span class="line">      exchange A[j] <span class="keyword">with</span> A[j - <span class="number">1</span>]</span><br></pre></td></tr></table></figure></p>
 <h1 id="冒泡排序实现"><a href="#冒泡排序实现" class="headerlink" title="冒泡排序实现"></a>冒泡排序实现</h1><h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(arrType* a, <span class="keyword">int</span> arrLength)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, j, t;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; arrLength - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = arrLength - <span class="number">1</span>; j &gt; i; j--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[j] &lt; a[j - <span class="number">1</span>]) &#123;</span><br><span class="line">               t = a[j];</span><br><span class="line">               a[j] = a[j - <span class="number">1</span>];</span><br><span class="line">               a[j - <span class="number">1</span>] = t;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Pascal"><a href="#Pascal" class="headerlink" title="Pascal"></a>Pascal</h2><figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">procedure</span> <span class="title">bubblesort</span>;</span>   </span><br><span class="line"><span class="keyword">var</span></span><br><span class="line">  i, j, t : integer;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">  <span class="keyword">for</span> i := <span class="number">1</span> <span class="keyword">to</span> arrLength - <span class="number">1</span> <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">for</span> j := arrLength <span class="keyword">downto</span> i + <span class="number">1</span> <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">if</span> a[j] &lt; a[j - <span class="number">1</span>] <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">begin</span></span><br><span class="line">                t := a[j];</span><br><span class="line">                a[j] := a[j - <span class="number">1</span>];</span><br><span class="line">                a[j - <span class="number">1</span>] := t;</span><br><span class="line">            <span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
@@ -586,7 +588,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -608,7 +610,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -693,7 +695,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">91.2k</span>
+    <span title="Site words total count">93.3k</span>
   
 </div>
 
