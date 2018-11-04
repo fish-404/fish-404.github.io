@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fish-404.github.io/Data-structures-SqQueue/</loc>
+    
+    <lastmod>2018-11-03T16:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fish-404.github.io/Data-structures-sqstack/</loc>
     
     <lastmod>2018-10-24T16:00:00.000Z</lastmod>
