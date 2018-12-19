@@ -476,6 +476,212 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fish-404.github.io/Data-structure-SqList/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="a cat called fish">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/cat.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不存在的貓">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Data-structure-SqList/" itemprop="url">数据结构-顺序表</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-17T00:00:00+08:00">
+                Dec 17 2018
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-12-19T00:00:00+08:00">
+                Dec 19 2018
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Data-structure-SqList/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/Data-structure-SqList/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,114
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>顺序表的描述与表示</li>
+<li>顺序表的操作接口定义</li>
+<li>顺序表的操作实现</li>
+</ul>
+<h1 id="顺序表的描述与表示"><a href="#顺序表的描述与表示" class="headerlink" title="顺序表的描述与表示"></a>顺序表的描述与表示</h1><p>首先介绍线性表（Linear List），线性表是一种允许在序列任意位置进行操作的数据结构。采用顺序存储结构表示的线性表称为顺序表。用一组地址连续的存储单元依次存放线性表的数据元素，以存储位置相邻表示位序相继的两个元素之间的前驱和后继关系。</p>
+<p>顺序表的类型定义：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">  ElemType* base;     <span class="comment">// 顺序表存储空间的基址</span></span><br><span class="line">  <span class="keyword">int</span> length;         <span class="comment">// 顺序表当前长度</span></span><br><span class="line">  <span class="keyword">int</span> size;           <span class="comment">// 顺序表的存储容量</span></span><br><span class="line">  <span class="keyword">int</span> increment;      <span class="comment">// 顺序表扩容时的增量</span></span><br><span class="line">&#125;SqList;</span><br></pre></td></tr></table></figure></p>
+<h2 id="本文中预定义的说明"><a href="#本文中预定义的说明" class="headerlink" title="本文中预定义的说明"></a>本文中预定义的说明</h2><h3 id="预定义常量和类型"><a href="#预定义常量和类型" class="headerlink" title="预定义常量和类型"></a>预定义常量和类型</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//函数结果状态代码</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TRUE      1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FALSE     0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OK        1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ERROR     0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OVERFLOW -1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Status; <span class="comment">// 用作函数值类型，表示函数结果状态</span></span><br></pre></td></tr></table></figure>
+<h3 id="数据结构（存储结构）的表示"><a href="#数据结构（存储结构）的表示" class="headerlink" title="数据结构（存储结构）的表示"></a>数据结构（存储结构）的表示</h3><p>数据结构的表示用类型定义(<code>typedef</code>)描述。数据元素类型约定为ElemType，读者在使用该数据类型时自行定义，如<code>int</code>、<code>char</code>等简单类型。</p>
+<h3 id="扩展引用调用"><a href="#扩展引用调用" class="headerlink" title="扩展引用调用"></a>扩展引用调用</h3><p>为了便于算法描述，我们使用了 C++ 语言中的引用调用参数传递方式。</p>
+<h1 id="顺序表的操作接口定义"><a href="#顺序表的操作接口定义" class="headerlink" title="顺序表的操作接口定义"></a>顺序表的操作接口定义</h1><p>由于采用了顺序存储结构，如果在顺序表中插入或删除元素，则需要移动操作位置之后的所有元素。实际上，如果需要频繁地插入和删除数据，选择顺序表作为抽象数据结构是一个极大的错误。因此在下面的接口定义中只考虑在表尾插入和删除元素。</p>
+<p>顺序表的接口定义如下：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化顺序表L</span></span><br><span class="line"><span class="function">Status <span class="title">InitList_Sq</span><span class="params">(SqList &amp;L, <span class="keyword">int</span> size, <span class="keyword">int</span> inc)</span></span>;</span><br><span class="line"><span class="comment">// 销毁顺序表L</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DestroyList_Sq</span><span class="params">(SqList &amp;L)</span></span>;</span><br><span class="line"><span class="comment">// 将顺序表L清空</span></span><br><span class="line"><span class="function">Status <span class="title">ClearList_Sq</span><span class="params">(SqList &amp;L)</span></span>;</span><br><span class="line"><span class="comment">// 判断顺序表是否为空，是返回 TRUE, 否则返回 FALSE</span></span><br><span class="line"><span class="function">Status <span class="title">ListEmpty_Sq</span><span class="params">(SqList L)</span></span>;</span><br><span class="line"><span class="comment">// 返回顺序表L中元素个数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ListLength_Sq</span><span class="params">(SqList L)</span></span>;</span><br><span class="line"><span class="comment">// 用e返回顺序表L中第i个元素的值</span></span><br><span class="line"><span class="function">Status <span class="title">GetElem_Sq</span><span class="params">(SqList L, <span class="keyword">int</span> i, ElemType &amp;e)</span></span>;</span><br><span class="line"><span class="comment">// 在顺序表L中查找元素e，查找成功返回该元素在表中第一次出现位置，否则返回-1</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Search_Sq</span><span class="params">(SqList, ElemType e)</span></span>;</span><br><span class="line"><span class="comment">// 遍历顺序表L， 依次对每个元素调用visit()</span></span><br><span class="line">Status ListTraverse_Sq(SqList L, Status( *visit)(ElemType e));</span><br><span class="line"><span class="comment">// 将顺序表L中第i个元素赋值为e</span></span><br><span class="line"><span class="function">Status <span class="title">PutElem_Sq</span><span class="params">(SqList &amp;L, <span class="keyword">int</span> i, ElemType e)</span></span>;</span><br><span class="line"><span class="comment">// 在顺序表L表尾添加元素e</span></span><br><span class="line"><span class="function">Status <span class="title">Append_Sq</span><span class="params">(SqList &amp;L, ElemType e)</span></span>;</span><br><span class="line"><span class="comment">// 删除顺序表L表尾元素，并用e返回</span></span><br><span class="line"><span class="function">Status <span class="title">DeleteLast_Sq</span><span class="params">(SqList &amp;L, ElemType &amp;e)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<h1 id="顺序表接口实现"><a href="#顺序表接口实现" class="headerlink" title="顺序表接口实现"></a>顺序表接口实现</h1><h2 id="初始化顺序表"><a href="#初始化顺序表" class="headerlink" title="初始化顺序表"></a>初始化顺序表</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">InitList_Sq</span><span class="params">(SqList &amp;L, <span class="keyword">int</span> size, <span class="keyword">int</span> inc)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  L.base = (ElemType*)<span class="built_in">malloc</span>(size * <span class="keyword">sizeof</span>(ElemType));</span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">NULL</span> == L.base)</span><br><span class="line">    <span class="keyword">return</span> OVERFLOW;</span><br><span class="line">  L.size = size;</span><br><span class="line">  L.increment = inc;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="销毁顺序表"><a href="#销毁顺序表" class="headerlink" title="销毁顺序表"></a>销毁顺序表</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DestroyList_Sq</span><span class="params">(SqList &amp;L)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">free</span>(L.base);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="将顺序表清空"><a href="#将顺序表清空" class="headerlink" title="将顺序表清空"></a>将顺序表清空</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ClearList_Sq</span><span class="params">(SqList &amp;L)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  L.length = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="判断顺序表是否为空"><a href="#判断顺序表是否为空" class="headerlink" title="判断顺序表是否为空"></a>判断顺序表是否为空</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">ListEmpty_Sq</span><span class="params">(SqList L)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (L.length == <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> TRUE;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> FALSE;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="求顺序表元素个数"><a href="#求顺序表元素个数" class="headerlink" title="求顺序表元素个数"></a>求顺序表元素个数</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ListLength_Sq</span><span class="params">(SqList L)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> L.length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="求第i个元素值"><a href="#求第i个元素值" class="headerlink" title="求第i个元素值"></a>求第i个元素值</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">GetElem_Sq</span><span class="params">(SqList L, <span class="keyword">int</span> i, ElemType &amp;e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (i &lt; <span class="number">0</span> || i &gt; L.length)</span><br><span class="line">    <span class="keyword">return</span> ERROR;</span><br><span class="line">  e = L.base[i - <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Search_Sq</span><span class="params">(SqList L, ElemType e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (i &lt; L.length &amp;&amp; L.elem[i] != e)</span><br><span class="line">    i++;</span><br><span class="line">  <span class="keyword">if</span> (i &lt; L.length)</span><br><span class="line">    <span class="keyword">return</span> i;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="访问每个元素"><a href="#访问每个元素" class="headerlink" title="访问每个元素"></a>访问每个元素</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">status ListTraverse_Sq(SqList L, Status(*visit)(ElemType e))</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">int</span> i;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (L == <span class="literal">NULL</span> || L.length &lt;= <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> ERROR;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; L.length; i++) &#123;</span><br><span class="line">      visit(L.base[i]);</span><br><span class="line">  &#125;  </span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="赋值指定位序元素"><a href="#赋值指定位序元素" class="headerlink" title="赋值指定位序元素"></a>赋值指定位序元素</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">PutElem_Sq</span><span class="params">(SqList &amp;L, <span class="keyword">int</span> i, ElemType e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (i &gt; L.length || L == <span class="literal">NULL</span>)</span><br><span class="line">    <span class="keyword">return</span> ERROR;</span><br><span class="line"></span><br><span class="line">  L.base[i - <span class="number">1</span>] = e;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="添加表尾元素"><a href="#添加表尾元素" class="headerlink" title="添加表尾元素"></a>添加表尾元素</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">Append_Sq</span><span class="params">(SqList &amp;L, ElemType e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (L.length == L.size)</span><br><span class="line">    <span class="keyword">return</span> ERROR;</span><br><span class="line"></span><br><span class="line">  L.base[L.length] = e;</span><br><span class="line">  L.length++;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="删除表尾元素"><a href="#删除表尾元素" class="headerlink" title="删除表尾元素"></a>删除表尾元素</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Status <span class="title">DeleteLast_Sq</span><span class="params">(SqList &amp;L, ElemType &amp;e)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="number">0</span> == L.length || <span class="literal">NULL</span> == L)</span><br><span class="line">    <span class="keyword">return</span> ERROR;</span><br><span class="line"></span><br><span class="line">  e = L.base[L.length - <span class="number">1</span>];</span><br><span class="line">  L.length--;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>《数据结构》（吴伟民，李小妹）</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fish-404.github.io/Bookcomment-Walk-in-the-night/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -959,7 +1165,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,271
+                  1,284
                 </span>
               
 
@@ -987,7 +1193,7 @@
         
           <ul>
 <li>循环顺序队列的描述与表示</li>
-<li>循环顺序队列的操作定义接口</li>
+<li>循环顺序队列的操作接口定义</li>
 <li>循环顺序队列的操作实现</li>
 </ul>
           <!--noindex-->
@@ -1178,7 +1384,7 @@
         
           <ul>
 <li>顺序栈的描述与表示</li>
-<li>顺序栈的操作定义接口</li>
+<li>顺序栈的操作接口定义</li>
 <li>顺序栈的操作实现</li>
 </ul>
           <!--noindex-->
@@ -1408,194 +1614,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fish-404.github.io/Bookcomment-no-resolution/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="a cat called fish">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/cat.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="不存在的貓">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Bookcomment-no-resolution/" itemprop="url">书评-无解，近似解（写在读《樱草忌》之后）</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-06T00:00:00+08:00">
-                Oct 6 2018
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-10-06T00:00:00+08:00">
-                Oct 6 2018
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/书评/" itemprop="url" rel="index">
-                    <span itemprop="name">书评</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Bookcomment-no-resolution/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Bookcomment-no-resolution/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2,929
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">书名：    樱草忌</span><br><span class="line">作者：    【中】陆秋槎</span><br><span class="line">出版社：  新星出版社</span><br></pre></td></tr></table></figure>
-<p><strong>本是無解方程，偏尋近似之解，解得滿紙傷悲。</strong></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Bookcomment-no-resolution/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1650,7 +1668,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1741,7 +1759,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">104.4k</span>
+    <span title="Site words total count">105.6k</span>
   
 </div>
 
