@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="顺序表的描述与表示 顺序表的操作接口定义 顺序表的操作实现  顺序表的描述与表示首先介绍线性表（Linear List），线性表是一种允许在序列任意位置进行操作的数据结构。采用顺序存储结构表示的线性表称为顺序表。用一组地址连续的存储单元依次存放线性表的数据元素，以存储位置相邻表示位序相继的两个元素之间的前驱和后继关系。 顺序表的类型定义：123456typedef struct &amp;#123;">
+<meta name="description" content="顺序表的描述与表示 顺序表的操作接口定义 顺序表的操作实现">
 <meta name="keywords" content="Algorithms,Data Structures">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构-顺序表">
 <meta property="og:url" content="https://fish-404.github.io/Data-structure-SqList/index.html">
 <meta property="og:site_name" content="不存在的貓">
-<meta property="og:description" content="顺序表的描述与表示 顺序表的操作接口定义 顺序表的操作实现  顺序表的描述与表示首先介绍线性表（Linear List），线性表是一种允许在序列任意位置进行操作的数据结构。采用顺序存储结构表示的线性表称为顺序表。用一组地址连续的存储单元依次存放线性表的数据元素，以存储位置相邻表示位序相继的两个元素之间的前驱和后继关系。 顺序表的类型定义：123456typedef struct &amp;#123;">
+<meta property="og:description" content="顺序表的描述与表示 顺序表的操作接口定义 顺序表的操作实现">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-12-18T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构-顺序表">
-<meta name="twitter:description" content="顺序表的描述与表示 顺序表的操作接口定义 顺序表的操作实现  顺序表的描述与表示首先介绍线性表（Linear List），线性表是一种允许在序列任意位置进行操作的数据结构。采用顺序存储结构表示的线性表称为顺序表。用一组地址连续的存储单元依次存放线性表的数据元素，以存储位置相邻表示位序相继的两个元素之间的前驱和后继关系。 顺序表的类型定义：123456typedef struct &amp;#123;">
+<meta name="twitter:description" content="顺序表的描述与表示 顺序表的操作接口定义 顺序表的操作实现">
 
 
 
@@ -425,6 +425,7 @@
 <li>顺序表的操作接口定义</li>
 <li>顺序表的操作实现</li>
 </ul>
+<a id="more"></a>
 <h1 id="顺序表的描述与表示"><a href="#顺序表的描述与表示" class="headerlink" title="顺序表的描述与表示"></a>顺序表的描述与表示</h1><p>首先介绍线性表（Linear List），线性表是一种允许在序列任意位置进行操作的数据结构。采用顺序存储结构表示的线性表称为顺序表。用一组地址连续的存储单元依次存放线性表的数据元素，以存储位置相邻表示位序相继的两个元素之间的前驱和后继关系。</p>
 <p>顺序表的类型定义：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">  ElemType* base;     <span class="comment">// 顺序表存储空间的基址</span></span><br><span class="line">  <span class="keyword">int</span> length;         <span class="comment">// 顺序表当前长度</span></span><br><span class="line">  <span class="keyword">int</span> size;           <span class="comment">// 顺序表的存储容量</span></span><br><span class="line">  <span class="keyword">int</span> increment;      <span class="comment">// 顺序表扩容时的增量</span></span><br><span class="line">&#125;SqList;</span><br></pre></td></tr></table></figure></p>
 <h2 id="本文中预定义的说明"><a href="#本文中预定义的说明" class="headerlink" title="本文中预定义的说明"></a>本文中预定义的说明</h2><h3 id="预定义常量和类型"><a href="#预定义常量和类型" class="headerlink" title="预定义常量和类型"></a>预定义常量和类型</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//函数结果状态代码</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TRUE      1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FALSE     0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OK        1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ERROR     0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OVERFLOW -1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Status; <span class="comment">// 用作函数值类型，表示函数结果状态</span></span><br></pre></td></tr></table></figure>
