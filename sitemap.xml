@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fish-404.github.io/Book-2018-extract/</loc>
+    
+    <lastmod>2019-01-14T15:05:54.305Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fish-404.github.io/about/index.html</loc>
     
     <lastmod>2019-01-14T13:29:17.255Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://fish-404.github.io/Book-2019-extract/</loc>
     
     <lastmod>2019-01-14T12:17:57.467Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fish-404.github.io/Book-2018-extract/</loc>
-    
-    <lastmod>2019-01-14T11:45:07.767Z</lastmod>
     
   </url>
   
@@ -184,7 +184,7 @@
   </url>
   
   <url>
-    <loc>https://fish-404.github.io/Blog-change-blog-theme/</loc>
+    <loc>https://fish-404.github.io/Algorithms-bubble-sort/</loc>
     
     <lastmod>2018-07-15T16:00:00.000Z</lastmod>
     
@@ -198,7 +198,7 @@
   </url>
   
   <url>
-    <loc>https://fish-404.github.io/Algorithms-bubble-sort/</loc>
+    <loc>https://fish-404.github.io/Blog-change-blog-theme/</loc>
     
     <lastmod>2018-07-15T16:00:00.000Z</lastmod>
     
