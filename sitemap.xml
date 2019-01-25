@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fish-404.github.io/Algorithms-binary-search/</loc>
+    
+    <lastmod>2019-01-24T16:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fish-404.github.io/Book-2019-extract/</loc>
     
     <lastmod>2019-01-23T01:50:59.600Z</lastmod>
@@ -156,13 +163,6 @@
   </url>
   
   <url>
-    <loc>https://fish-404.github.io/Algorithms-binary-search/</loc>
-    
-    <lastmod>2018-07-31T16:00:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://fish-404.github.io/Bookcomment-knowledge-is-insecure/</loc>
     
     <lastmod>2018-07-30T16:00:00.000Z</lastmod>
@@ -205,7 +205,7 @@
   </url>
   
   <url>
-    <loc>https://fish-404.github.io/Blog-change-blog-theme/</loc>
+    <loc>https://fish-404.github.io/Algorithms-bubble-sort/</loc>
     
     <lastmod>2018-07-15T16:00:00.000Z</lastmod>
     
@@ -219,7 +219,7 @@
   </url>
   
   <url>
-    <loc>https://fish-404.github.io/Algorithms-bubble-sort/</loc>
+    <loc>https://fish-404.github.io/Blog-change-blog-theme/</loc>
     
     <lastmod>2018-07-15T16:00:00.000Z</lastmod>
     

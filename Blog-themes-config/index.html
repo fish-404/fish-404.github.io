@@ -127,6 +127,8 @@
 
 
 
+  <link rel="canonical" href="https://fish-404.github.io/Blog-themes-config/"/>
+
 
 
 
@@ -164,7 +166,7 @@
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description"></h1>
+        <h1 class="site-subtitle" itemprop="description">A cat called fish.</h1>
       
   </div>
 
@@ -293,7 +295,7 @@
     <link itemprop="mainEntityOfPage" href="https://fish-404.github.io/Blog-themes-config/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="a cat called fish">
+      <meta itemprop="name" content="Fish__404">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/cat.jpg">
     </span>
@@ -395,7 +397,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,699
+                  1,756
                 </span>
               
 
@@ -423,6 +425,7 @@
         <p>本文整理了NexT主题下通过配置主题<code>_config.yml</code>进行的相关配置。</p>
 <a id="more"></a>
 <p>进入路径<code>.\themes\next\</code>，修改主题下的配置文件<code>_config.yml</code></p>
+<p>需要注意的是，YAML语言对格式的要求较为严格，如generate时出错可以使用<a href="http://nodeca.github.io/js-yaml/" target="_blank" rel="noopener">YAML parser for JavaScript-JS-YAML</a>对自己的配置文件格式进行检查。或者可以查看<a href="http://www.ruanyifeng.com/blog/2016/07/yaml.html" target="_blank" rel="noopener">YAML语言教程-阮一峰的网络日志</a>了解相关语法。</p>
 <h1 id="选择外观"><a href="#选择外观" class="headerlink" title="选择外观"></a>选择外观</h1><p>NexT主题提供了不同的外观，默认是<code>Muse</code>，本站为<code>Mist</code>。找到如下<code>Schemes</code>字段，去掉想实现的外观前的注释号</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="comment">#scheme: Gemini</span></span><br></pre></td></tr></table></figure>
 <h1 id="菜单和小图标"><a href="#菜单和小图标" class="headerlink" title="菜单和小图标"></a>菜单和小图标</h1><p>菜单选项可以通过<code>_config.yml</code>中<code>menu</code>字段中的各项来控制，增加和删减菜单选项。菜单的小图标可以通过更改符号<code>||</code>后面的值来修改，后面的描述分别对应的是<a href="https://fontawesome.com/icons?d=gallery&m=free" target="_blank" rel="noopener">Font Awesome</a>列出的小图标。</p>
@@ -446,13 +449,14 @@
 <li><code>verify</code>设置评论是否需要验证码；</li>
 <li><code>placeholder</code>设置评论框默认的显示语句，可自定义；</li>
 <li><code>avatar</code>: 设置头像，<code>Valine</code>使用的是<code>Gravatar</code>来配置头像，（<a href="http://cn.gravatar.com/" target="_blank" rel="noopener">Gravatar-全球公认的头像</a>），如果有<code>Gravatar</code>账号，在评论时使用注册<code>Gravatar</code>时留下的邮箱，评论时就将出现<code>Gravatar</code>设置的头像。该字段有多个选项，在并不与<code>Gravatar</code>关联的情况下可以选择其他头像(详情可参见<a href="https://valine.js.org/avatar.html" target="_blank" rel="noopener">头像配置|Valine</a>)：<ul>
-<li>‘’ ：Gravatar官方头像</li>
-<li>mp ：神秘人，一个灰白人头像</li>
-<li>identicon ：抽象几何图形</li>
-<li>monsterid ：小怪物<br>   wavatar ：用不同面孔和背景组合生成的头像     用不同面孔和背景组合生成的头像</li>
-<li>retro ：八位像素复古头像</li>
-<li>robohash ：一种具有不同颜色、面部等的机器人</li>
-<li>hide ：不显示头像</li>
+<li><code>&#39;&#39;</code> ：Gravatar官方头像</li>
+<li><code>mp</code> ：神秘人，一个灰白人头像</li>
+<li><code>identicon</code> ：抽象几何图形</li>
+<li><code>monsterid</code> ：小怪物</li>
+<li><code>wavatar</code> ：用不同面孔和背景组合生成的头像</li>
+<li><code>retro</code> ：八位像素复古头像</li>
+<li><code>robohash</code> ：一种具有不同颜色、面部等的机器人</li>
+<li><code>hide</code> ：不显示头像</li>
 </ul>
 </li>
 <li><code>guest_info</code>：配置可供评论读者填写的个人信息选项；</li>
@@ -486,7 +490,7 @@
         <ul class="post-copyright">
   <li class="post-copyright-author">
     <strong>本文作者：</strong>
-    a cat called fish
+    Fish__404
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
@@ -494,7 +498,7 @@
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
-    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
   </li>
 </ul>
 
@@ -513,6 +517,18 @@
       
 
       
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
       
       
 
@@ -603,9 +619,9 @@
             
               <img class="site-author-image" itemprop="image"
                 src="/images/cat.jpg"
-                alt="a cat called fish" />
+                alt="Fish__404" />
             
-              <p class="site-author-name" itemprop="name">a cat called fish</p>
+              <p class="site-author-name" itemprop="name">Fish__404</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -674,6 +690,12 @@
 
           
           
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
 
           
           
@@ -729,7 +751,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">115.6k</span>
+    <span title="Site words total count">115.7k</span>
   
 </div>
 
@@ -903,7 +925,9 @@
         notify: true,
         appId: 'N0HVW6SnFPxcFCaYsR3Iqk0f-gzGzoHsz',
         appKey: 'SO0jdvBxhhBgQsyEn8iMjKHm',
-        placeholder: 'Would you like say something to the nonexistence cat? ^_^ 说不定有机会触发不存在的本喵现身噢！喵喵喵~~~ (=^x^=)',
+        placeholder: '��˵��ʲô����Լ�����ǳƾͿ�������������ַѡ��~
+˵�����л��ᴥ������������~ (-^��i��^-)
+',
         avatar:'robohash',
         guest_info:guest,
         pageSize:'7' || 10,
@@ -1243,6 +1267,23 @@
 
   
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: <16272>,
+    el: 'wpac-rating',
+    color: '6b22aa'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
   

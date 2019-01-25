@@ -94,10 +94,12 @@
 <meta property="og:site_name" content="不存在的貓">
 <meta property="og:description" content="算法：二分搜索算法（折半查找算法）时间复杂度：$O(log \; n)$  二分搜索算法概述 二分搜索算法伪代码 二分搜索算法实现">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-31T16:00:00.000Z">
+<meta property="og:image" content="https://idea-instructions.com/binary-search.png">
+<meta property="og:updated_time" content="2019-01-24T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法-二分搜索算法">
 <meta name="twitter:description" content="算法：二分搜索算法（折半查找算法）时间复杂度：$O(log \; n)$  二分搜索算法概述 二分搜索算法伪代码 二分搜索算法实现">
+<meta name="twitter:image" content="https://idea-instructions.com/binary-search.png">
 
 
 
@@ -126,6 +128,8 @@
 </script>
 
 
+
+  <link rel="canonical" href="https://fish-404.github.io/Algorithms-binary-search/"/>
 
 
 
@@ -164,7 +168,7 @@
       </a>
     </div>
       
-        <h1 class="site-subtitle" itemprop="description"></h1>
+        <h1 class="site-subtitle" itemprop="description">A cat called fish.</h1>
       
   </div>
 
@@ -293,7 +297,7 @@
     <link itemprop="mainEntityOfPage" href="https://fish-404.github.io/Algorithms-binary-search/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="a cat called fish">
+      <meta itemprop="name" content="Fish__404">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/cat.jpg">
     </span>
@@ -335,8 +339,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-01T00:00:00+08:00">
-                Aug 1 2018
+              <time title="更新于" itemprop="dateModified" datetime="2019-01-25T00:00:00+08:00">
+                Jan 25 2019
               </time>
             
           </span>
@@ -395,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  745
+                  760
                 </span>
               
 
@@ -428,14 +432,16 @@
 </ul>
 <a id="more"></a>
 <h1 id="二分搜索算法概述"><a href="#二分搜索算法概述" class="headerlink" title="二分搜索算法概述"></a>二分搜索算法概述</h1><p>二分搜索算法，也称折半查找算法，即在一个有序数组中查找某一个特定元素。整个搜索过程从中间开始，如果要查找的元素即中间元素，那么搜索过程结束；反之根据中间元素与要查找元素的关系在数组对应的那一半查找，例如查找元素大于中间元素，则在整个数组较大元素的那一半查找，反复进行这个过程，直到找到元素，或者数组为空，查找不到元素。</p>
-<h2 id="二分搜索算法描述"><a href="#二分搜索算法描述" class="headerlink" title="二分搜索算法描述"></a>二分搜索算法描述</h2><p>给定一个数组<code>A_0,A_1...A_{n-1}</code>， <code>A_0 \le A_1 \le \cdot \le A_{n - 1}</code>，待查找元素为<code>searchnum</code>：</p>
+<p>这里有一张非常形象的算法描述图：</p>
+<p><img src="https://idea-instructions.com/binary-search.png" alt="Binary Search"></p>
+<h2 id="二分搜索算法描述"><a href="#二分搜索算法描述" class="headerlink" title="二分搜索算法描述"></a>二分搜索算法描述</h2><p>给定一个数组 $A_0, A<em>1… A</em>{n-1}$， $A_0 \le A<em>1 \le \cdot \le A</em>{n - 1}$，待查找元素为<code>searchnum</code>：</p>
 <ol>
 <li>用<code>left</code>，<code>right</code>分别表示左右端点，即要查找的范围；</li>
-<li>用<code>middle</code>表示中间点，<code>middle = \lfloor (left + right) / 2 \rfloor</code>；</li>
+<li>用<code>middle</code>表示中间点，$middle = \lfloor (left + right) / 2 \rfloor$；</li>
 <li>若<code>left &gt; right</code>，搜索失败；</li>
-<li>若<code>A{middle} &gt; searchnum</code>，<code>right = middle - 1</code>，返回3；</li>
-<li>若<code>A{middle} &lt; searchnum</code>，<code>left = middle + 1</code>，返回3；</li>
-<li>若<code>A{middle} = searchnum</code>，搜索结束，返回<code>middle</code>。</li>
+<li>若 $A_{middle}$ &gt;<code>searchnum</code>，<code>right = middle - 1</code>，返回3；</li>
+<li>若 $A_{middle}$ &lt; <code>searchnum</code>，<code>left = middle + 1</code>，返回3；</li>
+<li>若 $A_{middle}$ = <code>searchnum</code>，搜索结束，返回<code>middle</code>。</li>
 </ol>
 <h1 id="二分搜索算法伪代码"><a href="#二分搜索算法伪代码" class="headerlink" title="二分搜索算法伪代码"></a>二分搜索算法伪代码</h1><h2 id="while-版本"><a href="#while-版本" class="headerlink" title="while 版本"></a>while 版本</h2><p>BINARY-SEARCH-WHILE(A, searchnum, left, right)<br><figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> left &lt;= right</span><br><span class="line">  middle = (left + right) <span class="keyword">div</span> <span class="number">2</span></span><br><span class="line">  <span class="keyword">case</span></span><br><span class="line">    A_middle &lt; searchnum : left = middle + <span class="number">1</span></span><br><span class="line">    A_middle &gt; searchnum : right = middle - <span class="number">1</span></span><br><span class="line">    A_middle = searchnum : return middle</span><br><span class="line">return FAILED</span><br></pre></td></tr></table></figure></p>
 <h2 id="递归版本"><a href="#递归版本" class="headerlink" title="递归版本"></a>递归版本</h2><p>BINARY-SEARCH-RECURSION(A, searchnum, left, right)<br><figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> left &lt;= right</span><br><span class="line">  middle = (left + right) <span class="keyword">div</span> <span class="number">2</span></span><br><span class="line">  <span class="keyword">case</span></span><br><span class="line">    A_middle &lt; searchnum :</span><br><span class="line">      return (A, searchnum, middle + <span class="number">1</span>, right)</span><br><span class="line">    A_middle &gt; searchnum :</span><br><span class="line">      return (A, searchnum, left, middle - <span class="number">1</span>)</span><br><span class="line">    A_middle = searchnum :</span><br><span class="line">      return middle</span><br></pre></td></tr></table></figure></p>
@@ -464,7 +470,7 @@
         <ul class="post-copyright">
   <li class="post-copyright-author">
     <strong>本文作者：</strong>
-    a cat called fish
+    Fish__404
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
@@ -472,7 +478,7 @@
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
-    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
   </li>
 </ul>
 
@@ -492,14 +498,26 @@
 
       
       
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
       
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Bookcomment-knowledge-is-insecure/" rel="next" title="书评-学问是靠不住的">
-                <i class="fa fa-chevron-left"></i> 书评-学问是靠不住的
+              <a href="/Linux-Install-archlinux-harddisk/" rel="next" title="Linux-在移动硬盘上安装Arch Linux">
+                <i class="fa fa-chevron-left"></i> Linux-在移动硬盘上安装Arch Linux
               </a>
             
           </div>
@@ -508,8 +526,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Bookcomment-lamb-jumping-out-of-the-sheepfold/" rel="prev" title="书评-跳出羊圈的羔羊">
-                书评-跳出羊圈的羔羊 <i class="fa fa-chevron-right"></i>
+              <a href="/Bookcomment-knowledge-is-insecure/" rel="prev" title="书评-学问是靠不住的">
+                书评-学问是靠不住的 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -581,9 +599,9 @@
             
               <img class="site-author-image" itemprop="image"
                 src="/images/cat.jpg"
-                alt="a cat called fish" />
+                alt="Fish__404" />
             
-              <p class="site-author-name" itemprop="name">a cat called fish</p>
+              <p class="site-author-name" itemprop="name">Fish__404</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -652,6 +670,12 @@
 
           
           
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
 
           
           
@@ -707,7 +731,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">115.6k</span>
+    <span title="Site words total count">115.7k</span>
   
 </div>
 
@@ -881,7 +905,9 @@
         notify: true,
         appId: 'N0HVW6SnFPxcFCaYsR3Iqk0f-gzGzoHsz',
         appKey: 'SO0jdvBxhhBgQsyEn8iMjKHm',
-        placeholder: 'Would you like say something to the nonexistence cat? ^_^ 说不定有机会触发不存在的本喵现身噢！喵喵喵~~~ (=^x^=)',
+        placeholder: '��˵��ʲô����Լ�����ǳƾͿ�������������ַѡ��~
+˵�����л��ᴥ������������~ (-^��i��^-)
+',
         avatar:'robohash',
         guest_info:guest,
         pageSize:'7' || 10,
@@ -1221,6 +1247,23 @@
 
   
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: <16272>,
+    el: 'wpac-rating',
+    color: '6b22aa'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
   
