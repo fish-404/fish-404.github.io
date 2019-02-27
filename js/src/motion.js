@@ -1,7 +1,6 @@
 /* global NexT: true */
 
-$(document).ready(function () {
-  window.onload = function(){
+ window.onload = function(){
 	  val bwol = documnet.body.offsetWidth;
 	  if (bwol < 975) {
 		  $('aside#sidebar').css("display", "none");
@@ -16,7 +15,9 @@ $(document).ready(function () {
 		$('body').velocity('stop').velocity({paddingLeft: 350}, 0);
   }
 
-  NexT.motion = {};
+
+$(document).ready(function () {
+   NexT.motion = {};
 
   var sidebarToggleLines = {
     lines: [],
