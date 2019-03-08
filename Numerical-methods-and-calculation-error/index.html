@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<meta name="google-site-verification" content="oidK62nPj9NWIhnc4mzpSvpYAdGP5A3X4Mh1u97sLn0" />
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-bounce.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-fish.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-fish.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-fish.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Numerical methods," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="计算方法课程第一章绪论与计算误差整理，来自课程内容，因 Github 无法渲染公式，故整理在此. 源文件：https://github.com/fish-404/Notes/tree/master/%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95">
+<meta name="keywords" content="Numerical methods">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算方法-[1]绪论与计算误差">
+<meta property="og:url" content="https://fish-404.github.io/Numerical-methods-and-calculation-error/index.html">
+<meta property="og:site_name" content="在逃的貓">
+<meta property="og:description" content="计算方法课程第一章绪论与计算误差整理，来自课程内容，因 Github 无法渲染公式，故整理在此. 源文件：https://github.com/fish-404/Notes/tree/master/%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/fish-404/Notes/master/%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95/%E5%88%A9%E7%94%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%A3%E5%86%B3%E5%AE%9E%E9%99%85%E9%97%AE%E9%A2%98%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B.png">
+<meta property="og:updated_time" content="2019-03-08T09:35:38.733Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算方法-[1]绪论与计算误差">
+<meta name="twitter:description" content="计算方法课程第一章绪论与计算误差整理，来自课程内容，因 Github 无法渲染公式，故整理在此. 源文件：https://github.com/fish-404/Notes/tree/master/%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/fish-404/Notes/master/%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95/%E5%88%A9%E7%94%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%A3%E5%86%B3%E5%AE%9E%E9%99%85%E9%97%AE%E9%A2%98%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://fish-404.github.io/Numerical-methods-and-calculation-error/"/>
+
+
+
+
+
+  <title>计算方法-[1]绪论与计算误差 | 在逃的貓</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container  page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">在逃的貓</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">A cat called fish.</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-fort-awesome"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-inbox"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fish-404.github.io/Numerical-methods-and-calculation-error/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fish__404">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/cat.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="在逃的貓">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">计算方法-[1]绪论与计算误差</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">
+                Mar 6 2019
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-08T17:35:38+08:00">
+                Mar 8 2019
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算方法/" itemprop="url" rel="index">
+                    <span itemprop="name">计算方法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Numerical-methods-and-calculation-error/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/Numerical-methods-and-calculation-error/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,986
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>计算方法课程第一章绪论与计算误差整理，来自课程内容，因 Github 无法渲染公式，故整理在此.</p>
+<p>源文件：<a href="https://github.com/fish-404/Notes/tree/master/%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">https://github.com/fish-404/Notes/tree/master/%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95</a></p>
+<a id="more"></a>
+<h1 id="第一章-绪论与计算误差"><a href="#第一章-绪论与计算误差" class="headerlink" title="第一章 绪论与计算误差"></a>第一章 绪论与计算误差</h1><h2 id="1-1-计算方法研究内容与意义"><a href="#1-1-计算方法研究内容与意义" class="headerlink" title="1.1 计算方法研究内容与意义"></a>1.1 计算方法研究内容与意义</h2><h3 id="研究对象"><a href="#研究对象" class="headerlink" title="研究对象"></a>研究对象</h3><p>计算方法研究的是运用计算机来解决各种数学问题的 <strong>近似</strong> 计算方法与理论。</p>
+<p>计算方法是研究求解各类数学问题在一定范围内的在一定范围内的 <em>数值解</em> 的方法，以及这些方法的 <strong>误差传播规律</strong>、<strong>收敛性</strong>、<strong>稳定性</strong>，与如何 <em>在计算机上</em> 编程 <em>有效实现</em> 等问题的学科。</p>
+<p><img src="https://raw.githubusercontent.com/fish-404/Notes/master/%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95/%E5%88%A9%E7%94%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%A3%E5%86%B3%E5%AE%9E%E9%99%85%E9%97%AE%E9%A2%98%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B.png" alt="利用计算机解决实际问题的基本过程流程图"></p>
+<h3 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h3><ol>
+<li>计算机只能解决以四则运算为基础的，能在有穷步内结束的计算问题，高等数学和线性代数的许多理论与方法不能在计算机上直接应用。</li>
+<li>众多生产实践与科学研究问题本身并不具备解析形式，或者用纯数学方法难以找到问题的解析解。</li>
+<li>一些问题虽然具有解析形式，但过于复杂，计算机无法在可接受的时间内求解。</li>
+<li>一些问题的解析解可能含有无穷多项，只能使用近似的计算方法去逼近问题的解。</li>
+<li>在分析实验，观察数据时，需要使用插值、拟合等多种数值计算方法把一系列离散的数据关联起来。</li>
+</ol>
+<h2 id="1-2-计算方法的主要特点"><a href="#1-2-计算方法的主要特点" class="headerlink" title="1.2 计算方法的主要特点"></a>1.2 计算方法的主要特点</h2><ul>
+<li><p><strong>严谨性</strong>：</p>
+<p>计算方法的收敛性、稳定性与可靠性需要以数学理论为基础</p>
+</li>
+<li><p><strong>实践性</strong>：</p>
+<p>与实际应用、实际计算过程紧密相连</p>
+</li>
+<li><p><strong>近似性</strong>:</p>
+<p>用有穷取代无穷，变不可解为可解的方法，对数学问题近似求解，逐步求精</p>
+</li>
+<li><p><strong>结构性</strong>：</p>
+<p>由有穷步的四则运算构成：计算复杂性低；方法、流程与计算机程序一致</p>
+</li>
+</ul>
+<h2 id="1-3-误差的基本概念"><a href="#1-3-误差的基本概念" class="headerlink" title="1.3 误差的基本概念"></a>1.3 误差的基本概念</h2><h3 id="1-3-1-计算机中数的浮点表示"><a href="#1-3-1-计算机中数的浮点表示" class="headerlink" title="1.3.1 计算机中数的浮点表示"></a>1.3.1 计算机中数的浮点表示</h3><p>计算机中参与运算的数是用浮点表示的</p>
+<p>$$<br>x = \pm a_1a_2 \cdots a_s \times \beta^c<br>$$</p>
+<p>其中 $1 \le a_1 &lt; \beta, 0 \le a_i &lt; \beta, i = 2, 3, \cdots, s\ge$, $c$是阶码</p>
+<h3 id="1-3-2-计算机中的舍入误差"><a href="#1-3-2-计算机中的舍入误差" class="headerlink" title="1.3.2 计算机中的舍入误差"></a>1.3.2 计算机中的舍入误差</h3><p>大多数计算机以二进制形式存储数字，由于计算机字长有限，不是所有数字都可以被准确地表示，它们必须被舍入到适合计算机的字长，意味着被执行的算术运算使不精确的。</p>
+<h3 id="1-3-3-误差来源"><a href="#1-3-3-误差来源" class="headerlink" title="1.3.3 误差来源"></a>1.3.3 误差来源</h3><ul>
+<li>观察误差</li>
+</ul>
+<p>由于仪器的精密程度、实验手段、周围环境、人工作态度及能力等因素，观察或测量结果存在误差。</p>
+<p>求解过程中，使用带有误差的观察数据作为数学模型的原始输入数据或已知参数引入观察误差。</p>
+<ul>
+<li>模型误差</li>
+</ul>
+<p>在建立数学模型时抓住问题最本质、起主导作用的方面，略去非本质的次要因素，将问题理想化再进行数学概括，模型与实际之间存在一定误差。</p>
+<p>在将实际问题转化为数学模型的阶段引入模型误差。</p>
+<ul>
+<li>截断误差</li>
+</ul>
+<p>为了让计算机能解决数学上需要无穷次运算才能获得精确解的问题，通过有限次计算得到问题近似解，近似解与理论上的准确解存在误差。</p>
+<p>在使用计算方法逼近数学模型的理论精确解的过程中引入截断误差，也称为「方法误差」。</p>
+<ul>
+<li>舍入误差</li>
+</ul>
+<p>由于计算机字长有限，在计算过程中的数据通过四舍五入或类似操作来保留有限位的有效数字，引入舍入误差。</p>
+<h3 id="1-3-4-误差与误差限"><a href="#1-3-4-误差与误差限" class="headerlink" title="1.3.4 误差与误差限"></a>1.3.4 误差与误差限</h3><h4 id="绝对误差"><a href="#绝对误差" class="headerlink" title="绝对误差"></a>绝对误差</h4><p>$$<br>e(x^*) = x - x^*<br>$$</p>
+<p>$x$ 为精确值， $x^*$ 为 $x$ 的近似值</p>
+<p>$e(x^*)$可正可负。</p>
+<h4 id="绝对误差限"><a href="#绝对误差限" class="headerlink" title="绝对误差限"></a>绝对误差限</h4><p>$|e(x^*)|$的上限称为$ x^*$ 的绝对误差限，记为 $\varepsilon(x^*)$</p>
+<p>$\varepsilon(x^*)$不唯一，越小越有参考价值</p>
+<p>给定近似值$x^*$ 的误差限$\varepsilon(x^*)$，就可以直到准确值 $x$ 的区间，实际应用中一般记为 $x = x^* \pm \varepsilon(x^*)$</p>
+<h4 id="相对误差"><a href="#相对误差" class="headerlink" title="相对误差"></a>相对误差</h4><p>$$<br>e_r(x^*) =\frac{e(x^*)}{x}  = \frac{(x - x^*)}{x}<br>$$</p>
+<h4 id="相对误差限"><a href="#相对误差限" class="headerlink" title="相对误差限"></a>相对误差限</h4><p>$|e_r(x^*)|$ 的上限称为 $x^*$ 的相对误差限，记为 $\varepsilon_r(x^*)$</p>
+<h4 id="有效数字与误差限的关系"><a href="#有效数字与误差限的关系" class="headerlink" title="有效数字与误差限的关系"></a>有效数字与误差限的关系</h4><ul>
+<li><strong>定理1</strong><br>如果近似数 $x^* = \pm r^m \times (a_1 r^{-1} + a_2 r ^{-2} + \cdots + a_n r^{-n})$ 具有 $n$ 位有效数字，则可以得到 $x^*$ 的一个绝对误差限：<br>$$<br>|e(x^*) | = |x - x^*| \le \varepsilon(x ^*) = \frac{1}{2} \times r^{m-n}<br>$$</li>
+<li><strong>定理2</strong><br>如果近似数 $x^* = \pm r^m \times (a_1 r^{-1} + a_2 r ^{-2} + \cdots + a_n r^{-n})$ 具有 $n$ 位有效数字，则可以得到 $x^*$ 的一个相对误差限：<br>$$<br>|e(x^*) | = |x - x^*| \le \varepsilon(x ^*) = \frac{1}{2} \times r^{-(n - 1)}<br>$$</li>
+<li><strong>定理3</strong><br>如果近似数 $x^* = \pm r^m \times (a_1 r^{-1} + a_2 r ^{-2} + \cdots + a_n r^{-n})$ 满足<br>$$<br>|e_r(x^*)|\le \frac{1}{2(a_1+ 1)}\times r^{-(n-1)}<br>$$<br>那么$x^*$至少有 $n$ 位有效数字。</li>
+</ul>
+<p><em>注意</em> ：任意移动小数点位置不影响有效数字位数。</p>
+<h4 id="四则运算的误差传播公式"><a href="#四则运算的误差传播公式" class="headerlink" title="四则运算的误差传播公式"></a>四则运算的误差传播公式</h4><h5 id="加减法"><a href="#加减法" class="headerlink" title="加减法"></a>加减法</h5><p>$$<br>\varepsilon(x^* \pm y^*) = \varepsilon(x^*) + \varepsilon (y ^*)<br>$$</p>
+<h5 id="乘法"><a href="#乘法" class="headerlink" title="乘法"></a>乘法</h5><p>$$<br>\varepsilon(x^*y^*) = |x^*|\varepsilon(y^*) + |y^*|\varepsilon(x^*)<br>$$</p>
+<h5 id="除法"><a href="#除法" class="headerlink" title="除法"></a>除法</h5><p>$$<br>\varepsilon(\frac{x^*}{y^*})=\frac{|x^*|\varepsilon(y^*)+|y^*|\varepsilon(x^*)}{|y^*|^2}, y \ne0, y^* \ne 0<br>$$</p>
+<p>(误差传播公式和求导公式有些相似）</p>
+<h3 id="1-3-5-设计计算方法的原则"><a href="#1-3-5-设计计算方法的原则" class="headerlink" title="1.3.5 设计计算方法的原则"></a>1.3.5 设计计算方法的原则</h3><h4 id="计算方法的评判标准"><a href="#计算方法的评判标准" class="headerlink" title="计算方法的评判标准"></a>计算方法的评判标准</h4><ol>
+<li>稳定性的好坏</li>
+<li>精度的高低</li>
+<li>计算量的大小</li>
+<li>存储量的大小</li>
+<li>逻辑是否简单</li>
+</ol>
+<h4 id="基本原则"><a href="#基本原则" class="headerlink" title="基本原则"></a>基本原则</h4><h5 id="1-避免两个相近的数相减"><a href="#1-避免两个相近的数相减" class="headerlink" title="1. 避免两个相近的数相减"></a>1. 避免两个相近的数相减</h5><p>两个相近的数相减将导致有效数字的严重丢失。在设计计算方法时应设法避免这种情况发生，常用方法时变换计算公式：</p>
+<p>常见变换公式：<br>$$<br>\sqrt{x+ \varepsilon} - \sqrt{x} = \frac{\varepsilon}{\sqrt{x + \varepsilon} + \sqrt{x}}, \varepsilon \to 0<br>$$<br>$$<br>ln(x + \varepsilon) - ln x = ln(1+\frac{\varepsilon}{x}),\varepsilon \to 0, 且 |x| \gg 0<br>$$<br>$$<br>1-cosx = 2sin^2 \frac{x}{2} , x\to 0<br>$$<br>$$<br>e^x - 1 = (1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots) - 1 = x (1 + \frac{x}{2} + \frac{x^2}{6} + \cdots), x\to 0<br>$$</p>
+<h5 id="2-防止大数吃小数"><a href="#2-防止大数吃小数" class="headerlink" title="2.防止大数吃小数"></a>2.防止大数吃小数</h5><p>当两个绝对值差异很大的数进行加减法运算时，绝对值小的数有可能因为计算机附点运算的特点而被“吃掉“，导致计算结果严重失真。</p>
+<ol>
+<li><p>求二次方程的根<br>$$<br>\begin{cases}<br>x_1 = \frac{-2c}{b + sgn(b)\sqrt{b^2 - 4ac}}, \quad sgn(b) =<br>\begin{cases}<br>1, b\ge 0 \\<br>-1, b &lt; 0<br>\end{cases}\\<br>x_2 = \frac{c}{ax_1}<br>\end{cases}<br>$$</p>
+</li>
+<li><p>在处理多个数求和操作时，一般按照从小到大的顺序累加，可以使求和的误差减到最小。</p>
+</li>
+</ol>
+<h5 id="3-避免采用绝对值很小的数作为除数"><a href="#3-避免采用绝对值很小的数作为除数" class="headerlink" title="3. 避免采用绝对值很小的数作为除数"></a>3. 避免采用绝对值很小的数作为除数</h5><p>当采用绝对值很小的数作为分母时，容易产生浮点溢出现象，同时可能引起大数吃小数的情况出现，导致误差很大。</p>
+<h5 id="4-简化运算步骤，减少运算次数"><a href="#4-简化运算步骤，减少运算次数" class="headerlink" title="4. 简化运算步骤，减少运算次数"></a>4. 简化运算步骤，减少运算次数</h5><ul>
+<li>良好的计算方法应该具有可接受的时间复杂度和（存储）空间复杂度。</li>
+<li>简化运算步骤不但能够有效地减少运算时间，同时也能减少舍入误差的积累。</li>
+<li>计算机处理速度顺序<br>$$<br>(+, -)&gt;(\times, \div)&gt;(exp)<br>$$</li>
+<li>在设计计算方法时应该尽量使用速度较快的加减运算。</li>
+</ul>
+<h5 id="5-控制计算方法的误差传播，保证计算方法的稳定性"><a href="#5-控制计算方法的误差传播，保证计算方法的稳定性" class="headerlink" title="5. 控制计算方法的误差传播，保证计算方法的稳定性"></a>5. 控制计算方法的误差传播，保证计算方法的稳定性</h5><ul>
+<li><strong>稳定性算法</strong>：在运算过程中误差逐步衰减的算法</li>
+<li><strong>不稳定算法</strong>： 误差的积累越来越大的算法</li>
+</ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li>《数值计算》</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Fish__404
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://fish-404.github.io/Numerical-methods-and-calculation-error/" title="计算方法-[1]绪论与计算误差">https://fish-404.github.io/Numerical-methods-and-calculation-error/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Numerical-methods/" rel="tag"><i class="fa fa-tag"></i> Numerical methods</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Github-git-push-problem/" rel="next" title="将本地已存在文件夹推送至远程仓库">
+                <i class="fa fa-chevron-left"></i> 将本地已存在文件夹推送至远程仓库
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/LaTeX-common-math-symbol-equation/" rel="prev" title="LaTeX-常用数学符号">
+                LaTeX-常用数学符号 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/cat.jpg"
+                alt="Fish__404" />
+            
+              <p class="site-author-name" itemprop="name">Fish__404</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/fish-404" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:fish404hsif@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章-绪论与计算误差"><span class="nav-number">1.</span> <span class="nav-text">第一章 绪论与计算误差</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-计算方法研究内容与意义"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 计算方法研究内容与意义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#研究对象"><span class="nav-number">1.1.1.</span> <span class="nav-text">研究对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#意义"><span class="nav-number">1.1.2.</span> <span class="nav-text">意义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-计算方法的主要特点"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 计算方法的主要特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-误差的基本概念"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 误差的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-计算机中数的浮点表示"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.3.1 计算机中数的浮点表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-计算机中的舍入误差"><span class="nav-number">1.3.2.</span> <span class="nav-text">1.3.2 计算机中的舍入误差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-3-误差来源"><span class="nav-number">1.3.3.</span> <span class="nav-text">1.3.3 误差来源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-4-误差与误差限"><span class="nav-number">1.3.4.</span> <span class="nav-text">1.3.4 误差与误差限</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#绝对误差"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">绝对误差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绝对误差限"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">绝对误差限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相对误差"><span class="nav-number">1.3.4.3.</span> <span class="nav-text">相对误差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相对误差限"><span class="nav-number">1.3.4.4.</span> <span class="nav-text">相对误差限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有效数字与误差限的关系"><span class="nav-number">1.3.4.5.</span> <span class="nav-text">有效数字与误差限的关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四则运算的误差传播公式"><span class="nav-number">1.3.4.6.</span> <span class="nav-text">四则运算的误差传播公式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#加减法"><span class="nav-number">1.3.4.6.1.</span> <span class="nav-text">加减法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#乘法"><span class="nav-number">1.3.4.6.2.</span> <span class="nav-text">乘法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#除法"><span class="nav-number">1.3.4.6.3.</span> <span class="nav-text">除法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-5-设计计算方法的原则"><span class="nav-number">1.3.5.</span> <span class="nav-text">1.3.5 设计计算方法的原则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算方法的评判标准"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">计算方法的评判标准</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本原则"><span class="nav-number">1.3.5.2.</span> <span class="nav-text">基本原则</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-避免两个相近的数相减"><span class="nav-number">1.3.5.2.1.</span> <span class="nav-text">1. 避免两个相近的数相减</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-防止大数吃小数"><span class="nav-number">1.3.5.2.2.</span> <span class="nav-text">2.防止大数吃小数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-避免采用绝对值很小的数作为除数"><span class="nav-number">1.3.5.2.3.</span> <span class="nav-text">3. 避免采用绝对值很小的数作为除数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-简化运算步骤，减少运算次数"><span class="nav-number">1.3.5.2.4.</span> <span class="nav-text">4. 简化运算步骤，减少运算次数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-控制计算方法的误差传播，保证计算方法的稳定性"><span class="nav-number">1.3.5.2.5.</span> <span class="nav-text">5. 控制计算方法的误差传播，保证计算方法的稳定性</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+      <div id="music163player">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="//music.163.com/outchain/player?type=0&id=2339687903&auto=0&height=90"></iframe>
+      </div>
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user-secret"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fish__404</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">126.8k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'N0HVW6SnFPxcFCaYsR3Iqk0f-gzGzoHsz',
+        appKey: 'SO0jdvBxhhBgQsyEn8iMjKHm',
+        placeholder: '不说点什么嘛？给自己起个昵称就好啦，邮箱网址选填~\n说不定有机会触发本喵现身噢~ \n喵喵喵o(=•ェ•=)m',
+        avatar:'robohash',
+        guest_info:guest,
+        pageSize:'7' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
