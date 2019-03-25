@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="MATLAB," />
+  <meta name="keywords" content="Program,C," />
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="在默认语言为中文的操作系统下安装和使用MATLAB，界面语言默认为中文，而并不是全部汉化，使用这样的专业软件习惯了英文界面，发现在预设里面并没有语言设置的选项，本文记录设置为英文的方法。">
-<meta name="keywords" content="MATLAB">
+<meta name="description" content="本文介绍C语言中的宏定义，并比较宏与函数的异同。">
+<meta name="keywords" content="Program,C">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MATLAB 语言设置">
-<meta property="og:url" content="https://fish-404.github.io/MATLAB-matlab-language-setting/index.html">
+<meta property="og:title" content="C语言中的宏及与函数的比较">
+<meta property="og:url" content="https://fish-404.github.io/C-marco-and-function/index.html">
 <meta property="og:site_name" content="在逃的貓">
-<meta property="og:description" content="在默认语言为中文的操作系统下安装和使用MATLAB，界面语言默认为中文，而并不是全部汉化，使用这样的专业软件习惯了英文界面，发现在预设里面并没有语言设置的选项，本文记录设置为英文的方法。">
+<meta property="og:description" content="本文介绍C语言中的宏定义，并比较宏与函数的异同。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-05T06:05:48.446Z">
+<meta property="og:updated_time" content="2019-03-25T09:32:01.739Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MATLAB 语言设置">
-<meta name="twitter:description" content="在默认语言为中文的操作系统下安装和使用MATLAB，界面语言默认为中文，而并不是全部汉化，使用这样的专业软件习惯了英文界面，发现在预设里面并没有语言设置的选项，本文记录设置为英文的方法。">
+<meta name="twitter:title" content="C语言中的宏及与函数的比较">
+<meta name="twitter:description" content="本文介绍C语言中的宏定义，并比较宏与函数的异同。">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://fish-404.github.io/MATLAB-matlab-language-setting/"/>
+  <link rel="canonical" href="https://fish-404.github.io/C-marco-and-function/"/>
 
 
 
 
 
-  <title>MATLAB 语言设置 | 在逃的貓</title>
+  <title>C语言中的宏及与函数的比较 | 在逃的貓</title>
   
 
 
@@ -292,7 +292,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fish-404.github.io/MATLAB-matlab-language-setting/">
+    <link itemprop="mainEntityOfPage" href="https://fish-404.github.io/C-marco-and-function/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fish__404">
@@ -309,7 +309,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">MATLAB 语言设置</h2>
+          <h2 class="post-title" itemprop="name headline">C语言中的宏及与函数的比较</h2>
         
 
         <div class="post-meta">
@@ -321,8 +321,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-28T00:00:00+08:00">
-                Mar 28 2018
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-25T00:00:00+08:00">
+                Mar 25 2019
               </time>
             
 
@@ -337,8 +337,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-06-05T14:05:48+08:00">
-                Jun 5 2018
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-25T17:32:01+08:00">
+                Mar 25 2019
               </time>
             
           </span>
@@ -356,8 +356,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MATLAB/" itemprop="url" rel="index">
-                    <span itemprop="name">MATLAB</span>
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
                   </a>
                 </span>
 
@@ -374,8 +374,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/MATLAB-matlab-language-setting/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/MATLAB-matlab-language-setting/" itemprop="commentCount"></span>
+                <a href="/C-marco-and-function/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/C-marco-and-function/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -397,7 +397,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  243
+                  1,593
                 </span>
               
 
@@ -422,18 +422,102 @@
       
 
       
-        <p>在默认语言为中文的操作系统下安装和使用MATLAB，界面语言默认为中文，而并不是全部汉化，使用这样的专业软件习惯了英文界面，发现在预设里面并没有语言设置的选项，本文记录设置为英文的方法。</p>
+        <p>本文介绍C语言中的宏定义，并比较宏与函数的异同。</p>
 <a id="more"></a>
-<h1 id="操作环境"><a href="#操作环境" class="headerlink" title="操作环境"></a>操作环境</h1><p>MATLAB版本:R2014a<br>操作系统：Windows 10</p>
-<h1 id="设置步骤"><a href="#设置步骤" class="headerlink" title="设置步骤"></a>设置步骤</h1><ol>
-<li>打开“系统设置”窗口：<br> 控制面板-&gt;系统和安全-&gt;系统-&gt;高级系统设置；</li>
-<li>单击右下角“环境变量(N)…”，弹出“环境变量”设置窗口；</li>
-<li>在“系统变量(S)”窗口下方单击“新建(W)…”弹出“新建系统变量”窗口；</li>
-<li>在“变量名(N)”一栏填入<code>MWLOCALE_TRANSLATED</code>；</li>
-<li>在“变量值(V)”一栏填入<code>OFF</code>（若要恢复中文设置，只需要改变这个值为<code>ON</code>即可）。</li>
+<p>编译一个C程序的第一个步骤称为预处理(preprocessing)阶段。在此阶段下，由<code>#define</code>指令定义的符号将被替换。</p>
+<h1 id="简单的宏"><a href="#简单的宏" class="headerlink" title="简单的宏"></a>简单的宏</h1><p>简单的宏（对象式宏）的定义如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> name stuff</span></span><br></pre></td></tr></table></figure>
+<p>使用该指令，可以将任何文本替换到程序中，预处理器遇到一个宏定义时，会将<code>name</code>用<code>stuff</code>进行替换。<code>stuff</code>可以包括标识符、关键字、数值常量、字符常量、字符串字面量、操作符和排列。</p>
+<p>通常，我们会在以下两种情况下用宏来为常量命名，替代字符或字符串字面量：</p>
+<ul>
+<li>常量被不止一次地使用</li>
+<li>常量日后可能需要修改</li>
+</ul>
+<p>可以用<code>#undef name</code>指令移除一个宏定义。</p>
+<h2 id="使用-define为常量命名的优点"><a href="#使用-define为常量命名的优点" class="headerlink" title="使用#define为常量命名的优点"></a>使用<code>#define</code>为常量命名的优点</h2><ul>
+<li><p><strong>程序更易读</strong></p>
+<p>帮助读者理解常量的意义，免于受大量「魔法数」的困惑。</p>
+</li>
+<li><p><strong>程序更易修改</strong></p>
+<p>仅需要改变一个宏定义，就可以改变程序中出现的所有常量值。对比「硬编码」常量，若在大型程序中多处出现，修改时很可能漏掉某处。</p>
+</li>
+<li><p><strong>避免前后不一致或键盘输入错误</strong></p>
+<p>例如数值常量$\pi$的值。</p>
+</li>
+<li><p><strong>可以对C语法进行修改</strong></p>
+<p>对于习惯使用其他编程语言的程序员可以使用宏定义来修改语法。但，修改语法并不是个好主意，会使程序难被其他程序员理解，并且可能造成混淆，使可读性下降。<em>避免用<code>#define</code>创建新语言。</em></p>
+</li>
+<li><p><strong>对类型重命名</strong></p>
+</li>
+<li><p><strong>控制条件编译</strong></p>
+</li>
+</ul>
+<h2 id="指令的规则"><a href="#指令的规则" class="headerlink" title="指令的规则"></a>指令的规则</h2><p>以下规则也适用于其他预处理指令。</p>
+<ul>
+<li><p><strong>指令以<code>#</code>开始</strong></p>
+<p><code>#</code>符号不需要出现在一行的行首，只要之前有空白字符就行。在<code>#</code>后是指令名，接着是指令所需要的其他信息。</p>
+</li>
+<li><p><strong>指令总是在第一个换行符处结束，除非明确指明要延续</strong></p>
+<p>如果想要在下一行延续指令，必须在当前行末尾使用<code>\</code>字符。</p>
+<p>利用相邻字符串常量被自动链接为一个字符串的特性，可以使用如下声明来调试一个存在许多涉及一组变量的不同计算过程的程序：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEBUG_PRINT printf(<span class="meta-string">"File %s line %d:"</span> \ </span></span><br><span class="line">						<span class="string">"x = %d, y = %d, z = %d"</span>, \ </span><br><span class="line">						__FILE__, __LINE__, \ </span><br><span class="line">						x, y, z)</span><br></pre></td></tr></table></figure>
+<p><em>注意</em>：为避免出错，不要在末尾放置分号。</p>
+<p>使用此调试语句示例：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x *= <span class="number">2</span>;</span><br><span class="line">y += x; </span><br><span class="line">z = x * y;</span><br><span class="line">DEBUG_PRINT;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p><strong>指令可以出现在程序中的任何地方</strong></p>
+<p>我们常将<code>#define</code>指令放在文件的开始。</p>
+</li>
+<li><p><strong>注释可以与指令放在同一行</strong></p>
+<p>在宏定义后面加一个注释来解释宏的含义是一种好习惯。</p>
+<h1 id="带参数的宏"><a href="#带参数的宏" class="headerlink" title="带参数的宏"></a>带参数的宏</h1><p><code>#define</code>机制允许将参数替换到文本中，称为带参数的宏/函数式宏/定义宏：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> name(paramter-list) stuff</span></span><br></pre></td></tr></table></figure>
+<p>为了区分带参数宏和函数，通常使用大写来命名宏。</p>
+<p>带参数宏常用于执行简单的函数，如：</p>
+</li>
+</ul>
+<ol>
+<li><p>求两数最大值</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX(x, y) ((x)&gt;(y)?(x):(y)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断奇偶性</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IS_EVEN(n) ((n) % 2 == 0）</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>交换两个数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SWAP(x, y, t) ((t) = (x), (x) = (y), (y) = (t)</span></span><br></pre></td></tr></table></figure>
+<p>带参数的宏不仅适用于模拟函数调用，也经常用作需要重复书写的代码段，如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MALLOC(n, type)\</span></span><br><span class="line">		((type *)<span class="built_in">malloc</span>((n) * <span class="keyword">sizeof</span>(type)))</span><br></pre></td></tr></table></figure>
+<h2 id="带参数宏与函数的比较"><a href="#带参数宏与函数的比较" class="headerlink" title="带参数宏与函数的比较"></a>带参数宏与函数的比较</h2><h3 id="执行速度"><a href="#执行速度" class="headerlink" title="执行速度"></a>执行速度</h3><p>程序执行时调用/返回函数通常会有额外开销，包括存储上下文信息、复制参数值等。</p>
+<p>调用宏则没有这些运行开销。</p>
+<h3 id="代码长度"><a href="#代码长度" class="headerlink" title="代码长度"></a>代码长度</h3><p>每一处宏调用都会导致插入宏的替换列表，由此导致程序源代码增加，编译后的代码也变大。</p>
+<p>函数调用的函数代码仅出现于一个地方：每次使用函数，调用同一份代码。</p>
+<p><em>如果相同的代码需要出现在程序的几个地方，更好的方法是实现为一个函数。避免用<code>#define</code>指令定义可以用函数实现的长序列代码。</em></p>
+<h3 id="参数求值"><a href="#参数求值" class="headerlink" title="参数求值"></a>参数求值</h3><p>参数每次用于宏定义时，都将重新求值。因此宏可能会不止一次地计算它的参数，由于多次求值，具有副作用的参数可能会产生不可预料的结果。</p>
+<p>参数在函数被调用前只求值一次，在函数中多次使用参数不会导致多种求值过程。</p>
+<p>考虑上面的求两数最值的一种使用情况：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">5</span>;</span><br><span class="line">y = <span class="number">8</span>;</span><br><span class="line">z = MAX(x++, y++);</span><br></pre></td></tr></table></figure>
+<p>宏替换后产生以下代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">z = ((x++) &gt; (y++) ? (x++) : (y++));</span><br></pre></td></tr></table></figure>
+<p>较小的值增加了一次，而较大的值却增加了两次，第一次在比较时，第二次在执行后面的表达式时，因此此时得到的结果是<code>x = 6, y = 10, z = 9</code>。</p>
+<h3 id="操作符优先级"><a href="#操作符优先级" class="headerlink" title="操作符优先级"></a>操作符优先级</h3><p>宏参数的求值是在所有周围表达式的上下文环境里，邻近操作符的优先级可能会产生不可预料的结果</p>
+<p>函数只在函数调用时求值一次，结果值传递给函数，表达式的求值结果更容易预测。</p>
+<p>考虑以下代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SQUARE(x)</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d\n"</span>, SQUARE(a + <span class="number">1</span>));</span><br></pre></td></tr></table></figure>
+<p>宏定义后产生的代码为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">"%d\n"</span>, a + <span class="number">1</span> * a + <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p>表达式没有按照预想的次序求值。</p>
+<p><strong>注意</strong>：<em>所有用于对数值表达式进行的宏定义都应该在宏定义每个参数周围加上括号，且在整个宏定义的两边也加上括号。</em></p>
+<h3 id="参数类型"><a href="#参数类型" class="headerlink" title="参数类型"></a>参数类型</h3><p>宏与类型无关，只要对参数的操作何发，可以用于任何类型参数。</p>
+<p>函数与类型有关，函数类型不同，需要使用不同函数，即使执行任务相同。</p>
+<p>例如上面举例的<code>MAX</code>宏，可以接受多种类型数：<code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>等。</p>
+<p>例如上面举例的<code>MALLOC</code>宏，<code>type</code>参数是一种类型，无法作为函数参数进行传递。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1></li>
 </ol>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li><a herf="https://cn.mathworks.com/matlabcentral/answers/129813-matlab-8-3-r2014a?s_tid=gn_loc_drophttps://cn.mathworks.com/matlabcentral/answers/129813-matlab-8-3-r2014a?s_tid=gn_loc_drop">在中文操作系统中，如何将中文版MATLAB 8.3(R2014a)转换为英文版？</a></li>
+<ul>
+<li>《C语言程序设计现代方法（第2版）》</li>
+<li>《C和指针》</li>
 </ul>
 
       
@@ -455,7 +539,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://fish-404.github.io/MATLAB-matlab-language-setting/" title="MATLAB 语言设置">https://fish-404.github.io/MATLAB-matlab-language-setting/</a>
+    <a href="https://fish-404.github.io/C-marco-and-function/" title="C语言中的宏及与函数的比较">https://fish-404.github.io/C-marco-and-function/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -470,7 +554,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MATLAB/" rel="tag"><i class="fa fa-tag"></i> MATLAB</a>
+            <a href="/tags/Program/" rel="tag"><i class="fa fa-tag"></i> Program</a>
+          
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C</a>
           
         </div>
       
@@ -483,8 +569,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Blog-themes-config/" rel="next" title="Blog-NexT主题配置文件配置">
-                <i class="fa fa-chevron-left"></i> Blog-NexT主题配置文件配置
+              <a href="/Bookcomment-highest-guidelines/" rel="next" title="书评-最高指导原则（读《束手》）">
+                <i class="fa fa-chevron-left"></i> 书评-最高指导原则（读《束手》）
               </a>
             
           </div>
@@ -492,10 +578,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Bookcomment-do-androids-dream-of=electric-sheep/" rel="prev" title="书评-仿生人？人型机器？">
-                书评-仿生人？人型机器？ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -579,7 +661,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -590,7 +672,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -656,7 +738,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#操作环境"><span class="nav-number">1.</span> <span class="nav-text">操作环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置步骤"><span class="nav-number">2.</span> <span class="nav-text">设置步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简单的宏"><span class="nav-number">1.</span> <span class="nav-text">简单的宏</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-define为常量命名的优点"><span class="nav-number">1.1.</span> <span class="nav-text">使用#define为常量命名的优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令的规则"><span class="nav-number">1.2.</span> <span class="nav-text">指令的规则</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#带参数的宏"><span class="nav-number">2.</span> <span class="nav-text">带参数的宏</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#带参数宏与函数的比较"><span class="nav-number">2.1.</span> <span class="nav-text">带参数宏与函数的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行速度"><span class="nav-number">2.1.1.</span> <span class="nav-text">执行速度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码长度"><span class="nav-number">2.1.2.</span> <span class="nav-text">代码长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数求值"><span class="nav-number">2.1.3.</span> <span class="nav-text">参数求值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作符优先级"><span class="nav-number">2.1.4.</span> <span class="nav-text">操作符优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数类型"><span class="nav-number">2.1.5.</span> <span class="nav-text">参数类型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
@@ -692,7 +774,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">133.5k</span>
+    <span title="Site words total count">136.4k</span>
   
 </div>
 

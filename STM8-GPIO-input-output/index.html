@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="在逃的貓">
 <meta property="og:description" content="本文对STM8单片机进行简要介绍，并对GPIO输入输出模式进行介绍，对GPIO的相关寄存器配置进行介绍。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-23T08:06:51.642Z">
+<meta property="og:updated_time" content="2019-03-24T16:01:40.195Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STM8-认识GPIO及输入输出模式">
 <meta name="twitter:description" content="本文对STM8单片机进行简要介绍，并对GPIO输入输出模式进行介绍，对GPIO的相关寄存器配置进行介绍。">
@@ -337,8 +337,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-03-23T16:06:51+08:00">
-                Mar 23 2018
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-25T00:01:40+08:00">
+                Mar 25 2019
               </time>
             
           </span>
@@ -431,8 +431,10 @@
 <li>悬浮不带中断输入</li>
 <li>悬浮中断输入</li>
 <li>上拉不带中断输入</li>
-<li>上拉中断输入<br>这里中断我们暂且不提，将输入方式分为悬浮输入和上拉输入。区分方式是从GPIO的内部结构来划分。<h2 id="悬浮输入"><a href="#悬浮输入" class="headerlink" title="悬浮输入"></a>悬浮输入</h2>悬浮输入，也叫浮空输入，顾名思义，即引脚悬空。这种方式的输入阻抗很高。当悬浮输入的引脚上加上信号时，单片机所得到的信号并不确定是高电平或是低电平，是一个不确定的信号。因而常用于模拟信号转换为数字信号的信号输入方式，例如ADC。</li>
+<li>上拉中断输入</li>
 </ul>
+<p>这里中断我们暂且不提，将输入方式分为悬浮输入和上拉输入。区分方式是从GPIO的内部结构来划分。</p>
+<h2 id="悬浮输入"><a href="#悬浮输入" class="headerlink" title="悬浮输入"></a>悬浮输入</h2><p>悬浮输入，也叫浮空输入，顾名思义，即引脚悬空。这种方式的输入阻抗很高。当悬浮输入的引脚上加上信号时，单片机所得到的信号并不确定是高电平或是低电平，是一个不确定的信号。因而常用于模拟信号转换为数字信号的信号输入方式，例如ADC。</p>
 <h2 id="上拉输入"><a href="#上拉输入" class="headerlink" title="上拉输入"></a>上拉输入</h2><p>上拉输入也很好理解，即在引脚处接一个上拉电阻到内部电源。这种方式的优点是可以增强驱动能力，增强抗干扰性，同时上拉电阻也起到了一个限流的作用。根据ST官方提供的STM8S105XX系列数据手册，内部电源$ V_DD $ 通常为5.0V，在此条件下，上拉电阻的取值最小为30kΩ，最大为80kΩ，典型值为55kΩ（不知道为什么中文版的数据手册典型值为45kΩ）。可以计算得出此时电流的大小是μA级别，这是因为我们的上拉电阻取值很大，所以限流作用就相对较小，这也被称之为弱上拉输入模式，即Weak Pull-up(WPU)。</p>
 <h1 id="输出模式"><a href="#输出模式" class="headerlink" title="输出模式"></a>输出模式</h1><p>STM8S系列输出模式有两种：</p>
 <ul>
@@ -605,7 +607,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -616,7 +618,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -718,7 +720,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">133.5k</span>
+    <span title="Site words total count">136.4k</span>
   
 </div>
 
