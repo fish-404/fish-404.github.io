@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fish-404.github.io/Numerical-methods-solutions-of-nolinear-equations/</loc>
+    
+    <lastmod>2019-04-03T15:44:01.058Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fish-404.github.io/Book-2019-extract/</loc>
     
-    <lastmod>2019-04-02T16:17:20.502Z</lastmod>
+    <lastmod>2019-04-03T15:12:53.067Z</lastmod>
     
   </url>
   
@@ -114,7 +121,14 @@
   </url>
   
   <url>
-    <loc>https://fish-404.github.io/Data-structures-SqQueue/</loc>
+    <loc>https://fish-404.github.io/Data-structures-SqList/</loc>
+    
+    <lastmod>2019-02-05T16:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fish-404.github.io/Blog-change-blog-theme/</loc>
     
     <lastmod>2019-02-05T16:00:00.000Z</lastmod>
     
@@ -128,14 +142,7 @@
   </url>
   
   <url>
-    <loc>https://fish-404.github.io/Data-structures-SqList/</loc>
-    
-    <lastmod>2019-02-05T16:00:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fish-404.github.io/Blog-change-blog-theme/</loc>
+    <loc>https://fish-404.github.io/Data-structures-SqQueue/</loc>
     
     <lastmod>2019-02-05T16:00:00.000Z</lastmod>
     
@@ -156,14 +163,14 @@
   </url>
   
   <url>
-    <loc>https://fish-404.github.io/Bookcomment-hit-destination/</loc>
+    <loc>https://fish-404.github.io/Data-structures-graph/</loc>
     
     <lastmod>2019-01-22T16:00:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://fish-404.github.io/Data-structures-graph/</loc>
+    <loc>https://fish-404.github.io/Bookcomment-hit-destination/</loc>
     
     <lastmod>2019-01-22T16:00:00.000Z</lastmod>
     
