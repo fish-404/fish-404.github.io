@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="在逃的貓">
 <meta property="og:description" content="本文记录在 Kobo Glo 原生系统 nickel 下设置自定义休眠/关机壁纸过程，系统版本为4.15.x。其他版本的 Kobo 应该也适用，因没有相应设备，故无法测试。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-09T16:00:00.000Z">
+<meta property="og:updated_time" content="2019-10-27T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设置 Kobo Glo 休眠&#x2F;关机壁纸">
 <meta name="twitter:description" content="本文记录在 Kobo Glo 原生系统 nickel 下设置自定义休眠/关机壁纸过程，系统版本为4.15.x。其他版本的 Kobo 应该也适用，因没有相应设备，故无法测试。">
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-07-10T00:00:00+08:00">
-                Jul 10 2019
+              <time title="更新于" itemprop="dateModified" datetime="2019-10-28T00:00:00+08:00">
+                Oct 28 2019
               </time>
             
           </span>
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  846
+                  975
                 </span>
               
 
@@ -423,6 +423,12 @@
       
         <p>本文记录在 Kobo Glo 原生系统 nickel 下设置自定义休眠/关机壁纸过程，系统版本为4.15.x。其他版本的 Kobo 应该也适用，因没有相应设备，故无法测试。</p>
 <a id="more"></a>
+<h1 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h1><p>4.13.x以上版本直接在<code>.kobo</code>文件夹内新建<code>screensaver</code>文件夹，将屏保图片放入文件夹内，屏保即可随机生成。经4.18.x固件版本测试可用。</p>
+<ul>
+<li>以下插件版本在新旧版本固件均可使用</li>
+<li>以下插件版本可实现关机与待机不同屏保</li>
+<li>4.18.x固件会将图片文件显示在书架中，即若采用插件版本，屏保图片也会显示在书架中</li>
+</ul>
 <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>虽对纸质书多有偏爱，对于在手机上阅读电子书多有排斥，出于便携性的考虑入手了电纸书。入手的是在国内尚属小众的 Kobo 电纸书，Kobo Glo 算是这个系列最初级的产品。最新的固件版本已经支持设定内置语言为繁体中文，书名显示也基本没有问题，因此直接打算用原生系统，但发现原生系统下没法改变休眠和关机时屏幕显示，只会显示休眠或关机字样，看着相当枯燥，想要自设壁纸但没有找到相关选项，网上的大部分解决方案都翻译自一篇英文博客(参考资料2），而该方法自系统版本升级后已无法生效。几经查找，找到了该方法程序的原作者，以及其仍在维护和更新的解决方案，几经折腾，成功将屏幕设置为可爱的小哀~</p>
 <p>更多折腾参见程序作者的 Github 仓库：<a href="https://github.com/frostschutz/Kobo" target="_blank" rel="noopener">https://github.com/frostschutz/Kobo</a> </p>
 <h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ol>
@@ -499,10 +505,9 @@
 </li>
 </ol>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li><p><a href="https://www.mobileread.com/forums/showthread.php?t=255238" target="_blank" rel="noopener">Random Screensaver Image - MobileRead Forums</a></p>
-</li>
-<li><p><a href="https://www.howtogeek.com/219056/how-to-add-custom-screensavers-to-your-kobo-ebook-reader/" target="_blank" rel="noopener">How to Add Custom Screensavers to Your Kobo Ebook Reader</a></p>
-</li>
+<li><a href="https://www.mobileread.com/forums/showthread.php?t=255238" target="_blank" rel="noopener">Random Screensaver Image - MobileRead Forums</a></li>
+<li><a href="https://www.howtogeek.com/219056/how-to-add-custom-screensavers-to-your-kobo-ebook-reader/" target="_blank" rel="noopener">How to Add Custom Screensavers to Your Kobo Ebook Reader</a></li>
+<li><a href="https://www.mobileread.com/forums/showthread.php?p=3868795" target="_blank" rel="noopener">Random Screensaver - MobileRead Forums</a></li>
 </ul>
 
       
@@ -642,7 +647,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -719,7 +724,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#步骤"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#更新"><span class="nav-number">1.</span> <span class="nav-text">更新</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#背景"><span class="nav-number">2.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#步骤"><span class="nav-number">3.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
@@ -755,7 +760,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">178.5k</span>
+    <span title="Site words total count">180.1k</span>
   
 </div>
 
