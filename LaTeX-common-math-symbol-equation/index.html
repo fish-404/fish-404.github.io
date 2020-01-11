@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="在逃的貓">
 <meta property="og:description" content="本文整理 LaTeX 中常用的数学符号及一些数学元素的表达，以便查阅。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-08T09:29:00.645Z">
+<meta property="og:updated_time" content="2020-01-11T15:40:45.512Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LaTeX-常用数学符号">
 <meta name="twitter:description" content="本文整理 LaTeX 中常用的数学符号及一些数学元素的表达，以便查阅。">
@@ -337,8 +337,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-03-08T17:29:00+08:00">
-                Mar 8 2019
+              <time title="更新于" itemprop="dateModified" datetime="2020-01-11T23:40:45+08:00">
+                Jan 11 2020
               </time>
             
           </span>
@@ -397,7 +397,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,043
+                  1,063
                 </span>
               
 
@@ -425,6 +425,7 @@
         <p>本文整理 LaTeX 中常用的数学符号及一些数学元素的表达，以便查阅。</p>
 <a id="more"></a>
 <p>下列所有表示均在<strong>数学模式</strong>下。</p>
+<p>更新：一个LaTeX 数学符号快速搜索工具：<a href="https://latex.guide/" target="_blank" rel="noopener">LaTeX Search: Find LaTeX commands</a></p>
 <h1 id="数学符号"><a href="#数学符号" class="headerlink" title="数学符号"></a>数学符号</h1><h2 id="希腊字母表"><a href="#希腊字母表" class="headerlink" title="希腊字母表"></a>希腊字母表</h2><h3 id="小写字母"><a href="#小写字母" class="headerlink" title="小写字母"></a>小写字母</h3><table>
 <thead>
 <tr>
@@ -829,7 +830,7 @@
 </tbody>
 </table>
 <h1 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h1><p>使用 <code>\array</code>环境生成矩阵</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;array&#125;[外部对齐]&#123;列对齐&#125;</span><br><span class="line">	行列内容</span><br><span class="line">\end&#123;array&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;array&#125;[外部对齐]&#123;列对齐&#125;</span><br><span class="line">    行列内容</span><br><span class="line">\end&#123;array&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>外部对齐参数：整个矩阵和周围对象的纵向关系：<ul>
 <li>居顶：<code>t</code></li>
@@ -847,15 +848,16 @@
 <li>列分隔：<code>&amp;</code></li>
 </ul>
 <p>示例：<br>$$<br>\begin{array}{ccc}<br>    x_1    &amp; x_2    &amp; \cdots \<br>    x_3    &amp; x_4    &amp; \cdots \<br>    \vdots &amp; \vdots &amp; \ddots \<br>\end{array}<br>$$</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;array&#125;&#123;ccc&#125;    </span><br><span class="line">	x_1    &amp; x_2    &amp; \cdots \\    </span><br><span class="line">	x_3    &amp; x_4    &amp; \cdots \\    </span><br><span class="line">	\vdots &amp; \vdots &amp; \ddots \\</span><br><span class="line">\end&#123;array&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;array&#125;&#123;ccc&#125;    </span><br><span class="line">    x_1    &amp; x_2    &amp; \cdots \\    </span><br><span class="line">    x_3    &amp; x_4    &amp; \cdots \\    </span><br><span class="line">    \vdots &amp; \vdots &amp; \ddots \\</span><br><span class="line">\end&#123;array&#125;</span><br></pre></td></tr></table></figure>
 <p>(分隔符对齐非必要，仅出于个人使用习惯）</p>
 <p>使用<code>array</code>环境产生的矩阵没有旁边的各种分隔符，可以用以下环境替代产生分隔符：</p>
 <p>$$<br>\begin{pmatrix}<br>       a &amp; b \\<br>       c &amp; d<br>\end{pmatrix}<br>$$</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;pmatrix&#125;</span><br><span class="line">  a &amp; b \\</span><br><span class="line">  c &amp; d</span><br><span class="line">\end&#123;pmatrix&#125;</span><br></pre></td></tr></table></figure>
-<p>$$<br>\begin{vmatrix}<br>  a &amp; b \\<br>  c &amp; d<br>\end{vmatrix}<br>$$<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;vmatrix&#125;</span><br><span class="line">  a &amp; b \\</span><br><span class="line">  c &amp; d</span><br><span class="line">\end&#123;vmatrix&#125;</span><br></pre></td></tr></table></figure></p>
+<p>$$<br>\begin{vmatrix}<br>  a &amp; b \\<br>  c &amp; d<br>\end{vmatrix}<br>$$</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;vmatrix&#125;</span><br><span class="line">  a &amp; b \\</span><br><span class="line">  c &amp; d</span><br><span class="line">\end&#123;vmatrix&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="分段函数"><a href="#分段函数" class="headerlink" title="分段函数"></a>分段函数</h1><p>使用 <code>\cases</code>环境可以生成分段函数，同样可以用于方程组。</p>
 <p>示例：<br>$$<br>y=<br>\begin{cases}<br>    -x, \quad x\leq 0 \\<br>    x, \quad x &gt; 0<br>\end{cases}<br>$$</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">y= % 换行是非必要的</span><br><span class="line">\begin&#123;cases&#125;</span><br><span class="line">	-x, \quad x\leq 0 \\</span><br><span class="line">	x, \quad x &gt; 0</span><br><span class="line">\end&#123;cases&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">y= % 换行是非必要的</span><br><span class="line">\begin&#123;cases&#125;</span><br><span class="line">    -x, \quad x\leq 0 \\</span><br><span class="line">    x, \quad x &gt; 0</span><br><span class="line">\end&#123;cases&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
 <li><a href="http://www.ptep-online.com/ctan/lshort_chinese.pdf" target="_blank" rel="noopener">一份不太简短的LATEX2ε介绍(PDF)</a></li>
 <li><a href="http://dralpha.altervista.org/zh/tech/lnotes2.pdf" target="_blank" rel="noopener">LATEX Notes雷太赫排版系统简介第二版v2.03 (PDF)</a></li>
@@ -1104,7 +1106,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user-secret"></i>
   </span>
