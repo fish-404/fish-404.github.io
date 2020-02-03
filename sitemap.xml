@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fish-404.github.io/Book-2020-extract/</loc>
+    
+    <lastmod>2020-02-03T07:55:47.422Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fish-404.github.io/Essay-2019-nCoV-personal-record-3/</loc>
+    
+    <lastmod>2020-02-02T16:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fish-404.github.io/Essay-2019-nCoV-personal-record-2/</loc>
     
     <lastmod>2020-01-31T16:00:00.000Z</lastmod>
@@ -19,13 +33,6 @@
     <loc>https://fish-404.github.io/Book-2019-extract/</loc>
     
     <lastmod>2020-01-26T07:03:44.801Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fish-404.github.io/Book-2020-extract/</loc>
-    
-    <lastmod>2020-01-26T02:27:47.403Z</lastmod>
     
   </url>
   
@@ -100,14 +107,14 @@
   </url>
   
   <url>
-    <loc>https://fish-404.github.io/Bookcomment-truth-cannot-distinguish/</loc>
+    <loc>https://fish-404.github.io/Data-type-choose/</loc>
     
     <lastmod>2019-06-28T16:00:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://fish-404.github.io/Data-type-choose/</loc>
+    <loc>https://fish-404.github.io/Bookcomment-truth-cannot-distinguish/</loc>
     
     <lastmod>2019-06-28T16:00:00.000Z</lastmod>
     
@@ -226,14 +233,14 @@
   </url>
   
   <url>
-    <loc>https://fish-404.github.io/Computer-Organization-single-precision-float/</loc>
+    <loc>https://fish-404.github.io/Blog-adjust-sidebar-nextmist-left/</loc>
     
     <lastmod>2019-03-24T16:00:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://fish-404.github.io/Blog-adjust-sidebar-nextmist-left/</loc>
+    <loc>https://fish-404.github.io/Computer-Organization-single-precision-float/</loc>
     
     <lastmod>2019-03-24T16:00:00.000Z</lastmod>
     
@@ -275,7 +282,7 @@
   </url>
   
   <url>
-    <loc>https://fish-404.github.io/Data-structures-SqStack/</loc>
+    <loc>https://fish-404.github.io/Data-structures-SqQueue/</loc>
     
     <lastmod>2019-02-05T16:00:00.000Z</lastmod>
     
@@ -289,7 +296,7 @@
   </url>
   
   <url>
-    <loc>https://fish-404.github.io/Data-structures-SqQueue/</loc>
+    <loc>https://fish-404.github.io/Data-structures-SqStack/</loc>
     
     <lastmod>2019-02-05T16:00:00.000Z</lastmod>
     
