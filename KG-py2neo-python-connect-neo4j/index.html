@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Vim," />
+  <meta name="keywords" content="Neo4j,python," />
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="在了解到Vim编辑器的强大的功能后，对于喜爱键盘想要摆脱鼠标的我来说是一个非常大的诱惑。而Vim自带的vimtutor无疑是一个入门的非常好的教程，该教程适合边学边用，很快就能了解最基本的Vim编辑器操作。本文将整理摘录vimtutor中的前六章内容，顺序上做了一定的归纳和调整。8.24 更新：补充了在Interactive Vim tutorial中学到的小技巧，因为大部分内容均为基本操作，故不">
-<meta name="keywords" content="Vim">
+<meta name="description" content="本文简述在 python 中使用 py2neo 连接 Neo4j 及连接时可能遇到的问题和解决方法。">
+<meta name="keywords" content="Neo4j,python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vim-Vimtutor学习整理">
-<meta property="og:url" content="https://fish-404.github.io/vim-vimtutor/index.html">
+<meta property="og:title" content="Neo4j之python连接失败解决(py2neo)">
+<meta property="og:url" content="https://fish-404.github.io/KG-py2neo-python-connect-neo4j/index.html">
 <meta property="og:site_name" content="在逃的貓">
-<meta property="og:description" content="在了解到Vim编辑器的强大的功能后，对于喜爱键盘想要摆脱鼠标的我来说是一个非常大的诱惑。而Vim自带的vimtutor无疑是一个入门的非常好的教程，该教程适合边学边用，很快就能了解最基本的Vim编辑器操作。本文将整理摘录vimtutor中的前六章内容，顺序上做了一定的归纳和调整。8.24 更新：补充了在Interactive Vim tutorial中学到的小技巧，因为大部分内容均为基本操作，故不">
+<meta property="og:description" content="本文简述在 python 中使用 py2neo 连接 Neo4j 及连接时可能遇到的问题和解决方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-05T14:06:43.935Z">
+<meta property="og:updated_time" content="2020-03-14T15:16:12.257Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vim-Vimtutor学习整理">
-<meta name="twitter:description" content="在了解到Vim编辑器的强大的功能后，对于喜爱键盘想要摆脱鼠标的我来说是一个非常大的诱惑。而Vim自带的vimtutor无疑是一个入门的非常好的教程，该教程适合边学边用，很快就能了解最基本的Vim编辑器操作。本文将整理摘录vimtutor中的前六章内容，顺序上做了一定的归纳和调整。8.24 更新：补充了在Interactive Vim tutorial中学到的小技巧，因为大部分内容均为基本操作，故不">
+<meta name="twitter:title" content="Neo4j之python连接失败解决(py2neo)">
+<meta name="twitter:description" content="本文简述在 python 中使用 py2neo 连接 Neo4j 及连接时可能遇到的问题和解决方法。">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://fish-404.github.io/vim-vimtutor/"/>
+  <link rel="canonical" href="https://fish-404.github.io/KG-py2neo-python-connect-neo4j/"/>
 
 
 
 
 
-  <title>Vim-Vimtutor学习整理 | 在逃的貓</title>
+  <title>Neo4j之python连接失败解决(py2neo) | 在逃的貓</title>
   
 
 
@@ -292,7 +292,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fish-404.github.io/vim-vimtutor/">
+    <link itemprop="mainEntityOfPage" href="https://fish-404.github.io/KG-py2neo-python-connect-neo4j/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fish__404">
@@ -309,7 +309,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Vim-Vimtutor学习整理</h2>
+          <h2 class="post-title" itemprop="name headline">Neo4j之python连接失败解决(py2neo)</h2>
         
 
         <div class="post-meta">
@@ -321,8 +321,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-14T00:00:00+08:00">
-                Aug 14 2018
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-14T00:00:00+08:00">
+                Mar 14 2020
               </time>
             
 
@@ -337,8 +337,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-05-05T22:06:43+08:00">
-                May 5 2019
+              <time title="更新于" itemprop="dateModified" datetime="2020-03-14T23:16:12+08:00">
+                Mar 14 2020
               </time>
             
           </span>
@@ -356,8 +356,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/软件使用/" itemprop="url" rel="index">
-                    <span itemprop="name">软件使用</span>
+                  <a href="/categories/知识图谱/" itemprop="url" rel="index">
+                    <span itemprop="name">知识图谱</span>
                   </a>
                 </span>
 
@@ -374,8 +374,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/vim-vimtutor/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/vim-vimtutor/" itemprop="commentCount"></span>
+                <a href="/KG-py2neo-python-connect-neo4j/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/KG-py2neo-python-connect-neo4j/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -397,7 +397,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,870
+                  1,156
                 </span>
               
 
@@ -422,61 +422,31 @@
       
 
       
-        <p>在了解到Vim编辑器的强大的功能后，对于喜爱键盘想要摆脱鼠标的我来说是一个非常大的诱惑。而Vim自带的vimtutor无疑是一个入门的非常好的教程，该教程适合边学边用，很快就能了解最基本的Vim编辑器操作。本文将整理摘录vimtutor中的前六章内容，顺序上做了一定的归纳和调整。<br>8.24 更新：<br>补充了在<a href="https://www.openvim.com/" target="_blank" rel="noopener">Interactive Vim tutorial</a>中学到的小技巧，因为大部分内容均为基本操作，故不再另外写文整理。<br><a id="more"></a></p>
-<h1 id="第一讲-基本使用"><a href="#第一讲-基本使用" class="headerlink" title="第一讲 基本使用"></a>第一讲 基本使用</h1><h2 id="1-1-移动光标"><a href="#1-1-移动光标" class="headerlink" title="1.1 移动光标"></a>1.1 移动光标</h2><p>在正常模式（Normal)下（使用<esc>键可以进入正常模式），使用<code>h j k l</code>键进行光标的移动，刚开始觉得这个设定极为反人类，但熟练其操作后会发现这个设定极为巧妙，能更快第在屏幕内四处移动光标。<br><code>h</code>: 光标向左移动；<br><code>l</code>: 光标向右移动；<br><code>j</code>: 光标向下移动；<br><code>k</code>: 光标向上移动.</esc></p>
-<p><em>小贴士</em>：在所有移动操作前加上<code>g</code>，就可以实现相对屏幕行进行操作而不是实际行，如<code>gj</code>。</p>
-<h2 id="1-2-VIM的进入和退出"><a href="#1-2-VIM的进入和退出" class="headerlink" title="1.2 VIM的进入和退出"></a>1.2 VIM的进入和退出</h2><p>在 Normal 模式下，<br><code>:q!&lt;Enter&gt;</code> : 退出编辑器，这种方式将会丢弃所有未写入的改动。<br><code>wq&lt;Enter&gt;</code>: 保存文件并退出。 </p>
-<h2 id="1-3-文本编辑"><a href="#1-3-文本编辑" class="headerlink" title="1.3 文本编辑"></a>1.3 文本编辑</h2><p>在 Normal 模式下，<br><code>x</code>: 删除光标所在位置的字符；<br><code>X</code>: 删除光标左侧位置字符；<br><code>.</code>: 可重复前一次操作；<br><code>i</code>: 在光标所在位置之前插入字符；<br><code>a</code>: 在光标所在位置之后插入字符；<br><code>A</code>: 在光标所在行末尾插入字符。</p>
-<h1 id="第二讲-删除撤销动作"><a href="#第二讲-删除撤销动作" class="headerlink" title="第二讲 删除撤销动作"></a>第二讲 删除撤销动作</h1><h2 id="2-1-动作"><a href="#2-1-动作" class="headerlink" title="2.1 动作"></a>2.1 动作</h2><h3 id="动作列表"><a href="#动作列表" class="headerlink" title="动作列表"></a>动作列表</h3><p><code>w</code>: 从当前光标位置移动到下一个单词起始处，不包括它的第一个字符；<br><code>e</code>: 从当前光标位置移动到单词末尾，包括最后一个字符；<br><code>$</code>: 从当前光标位置移动到当前行末；<br><code>ge</code>: 从当前光标位置移动到上一个单词末尾；<br><code>b</code>：从当前光标位置移动到上一个单词开头。</p>
-<h3 id="计数指定动作"><a href="#计数指定动作" class="headerlink" title="计数指定动作"></a>计数指定动作</h3><ol>
-<li>在动作前输入数字会使该动作重复多次，e.g. ：</li>
-</ol>
+        <p>本文简述在 python 中使用 py2neo 连接 Neo4j 及连接时可能遇到的问题和解决方法。</p>
+<a id="more"></a>
+<p>使用 <code>pip</code> 工具安装 py2neo 。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install py2neo</span><br></pre></td></tr></table></figure>
+<p>若已安装 pip 仍提示 <code>pip : command not found</code> ，可以切换到到 Python 的安装目录<code>&lt;Installation floder&gt;\Scripts</code>目录下，使用以下命令安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./pip install py2neo</span><br></pre></td></tr></table></figure>
+<p>由于网络原因，有可能多次下载失败，这种情况可以选择到  <a href="https://pypi.org" target="_blank" rel="noopener">PyPI</a> 手动下载<a href="https://pypi.org/project/py2neo/#files" target="_blank" rel="noopener"> py2neo package</a> ，再使用 <code>pip</code> 进行安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install THE_PACKAGE_PATH</span><br></pre></td></tr></table></figure>
+<p>导入 py2neo :</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> py2neo</span><br></pre></td></tr></table></figure>
+<p>调用 <code>py2neo.Graph()</code> 函数连接Neo4j中已有的图：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">graph=py2neo.Graph(&quot;bolt://localhost:7687&quot;)</span><br></pre></td></tr></table></figure>
+<p>注：这里的端口是一般情况下的默认端口号，在该端口被占用的情况下Neo4j启用的访问端口可能并不是此端口号。</p>
+<p>此时并不能看出连接是否成功，可以使用查询语句查看是否能查询到结果，若连接成功，则此时可以使用图实例所提供的各项功能，py2neo 中提供了对节点、关系，以及各类操作的方法，也可以调用 Cypher 语句进行操作。</p>
+<p>这里我们通过调用 <code>len()</code> 函数对节点进行计数来查看连接状态：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">len(graph.nodes)</span><br></pre></td></tr></table></figure>
+<p>若连接不成功，可能看到以下错误提示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last): </span><br><span class="line">    File &quot;E:\Python\lib\site-packages\py2neo\database.py&quot;, line 828, in run entities=entities))</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\py2neo\internal\connectors.py&quot;, line 292, in run return self._run_1(statement, parameters, graph, keys, entities)</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\py2neo\internal\connectors.py&quot;, line 241, in _run_1cx = self.pool.acquire()</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\neobolt\direct.py&quot;, line 715, in acquire return self.acquire_direct(self.address)</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\neobolt\direct.py&quot;, line 608, in acquire_direct connection = self.connector(address, error_handler=self.connection_error_handler)</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\py2neo\internal\connectors.py&quot;, line 227, in connector encrypted=cx_data[&quot;secure&quot;], **kwargs)</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\neobolt\direct.py&quot;, line 972, in connect raise last_error </span><br><span class="line">    File &quot;E:\Python\lib\site-packages\neobolt\direct.py&quot;, line 964, in connect connection = _handshake(s, address, der_encoded_server_certificate, **config)</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\neobolt\direct.py&quot;, line 932, in _handshake connection.hello()</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\neobolt\direct.py&quot;, line 249, in hello self.sync()</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\neobolt\direct.py&quot;, line 527, in sync detail_delta, summary_delta = self.fetch()</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\neobolt\direct.py&quot;, line 419, in fetch    return self._fetch()</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\neobolt\direct.py&quot;, line 461, in _fetch  response.on_failure(summary_metadata or &#123;&#125;)</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\neobolt\direct.py&quot;, line 774, in on_failure raise AuthError(message)</span><br><span class="line">neobolt.exceptions.AuthError: The client is unauthorized due to authentication failure.                                                                             During handling of the above exception, another exception occurred:                 Traceback (most recent call last):</span><br><span class="line">    File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\py2neo\matching.py&quot;, line 196, in __len__  return len(self.match())</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\py2neo\matching.py&quot;, line 80, in __len__ return self.graph.evaluate(*self._query_and_parameters(count=True))</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\py2neo\database.py&quot;, line 395, in evaluate return self.begin(autocommit=True).evaluate(cypher, parameters, **kwparameters)</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\py2neo\database.py&quot;, line 876, in evaluate return self.run(cypher, parameters, **kwparameters).evaluate(0)</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\py2neo\database.py&quot;, line 830, in run raise GraphError.hydrate(&#123;&quot;code&quot;: error.code, &quot;message&quot;: error.message&#125;)</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\py2neo\database.py&quot;, line 676, in hydrate_, classification, category, title = code.split(&quot;.&quot;)                                   AttributeError: &apos;NoneType&apos; object has no attribute &apos;split&apos;</span><br></pre></td></tr></table></figure>
+<p>可以看到是身份验证失败而产生的错误。这是由于连接时未设置用户名和密码导致的，默认用户名为 <code>neo4j</code>，密码为<code>password</code>，而 Neo4j 默认密码为 <code>neo4j</code> ，因此导致了认证失败，同时在第一次开启图数据库时 Neo4j 会提示设立身份验证方式，此时设置的密码将用于登录，若使用 Neo4j Browser，并不会在每一次登陆时都提示身份验证，因此并未注意到这一点。在 Neo4j Browser 中使用 <code>server user list</code> 可以看到此时有名为 <code>neo4j</code> 的使用者。可以使用 <code>server user add</code> 命令添加一个用户，用此用户作为 <code>Graph()</code> 的 <code>auth</code> 项参数登录即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">graph=py2neo.Graph(<span class="string">"bolt://localhost:7687"</span>, auth=(<span class="string">'username'</span>, <span class="string">'password'</span>))</span><br></pre></td></tr></table></figure>
+<p>注：在查找此问题的解决方式时看到有提议用 <code>neo4j-admin</code> 工具修改初始密码，在 Windows 下，此工具并不是直接以 <code>*.exe</code> 的可执行文件出现，而是 <code>*.bat</code> 的批处理文件，并且在 Neo4j Desktop 版本下此工具不是位于 <code>&lt;Installation Folder&gt;/bin</code> ，而应该切换至 <code>&lt;Database Folder&gt;/bin</code> 目录下，运行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./neo4j-admin.bat YOURCOMMAND</span><br></pre></td></tr></table></figure>
+<p>但在此操作应该是在数据库未建立时，否则，将会提示此时的权限已经转移到 <code>&lt;Database Folder&gt;/data/dbms/</code> 下的 <code>auth</code> 文件中，如果要重设密码应该移除 <code>auth</code> 和 <code>role</code> 相关文件或者重设该数据库，所以并不能使用此方式，新建一个用户应该是一个比较好的选择。</p>
 <ul>
-<li><code>2w</code> 将光标向后移动两个单词</li>
-<li><code>3e</code> 使光标移向后移动到第三个单词末尾</li>
-<li><code>7perfect &lt;ESC&gt;</code>将插入7个perfect单词 </li>
-</ul>
-<ol>
-<li><code>0</code>：移动光标到行首</li>
-</ol>
-<h2 id="2-2-删除类命令"><a href="#2-2-删除类命令" class="headerlink" title="2.2 删除类命令"></a>2.2 删除类命令</h2><p>改变文本的命令通常由一个操作符和一个动作构成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">operator [number] motion</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>operator  操作符</li>
-<li>[number] 可选操作，附加数字表示动作重复次数</li>
-<li><p>motion  动作，表示在所操作的文本上的移动<br>例如删除类命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d [number] motion</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>d  删除操作符<br><code>dw</code>: 删除至下一个单词起始处，不包括下一个单词的第一个字符；<br><code>de</code>: 删除至当前单词末尾，包括最后一个字符；<br><code>d$</code>: 删除至当前行末尾；<br>删除命令也可以搭配计数删除更多。<br><code>dd</code>: 删除当前行；<br><code>dd</code> 命令同样可以在之前插入数字进行计数删除多行。</p>
-</li>
-</ul>
-<h2 id="2-3-撤销类命令"><a href="#2-3-撤销类命令" class="headerlink" title="2.3 撤销类命令"></a>2.3 撤销类命令</h2><p><code>u</code>: 撤销最后执行的命令；<br><code>U</code>: 撤销对整行的修改。<br><code>CTRL-R</code>: 撤销以前的撤销命令，恢复之前的操作结果</p>
-<h1 id="第三讲-插入替换更改"><a href="#第三讲-插入替换更改" class="headerlink" title="第三讲 插入替换更改"></a>第三讲 插入替换更改</h1><h2 id="3-1-插入类命令"><a href="#3-1-插入类命令" class="headerlink" title="3.1 插入类命令"></a>3.1 插入类命令</h2><p><code>p</code>: 将最后一次删除的内容插入当前光标之后, 类似于剪切功能。<br><code>o</code>: 在光标当前行下方创建新的一行，并进入插入模式；<br><code>O</code>: 在光标当前行上方创建新的一行，并进入插入模式。</p>
-<h2 id="3-2-替换类命令"><a href="#3-2-替换类命令" class="headerlink" title="3.2 替换类命令"></a>3.2 替换类命令</h2><p><code>r[CHARACTER]</code>: 输入 r 和一个字符替换光标所在位置的字符<br><code>R</code>: 连续替换多个字符，与插入模式类似，不过每个输入的字符会替代光标当前字符，与键盘使用了 insert 键进入改写模式的情况类似</p>
-<h2 id="3-3-更改类命令"><a href="#3-3-更改类命令" class="headerlink" title="3.3 更改类命令"></a>3.3 更改类命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c [number] motion</span><br></pre></td></tr></table></figure>
-<ul>
-<li>c 操作符</li>
-</ul>
-<p><code>cw</code>: 更改文本直到该单词末尾；<br><code>ce</code>: 更改文本直到下一单词开始；<br><code>c$</code>: 更改文本直到行末。<br>更改命令执行后直接进入 insert 模式。</p>
-<h1 id="第四讲-定位查找"><a href="#第四讲-定位查找" class="headerlink" title="第四讲 定位查找"></a>第四讲 定位查找</h1><h2 id="4-1-定位及文件状态"><a href="#4-1-定位及文件状态" class="headerlink" title="4.1 定位及文件状态"></a>4.1 定位及文件状态</h2><p><code>F[CHAR]</code>: 光标移动到上一个 char 所指字母所在位置；<br><code>f[CHAR]</code>: 光标移动到下一个 char 所指字母所在位置；<br><code>*</code>: 光标移动到当前光标所指单词相同的下一个位置；<br><code>#</code>: 光标移动到当前光标所指单词相同的上一个位置；<br><code>CTRL-g/G</code>: 显示当前编辑文件中当前光标所在行位置以及文件状态信息；<br><code>G</code>: 光标跳转到文件最后一行；<br><code>gg</code>: 光标跳转到文件第一行；<br><code>G[NUMBER]</code>: 光标跳转到number表示的行号。</p>
-<h2 id="4-2-搜索类命令"><a href="#4-2-搜索类命令" class="headerlink" title="4.2 搜索类命令"></a>4.2 搜索类命令</h2><p><code>/[STRING]</code>: 正向查找string表示的字符串;<br><code>?[STRING]</code>: 逆向查找string表示的字符串；<br><code>CTRL-O</code> \ <code>N</code>：回到前一个位置；<br><code>CTRL-I</code> \ <code>n</code>: 到下一个位置。</p>
-<h2 id="4-3-配对括号的查找"><a href="#4-3-配对括号的查找" class="headerlink" title="4.3 配对括号的查找"></a>4.3 配对括号的查找</h2><p>使用<code>%</code>可查找匹配对的括号<code>) \ ] \ }</code>：<br>将光标移动到左括号处，按下<code>%</code>，光标将跳转到匹配的右括号处，再按下一次可跳回原来的左括号处。<br>（这对程序员来说真是个福音~）</p>
-<h2 id="4-4-替换命令"><a href="#4-4-替换命令" class="headerlink" title="4.4 替换命令"></a>4.4 替换命令</h2><p><code>:s/old/new</code>: 在光标所在行第一次出现的 old 表示的字符串替换为新的字符串 new ;<br><code>:s/old/new/g</code>: 在光标所在行替换所有出现的 old 所表示的字符串替换为新的字符串 new ；<br><code>:#,#s/old/new/g</code>: 在两行内替换所有的字符串 old 为新的字符串 new ；<br><code>:%s/old/new/g</code>: 在文件内替换所有的字符串 old 为新的字符串 new ；<br><code>:%s/old/new/gc</code>: 进行全文替换时询问用户确认每个替换。</p>
-<h1 id="第五讲-文件操作"><a href="#第五讲-文件操作" class="headerlink" title="第五讲 文件操作"></a>第五讲 文件操作</h1><h2 id="5-1-在VIM内部执行外部命令"><a href="#5-1-在VIM内部执行外部命令" class="headerlink" title="5.1 在VIM内部执行外部命令"></a>5.1 在VIM内部执行外部命令</h2><p><code>:![COMMAND]</code>: 执行command所代表的外部命令</p>
-<h2 id="5-2-保存文件"><a href="#5-2-保存文件" class="headerlink" title="5.2 保存文件"></a>5.2 保存文件</h2><p><code>:w FILENAME</code>: 将对文件的改动保存到一个文件中;<br><code>v motion: w FILENAME</code>: 将文件的部分内容保存到文件中：<br>v 进入可视模式（Visual), motion 表示光标的移动，可选中文本，按下：后下方将出现<code>&#39;&lt;,&#39;&gt;</code>，输入w FILENAME将选中的文本保存在文件FILENAME中。可视选中后同样也可以进行批量删除操作。</p>
-<h2 id="5-3-提取合并文件"><a href="#5-3-提取合并文件" class="headerlink" title="5.3 提取合并文件"></a>5.3 提取合并文件</h2><p><code>:r FILENAME</code>: 提取磁盘文件 FILENAME 并将其插入到当前文件光标当前位置后；<br><code>:r !command</code>: 读取command命令的输出插入到当前文件光标当前位置后。</p>
-<h2 id="5-4-复制粘贴文本"><a href="#5-4-复制粘贴文本" class="headerlink" title="5.4 复制粘贴文本"></a>5.4 复制粘贴文本</h2><p>进入 Visual 模式，<br>使用<code>y</code>进行复制，使用<code>p</code>进行粘贴</p>
-<p>文本编辑部分整理至此。</p>
-<p>顺便推荐几个网站：</p>
-<ul>
-<li><a href="https://vim-adventures.com/ " target="_blank" rel="noopener">VIM Adventures</a>，这是一个用VIM操作来进行的游戏，不过免费版只能练习最基本的移动操作~</li>
-<li><a href="https://www.openvim.com/" target="_blank" rel="noopener">Interative Vim tutorial</a>,这是一个交互的类似于 vimtutor 的教程网站</li>
-<li><a href="https://www.openvim.com/sandbox.html" target="_blank" rel="noopener">Interative Vim tutorial - sandbox</a>这是上面那个教程网站给出的一个练习，右侧还有命令提示，可以说非常贴心了</li>
-<li><a href="http://www.vimsnake.com/" target="_blank" rel="noopener">Vim Snake</a> 一个基于Vim移动操作的贪吃蛇游戏</li>
-</ul>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li>vimtutor</li>
-<li><a href="https://www.openvim.com/" target="_blank" rel="noopener">Interative Vim tutorial</a></li>
-<li>《Vim 实用技巧（第2版）》</li>
+<li><strong>参考资料</strong>：<a href="https://py2neo.org/v4/index.html" target="_blank" rel="noopener">The Py2neo v4 Handbook</a></li>
 </ul>
 
       
@@ -498,7 +468,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://fish-404.github.io/vim-vimtutor/" title="Vim-Vimtutor学习整理">https://fish-404.github.io/vim-vimtutor/</a>
+    <a href="https://fish-404.github.io/KG-py2neo-python-connect-neo4j/" title="Neo4j之python连接失败解决(py2neo)">https://fish-404.github.io/KG-py2neo-python-connect-neo4j/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -513,7 +483,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Vim/" rel="tag"><i class="fa fa-tag"></i> Vim</a>
+            <a href="/tags/Neo4j/" rel="tag"><i class="fa fa-tag"></i> Neo4j</a>
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
           
         </div>
       
@@ -526,8 +498,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Bookcomment-lamb-jumping-out-of-the-sheepfold/" rel="next" title="书评-跳出羊圈的羔羊">
-                <i class="fa fa-chevron-left"></i> 书评-跳出羊圈的羔羊
+              <a href="/Essay-2019-nCoV-personal-record-14/" rel="next" title="疫期小记 14">
+                <i class="fa fa-chevron-left"></i> 疫期小记 14
               </a>
             
           </div>
@@ -535,10 +507,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/C-program-escape-sequence/" rel="prev" title="C语言中的转义序列">
-                C语言中的转义序列 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -593,17 +561,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -689,22 +648,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一讲-基本使用"><span class="nav-number">1.</span> <span class="nav-text">第一讲 基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-移动光标"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 移动光标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-VIM的进入和退出"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 VIM的进入和退出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-文本编辑"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 文本编辑</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二讲-删除撤销动作"><span class="nav-number">2.</span> <span class="nav-text">第二讲 删除撤销动作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-动作"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 动作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#动作列表"><span class="nav-number">2.1.1.</span> <span class="nav-text">动作列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计数指定动作"><span class="nav-number">2.1.2.</span> <span class="nav-text">计数指定动作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-删除类命令"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 删除类命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-撤销类命令"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 撤销类命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三讲-插入替换更改"><span class="nav-number">3.</span> <span class="nav-text">第三讲 插入替换更改</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-插入类命令"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 插入类命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-替换类命令"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 替换类命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-更改类命令"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 更改类命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四讲-定位查找"><span class="nav-number">4.</span> <span class="nav-text">第四讲 定位查找</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-定位及文件状态"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 定位及文件状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-搜索类命令"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 搜索类命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-配对括号的查找"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 配对括号的查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-替换命令"><span class="nav-number">4.4.</span> <span class="nav-text">4.4 替换命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第五讲-文件操作"><span class="nav-number">5.</span> <span class="nav-text">第五讲 文件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-在VIM内部执行外部命令"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 在VIM内部执行外部命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-保存文件"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 保存文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-提取合并文件"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 提取合并文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-复制粘贴文本"><span class="nav-number">5.4.</span> <span class="nav-text">5.4 复制粘贴文本</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
