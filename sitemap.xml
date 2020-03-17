@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fish-404.github.io/KG-Cypher-learning/</loc>
+    
+    <lastmod>2020-03-17T15:47:43.732Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fish-404.github.io/Moviecomment-Potrait-de-la-jeune-fille-en-feu/</loc>
     
     <lastmod>2020-03-16T16:00:00.000Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://fish-404.github.io/KG-py2neo-python-connect-neo4j/</loc>
     
     <lastmod>2020-03-14T15:16:12.257Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fish-404.github.io/KG-Cypher-learning/</loc>
-    
-    <lastmod>2020-03-14T07:46:56.136Z</lastmod>
     
   </url>
   
