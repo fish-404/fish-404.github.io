@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="在逃的貓">
 <meta property="og:description" content="本文简述在 python 中使用 py2neo 连接 Neo4j 及连接时可能遇到的问题和解决方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-14T15:16:12.257Z">
+<meta property="og:updated_time" content="2020-03-24T02:38:27.984Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Neo4j之python连接失败解决(py2neo)">
 <meta name="twitter:description" content="本文简述在 python 中使用 py2neo 连接 Neo4j 及连接时可能遇到的问题和解决方法。">
@@ -337,8 +337,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-03-14T23:16:12+08:00">
-                Mar 14 2020
+              <time title="更新于" itemprop="dateModified" datetime="2020-03-24T10:38:27+08:00">
+                Mar 24 2020
               </time>
             
           </span>
@@ -431,17 +431,17 @@
 <p>由于网络原因，有可能多次下载失败，这种情况可以选择到  <a href="https://pypi.org" target="_blank" rel="noopener">PyPI</a> 手动下载<a href="https://pypi.org/project/py2neo/#files" target="_blank" rel="noopener"> py2neo package</a> ，再使用 <code>pip</code> 进行安装：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install THE_PACKAGE_PATH</span><br></pre></td></tr></table></figure>
 <p>导入 py2neo :</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> py2neo</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="keyword">import</span> py2neo</span><br></pre></td></tr></table></figure>
 <p>调用 <code>py2neo.Graph()</code> 函数连接Neo4j中已有的图：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">graph=py2neo.Graph(&quot;bolt://localhost:7687&quot;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;graph=py2neo.Graph(&quot;bolt://localhost:7687&quot;)</span><br></pre></td></tr></table></figure>
 <p>注：这里的端口是一般情况下的默认端口号，在该端口被占用的情况下Neo4j启用的访问端口可能并不是此端口号。</p>
 <p>此时并不能看出连接是否成功，可以使用查询语句查看是否能查询到结果，若连接成功，则此时可以使用图实例所提供的各项功能，py2neo 中提供了对节点、关系，以及各类操作的方法，也可以调用 Cypher 语句进行操作。</p>
 <p>这里我们通过调用 <code>len()</code> 函数对节点进行计数来查看连接状态：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">len(graph.nodes)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;len(graph.nodes)</span><br></pre></td></tr></table></figure>
 <p>若连接不成功，可能看到以下错误提示</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last): </span><br><span class="line">    File &quot;E:\Python\lib\site-packages\py2neo\database.py&quot;, line 828, in run entities=entities))</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\py2neo\internal\connectors.py&quot;, line 292, in run return self._run_1(statement, parameters, graph, keys, entities)</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\py2neo\internal\connectors.py&quot;, line 241, in _run_1cx = self.pool.acquire()</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\neobolt\direct.py&quot;, line 715, in acquire return self.acquire_direct(self.address)</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\neobolt\direct.py&quot;, line 608, in acquire_direct connection = self.connector(address, error_handler=self.connection_error_handler)</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\py2neo\internal\connectors.py&quot;, line 227, in connector encrypted=cx_data[&quot;secure&quot;], **kwargs)</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\neobolt\direct.py&quot;, line 972, in connect raise last_error </span><br><span class="line">    File &quot;E:\Python\lib\site-packages\neobolt\direct.py&quot;, line 964, in connect connection = _handshake(s, address, der_encoded_server_certificate, **config)</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\neobolt\direct.py&quot;, line 932, in _handshake connection.hello()</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\neobolt\direct.py&quot;, line 249, in hello self.sync()</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\neobolt\direct.py&quot;, line 527, in sync detail_delta, summary_delta = self.fetch()</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\neobolt\direct.py&quot;, line 419, in fetch    return self._fetch()</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\neobolt\direct.py&quot;, line 461, in _fetch  response.on_failure(summary_metadata or &#123;&#125;)</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\neobolt\direct.py&quot;, line 774, in on_failure raise AuthError(message)</span><br><span class="line">neobolt.exceptions.AuthError: The client is unauthorized due to authentication failure.                                                                             During handling of the above exception, another exception occurred:                 Traceback (most recent call last):</span><br><span class="line">    File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\py2neo\matching.py&quot;, line 196, in __len__  return len(self.match())</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\py2neo\matching.py&quot;, line 80, in __len__ return self.graph.evaluate(*self._query_and_parameters(count=True))</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\py2neo\database.py&quot;, line 395, in evaluate return self.begin(autocommit=True).evaluate(cypher, parameters, **kwparameters)</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\py2neo\database.py&quot;, line 876, in evaluate return self.run(cypher, parameters, **kwparameters).evaluate(0)</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\py2neo\database.py&quot;, line 830, in run raise GraphError.hydrate(&#123;&quot;code&quot;: error.code, &quot;message&quot;: error.message&#125;)</span><br><span class="line">    File &quot;E:\Python\lib\site-packages\py2neo\database.py&quot;, line 676, in hydrate_, classification, category, title = code.split(&quot;.&quot;)                                   AttributeError: &apos;NoneType&apos; object has no attribute &apos;split&apos;</span><br></pre></td></tr></table></figure>
 <p>可以看到是身份验证失败而产生的错误。这是由于连接时未设置用户名和密码导致的，默认用户名为 <code>neo4j</code>，密码为<code>password</code>，而 Neo4j 默认密码为 <code>neo4j</code> ，因此导致了认证失败，同时在第一次开启图数据库时 Neo4j 会提示设立身份验证方式，此时设置的密码将用于登录，若使用 Neo4j Browser，并不会在每一次登陆时都提示身份验证，因此并未注意到这一点。在 Neo4j Browser 中使用 <code>server user list</code> 可以看到此时有名为 <code>neo4j</code> 的使用者。可以使用 <code>server user add</code> 命令添加一个用户，用此用户作为 <code>Graph()</code> 的 <code>auth</code> 项参数登录即可。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">graph=py2neo.Graph(<span class="string">"bolt://localhost:7687"</span>, auth=(<span class="string">'username'</span>, <span class="string">'password'</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;graph=py2neo.Graph(<span class="string">"bolt://localhost:7687"</span>, auth=(<span class="string">'username'</span>, <span class="string">'password'</span>))</span><br></pre></td></tr></table></figure>
 <p>注：在查找此问题的解决方式时看到有提议用 <code>neo4j-admin</code> 工具修改初始密码，在 Windows 下，此工具并不是直接以 <code>*.exe</code> 的可执行文件出现，而是 <code>*.bat</code> 的批处理文件，并且在 Neo4j Desktop 版本下此工具不是位于 <code>&lt;Installation Folder&gt;/bin</code> ，而应该切换至 <code>&lt;Database Folder&gt;/bin</code> 目录下，运行以下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./neo4j-admin.bat YOURCOMMAND</span><br></pre></td></tr></table></figure>
 <p>但在此操作应该是在数据库未建立时，否则，将会提示此时的权限已经转移到 <code>&lt;Database Folder&gt;/data/dbms/</code> 下的 <code>auth</code> 文件中，如果要重设密码应该移除 <code>auth</code> 和 <code>role</code> 相关文件或者重设该数据库，所以并不能使用此方式，新建一个用户应该是一个比较好的选择。</p>
@@ -585,7 +585,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">83</span>
+                  <span class="site-state-item-count">84</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -682,7 +682,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">256.8k</span>
+    <span title="Site words total count">257.1k</span>
   
 </div>
 
