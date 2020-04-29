@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fish-404.github.io/Book-2020-extract/</loc>
+    
+    <lastmod>2020-04-29T07:43:23.244Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fish-404.github.io/Nonsense-2037/</loc>
     
     <lastmod>2020-03-31T16:00:00.000Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://fish-404.github.io/KG-py2neo-python-connect-neo4j/</loc>
     
     <lastmod>2020-03-24T02:38:27.984Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fish-404.github.io/Book-2020-extract/</loc>
-    
-    <lastmod>2020-03-22T01:20:18.779Z</lastmod>
     
   </url>
   
