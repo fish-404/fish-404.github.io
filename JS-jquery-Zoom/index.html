@@ -397,7 +397,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  661
+                  727
                 </span>
               
 
@@ -426,9 +426,12 @@
 <a id="more"></a>
 <h1 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- jQuery Required 1.7+ --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><code>&lt;img&gt;</code> 标签需置于某个合法的 HTML 标签内，如 <code>&lt;div&gt; &lt;figure&gt; ...</code> ， 而使用 <code>zoom()</code> 的元素应该是 <code>&lt;img&gt;</code> 的 <code>Parent Elemnt</code> 。</p>
-<p>启用 zoom：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">figure</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://example.com/example.png"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">figure</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="启用-zoom："><a href="#启用-zoom：" class="headerlink" title="启用 zoom："></a>启用 zoom：</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">figure</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://example.com/example.png"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">figure</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 最简单的启用方式 */</span></span><br><span class="line">$(<span class="string">'#example'</span>).zoom();</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 通常需要配置 zoom 参数 */</span></span><br><span class="line">$(<span class="string">'#example'</span>).zoom(&#123;</span><br><span class="line">    property1: value1, </span><br><span class="line">    property2: value2,</span><br><span class="line">    ... </span><br><span class="line">    propertyN: valueN</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="禁用-zoom"><a href="#禁用-zoom" class="headerlink" title="禁用 zoom"></a>禁用 zoom</h2><p>以下是zoom的禁用方式。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#example'</span>).trigger(<span class="string">'zoom.destroy'</span>);</span><br></pre></td></tr></table></figure>
+<p>比如你可以使用一个checkbox来控制zoom的启用和关闭。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"input:checkbox"</span>).change(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span> ($(<span class="string">"input:checked"</span>).length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    $(<span class="string">'#example'</span>).trigger(<span class="string">'zoom.destroy'</span>); </span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">   	$(<span class="string">'#example'</span>).zoom(&#123;</span><br><span class="line"></span><br><span class="line">        magnify: <span class="number">2</span></span><br><span class="line">    &#125;); </span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h1 id="属性值配置"><a href="#属性值配置" class="headerlink" title="属性值配置"></a>属性值配置</h1><h2 id="url"><a href="#url" class="headerlink" title="url"></a>url</h2><p><code>zoom</code> 图片源。</p>
 <p>值 ： <code>false</code> | URL</p>
 <p>默认取 <code>&lt;img&gt;</code> 中的 <code>src</code> 作为放大图片源。当填写具体 <code>url</code> 时将取该 <code>url</code> 作为放大图片源。</p>
@@ -678,7 +681,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本使用"><span class="nav-number">1.</span> <span class="nav-text">基本使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#属性值配置"><span class="nav-number">2.</span> <span class="nav-text">属性值配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#url"><span class="nav-number">2.1.</span> <span class="nav-text">url</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#on"><span class="nav-number">2.2.</span> <span class="nav-text">on</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#duration"><span class="nav-number">2.3.</span> <span class="nav-text">duration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#target"><span class="nav-number">2.4.</span> <span class="nav-text">target</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#touch"><span class="nav-number">2.5.</span> <span class="nav-text">touch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#magnify"><span class="nav-number">2.5.1.</span> <span class="nav-text">magnify</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#callback-onZoomIn-onZoomOut"><span class="nav-number">2.6.</span> <span class="nav-text">callback/onZoomIn/onZoomOut</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本使用"><span class="nav-number">1.</span> <span class="nav-text">基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#启用-zoom："><span class="nav-number">1.1.</span> <span class="nav-text">启用 zoom：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#禁用-zoom"><span class="nav-number">1.2.</span> <span class="nav-text">禁用 zoom</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#属性值配置"><span class="nav-number">2.</span> <span class="nav-text">属性值配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#url"><span class="nav-number">2.1.</span> <span class="nav-text">url</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#on"><span class="nav-number">2.2.</span> <span class="nav-text">on</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#duration"><span class="nav-number">2.3.</span> <span class="nav-text">duration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#target"><span class="nav-number">2.4.</span> <span class="nav-text">target</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#touch"><span class="nav-number">2.5.</span> <span class="nav-text">touch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#magnify"><span class="nav-number">2.5.1.</span> <span class="nav-text">magnify</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#callback-onZoomIn-onZoomOut"><span class="nav-number">2.6.</span> <span class="nav-text">callback/onZoomIn/onZoomOut</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
@@ -714,7 +717,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">298.1k</span>
+    <span title="Site words total count">298.2k</span>
   
 </div>
 
@@ -886,8 +889,8 @@
         el: '#comments' ,
         verify: true,
         notify: true,
-        appId: 'N0HVW6SnFPxcFCaYsR3Iqk0f-gzGzoHsz',
-        appKey: 'SO0jdvBxhhBgQsyEn8iMjKHm',
+        appId: 'BwfroBJnkh22Gmd39XCKHVR6-MdYXbMMI',
+        appKey: '6kUQN2hR5mA4BEGerhyY4dGa',
         placeholder: '不说点什么嘛？给自己起个昵称就好啦，邮箱网址选填~\n说不定有机会触发本喵现身噢~ \n喵喵喵o(=•ェ•=)m',
         avatar:'robohash',
         guest_info:guest,
