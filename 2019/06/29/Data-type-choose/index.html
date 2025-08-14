@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.ico/apple-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.ico/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.ico/andiroid-icon-192x192.png" color="#222">
+  <link rel="manifest" href="/images/logo.ico/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="偶然发现关于数据类型选择之前没注意到的点，做此记录。  整型 浮点型 字符型（字符型实际上属于整型的一种，但这里分开讨论）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据类型选择">
+<meta property="og:url" content="https://junyuh.netlify.app/2019/06/29/Data-type-choose/index.html">
+<meta property="og:site_name" content="Junyu">
+<meta property="og:description" content="偶然发现关于数据类型选择之前没注意到的点，做此记录。  整型 浮点型 字符型（字符型实际上属于整型的一种，但这里分开讨论）">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-06-28T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-06-28T16:00:00.000Z">
+<meta property="article:author" content="Junyu">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://junyuh.netlify.app/2019/06/29/Data-type-choose/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://junyuh.netlify.app/2019/06/29/Data-type-choose/","path":"2019/06/29/Data-type-choose/","title":"数据类型选择"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>数据类型选择 | Junyu</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Junyu</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">备忘录</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B4%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">整型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4"><span class="nav-number">1.1.</span> <span class="nav-text">取值范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%AE%E7%82%B9%E5%9E%8B"><span class="nav-number">1.2.</span> <span class="nav-text">浮点型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E5%9E%8B"><span class="nav-number">1.3.</span> <span class="nav-text">字符型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Junyu</p>
+  <div class="site-description" itemprop="description">好记性不如烂笔头</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fish-404" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fish-404" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:junyu_huang@outlook.com" title="E-Mail → mailto:junyu_huang@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://junyuh.netlify.app/2019/06/29/Data-type-choose/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Junyu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Junyu">
+      <meta itemprop="description" content="好记性不如烂笔头">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="数据类型选择 | Junyu">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据类型选择
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-06-29 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-29T00:00:00+08:00">2019-06-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/" itemprop="url" rel="index"><span itemprop="name">技术杂谈</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>偶然发现关于数据类型选择之前没注意到的点，做此记录。</p>
+<ul>
+<li>整型</li>
+<li>浮点型</li>
+<li>字符型（字符型实际上属于整型的一种，但这里分开讨论）</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h1><h2 id="取值范围"><a href="#取值范围" class="headerlink" title="取值范围"></a>取值范围</h2><p>整型类型的取值范围会根据机器的不同而不同，但规定了如下最小值：</p>
+<blockquote>
+<ul>
+<li><code>short int</code> 至少 16  位</li>
+<li><code>int</code> 至少 16 位</li>
+<li><code>long int</code> 至少 32 位</li>
+<li><code>long long int</code> 至少 64 位</li>
+</ul>
+</blockquote>
+<p>听上去长整型应该比短整型所能表示的值要大，但是这个假设并不一定正确。整型值之间相互的大小规则如下：</p>
+<blockquote>
+<ul>
+<li><code>int </code>类型不能比<code>short int</code>类型短</li>
+<li><code>long int</code>类型不能比<code>int</code>类型短</li>
+</ul>
+</blockquote>
+<p>而标准并没有规定3个数值必须不同，因此基于上述规则，如果某机器的环境字长是32位，且没有指令能更有效处理更短的整型值时，可能上述提到的3个整型值都为32位。</p>
+<p>当数值超过<code>int</code>表示的范围时，选用<code>long long int</code>。</p>
+<p>对于特定的实现，确定整数类型范围的一种方法是检查<code>&lt;limits.h&gt;</code>。</p>
+<h2 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h2><ul>
+<li>浮点数字面值在缺省情况下是<code>double</code>类型。</li>
+<li>执行浮点数运算时选用<code>double</code>类型，精度高于<code>float</code>类型，而实际上单精度和双精度的计算代价相差无几，甚至有些机器运算双精度浮点数更快。</li>
+<li><code>long double</code>提供扩展精度，但一般情况下没有必要，且会带来运行消耗。</li>
+</ul>
+<h2 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h2><p>字符在本质上是小整型值。标准中没有规定<code>char</code>类型缺省是无符号型还是有符号型，取决于编译器，有些编译器将其作为有符号数来处理，有些编译器作为无符号数来处理，而另有一些编译器提供编译选项来选择<code>char</code>的类型。</p>
+<ul>
+<li><p>为了保持最佳的可移植性，把字符的值限制在有符号和无符号范围的交集之间</p>
+</li>
+<li><p>显示地将这类变量声明为<code>signed</code>或<code>unsigned</code>，可以提高可移植性，确保在不同的机器中在字符是否有符号方面保持一致。</p>
+</li>
+<li><p>只有当<code>char</code>类型显示声明了符号类型时才对其进行算术运算。</p>
+</li>
+<li><p>许多处理字符的库函数将参数声明为<code>char</code>，而若将参数显示声明为<code>signed</code>或<code>unsigned</code>时可能会带来兼容性问题。</p>
+</li>
+</ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li>《C++ Primer 中文版 （第5版）》</li>
+<li>《C 和指针》</li>
+<li>《C语言程序设计现代方法 第2版》</li>
+<li><a href = "https://stackoverflow.com/questions/1074474/should-i-use-double-or-float">c++ - Sholud I usedoble or float? - Stack Overflow</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Junyu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://junyuh.netlify.app/2019/06/29/Data-type-choose/" title="数据类型选择">https://junyuh.netlify.app/2019/06/29/Data-type-choose/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/06/21/change-Google-Chrome-installation-folder/" rel="prev" title="修改 Google Chrome 默认安装路径">
+                  <i class="fa fa-angle-left"></i> 修改 Google Chrome 默认安装路径
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/07/10/change-kobo-glo-screen/" rel="next" title="设置 Kobo Glo 休眠&#x2F;关机壁纸">
+                  设置 Kobo Glo 休眠/关机壁纸 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2018 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-paw"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Junyu</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

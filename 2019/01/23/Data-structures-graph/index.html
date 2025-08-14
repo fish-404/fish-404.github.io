@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.ico/apple-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.ico/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.ico/andiroid-icon-192x192.png" color="#222">
+  <link rel="manifest" href="/images/logo.ico/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="图是一种比树形结构更复杂的非线性结构。在图结构中，允许多个结点之间相关，称为「多对多」关系。本文整理关于图的基本定义以及图的相关术语。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构-图的相关定义">
+<meta property="og:url" content="https://junyuh.netlify.app/2019/01/23/Data-structures-graph/index.html">
+<meta property="og:site_name" content="Junyu">
+<meta property="og:description" content="图是一种比树形结构更复杂的非线性结构。在图结构中，允许多个结点之间相关，称为「多对多」关系。本文整理关于图的基本定义以及图的相关术语。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-01-22T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-01-22T16:00:00.000Z">
+<meta property="article:author" content="Junyu">
+<meta property="article:tag" content="Data Structures">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://junyuh.netlify.app/2019/01/23/Data-structures-graph/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://junyuh.netlify.app/2019/01/23/Data-structures-graph/","path":"2019/01/23/Data-structures-graph/","title":"数据结构-图的相关定义"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>数据结构-图的相关定义 | Junyu</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Junyu</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">备忘录</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">图的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Junyu</p>
+  <div class="site-description" itemprop="description">好记性不如烂笔头</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fish-404" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fish-404" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:junyu_huang@outlook.com" title="E-Mail → mailto:junyu_huang@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://junyuh.netlify.app/2019/01/23/Data-structures-graph/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Junyu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Junyu">
+      <meta itemprop="description" content="好记性不如烂笔头">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="数据结构-图的相关定义 | Junyu">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据结构-图的相关定义
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-01-23 00:00:00" itemprop="dateCreated datePublished" datetime="2019-01-23T00:00:00+08:00">2019-01-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>图是一种比树形结构更复杂的非线性结构。在图结构中，允许多个结点之间相关，称为「多对多」关系。本文整理关于图的基本定义以及图的相关术语。</p>
+<span id="more"></span>
+
+<h1 id="图的定义"><a href="#图的定义" class="headerlink" title="图的定义"></a>图的定义</h1><p>在图中，通常将数据元素称为<strong>顶点</strong>(Vertex)，顶点之间的关系称为<strong>边</strong>(Edge)。</p>
+<p><strong>图</strong>(Graph)由有限点集$V$和有限边集$E$组成，记为<br>$$<br>G &#x3D; (V, E)<br>$$</p>
+<p>顶点总数$|V|$记为$n$，边的总数$E$记为$e$。</p>
+<ol>
+<li>有向图</li>
+</ol>
+<p>   用$&lt;v, w&gt;$表示从顶点$v$指向顶点$w$的<strong>有向边</strong>，也称为<strong>弧</strong>(Arc)，$v$为<strong>起点</strong>，$w$为<strong>终点</strong>，起点与终点次序不能颠倒。当图中的边均为有向边，则称图为<strong>有向图</strong>(Digraph)。</p>
+<ol start="2">
+<li>无向图</li>
+</ol>
+<p>   若边集$E$是对称的，即当$&lt;v,w&gt;\in E$ ，有$&lt;w,v&gt;\in E$，则称为<strong>无向图</strong>。此时用无序对$(v,w)$代替有序对$&lt;v,w&gt;$和$&lt;w,v&gt;$，称为<strong>无向边</strong>，简称<strong>边</strong>。</p>
+<ol start="3">
+<li>子图</li>
+</ol>
+<p>   若图$G &#x3D; (V, E), G’ &#x3D; (V’, E’)$，当$V’\subseteq V, E’ \subseteq E$，则称$G’$为$G$的子图。</p>
+<ol start="4">
+<li><p>完全图</p>
+<p>包含所有可能的边的图称为<strong>完全图</strong>。</p>
+<ul>
+<li>无向完全图包含$n(n-1)&#x2F;2$条边。</li>
+<li>有向完全图包含$n(n - 1)$条弧。</li>
+</ul>
+</li>
+<li><p>邻接顶点</p>
+<ul>
+<li>在无向图中，若存在边$(v, w)$，则称$v$和$w$互为<strong>邻接顶点</strong>(Adjacent Verices)，或称$v$和$w$相邻接。</li>
+<li>在有向图中，若存在弧$&lt;v, w&gt;$，则称$w$是$v$的邻接顶点，但$v$未必是$w$的邻接顶点。</li>
+</ul>
+</li>
+<li><p>度</p>
+<p>在图中，顶点的<strong>度</strong>(Degree)指依附于该顶点的边数。</p>
+<p>对于有向图，又分为<strong>出度</strong>(OutDegree)和<strong>入度</strong>(InDegree)。</p>
+<ul>
+<li>出度：以该顶点为起点的弧的数目。</li>
+<li>入度：以该顶点为终点的弧的数目。</li>
+<li>有向图顶点的度为出度和入度之和。</li>
+</ul>
+</li>
+<li><p>权</p>
+<p>当图中的边或弧具有附加属性信息时，将此信息称为<strong>权</strong>(Weight)。</p>
+<p>带权的图称为<strong>带权图</strong>，简称为<strong>网</strong>(Network)。</p>
+</li>
+<li><p>路径</p>
+<p>如果顶点序列$(v_1, v_2, \cdots, v_n)$从$v_i$到$v_{i+1}(1 \le i &lt;n)$的边（弧）均存在，则称顶点序列$(v_1, v_2, \cdots, v_n)$构成一条长度为$n-1$的<strong>路径</strong>。</p>
+<ul>
+<li><strong>路径长度</strong>：路径包含的边数。</li>
+<li><strong>简单路径</strong>：路径上的顶点各不相同。</li>
+<li><strong>回路</strong>：一条路径将某个顶点连接到自身。</li>
+</ul>
+</li>
+<li><p>连通图和强连通图</p>
+<ul>
+<li><p><strong>连通图</strong></p>
+<p>在无向图中，若顶点$v$到顶点$w$有路径，则称$v$和$w$是连通的。若图中任意两个顶点都是连通的，则称该图为<strong>连通图</strong>(Connected Graph)。</p>
+<ul>
+<li><strong>连通分量</strong>(Connected Component)：无向图中的极大连通子图。</li>
+</ul>
+</li>
+<li><p><strong>强连通图</strong></p>
+<p>在有向图中，若图中任意两个顶点$v$和$w$，既有$v$到$w$的路径，又有$w$到$v$的路径，则称该图为<strong>强连通图</strong>(Strongly Connected Graph)。</p>
+<ul>
+<li><strong>强连通分量</strong>(Strongly Connected Component)：有向图中的极大强连通子图。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>生成树</p>
+<p>连通图的<strong>生成树</strong>(Spanning Tree)是含有所有顶点且只有$n-1$条边的连通子图。</p>
+</li>
+</ol>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li>《数据结构》（高教版，吴伟民，李小妹）</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Junyu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://junyuh.netlify.app/2019/01/23/Data-structures-graph/" title="数据结构-图的相关定义">https://junyuh.netlify.app/2019/01/23/Data-structures-graph/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Data-Structures/" rel="tag"><i class="fa fa-tag"></i> Data Structures</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/01/16/Data-structures-MGraph/" rel="prev" title="数据结构-邻接数组存储的图">
+                  <i class="fa fa-angle-left"></i> 数据结构-邻接数组存储的图
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/02/17/Github-git-push-problem/" rel="next" title="将本地已存在文件夹推送至远程仓库">
+                  将本地已存在文件夹推送至远程仓库 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2018 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-paw"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Junyu</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
