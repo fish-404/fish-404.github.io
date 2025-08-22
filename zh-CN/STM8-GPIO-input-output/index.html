@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.ico/apple-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.ico/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.ico/andiroid-icon-192x192.png" color="#222">
+  <link rel="manifest" href="/images/logo.ico/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="本文对STM8单片机进行简要介绍，并对GPIO输入输出模式进行介绍，对GPIO的相关寄存器配置进行介绍。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STM8-认识GPIO及输入输出模式">
+<meta property="og:url" content="https://junyuh.netlify.app/zh-CN/STM8-GPIO-input-output/index.html">
+<meta property="og:site_name" content="Junyu">
+<meta property="og:description" content="本文对STM8单片机进行简要介绍，并对GPIO输入输出模式进行介绍，对GPIO的相关寄存器配置进行介绍。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-02-19T15:01:00.000Z">
+<meta property="article:modified_time" content="2018-02-19T15:01:00.000Z">
+<meta property="article:author" content="Junyu">
+<meta property="article:tag" content="STM8">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://junyuh.netlify.app/zh-CN/STM8-GPIO-input-output/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://junyuh.netlify.app/zh-CN/STM8-GPIO-input-output/","path":"zh-CN/STM8-GPIO-input-output/","title":"STM8-认识GPIO及输入输出模式"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>STM8-认识GPIO及输入输出模式 | Junyu</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+  <script src="/js/third-party/addtoany.js" defer></script>
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Junyu</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GPIO%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">GPIO简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">输入模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%82%AC%E6%B5%AE%E8%BE%93%E5%85%A5"><span class="nav-number">2.1.</span> <span class="nav-text">悬浮输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E6%8B%89%E8%BE%93%E5%85%A5"><span class="nav-number">2.2.</span> <span class="nav-text">上拉输入</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">输出模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E6%8C%BD%E8%BE%93%E5%87%BA"><span class="nav-number">3.1.</span> <span class="nav-text">推挽输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E6%BC%8F%E8%BE%93%E5%87%BA"><span class="nav-number">3.2.</span> <span class="nav-text">开漏输出</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%EF%BC%9A%E4%BF%9D%E6%8A%A4%E4%BA%8C%E6%9E%81%E7%AE%A1"><span class="nav-number">4.</span> <span class="nav-text">补充：保护二极管</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E5%AF%84%E5%AD%98%E5%99%A8%E9%85%8D%E7%BD%AE"><span class="nav-number">5.</span> <span class="nav-text">输入输出寄存器配置</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Junyu</p>
+  <div class="site-description" itemprop="description">Be curious, be passion.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">52</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fish-404" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fish-404" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:junyu_huang@outlook.com" title="E-Mail → mailto:junyu_huang@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://junyuh.netlify.app/zh-CN/STM8-GPIO-input-output/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Junyu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Junyu">
+      <meta itemprop="description" content="Be curious, be passion.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="STM8-认识GPIO及输入输出模式 | Junyu">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          STM8-认识GPIO及输入输出模式
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-02-19 23:01:00" itemprop="dateCreated datePublished" datetime="2018-02-19T23:01:00+08:00">2018-02-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/STM8/" itemprop="url" rel="index"><span itemprop="name">STM8</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>本文对STM8单片机进行简要介绍，并对GPIO输入输出模式进行介绍，对GPIO的相关寄存器配置进行介绍。</p>
+<span id="more"></span>
+
+<p>本STM8系列实验基于STM8S105C6芯片。相关参考手册可以访问<a target="_blank" rel="noopener" href="http://www.st.com/content/st_com/en/products/microcontrollers/stm8-8-bit-mcus/stm8s-series/stm8s103-105/stm8s105c6.html">ST官网</a>获取。</p>
+<h1 id="GPIO简介"><a href="#GPIO简介" class="headerlink" title="GPIO简介"></a>GPIO简介</h1><p>GPIO(General purpose input&#x2F;output ports)，即通用输入&#x2F;输出口，用于芯片与外部的数据传输。一个I&#x2F;O端口包含8个引脚，每个引脚可以被独立配置为数字输入或数字输出，部分引脚有模拟输入，外部中断等功能。打个也许不太恰当的比方，当我们的手接近火焰时会有缩手反射的现象，这个过程需要神经中枢的参与，手就像是外设，而单片机就像是神经中枢，手对于外界火焰的感知就好比输入，而神经中枢对输入的处理就好比单片机的软件处理，神经中枢所产生的神经冲动而导致缩手反射就好比输出。一个强大的系统离不开输入输出和中枢系统的协调配合。GPIO的配置是单片机编程中最基本，最常用的配置。LQFP48(7×7)封装的STM8S105C6可用I&#x2F;O端口共38个(参考STM8&#x2F;STM32选型手册)。不同型号的STM8芯片的可用I&#x2F;O端口数量不一样，更多的I&#x2F;O端口可以连接更多的外设，但也不要盲目求多，适用即可，比所用的预留一些即可，过多也是资源的浪费。</p>
+<h1 id="输入模式"><a href="#输入模式" class="headerlink" title="输入模式"></a>输入模式</h1><p>STM8S系列芯片的GPIO输入模式有四种：</p>
+<ul>
+<li>悬浮不带中断输入</li>
+<li>悬浮中断输入</li>
+<li>上拉不带中断输入</li>
+<li>上拉中断输入</li>
+</ul>
+<p>这里中断我们暂且不提，将输入方式分为悬浮输入和上拉输入。区分方式是从GPIO的内部结构来划分。</p>
+<h2 id="悬浮输入"><a href="#悬浮输入" class="headerlink" title="悬浮输入"></a>悬浮输入</h2><p>悬浮输入，也叫浮空输入，顾名思义，即引脚悬空。这种方式的输入阻抗很高。当悬浮输入的引脚上加上信号时，单片机所得到的信号并不确定是高电平或是低电平，是一个不确定的信号。因而常用于模拟信号转换为数字信号的信号输入方式，例如ADC。</p>
+<h2 id="上拉输入"><a href="#上拉输入" class="headerlink" title="上拉输入"></a>上拉输入</h2><p>上拉输入也很好理解，即在引脚处接一个上拉电阻到内部电源。这种方式的优点是可以增强驱动能力，增强抗干扰性，同时上拉电阻也起到了一个限流的作用。根据ST官方提供的STM8S105XX系列数据手册，内部电源$ V_DD $ 通常为5.0V，在此条件下，上拉电阻的取值最小为30kΩ，最大为80kΩ，典型值为55kΩ（不知道为什么中文版的数据手册典型值为45kΩ）。可以计算得出此时电流的大小是μA级别，这是因为我们的上拉电阻取值很大，所以限流作用就相对较小，这也被称之为弱上拉输入模式，即Weak Pull-up(WPU)。</p>
+<h1 id="输出模式"><a href="#输出模式" class="headerlink" title="输出模式"></a>输出模式</h1><p>STM8S系列输出模式有两种：</p>
+<ul>
+<li>推挽输出</li>
+<li>开漏输出</li>
+</ul>
+<h2 id="推挽输出"><a href="#推挽输出" class="headerlink" title="推挽输出"></a>推挽输出</h2><p>推挽输出(Push-pull output)，也称为互补输出，推拉式输出。推挽输出模式导通损耗小，效率高。在此模式下，N-MOS、P-MOS两个MOS均被接入电路，通过输出控制寄存器控制两个MOS管的导通或关闭。正常工作状态下，仅有一个MOS管导通，另一个MOS管截止，从而可以自如地控制高低数字信号的输出。</p>
+<h2 id="开漏输出"><a href="#开漏输出" class="headerlink" title="开漏输出"></a>开漏输出</h2><p>开漏输出(Open drain output)，有时简称为OD输出。相比推挽输出，GPIO结构中的P-MOS管没有被接入，无法输出高电平状态，需要外接上拉电阻。在没有外接上拉电阻，引脚悬空的状态下，端口引脚状态将不确定。上拉电阻阻值的大小会引起输出信号上升沿时间的变化，上拉电阻越小，上升沿时间越短，速度越快。开漏输出模式吸收电流能力强（一般在20mA以内），适用于电流型驱动。用作电流型驱动时，驱动电流由外部电源经上拉电阻给引脚连接的电路或器件，单片机内部几乎不需要提供驱动电流，减少了单片机自身功耗。利用开漏输出模式通过上拉电阻外接不同的电源还可以实现电平信号标准的转换。将多个开漏模式引脚连在一起，可以构成线与结构。</p>
+<p>需要注意的是，有部分引脚具有“真正的”开漏输出功能。所谓“真正的”开漏输出指的是除了无P-MOS以外，也没有连接电源的保护二极管，即不存在任何电路连接到内部电源。在此模式下，必须加上拉电阻。</p>
+<h1 id="补充：保护二极管"><a href="#补充：保护二极管" class="headerlink" title="补充：保护二极管"></a>补充：保护二极管</h1><p>GPIO引脚内部通常还会有一对反向连接电源地的保护二极管。以防止外部管脚输入电压过高或过低损坏引脚电路。通常为锗二极管，肖特基势垒二极管。</p>
+<h1 id="输入输出寄存器配置"><a href="#输入输出寄存器配置" class="headerlink" title="输入输出寄存器配置"></a>输入输出寄存器配置</h1><p>简单地了解了输入输出模式，接下来我们将介绍如何配置相应的输入输出模式。查阅对应芯片系列的Reference manual（建议看原版，或者中英对照），查阅GPIO章节，与之相关的几个寄存器分别是<code>Px_DDR</code>,<code>Px_IDR</code>,<code>Px_ODR</code>,<code>Px_CR1</code>,<code>Px_CR2</code>，手册中详细地描述了每个寄存器的配置过程及功能。</p>
+<ul>
+<li>输出数据寄存器        ODR</li>
+<li>数据方向寄存器               DDR</li>
+<li>控制寄存器                      CR1</li>
+<li>控制寄存器                      CR2</li>
+<li>输入寄存器                       IDR</li>
+</ul>
+<p>如果我们需要IO输出一个低电平，需要如何操作呢？</p>
+<ul>
+<li>将DDR置1选择输出模式</li>
+<li>配置CR1,CR2选择输出模式<ul>
+<li>CR1：选择开漏输出或是推挽输出（有些翻译为上拉输出）</li>
+<li>CR2：配置输出速率</li>
+</ul>
+</li>
+<li>写ODR寄存器，STM8将通过锁存器输出对应的数值到I&#x2F;O</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Junyu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://junyuh.netlify.app/zh-CN/STM8-GPIO-input-output/" title="STM8-认识GPIO及输入输出模式">https://junyuh.netlify.app/zh-CN/STM8-GPIO-input-output/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/STM8/" rel="tag"><i class="fa fa-tag"></i> STM8</a>
+          </div>
+
+        
+  <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_douban"></a>
+      <a class="a2a_button_wechat"></a>
+      <a class="a2a_button_evernote"></a>
+      <a class="a2a_button_pocket"></a>
+  </div>
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/zh-CN/LaTex-use-mcmthesis-write/" rel="prev" title="LaTeX-使用mcmthesis模板写作美赛论文">
+                  <i class="fa fa-angle-left"></i> LaTeX-使用mcmthesis模板写作美赛论文
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/zh-CN/Blog-themes-config/" rel="next" title="Blog-NexT主题配置文件配置">
+                  Blog-NexT主题配置文件配置 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+  <div class="languages">
+    <label class="lang-select-label">
+      <i class="fa fa-language"></i>
+      <span>简体中文</span>
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </label>
+    <select class="lang-select" data-canonical="" aria-label="选择语言">
+      
+        <option value="zh-CN" data-href="/zh-CN/STM8-GPIO-input-output/" selected="">
+          简体中文
+        </option>
+      
+        <option value="en" data-href="/en/STM8-GPIO-input-output/" selected="">
+          English
+        </option>
+      
+    </select>
+  </div>
+
+  <div class="copyright">
+    &copy; 2018 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-paw"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Junyu</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
