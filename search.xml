@@ -406,6 +406,7 @@
 <li><a href="http://mashirosorata.vicp.io/HEXO-NEXT%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE.html">HEXO+NEXT主题个性化配置|SORA</a></li>
 <li><a href="https://theme-next.js.org/docs/third-party-services/search-services#Local-Search">Search Services | NexT</a></li>
 <li><a href="https://theme-next.js.org/docs/theme-settings/custom-pages.html?highlight=404#Custom-404-Page">Custom Pages | NexT</a></li>
+<li><a href="https://answers.netlify.com/t/custom-404-page-handling/76745/7">Custom 404 page handling - Support - Netlify Support Forums</a></li>
 </ul>
 ]]></content>
       <categories>
@@ -4701,5 +4702,66 @@
       <tags>
         <tag>Nginx</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hexo NexT 多语言支持</title>
+    <url>/zh-CN/Blog-hexo-next-i18n-support/</url>
+    <content><![CDATA[<p>本文详述如何配置 Hexo NexT 多语言支持。</p>
+<span id="more"></span>
+
+<p>Hexo 的默认 Index 生成插件 <a href="https://github.com/hexojs/hexo-generator-index">hexojs&#x2F;hexo-generator-index: Index generator plugin for Hexo.</a> 目前不支持生成多语言版本的 Index 。搜索解决方案的时候有发现这个插件 <a href="https://github.com/xcatliu/hexo-generator-index-i18n">xcatliu&#x2F;hexo-generator-index-i18n: I18n index generator plugin for Hexo</a>，它可以为各个语言生成自己的 Index，但如果需要为默认首页设置默认语言则与官方的 Index 插件不兼容，是在早期版本的基础上开发的，缺少<code>hidden</code>, <code>top</code> 的特性。因此我把这两个插件进行了结合，已经提交 <a href="https://github.com/hexojs/hexo-generator-index/pull/143">PR</a>，未被合并，需要多语言的可以参考以下设置。</p>
+<h1 id="使用本地插件生成-index"><a href="#使用本地插件生成-index" class="headerlink" title="使用本地插件生成 index"></a>使用本地插件生成 index</h1><ol>
+<li>新建插件目录</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p plugins/hexo-generator-index</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>复制原来的插件到本地</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> -r node_modules/hexo-generator-index/* plugins/hexo-generator-index/</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>修改 <code>package.json</code> 引用路径</li>
+</ol>
+<figure class="highlight diff"><figcaption><span>package.json</span></figcaption><table><tr><td class="code"><pre><span class="line">&quot;dependencies&quot;: &#123;</span><br><span class="line"><span class="deletion">-     &quot;hexo-generator-index&quot;: &quot;^4.0.0&quot;,</span></span><br><span class="line">    ……</span><br><span class="line"><span class="addition">+     &quot;hexo-generator-index&quot;: &quot;file:./plugins/hexo-generator-index&quot;,</span></span><br><span class="line">    ……</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>修改插件代码，需要修改两个地方，一个是 <code>index.js</code>， 一个是 <code>lib/generator.js</code></li>
+</ol>
+<figure class="highlight diff"><figcaption><span>index.js</span></figcaption><table><tr><td class="code"><pre><span class="line">&#x27;use strict&#x27;;</span><br><span class="line"></span><br><span class="line">hexo.config.index_generator = Object.assign(&#123;</span><br><span class="line">  per_page: typeof hexo.config.per_page <span class="comment">=== &#x27;undefined&#x27; ? 10 : hexo.config.per_page,</span></span><br><span class="line">  order_by: &#x27;-date&#x27;,</span><br><span class="line">  layout: [&#x27;index&#x27;, &#x27;archive&#x27;],</span><br><span class="line"><span class="addition">+  single_lang_index: false</span></span><br><span class="line">&#125;, hexo.config.index_generator);</span><br><span class="line"></span><br><span class="line">hexo.extend.generator.register(&#x27;index&#x27;, require(&#x27;./lib/generator&#x27;));</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><figcaption><span>lib/generator.js</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> pagination = <span class="built_in">require</span>(<span class="string">&#x27;hexo-pagination&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">generateIndexPage</span>(<span class="params">indexPath, posts, config</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> paginationDir = config.<span class="property">index_generator</span>.<span class="property">pagination_dir</span> || config.<span class="property">pagination_dir</span> || <span class="string">&#x27;page&#x27;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">pagination</span>(indexPath, posts, &#123;</span><br><span class="line">    <span class="attr">perPage</span>: config.<span class="property">index_generator</span>.<span class="property">per_page</span>,</span><br><span class="line">    <span class="attr">layout</span>: config.<span class="property">index_generator</span>.<span class="property">layout</span> || [<span class="string">&#x27;index&#x27;</span>, <span class="string">&#x27;archive&#x27;</span>],</span><br><span class="line">    <span class="attr">format</span>: paginationDir + <span class="string">&#x27;/%d/&#x27;</span>,</span><br><span class="line">    <span class="attr">data</span>: &#123;</span><br><span class="line">      <span class="attr">__index</span>: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="keyword">function</span>(<span class="params">locals</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> config = <span class="variable language_">this</span>.<span class="property">config</span>;</span><br><span class="line">  <span class="keyword">const</span> posts = locals.<span class="property">posts</span>.<span class="title function_">filter</span>(<span class="function"><span class="params">post</span> =&gt;</span> !post.<span class="property">hidden</span>).<span class="title function_">sort</span>(config.<span class="property">index_generator</span>.<span class="property">order_by</span>);</span><br><span class="line"></span><br><span class="line">  posts.<span class="property">data</span>.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> (b.<span class="property">sticky</span> || <span class="number">0</span>) - (a.<span class="property">sticky</span> || <span class="number">0</span>));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> indexPath = config.<span class="property">index_generator</span>.<span class="property">path</span> || <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">  <span class="keyword">const</span> langs = [].<span class="title function_">concat</span>(config.<span class="property">language</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (langs.<span class="property">length</span> &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">generateIndexPage</span>(indexPath, posts, config);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Generate default index page</span></span><br><span class="line">  <span class="keyword">let</span> indexPages = <span class="title function_">generateIndexPage</span>(</span><br><span class="line">    indexPath,</span><br><span class="line">    config.<span class="property">index_generator</span>.<span class="property">single_lang_index</span> ? posts.<span class="title function_">filter</span>(<span class="function"><span class="params">post</span> =&gt;</span> post.<span class="property">lang</span> === langs[<span class="number">0</span>]) : posts,</span><br><span class="line">    config</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Generate index pages for each language</span></span><br><span class="line">  indexPages = [].<span class="title function_">concat</span>(</span><br><span class="line">    indexPages,</span><br><span class="line">    ...langs.<span class="title function_">map</span>(<span class="function"><span class="params">lang</span> =&gt;</span> <span class="title function_">generateIndexPage</span>(</span><br><span class="line">      path.<span class="title function_">join</span>(lang, indexPath),</span><br><span class="line">      posts.<span class="title function_">filter</span>(<span class="function"><span class="params">post</span> =&gt;</span> post.<span class="property">lang</span> === lang),</span><br><span class="line">      config</span><br><span class="line">    ))</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> indexPages;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>在 <code>_config.yml</code> 中添加多语言配置，<code>single_lang_index</code> 为 true 时，首页只生成第一个语言的文章，默认配置则为 <code>false</code></li>
+</ol>
+<figure class="highlight nestedtext"><table><tr><td class="code"><pre><span class="line"><span class="attribute">language</span><span class="punctuation">: </span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">zh-CN</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">en</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">permalink</span><span class="punctuation">:</span> <span class="string">:lang/:title/</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">new_post_name</span><span class="punctuation">:</span> <span class="string">:lang/:title.md </span></span><br><span class="line"></span><br><span class="line"><span class="attribute">index_generator</span><span class="punctuation">:</span></span><br><span class="line">  <span class="attribute">path</span><span class="punctuation">:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="attribute">per_page</span><span class="punctuation">:</span> <span class="string">7</span></span><br><span class="line">  <span class="attribute">order_by</span><span class="punctuation">:</span> <span class="string">-date</span></span><br><span class="line">  <span class="attribute">single_lang_index</span><span class="punctuation">:</span> <span class="string">true</span></span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>配置<code>_config.next.yml</code></li>
+</ol>
+<figure class="highlight nix"><table><tr><td class="code"><pre><span class="line"><span class="params">language_switcher:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li>post 文章结构如下：</li>
+</ol>
+<figure class="highlight nix"><table><tr><td class="code"><pre><span class="line">└── workspace<span class="symbol">/</span></span><br><span class="line">    └── source<span class="symbol">/</span></span><br><span class="line">        ├── _posts<span class="symbol">/</span></span><br><span class="line">        │   ├── zh-CN<span class="symbol">/</span></span><br><span class="line">        │   │   ├── welcome.md</span><br><span class="line">        │   │   ├── blogpost.md</span><br><span class="line">        │   │   └── ...</span><br><span class="line">        │   └── en<span class="symbol">/</span></span><br><span class="line">        │       ├── welcome.md</span><br><span class="line">        │       ├── blogpost.md</span><br><span class="line">        │       └── ...</span><br></pre></td></tr></table></figure>
+<p>配置完成后，就可以对应生成 <code>/</code> 的默认主页，<code>/en</code> 只生成英语文章的 index 页， <code>/zh-CN</code> 只生成中文文章的 index 页。</p>
+<h1 id="修改-NexT-的语言转换器配置"><a href="#修改-NexT-的语言转换器配置" class="headerlink" title="修改 NexT 的语言转换器配置"></a>修改 NexT 的语言转换器配置</h1><p>NexT 的语言转换器默认行为是，转换语言如果是到默认语言，也就是第一个语言的时候，不会带 <code>:lang</code> 路径，这样如果按照上面的 <code>permalink</code>配置会导致切换语言时路径丢失。我们使用 <code>patch-package</code> 来实现变更。</p>
+<ol>
+<li>安装 <code>patch-package</code></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install patch-package --save-dev</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>修改 <code>node_modules/hexo-theme-next/scripts/helpers/engine.js</code> 文件</li>
+</ol>
+<figure class="highlight diff"><figcaption><span>engine.js</span></figcaption><table><tr><td class="code"><pre><span class="line">hexo.extend.helper.register(&#x27;i18n_path&#x27;, function(language) &#123;</span><br><span class="line">  const &#123; path, lang &#125; = this.page;</span><br><span class="line">  const base = path.startsWith(lang) ? path.slice(lang.length + 1) : path;</span><br><span class="line"><span class="deletion">- return this.url_for(`$&#123;this.languages.indexOf(language) === 0 ? &#x27;&#x27; : &#x27;/&#x27; + language&#125;/$&#123;base&#125;`);</span></span><br><span class="line"><span class="addition">+ return this.url_for(`$&#123;&#x27;/&#x27; + language&#125;/$&#123;base&#125;`);</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>创建补丁</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">npx patch-package hexo-theme-next</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>应用补丁：</li>
+</ol>
+<figure class="highlight diff"><figcaption><span>packge.json</span></figcaption><table><tr><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">    ……</span><br><span class="line"><span class="addition">+     &quot;postinstall&quot;: &quot;patch-package&quot;</span></span><br><span class="line">    ……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样就可实现多语言的索引页和多语言切换了，建议还要加上404页面的配置，以免语言切换时找不到页面。</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
   </entry>
 </search>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.ico/apple-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.ico/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.ico/andiroid-icon-192x192.png" color="#222">
+  <link rel="manifest" href="/images/logo.ico/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="本文详述如何配置 Hexo NexT 多语言支持。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo NexT 多语言支持">
+<meta property="og:url" content="https://junyuh.netlify.app/zh-CN/Blog-hexo-next-i18n-support/index.html">
+<meta property="og:site_name" content="Junyu">
+<meta property="og:description" content="本文详述如何配置 Hexo NexT 多语言支持。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-08-30T16:00:00.000Z">
+<meta property="article:author" content="Junyu">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://junyuh.netlify.app/zh-CN/Blog-hexo-next-i18n-support/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://junyuh.netlify.app/zh-CN/Blog-hexo-next-i18n-support/","path":"zh-CN/Blog-hexo-next-i18n-support/","title":"Hexo NexT 多语言支持"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Hexo NexT 多语言支持 | Junyu</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+  <script src="/js/third-party/addtoany.js" defer></script>
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Junyu</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%9C%AC%E5%9C%B0%E6%8F%92%E4%BB%B6%E7%94%9F%E6%88%90-index"><span class="nav-number">1.</span> <span class="nav-text">使用本地插件生成 index</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-NexT-%E7%9A%84%E8%AF%AD%E8%A8%80%E8%BD%AC%E6%8D%A2%E5%99%A8%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">修改 NexT 的语言转换器配置</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Junyu</p>
+  <div class="site-description" itemprop="description">Be curious, be passionate.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fish-404" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fish-404" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:junyu_huang@outlook.com" title="E-Mail → mailto:junyu_huang@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://junyuh.netlify.app/zh-CN/Blog-hexo-next-i18n-support/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Junyu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Junyu">
+      <meta itemprop="description" content="Be curious, be passionate.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Hexo NexT 多语言支持 | Junyu">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo NexT 多语言支持
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-08-31 00:00:00" itemprop="dateCreated datePublished" datetime="2025-08-31T00:00:00+08:00">2025-08-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Blog/" itemprop="url" rel="index"><span itemprop="name">Blog</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>本文详述如何配置 Hexo NexT 多语言支持。</p>
+<span id="more"></span>
+
+<p>Hexo 的默认 Index 生成插件 <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-generator-index">hexojs&#x2F;hexo-generator-index: Index generator plugin for Hexo.</a> 目前不支持生成多语言版本的 Index 。搜索解决方案的时候有发现这个插件 <a target="_blank" rel="noopener" href="https://github.com/xcatliu/hexo-generator-index-i18n">xcatliu&#x2F;hexo-generator-index-i18n: I18n index generator plugin for Hexo</a>，它可以为各个语言生成自己的 Index，但如果需要为默认首页设置默认语言则与官方的 Index 插件不兼容，是在早期版本的基础上开发的，缺少<code>hidden</code>, <code>top</code> 的特性。因此我把这两个插件进行了结合，已经提交 <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-generator-index/pull/143">PR</a>，未被合并，需要多语言的可以参考以下设置。</p>
+<h1 id="使用本地插件生成-index"><a href="#使用本地插件生成-index" class="headerlink" title="使用本地插件生成 index"></a>使用本地插件生成 index</h1><ol>
+<li>新建插件目录</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p plugins/hexo-generator-index</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>复制原来的插件到本地</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> -r node_modules/hexo-generator-index/* plugins/hexo-generator-index/</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>修改 <code>package.json</code> 引用路径</li>
+</ol>
+<figure class="highlight diff"><figcaption><span>package.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;dependencies&quot;: &#123;</span><br><span class="line"><span class="deletion">-     &quot;hexo-generator-index&quot;: &quot;^4.0.0&quot;,</span></span><br><span class="line">    ……</span><br><span class="line"><span class="addition">+     &quot;hexo-generator-index&quot;: &quot;file:./plugins/hexo-generator-index&quot;,</span></span><br><span class="line">    ……</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>修改插件代码，需要修改两个地方，一个是 <code>index.js</code>， 一个是 <code>lib/generator.js</code></li>
+</ol>
+<figure class="highlight diff"><figcaption><span>index.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x27;use strict&#x27;;</span><br><span class="line"></span><br><span class="line">hexo.config.index_generator = Object.assign(&#123;</span><br><span class="line">  per_page: typeof hexo.config.per_page <span class="comment">=== &#x27;undefined&#x27; ? 10 : hexo.config.per_page,</span></span><br><span class="line">  order_by: &#x27;-date&#x27;,</span><br><span class="line">  layout: [&#x27;index&#x27;, &#x27;archive&#x27;],</span><br><span class="line"><span class="addition">+  single_lang_index: false</span></span><br><span class="line">&#125;, hexo.config.index_generator);</span><br><span class="line"></span><br><span class="line">hexo.extend.generator.register(&#x27;index&#x27;, require(&#x27;./lib/generator&#x27;));</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><figcaption><span>lib/generator.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> pagination = <span class="built_in">require</span>(<span class="string">&#x27;hexo-pagination&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">generateIndexPage</span>(<span class="params">indexPath, posts, config</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> paginationDir = config.<span class="property">index_generator</span>.<span class="property">pagination_dir</span> || config.<span class="property">pagination_dir</span> || <span class="string">&#x27;page&#x27;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">pagination</span>(indexPath, posts, &#123;</span><br><span class="line">    <span class="attr">perPage</span>: config.<span class="property">index_generator</span>.<span class="property">per_page</span>,</span><br><span class="line">    <span class="attr">layout</span>: config.<span class="property">index_generator</span>.<span class="property">layout</span> || [<span class="string">&#x27;index&#x27;</span>, <span class="string">&#x27;archive&#x27;</span>],</span><br><span class="line">    <span class="attr">format</span>: paginationDir + <span class="string">&#x27;/%d/&#x27;</span>,</span><br><span class="line">    <span class="attr">data</span>: &#123;</span><br><span class="line">      <span class="attr">__index</span>: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="keyword">function</span>(<span class="params">locals</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> config = <span class="variable language_">this</span>.<span class="property">config</span>;</span><br><span class="line">  <span class="keyword">const</span> posts = locals.<span class="property">posts</span>.<span class="title function_">filter</span>(<span class="function"><span class="params">post</span> =&gt;</span> !post.<span class="property">hidden</span>).<span class="title function_">sort</span>(config.<span class="property">index_generator</span>.<span class="property">order_by</span>);</span><br><span class="line"></span><br><span class="line">  posts.<span class="property">data</span>.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> (b.<span class="property">sticky</span> || <span class="number">0</span>) - (a.<span class="property">sticky</span> || <span class="number">0</span>));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> indexPath = config.<span class="property">index_generator</span>.<span class="property">path</span> || <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">  <span class="keyword">const</span> langs = [].<span class="title function_">concat</span>(config.<span class="property">language</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (langs.<span class="property">length</span> &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">generateIndexPage</span>(indexPath, posts, config);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Generate default index page</span></span><br><span class="line">  <span class="keyword">let</span> indexPages = <span class="title function_">generateIndexPage</span>(</span><br><span class="line">    indexPath,</span><br><span class="line">    config.<span class="property">index_generator</span>.<span class="property">single_lang_index</span> ? posts.<span class="title function_">filter</span>(<span class="function"><span class="params">post</span> =&gt;</span> post.<span class="property">lang</span> === langs[<span class="number">0</span>]) : posts,</span><br><span class="line">    config</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Generate index pages for each language</span></span><br><span class="line">  indexPages = [].<span class="title function_">concat</span>(</span><br><span class="line">    indexPages,</span><br><span class="line">    ...langs.<span class="title function_">map</span>(<span class="function"><span class="params">lang</span> =&gt;</span> <span class="title function_">generateIndexPage</span>(</span><br><span class="line">      path.<span class="title function_">join</span>(lang, indexPath),</span><br><span class="line">      posts.<span class="title function_">filter</span>(<span class="function"><span class="params">post</span> =&gt;</span> post.<span class="property">lang</span> === lang),</span><br><span class="line">      config</span><br><span class="line">    ))</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> indexPages;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>在 <code>_config.yml</code> 中添加多语言配置，<code>single_lang_index</code> 为 true 时，首页只生成第一个语言的文章，默认配置则为 <code>false</code></li>
+</ol>
+<figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">language</span><span class="punctuation">: </span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">zh-CN</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">en</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">permalink</span><span class="punctuation">:</span> <span class="string">:lang/:title/</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">new_post_name</span><span class="punctuation">:</span> <span class="string">:lang/:title.md </span></span><br><span class="line"></span><br><span class="line"><span class="attribute">index_generator</span><span class="punctuation">:</span></span><br><span class="line">  <span class="attribute">path</span><span class="punctuation">:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="attribute">per_page</span><span class="punctuation">:</span> <span class="string">7</span></span><br><span class="line">  <span class="attribute">order_by</span><span class="punctuation">:</span> <span class="string">-date</span></span><br><span class="line">  <span class="attribute">single_lang_index</span><span class="punctuation">:</span> <span class="string">true</span></span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>配置<code>_config.next.yml</code></li>
+</ol>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">language_switcher:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li>post 文章结构如下：</li>
+</ol>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">└── workspace<span class="symbol">/</span></span><br><span class="line">    └── source<span class="symbol">/</span></span><br><span class="line">        ├── _posts<span class="symbol">/</span></span><br><span class="line">        │   ├── zh-CN<span class="symbol">/</span></span><br><span class="line">        │   │   ├── welcome.md</span><br><span class="line">        │   │   ├── blogpost.md</span><br><span class="line">        │   │   └── ...</span><br><span class="line">        │   └── en<span class="symbol">/</span></span><br><span class="line">        │       ├── welcome.md</span><br><span class="line">        │       ├── blogpost.md</span><br><span class="line">        │       └── ...</span><br></pre></td></tr></table></figure>
+<p>配置完成后，就可以对应生成 <code>/</code> 的默认主页，<code>/en</code> 只生成英语文章的 index 页， <code>/zh-CN</code> 只生成中文文章的 index 页。</p>
+<h1 id="修改-NexT-的语言转换器配置"><a href="#修改-NexT-的语言转换器配置" class="headerlink" title="修改 NexT 的语言转换器配置"></a>修改 NexT 的语言转换器配置</h1><p>NexT 的语言转换器默认行为是，转换语言如果是到默认语言，也就是第一个语言的时候，不会带 <code>:lang</code> 路径，这样如果按照上面的 <code>permalink</code>配置会导致切换语言时路径丢失。我们使用 <code>patch-package</code> 来实现变更。</p>
+<ol>
+<li>安装 <code>patch-package</code></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install patch-package --save-dev</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>修改 <code>node_modules/hexo-theme-next/scripts/helpers/engine.js</code> 文件</li>
+</ol>
+<figure class="highlight diff"><figcaption><span>engine.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo.extend.helper.register(&#x27;i18n_path&#x27;, function(language) &#123;</span><br><span class="line">  const &#123; path, lang &#125; = this.page;</span><br><span class="line">  const base = path.startsWith(lang) ? path.slice(lang.length + 1) : path;</span><br><span class="line"><span class="deletion">- return this.url_for(`$&#123;this.languages.indexOf(language) === 0 ? &#x27;&#x27; : &#x27;/&#x27; + language&#125;/$&#123;base&#125;`);</span></span><br><span class="line"><span class="addition">+ return this.url_for(`$&#123;&#x27;/&#x27; + language&#125;/$&#123;base&#125;`);</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>创建补丁</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx patch-package hexo-theme-next</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>应用补丁：</li>
+</ol>
+<figure class="highlight diff"><figcaption><span>packge.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">    ……</span><br><span class="line"><span class="addition">+     &quot;postinstall&quot;: &quot;patch-package&quot;</span></span><br><span class="line">    ……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样就可实现多语言的索引页和多语言切换了，建议还要加上404页面的配置，以免语言切换时找不到页面。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Junyu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://junyuh.netlify.app/zh-CN/Blog-hexo-next-i18n-support/" title="Hexo NexT 多语言支持">https://junyuh.netlify.app/zh-CN/Blog-hexo-next-i18n-support/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+  <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_douban"></a>
+      <a class="a2a_button_wechat"></a>
+      <a class="a2a_button_evernote"></a>
+      <a class="a2a_button_pocket"></a>
+  </div>
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/en/tomcat-set-title/" rel="prev" title="Tomcat set Windows cmd title">
+                  <i class="fa fa-angle-left"></i> Tomcat set Windows cmd title
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+  <div class="languages">
+    <label class="lang-select-label">
+      <i class="fa fa-language"></i>
+      <span>简体中文</span>
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </label>
+    <select class="lang-select" data-canonical="" aria-label="选择语言">
+      
+        <option value="zh-CN" data-href="/zh-CN/Blog-hexo-next-i18n-support/" selected="">
+          简体中文
+        </option>
+      
+        <option value="en" data-href="/en/Blog-hexo-next-i18n-support/" selected="">
+          English
+        </option>
+      
+    </select>
+  </div>
+
+  <div class="copyright">
+    &copy; 2018 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-paw"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Junyu</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
