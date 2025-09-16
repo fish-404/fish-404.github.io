@@ -15,10 +15,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/yello/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":"ture","motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="觉得官方的主题不太好看，Github上，Hexo官网上都有许多可供选择的主题，我这里使用NexT主题，本文介绍了修改主题的方法以及站点配置文件_config.yml的一些相关配置。">
 <meta property="og:type" content="article">
@@ -31,8 +33,8 @@
 <meta property="article:modified_time" content="2019-02-05T16:00:00.000Z">
 <meta property="article:author" content="Junyu">
 <meta property="article:tag" content="Blog">
-<meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="NexT">
+<meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
 
 
@@ -44,6 +46,9 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>Blog-修改站点主题以及站点配置文件 | Junyu</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-498SG67TB7"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-498SG67TB7","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
 
@@ -63,12 +68,19 @@
 
 
 
+  <script src="/js/third-party/pace.js" defer></script>
 
   <script src="/js/third-party/addtoany.js" defer></script>
 
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
 
 
 
@@ -110,7 +122,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -161,7 +173,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%94%B9%E5%8F%98%E4%B8%BB%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">改变主题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E4%B8%BB%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">下载主题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">站点配置文件的设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F"><span class="nav-number">2.1.</span> <span class="nav-text">设置个人头像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%AB%99%E7%82%B9%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-number">2.2.</span> <span class="nav-text">设置站点的基本信息</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%BD%AE%E9%A1%B6%E6%96%87%E7%AB%A0"><span class="nav-number">3.</span> <span class="nav-text">设置置顶文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E7%AB%A0%E9%93%BE%E6%8E%A5%E6%A0%BC%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">修改文章链接格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">改变主题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E4%B8%BB%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">下载主题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">站点配置文件的设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F"><span class="nav-number">2.1.</span> <span class="nav-text">设置个人头像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%AB%99%E7%82%B9%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-number">2.2.</span> <span class="nav-text">设置站点的基本信息</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">设置置顶文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">修改文章链接格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -195,9 +207,12 @@
       <span class="links-of-author-item">
         <a href="mailto:junyu_huang@outlook.com" title="E-Mail → mailto:junyu_huang@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/8257973" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;8257973" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i></a>
+      </span>
   </div>
   <div class="cc-license animated" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
 
         </div>
@@ -280,29 +295,34 @@
     
     <div class="post-body" itemprop="articleBody"><p>觉得官方的主题不太好看，Github上，Hexo官网上都有许多可供选择的主题，我这里使用<a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/">NexT</a>主题，本文介绍了修改主题的方法以及站点配置文件<code>_config.yml</code>的一些相关配置。</p>
 <span id="more"></span>
-
-<h1 id="改变主题"><a href="#改变主题" class="headerlink" title="改变主题"></a>改变主题</h1><h2 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h2><p>新版本的NexT有两种下载方式：</p>
+<h1>改变主题</h1>
+<h2 id="下载主题">下载主题</h2>
+<p>新版本的NexT有两种下载方式：</p>
 <ol>
 <li>将需要的主题从Github下载（clone）到你的站点目录中</li>
 <li>使用 npm 安装</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next&lt;</span></span><br></pre></td></tr></table></figure>
-
-<p>#安装主题<br>npm install hexo-theme-next@latest</p>
+<p>#安装主题<br>
+npm install hexo-theme-next@latest</p>
 <figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 修改站点配置文件</span><br><span class="line"></span><br><span class="line">修改你的站点配置文件`_config.yml`，找到如下字段，将`theme`后面的主题修改为`next`</span><br><span class="line"></span><br><span class="line">```yaml</span><br><span class="line"># Extensions</span><br><span class="line">## Plugins: https:<span class="comment">//hexo.io/plugins/</span></span><br><span class="line">## Themes: https:<span class="comment">//hexo.io/themes/</span></span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-
-<h1 id="站点配置文件的设置"><a href="#站点配置文件的设置" class="headerlink" title="站点配置文件的设置"></a>站点配置文件的设置</h1><h2 id="设置个人头像"><a href="#设置个人头像" class="headerlink" title="设置个人头像"></a>设置个人头像</h2><p>个人头像将显示在侧边栏中。在<code>.\source</code>下创建一个<code>images</code>文件夹，将想要设置为头像的图片放于此文件夹中。修改<code>_config.yml</code>，在其中添加如下代码：</p>
+<h1>站点配置文件的设置</h1>
+<h2 id="设置个人头像">设置个人头像</h2>
+<p>个人头像将显示在侧边栏中。在<code>.\source</code>下创建一个<code>images</code>文件夹，将想要设置为头像的图片放于此文件夹中。修改<code>_config.yml</code>，在其中添加如下代码：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Head portrait</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">/images/cat.jpg</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="设置站点的基本信息"><a href="#设置站点的基本信息" class="headerlink" title="设置站点的基本信息"></a>设置站点的基本信息</h2><p>在<code>_config.yml</code>中找到如下字段，配置个人站点的基本信息，下面的出现位置举例基于NexT主题。</p>
+<h2 id="设置站点的基本信息">设置站点的基本信息</h2>
+<p>在<code>_config.yml</code>中找到如下字段，配置个人站点的基本信息，下面的出现位置举例基于NexT主题。</p>
  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">（此处为站点名称，即左上角的名称）</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">（站点描述，将出现在侧边栏头像下方）</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">（作者，将出现在侧边栏头像下方，如果没有修改主题配置文件，同时会出现在网页下方）</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">（界面语言，简体字为zh-Hans）</span></span><br></pre></td></tr></table></figure>
-<h1 id="设置置顶文章"><a href="#设置置顶文章" class="headerlink" title="设置置顶文章"></a>设置置顶文章</h1><p>找到文件<code>node_modules\hexo-generator-index\lib\generator.js</code>，将文件内容修改为：</p>
+<h1>设置置顶文章</h1>
+<p>找到文件<code>node_modules\hexo-generator-index\lib\generator.js</code>，将文件内容修改为：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&#x27;use strict&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> pagination = <span class="built_in">require</span>(<span class="string">&#x27;hexo-pagination&#x27;</span>);</span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="keyword">function</span>(<span class="params">locals</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> config = <span class="variable language_">this</span>.<span class="property">config</span>;</span><br><span class="line">  <span class="keyword">var</span> posts = locals.<span class="property">posts</span>;</span><br><span class="line">    posts.<span class="property">data</span> = posts.<span class="property">data</span>.<span class="title function_">sort</span>(<span class="keyword">function</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(a.<span class="property">top</span> &amp;&amp; b.<span class="property">top</span>) &#123; <span class="comment">// 两篇文章top都有定义</span></span><br><span class="line">            <span class="keyword">if</span>(a.<span class="property">top</span> == b.<span class="property">top</span>) <span class="keyword">return</span> b.<span class="property">date</span> - a.<span class="property">date</span>; <span class="comment">// 若top值一样则按照文章日期降序排</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">return</span> b.<span class="property">top</span> - a.<span class="property">top</span>; <span class="comment">// 否则按照top值降序排</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(a.<span class="property">top</span> &amp;&amp; !b.<span class="property">top</span>) &#123; <span class="comment">// 以下是只有一篇文章top有定义，那么将有top的排在前面</span></span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!a.<span class="property">top</span> &amp;&amp; b.<span class="property">top</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> b.<span class="property">date</span> - a.<span class="property">date</span>; <span class="comment">// 都没定义按照文章日期降序排</span></span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="keyword">var</span> paginationDir = config.<span class="property">pagination_dir</span> || <span class="string">&#x27;page&#x27;</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">pagination</span>(<span class="string">&#x27;&#x27;</span>, posts, &#123;</span><br><span class="line">    <span class="attr">perPage</span>: config.<span class="property">index_generator</span>.<span class="property">per_page</span>,</span><br><span class="line">    <span class="attr">layout</span>: [<span class="string">&#x27;index&#x27;</span>, <span class="string">&#x27;archive&#x27;</span>],</span><br><span class="line">    <span class="attr">format</span>: paginationDir + <span class="string">&#x27;/%d/&#x27;</span>,</span><br><span class="line">    <span class="attr">data</span>: &#123;</span><br><span class="line">      <span class="attr">__index</span>: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>发布时需要置顶的文章在前面格式处配置，top值越大越前面:</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"><span class="section">top: 7</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-<h1 id="修改文章链接格式"><a href="#修改文章链接格式" class="headerlink" title="修改文章链接格式"></a>修改文章链接格式</h1><p>修改<code>permalink</code>样式可以改变自动生成的博文链接样式：</p>
+<h1>修改文章链接格式</h1>
+<p>修改<code>permalink</code>样式可以改变自动生成的博文链接样式：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as &#x27;http://yoursite.com/child&#x27; and root as &#x27;/child/&#x27;</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://yoursite.com</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:title/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1>参考资料</h1>
+<ul>
 <li><a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/getting-started.html">开始使用-NexT使用文档</a></li>
 <li><a target="_blank" rel="noopener" href="http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html">hexo的next主题个性化教程：打造酷炫网站|Moorez</a></li>
 <li><a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/getting-started/">Getting Started | NexT</a></li>
@@ -332,10 +352,27 @@
 </ul>
 </div>
 
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
           <div class="post-tags">
               <a href="/tags/Blog/" rel="tag"><i class="fa fa-tag"></i> Blog</a>
-              <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
               <a href="/tags/NexT/" rel="tag"><i class="fa fa-tag"></i> NexT</a>
+              <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
           </div>
 
         
@@ -370,32 +407,24 @@
 
 
 
-      <div class="tabs tabs-comment">
-        <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-changyan">changyan</a></li>
-            <li class="tab"><a href="#comment-disqus">disqus</a></li>
-            <li class="tab"><a href="#comment-livere">livere</a></li>
-            <li class="tab"><a href="#comment-utterances">utterances</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane changyan" id="comment-changyan">
-              <div class="comments" id="SOHUCS" sid="e1194ddf542521385741fbde91b26594"></div>
-            </div>
-            <div class="tab-pane disqus" id="comment-disqus">
-              
+      <div class="comment-button-group">
+          <a class="btn comment-button comment-disqus">disqus</a>
+          <a class="btn comment-button comment-livere">livere</a>
+          <a class="btn comment-button comment-utterances">utterances</a>
+      </div>
+        <div class="comment-position comment-disqus">
+          
   <div class="comments" id="disqus_thread">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-            </div>
-            <div class="tab-pane livere" id="comment-livere">
-              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
-            </div>
-            <div class="tab-pane utterances" id="comment-utterances">
-              <div class="comments utterances-container"></div>
-            </div>
         </div>
-      </div>
+        <div class="comment-position comment-livere">
+          <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
+        </div>
+        <div class="comment-position comment-utterances">
+          <div class="comments utterances-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js" defer></script>
 </div>
   </main>
 
@@ -445,12 +474,11 @@
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyy677YK2","appkey":"5d6728fb7c0c99dba952d82907fb1777","count":false}</script>
-<script src="/js/third-party/comments/changyan.js" defer></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"junyuh","count":false,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js" defer></script>
 <script src="/js/third-party/comments/livere.js" defer></script>

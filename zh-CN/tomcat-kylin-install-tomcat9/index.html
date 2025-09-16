@@ -15,10 +15,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/yello/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":"ture","motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="本文记录在银河麒麟V10上离线安装 tomcat 9 的过程。">
 <meta property="og:type" content="article">
@@ -43,6 +45,9 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>银河麒麟V10离线安装 tomcat 9 记录 | Junyu</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-498SG67TB7"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-498SG67TB7","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
 
@@ -62,12 +67,19 @@
 
 
 
+  <script src="/js/third-party/pace.js" defer></script>
 
   <script src="/js/third-party/addtoany.js" defer></script>
 
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
 
 
 
@@ -109,7 +121,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -160,7 +172,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">下载安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%A5%E5%BF%97%E8%B7%AF%E5%BE%84%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">日志路径配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JVM%E7%9A%84%E8%BF%90%E8%A1%8C%E5%8F%82%E6%95%B0%E4%BC%98%E5%8C%96%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">JVM的运行参数优化配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%90%AF%E5%8A%A8%E7%AB%AF%E5%8F%A3%E5%8F%B7"><span class="nav-number">4.</span> <span class="nav-text">修改启动端口号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E4%B8%BA%E6%9C%8D%E5%8A%A1"><span class="nav-number">5.</span> <span class="nav-text">配置为服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">下载安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">日志路径配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">JVM的运行参数优化配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">修改启动端口号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">配置为服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -194,9 +206,12 @@
       <span class="links-of-author-item">
         <a href="mailto:junyu_huang@outlook.com" title="E-Mail → mailto:junyu_huang@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/8257973" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;8257973" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i></a>
+      </span>
   </div>
   <div class="cc-license animated" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
 
         </div>
@@ -272,14 +287,16 @@
     
     <div class="post-body" itemprop="articleBody"><p>本文记录在银河麒麟V10上离线安装 tomcat 9 的过程。</p>
 <span id="more"></span>
-
-<h1 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h1><ol>
-<li>下载对应安装版本的安装包<br><a target="_blank" rel="noopener" href="https://archive.apache.org/dist/tomcat/">Apache Archive Distribution Directory</a></li>
+<h1>下载安装</h1>
+<ol>
+<li>下载对应安装版本的安装包<br>
+<a target="_blank" rel="noopener" href="https://archive.apache.org/dist/tomcat/">Apache Archive Distribution Directory</a></li>
 <li>借助传输工具上传安装包至服务器</li>
 <li>解压 tomcat 安装包</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf apache-tomcat-9.0.93.tar.gz</span><br></pre></td></tr></table></figure>
-<h1 id="日志路径配置"><a href="#日志路径配置" class="headerlink" title="日志路径配置"></a>日志路径配置</h1><ol>
+<h1>日志路径配置</h1>
+<ol>
 <li>创建 tomcat 日志文件夹路径</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> tomcat-logs</span><br></pre></td></tr></table></figure>
@@ -299,24 +316,28 @@
 <li>第4步完成后，<code>catalina.out</code>会无限写入，长期运行可能导致运行日志较多，配置 <code>logrotate</code> 自动轮转。以下配置可配置每日切割轮转，保留30天日志。你可以将你需要的配置轮转规则发给AI，让其生成相关的配置项，然后比对参考资料进行核对</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加一个logrotate文件，最后的 tomcat-prod 设置为你方便识别的名字即可</span></span><br><span class="line">vim /etc/logrotate.d/tomcat-prod</span><br><span class="line">/data/tomcat-logs/catalina.out &#123;</span><br><span class="line">        daily</span><br><span class="line">        rotate 30</span><br><span class="line">        copytruncate</span><br><span class="line">        compress</span><br><span class="line">        delaycompress</span><br><span class="line">        missingok</span><br><span class="line">        notifempty</span><br><span class="line">        dateext</span><br><span class="line">        dateformat -%Y%m%d</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="JVM的运行参数优化配置"><a href="#JVM的运行参数优化配置" class="headerlink" title="JVM的运行参数优化配置"></a>JVM的运行参数优化配置</h1><p>修改 <code>catalina.sh</code> 写入下面参数</p>
+<h1>JVM的运行参数优化配置</h1>
+<p>修改 <code>catalina.sh</code> 写入下面参数</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">JAVA_OPTS</span>=<span class="string">&quot;<span class="variable">$JAVA_OPTS</span> <span class="variable">$JSSE_OPTS</span> -server -Xmx16G -Xms16G -XX:MaxDirectMemorySize=4G -XX:+UseG1GC -XX:ConcGCThreads=16  -XX:ParallelGCThreads=16&quot;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>注：根据官方文档，这并非推荐的配置的方式，推荐做法是修改 setenv.sh，因本次部署时未实践，故不做记录，请参考参考资料2</p>
+<p>注：根据官方文档，这并非推荐的配置的方式，推荐做法是修改 <a target="_blank" rel="noopener" href="http://setenv.sh">setenv.sh</a>，因本次部署时未实践，故不做记录，请参考参考资料2</p>
 </blockquote>
-<h1 id="修改启动端口号"><a href="#修改启动端口号" class="headerlink" title="修改启动端口号"></a>修改启动端口号</h1><p>若不想使用默认端口，可在 <code>server.xml</code>修改启动端口</p>
+<h1>修改启动端口号</h1>
+<p>若不想使用默认端口，可在 <code>server.xml</code>修改启动端口</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">&quot;8089&quot;</span> <span class="attr">protocol</span>=<span class="string">&quot;org.apache.coyote.http11.Http11NioProtocol&quot;</span></span></span><br><span class="line"><span class="tag">              <span class="attr">connectionTimeout</span>=<span class="string">&quot;20000&quot;</span></span></span><br><span class="line"><span class="tag">              <span class="attr">redirectPort</span>=<span class="string">&quot;8443&quot;</span></span></span><br><span class="line"><span class="tag">              <span class="attr">maxParameterCount</span>=<span class="string">&quot;1000&quot;</span></span></span><br><span class="line"><span class="tag">              <span class="attr">maxThreads</span>=<span class="string">&quot;128&quot;</span></span></span><br><span class="line"><span class="tag">              <span class="attr">maxConnections</span>=<span class="string">&quot;10000&quot;</span></span></span><br><span class="line"><span class="tag">              <span class="attr">acceptCount</span>=<span class="string">&quot;256&quot;</span></span></span><br><span class="line"><span class="tag">              /&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="配置为服务"><a href="#配置为服务" class="headerlink" title="配置为服务"></a>配置为服务</h1><p>查看 Java 安装位置</p>
+<h1>配置为服务</h1>
+<p>查看 Java 安装位置</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">readlink</span> -f $(<span class="built_in">which</span> java) | sed <span class="string">&#x27;s|/bin/java||&#x27;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>&#x2F;usr&#x2F;lib&#x2F;jvm&#x2F;java-1.8.0-openjdk-1.8.0.312.b07-10.ky10.x86_64&#x2F;jre</p>
+<p>/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-10.ky10.x86_64/jre</p>
 </blockquote>
 <p>配置为服务</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/lib/systemd/system/tomcat.service</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># Systemd unit file for default tomcat</span><br><span class="line">#</span><br><span class="line"># To create clones of this service:</span><br><span class="line"># DO NOTHING, use tomcat@.service instead.</span><br><span class="line"></span><br><span class="line">[Unit]</span><br><span class="line">Description=Tomcat service</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">Environment=&quot;JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-10.ky10.x86_64/jre &quot;</span><br><span class="line">User=root</span><br><span class="line">Group=root</span><br><span class="line">ExecStart=/example/tomcat/bin/startup.sh</span><br><span class="line">ExecStop=/example/tomcat/bin/shutdown.sh</span><br><span class="line">ExecReload=/usr/bin/kill -s SIGHUP $MAINPID</span><br><span class="line">PrivateTmp=true</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
 <p>启动服务</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 重载配置</span></span><br><span class="line">systemctl daemon-reload</span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line">systemctl start tomcat.service</span><br><span class="line"><span class="comment"># 查看服务状态</span></span><br><span class="line">systemctl status tomcat.service</span><br><span class="line"><span class="comment"># 创建开机启动</span></span><br><span class="line">systemctl <span class="built_in">enable</span> tomcat.service</span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ol>
+<h1>参考资料</h1>
+<ol>
 <li><a target="_blank" rel="noopener" href="https://linux.die.net/man/8/logrotate">logrotate(8) - Linux man page</a></li>
 <li><a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/TOMCAT/Memory#Memory-Q1">Memory - Apache Tomcat - Apache Software Foundation</a></li>
 </ol>
@@ -343,6 +364,23 @@
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
 </ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
 </div>
 
           <div class="post-tags">
@@ -382,32 +420,24 @@
 
 
 
-      <div class="tabs tabs-comment">
-        <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-changyan">changyan</a></li>
-            <li class="tab"><a href="#comment-disqus">disqus</a></li>
-            <li class="tab"><a href="#comment-livere">livere</a></li>
-            <li class="tab"><a href="#comment-utterances">utterances</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane changyan" id="comment-changyan">
-              <div class="comments" id="SOHUCS" sid="f4fd11517e030643a657b0051e85c08b"></div>
-            </div>
-            <div class="tab-pane disqus" id="comment-disqus">
-              
+      <div class="comment-button-group">
+          <a class="btn comment-button comment-disqus">disqus</a>
+          <a class="btn comment-button comment-livere">livere</a>
+          <a class="btn comment-button comment-utterances">utterances</a>
+      </div>
+        <div class="comment-position comment-disqus">
+          
   <div class="comments" id="disqus_thread">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-            </div>
-            <div class="tab-pane livere" id="comment-livere">
-              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
-            </div>
-            <div class="tab-pane utterances" id="comment-utterances">
-              <div class="comments utterances-container"></div>
-            </div>
         </div>
-      </div>
+        <div class="comment-position comment-livere">
+          <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
+        </div>
+        <div class="comment-position comment-utterances">
+          <div class="comments utterances-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js" defer></script>
 </div>
   </main>
 
@@ -457,12 +487,11 @@
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyy677YK2","appkey":"5d6728fb7c0c99dba952d82907fb1777","count":false}</script>
-<script src="/js/third-party/comments/changyan.js" defer></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"junyuh","count":false,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js" defer></script>
 <script src="/js/third-party/comments/livere.js" defer></script>

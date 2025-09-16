@@ -15,10 +15,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/yello/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":"ture","motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="本文记录通过 nginx 设置外部访问服务器视频的过程。">
 <meta property="og:type" content="article">
@@ -42,6 +44,9 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>通过 nginx 设置外部访问服务器视频 | Junyu</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-498SG67TB7"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-498SG67TB7","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
 
@@ -61,12 +66,19 @@
 
 
 
+  <script src="/js/third-party/pace.js" defer></script>
 
   <script src="/js/third-party/addtoany.js" defer></script>
 
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
 
 
 
@@ -108,7 +120,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -159,7 +171,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">1.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -193,9 +205,12 @@
       <span class="links-of-author-item">
         <a href="mailto:junyu_huang@outlook.com" title="E-Mail → mailto:junyu_huang@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/8257973" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;8257973" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i></a>
+      </span>
   </div>
   <div class="cc-license animated" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
 
         </div>
@@ -271,23 +286,24 @@
     
     <div class="post-body" itemprop="articleBody"><p>本文记录通过 nginx 设置外部访问服务器视频的过程。</p>
 <span id="more"></span>
-
-<p>添加一个 <code>video.conf</code>配置文件，用于放 mp4 文件 Nginx 配置（假设视频放在 &#x2F;example&#x2F;video&#x2F; 目录下）</p>
+<p>添加一个 <code>video.conf</code>配置文件，用于放 mp4 文件 Nginx 配置（假设视频放在 /example/video/ 目录下）</p>
 <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编辑配置文件</span></span><br><span class="line">vim /usr/<span class="keyword">local</span>/nginx/conf/video.conf</span><br><span class="line"><span class="comment"># 配置文件内容</span></span><br><span class="line">location /video/ &#123;</span><br><span class="line">       <span class="built_in">alias</span> /example/video/;</span><br><span class="line"></span><br><span class="line">       mp4;</span><br><span class="line">       mp4_buffer_size <span class="number">4</span>m;</span><br><span class="line">       mp4_max_buffer_size <span class="number">20</span>m;</span><br><span class="line"></span><br><span class="line">        sendfile <span class="keyword">on</span>;</span><br><span class="line">        tcp_nopush <span class="keyword">on</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 启用范围请求</span></span><br><span class="line">        add_header Accept-Ranges bytes;</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 缓存控制</span></span><br><span class="line">        expires <span class="number">30</span>d;</span><br><span class="line">        add_header Cache-Control <span class="string">&quot;public, max-age=604800&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 限速</span></span><br><span class="line">        limit_rate_after <span class="number">10</span>m;</span><br><span class="line">        limit_rate <span class="number">2</span>m;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>配置完成后，在主配置文件中引用该配置</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen <span class="number">80</span>;</span><br><span class="line">    server_name your-domain.com;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">location</span> <span class="title">/app1</span> &#123;</span><br><span class="line">        <span class="comment"># 其他配置...</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">location</span> <span class="title">/app2</span> &#123;</span><br><span class="line">        <span class="comment"># 其他配置...</span></span><br><span class="line">    &#125;</span><br><span class="line">    include /usr/local/nginx/conf/video.conf</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>重启 nginx </p>
+<p>重启 nginx</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart nginx</span><br></pre></td></tr></table></figure>
 <p>如果报如下信息测试失败,那可能是因为你的 nginx 没有安装 mp4 模块，该模块不会默认安装</p>
 <blockquote>
-<p>nginx: [emerg] unknown directive “mp4” in &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;conf&#x2F;video.conf:5<br>nginx: configuration file &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;conf&#x2F;nginx.conf test failed</p>
+<p>nginx: [emerg] unknown directive “mp4” in /usr/local/nginx/conf/video.conf:5<br>
+nginx: configuration file /usr/local/nginx/conf/nginx.conf test failed</p>
 </blockquote>
 <p>由于我的 nginx 是编译安装的，重新编译 nginx，查看目前的编译参数</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>sbin/nginx -V</span><br></pre></td></tr></table></figure>
 <p>如果有之前已经编译过的模块，重新编译时也要记得加上，例如下面的 ssl 模块</p>
 <figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">./configure</span>  <span class="params">--with-http_ssl_module</span> <span class="params">--with-http_mp4_module</span></span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<p>编译完成后，重新启动 nginx 就可以通过 your-domain.com&#x2F;video&#x2F;video.mp4 访问了。</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<p>编译完成后，重新启动 nginx 就可以通过 <a target="_blank" rel="noopener" href="http://your-domain.com/video/video.mp4">your-domain.com/video/video.mp4</a> 访问了。</p>
+<h1>参考资料</h1>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://nginx.org/en/docs/http/ngx_http_mp4_module.html?_ga=2.51429225.1399780891.1753688554-752556077.1753688554">Module ngx_http_mp4_module</a></li>
 <li><a target="_blank" rel="noopener" href="https://docs.nginx.com/nginx/admin-guide/web-server/serving-static-content/#optimize-performance-for-serving-content">Serve Static Content | NGINX Documentation</a></li>
 <li><a target="_blank" rel="noopener" href="https://nginx.org/en/docs/http/ngx_http_core_module.html#limit_rate">Module ngx_http_core_module</a></li>
@@ -315,6 +331,23 @@
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
 </ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
 </div>
 
           <div class="post-tags">
@@ -353,32 +386,24 @@
 
 
 
-      <div class="tabs tabs-comment">
-        <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-changyan">changyan</a></li>
-            <li class="tab"><a href="#comment-disqus">disqus</a></li>
-            <li class="tab"><a href="#comment-livere">livere</a></li>
-            <li class="tab"><a href="#comment-utterances">utterances</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane changyan" id="comment-changyan">
-              <div class="comments" id="SOHUCS" sid="dad90e6ae34fbc820b4abb5364893440"></div>
-            </div>
-            <div class="tab-pane disqus" id="comment-disqus">
-              
+      <div class="comment-button-group">
+          <a class="btn comment-button comment-disqus">disqus</a>
+          <a class="btn comment-button comment-livere">livere</a>
+          <a class="btn comment-button comment-utterances">utterances</a>
+      </div>
+        <div class="comment-position comment-disqus">
+          
   <div class="comments" id="disqus_thread">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-            </div>
-            <div class="tab-pane livere" id="comment-livere">
-              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
-            </div>
-            <div class="tab-pane utterances" id="comment-utterances">
-              <div class="comments utterances-container"></div>
-            </div>
         </div>
-      </div>
+        <div class="comment-position comment-livere">
+          <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
+        </div>
+        <div class="comment-position comment-utterances">
+          <div class="comments utterances-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js" defer></script>
 </div>
   </main>
 
@@ -428,12 +453,11 @@
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyy677YK2","appkey":"5d6728fb7c0c99dba952d82907fb1777","count":false}</script>
-<script src="/js/third-party/comments/changyan.js" defer></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"junyuh","count":false,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js" defer></script>
 <script src="/js/third-party/comments/livere.js" defer></script>

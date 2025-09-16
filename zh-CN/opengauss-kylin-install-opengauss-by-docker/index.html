@@ -15,10 +15,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/yello/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":"ture","motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="本文记录在银河麒麟V10上使用 docker 离线安装 opengauss 数据库的过程。">
 <meta property="og:type" content="article">
@@ -43,6 +45,9 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>银河麒麟V10 docker 离线安装 opengauss 数据库（单节点部署） | Junyu</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-498SG67TB7"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-498SG67TB7","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
 
@@ -62,12 +67,19 @@
 
 
 
+  <script src="/js/third-party/pace.js" defer></script>
 
   <script src="/js/third-party/addtoany.js" defer></script>
 
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
 
 
 
@@ -109,7 +121,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -160,7 +172,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">1.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -194,9 +206,12 @@
       <span class="links-of-author-item">
         <a href="mailto:junyu_huang@outlook.com" title="E-Mail → mailto:junyu_huang@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/8257973" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;8257973" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i></a>
+      </span>
   </div>
   <div class="cc-license animated" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
 
         </div>
@@ -272,7 +287,6 @@
     
     <div class="post-body" itemprop="articleBody"><p>本文记录在银河麒麟V10上使用 docker 离线安装 opengauss 数据库的过程。</p>
 <span id="more"></span>
-
 <ol>
 <li>准备合适的 docker 镜像</li>
 <li>通过文件传输工具将镜像传输至服务器</li>
@@ -281,10 +295,9 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker load -i opengauss_3.0.0.tar</span><br></pre></td></tr></table></figure>
 <p>正常应该是输出类似这样的内容：</p>
 <figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6</span><span class="params">f37ca73c74f:</span> Loading layer [<span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">&gt;</span>]  <span class="number">75.16</span>MB<span class="symbol">/75.16MB</span></span><br><span class="line"><span class="params">fbf2d42d54b9:</span> Loading layer [<span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">&gt;</span>]   <span class="number">57.7</span>MB<span class="symbol">/57.7MB</span></span><br><span class="line"><span class="params">c777acc6f953:</span> Loading layer [<span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">&gt;</span>]  <span class="number">20.48</span>kB<span class="symbol">/20.48kB</span></span><br><span class="line"><span class="params">a8d219ac51aa:</span> Loading layer [<span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">&gt;</span>]  <span class="number">337.4</span>MB<span class="symbol">/337.4MB</span></span><br><span class="line"><span class="number">63</span><span class="params">f854361eb8:</span> Loading layer [<span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">==</span><span class="operator">&gt;</span>]  <span class="number">20.99</span>kB<span class="symbol">/20.99kB</span></span><br><span class="line">Loaded <span class="params">image:</span> enmotech<span class="operator">/</span>opengauss:<span class="number">5.0</span>.<span class="number">0</span></span><br></pre></td></tr></table></figure>
-
 <p>如果提示下面的内容，可能是你的 docker 没有启动</p>
 <blockquote>
-<p>Cannot connect to the Docker daemon at unix:&#x2F;&#x2F;&#x2F;var&#x2F;run&#x2F;docker.sock. Is the docker daemon running?</p>
+<p>Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
 <ol start="4">
@@ -299,13 +312,12 @@
 <li>启动容器，可以根据你的需要修改容器名称（<code>--name</code> 后面的参数），修改数据库密码，修改映射端口（<code>-p</code>参数的冒号前面的端口）</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker run \</span><br><span class="line">&gt; --name opengauss \</span><br><span class="line">&gt; --privileged=<span class="literal">true</span> \</span><br><span class="line">&gt; -d \</span><br><span class="line">&gt; -e GS_PASSWORD=your-password \</span><br><span class="line">&gt; -p 1234:5432 \</span><br><span class="line">&gt; -v /example/opengauss/data:/var/lib/opengauss/data \</span><br><span class="line">&gt; enmotech/opengauss:5.0.0</span><br></pre></td></tr></table></figure>
-<p>成功后会输出一长串容器ID（如果成功后又快速退出了也会，这个不代表已经成功了）<br>7. 查看容器运行状态，如果 <code>STATUS</code> 是 UP，就是启动成功了。如果你看到的是 Exited，那说明启动后又退出了，没有成功跑起来。</p>
+<p>成功后会输出一长串容器ID（如果成功后又快速退出了也会，这个不代表已经成功了）<br>
+7. 查看容器运行状态，如果 <code>STATUS</code> 是 UP，就是启动成功了。如果你看到的是 Exited，那说明启动后又退出了，没有成功跑起来。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br><span class="line">CONTAINER ID   IMAGE                      COMMAND                   CREATED        STATUS      PORTS                                         NAMES</span><br><span class="line">31858d593b66   enmotech/opengauss:5.0.0   <span class="string">&quot;entrypoint.sh gauss…&quot;</span>   2 months ago   Up 4 days   0.0.0.0:14869-&gt;5432/tcp, :::1234-&gt;5432/tcp   opengauss</span><br></pre></td></tr></table></figure>
-
 <details>
 <summary>一种可能的错误情况</summary>
 如果你看到的是 Exited，那说明启动后又退出了，没有成功跑起来。
-
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker</span> ps -a | grep opengauss</span><br><span class="line"><span class="attribute">CONTAINER</span> ID   IMAGE          COMMAND           CREATED          STATUS                      PORTS     NAMES</span><br><span class="line"><span class="attribute">1b87a6e93e3f</span>   <span class="number">478</span>a00294137   <span class="string">&quot;entrypoint.sh&quot;</span>   <span class="number">35</span> seconds ago   Exited (<span class="number">1</span>) <span class="number">34</span> seconds ago             opengauss</span><br></pre></td></tr></table></figure>
 <p>可以用以下命令查看情况：</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># docker logs 容器ID</span></span><br><span class="line"><span class="attribute">docker</span> logs <span class="number">1</span>b876e93e3f</span><br></pre></td></tr></table></figure>
@@ -315,7 +327,6 @@
 </blockquote>
 <p>那有可能是你的镜像不支持单节点部署，建议你更换镜像文件</p>
 </details>
-
 <ol start="8">
 <li>通过以下命令就可以进入容器了</li>
 </ol>
@@ -327,14 +338,16 @@
 <li>openGauss安装时默认会创建omm超级用户，容器内切换到该用户</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su - omm</span><br></pre></td></tr></table></figure>
-
 <ol start="10">
-<li>输入 <code>gsql</code> 就可以进入数据库了，之后的赋权操作都需要在此处进行，<code>\q</code> 可以退出数据库<br><strong>注意：默认是不允许 omm 用户远程连接数据库的</strong><br>可能会提示以下内容：<blockquote>
+<li>输入 <code>gsql</code> 就可以进入数据库了，之后的赋权操作都需要在此处进行，<code>\q</code> 可以退出数据库<br>
+<strong>注意：默认是不允许 omm 用户远程连接数据库的</strong><br>
+可能会提示以下内容：</li>
+</ol>
+<blockquote>
 <p>Forbid remote connection with initial user.</p>
 </blockquote>
-</li>
-</ol>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1>参考资料</h1>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://docs.opengauss.org/zh/docs/5.0.0/docs/InstallationGuide/%E5%8D%95%E8%8A%82%E7%82%B9%E5%AE%89%E8%A3%85_%E5%AE%B9%E5%99%A8.html">单节点安装 容器 | openGauss文档 | openGauss社区</a></li>
 </ul>
 
@@ -360,6 +373,23 @@
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
 </ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
 </div>
 
           <div class="post-tags">
@@ -399,32 +429,24 @@
 
 
 
-      <div class="tabs tabs-comment">
-        <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-changyan">changyan</a></li>
-            <li class="tab"><a href="#comment-disqus">disqus</a></li>
-            <li class="tab"><a href="#comment-livere">livere</a></li>
-            <li class="tab"><a href="#comment-utterances">utterances</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane changyan" id="comment-changyan">
-              <div class="comments" id="SOHUCS" sid="05d583faee1a9d6e2b15a0490d0ddbcf"></div>
-            </div>
-            <div class="tab-pane disqus" id="comment-disqus">
-              
+      <div class="comment-button-group">
+          <a class="btn comment-button comment-disqus">disqus</a>
+          <a class="btn comment-button comment-livere">livere</a>
+          <a class="btn comment-button comment-utterances">utterances</a>
+      </div>
+        <div class="comment-position comment-disqus">
+          
   <div class="comments" id="disqus_thread">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-            </div>
-            <div class="tab-pane livere" id="comment-livere">
-              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
-            </div>
-            <div class="tab-pane utterances" id="comment-utterances">
-              <div class="comments utterances-container"></div>
-            </div>
         </div>
-      </div>
+        <div class="comment-position comment-livere">
+          <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
+        </div>
+        <div class="comment-position comment-utterances">
+          <div class="comments utterances-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js" defer></script>
 </div>
   </main>
 
@@ -474,12 +496,11 @@
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyy677YK2","appkey":"5d6728fb7c0c99dba952d82907fb1777","count":false}</script>
-<script src="/js/third-party/comments/changyan.js" defer></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"junyuh","count":false,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js" defer></script>
 <script src="/js/third-party/comments/livere.js" defer></script>

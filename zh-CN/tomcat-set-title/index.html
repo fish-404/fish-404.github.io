@@ -15,10 +15,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/yello/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":"ture","motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="Tomcat 设置 windows 黑窗口名称。">
 <meta property="og:type" content="article">
@@ -42,6 +44,9 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>Tomcat 设置 Windows 黑窗口名称 | Junyu</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-498SG67TB7"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-498SG67TB7","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
 
@@ -61,12 +66,19 @@
 
 
 
+  <script src="/js/third-party/pace.js" defer></script>
 
   <script src="/js/third-party/addtoany.js" defer></script>
 
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
 
 
 
@@ -108,7 +120,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -192,9 +204,12 @@
       <span class="links-of-author-item">
         <a href="mailto:junyu_huang@outlook.com" title="E-Mail → mailto:junyu_huang@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/8257973" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;8257973" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i></a>
+      </span>
   </div>
   <div class="cc-license animated" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
 
         </div>
@@ -270,9 +285,9 @@
     
     <div class="post-body" itemprop="articleBody"><p>Tomcat 设置 windows 黑窗口名称。</p>
 <span id="more"></span>
-
 <p>同时开多个 tomcat 启动不同项目时，不好区分那个黑窗口是哪个项目，设置黑窗口名称可以帮助区分。</p>
-<p>进入 tomcat 的 bin 目录，如 <code>T:\apache-tomcat-9.0.60-windows-x64\apache-tomcat-9.0.60\bin</code>，找到 <code>catalina.bat</code> 文件，用文本编辑器打开<br>可以看到文件说明里面的最下面有关于 <code>TITLE</code> 的参数说明，默认会叫 <code>Tomcat</code>, 可以根据自己的需要进行修改，可以有空格。</p>
+<p>进入 tomcat 的 bin 目录，如 <code>T:\apache-tomcat-9.0.60-windows-x64\apache-tomcat-9.0.60\bin</code>，找到 <code>catalina.bat</code> 文件，用文本编辑器打开<br>
+可以看到文件说明里面的最下面有关于 <code>TITLE</code> 的参数说明，默认会叫 <code>Tomcat</code>, 可以根据自己的需要进行修改，可以有空格。</p>
 <figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">rem   TITLE           (Optional) Specify the title of Tomcat window. The default</span></span><br><span class="line"><span class="comment">rem                   TITLE is Tomcat if it&#x27;s not specified.</span></span><br><span class="line"><span class="comment">rem                   Example (all one line)</span></span><br><span class="line"><span class="comment">rem                   set TITLE=Tomcat.Cluster#1.Server#1 [%DATE% %TIME%]</span></span><br></pre></td></tr></table></figure>
 <p>搜索文件中的 <code>TITLE</code>，找到下面这段，<code>set TITLE</code> 后面填写你的命名即可。</p>
 <figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">:doStart</span><br><span class="line"><span class="built_in">shift</span></span><br><span class="line"><span class="comment">rem 把这里的 Tomcat 改为需要设置的名字，可以带空格</span></span><br><span class="line"><span class="comment">rem if &quot;%TITLE%&quot; == &quot;&quot; set TITLE=Tomcat</span></span><br><span class="line"><span class="keyword">if</span> &quot;<span class="variable">%TITLE%</span>&quot; == &quot;&quot; <span class="built_in">set</span> <span class="built_in">TITLE</span>=YOURNAME YOURSUBNAME</span><br><span class="line"><span class="built_in">set</span> _EXECJAVA=<span class="built_in">start</span> &quot;<span class="variable">%TITLE%</span>&quot; <span class="variable">%_RUNJAVA%</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> &quot;&quot;%<span class="number">1</span>&quot;&quot; == &quot;&quot;-security&quot;&quot; <span class="keyword">goto</span> execCmd</span><br><span class="line"><span class="built_in">shift</span></span><br><span class="line"><span class="built_in">echo</span> Using Security Manager</span><br><span class="line"><span class="built_in">set</span> &quot;SECURITY_POLICY_FILE=<span class="variable">%CATALINA_BASE%</span>\conf\catalina.policy&quot;</span><br><span class="line"><span class="keyword">goto</span> execCmd</span><br></pre></td></tr></table></figure>
@@ -298,6 +313,23 @@
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
 </ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
 </div>
 
           <div class="post-tags">
@@ -336,32 +368,24 @@
 
 
 
-      <div class="tabs tabs-comment">
-        <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-changyan">changyan</a></li>
-            <li class="tab"><a href="#comment-disqus">disqus</a></li>
-            <li class="tab"><a href="#comment-livere">livere</a></li>
-            <li class="tab"><a href="#comment-utterances">utterances</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane changyan" id="comment-changyan">
-              <div class="comments" id="SOHUCS" sid="7b4ab51cd212c7edf4307fd874edae96"></div>
-            </div>
-            <div class="tab-pane disqus" id="comment-disqus">
-              
+      <div class="comment-button-group">
+          <a class="btn comment-button comment-disqus">disqus</a>
+          <a class="btn comment-button comment-livere">livere</a>
+          <a class="btn comment-button comment-utterances">utterances</a>
+      </div>
+        <div class="comment-position comment-disqus">
+          
   <div class="comments" id="disqus_thread">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-            </div>
-            <div class="tab-pane livere" id="comment-livere">
-              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
-            </div>
-            <div class="tab-pane utterances" id="comment-utterances">
-              <div class="comments utterances-container"></div>
-            </div>
         </div>
-      </div>
+        <div class="comment-position comment-livere">
+          <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
+        </div>
+        <div class="comment-position comment-utterances">
+          <div class="comments utterances-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js" defer></script>
 </div>
   </main>
 
@@ -411,12 +435,11 @@
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyy677YK2","appkey":"5d6728fb7c0c99dba952d82907fb1777","count":false}</script>
-<script src="/js/third-party/comments/changyan.js" defer></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"junyuh","count":false,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js" defer></script>
 <script src="/js/third-party/comments/livere.js" defer></script>

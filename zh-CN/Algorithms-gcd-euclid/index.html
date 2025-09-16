@@ -15,17 +15,19 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/yello/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":"ture","motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="算法：辗转相除法（欧几里得算法）  GCD递归定理  辗转相除法算法概述  辗转相除法伪代码  辗转相除法代码实现">
+    <meta name="description" content="算法：辗转相除法（欧几里得算法）   GCD递归定理   辗转相除法算法概述   辗转相除法伪代码   辗转相除法代码实现">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法-辗转相除法（欧几里得算法）">
 <meta property="og:url" content="https://junyuh.netlify.app/zh-CN/Algorithms-gcd-euclid/index.html">
 <meta property="og:site_name" content="Junyu">
-<meta property="og:description" content="算法：辗转相除法（欧几里得算法）  GCD递归定理  辗转相除法算法概述  辗转相除法伪代码  辗转相除法代码实现">
+<meta property="og:description" content="算法：辗转相除法（欧几里得算法）   GCD递归定理   辗转相除法算法概述   辗转相除法伪代码   辗转相除法代码实现">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-07-14T16:00:00.000Z">
 <meta property="article:modified_time" content="2023-08-27T16:00:00.000Z">
@@ -43,6 +45,9 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>算法-辗转相除法（欧几里得算法） | Junyu</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-498SG67TB7"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-498SG67TB7","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
 
@@ -62,12 +67,19 @@
 
 
 
+  <script src="/js/third-party/pace.js" defer></script>
 
   <script src="/js/third-party/addtoany.js" defer></script>
 
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
 
 
 
@@ -109,7 +121,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -160,7 +172,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GCD%E9%80%92%E5%BD%92%E5%AE%9A%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">GCD递归定理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0"><span class="nav-number">2.</span> <span class="nav-text">辗转相除法算法概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%8F%8F%E8%BF%B0%EF%BC%9A"><span class="nav-number">2.1.</span> <span class="nav-text">算法描述：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.2.</span> <span class="nav-text">算法示例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95%E4%BC%AA%E4%BB%A3%E7%A0%81%E8%A1%A8%E7%A4%BA"><span class="nav-number">3.</span> <span class="nav-text">辗转相除法伪代码表示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95%E5%AE%9E%E7%8E%B0"><span class="nav-number">4.</span> <span class="nav-text">辗转相除法实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C"><span class="nav-number">4.1.</span> <span class="nav-text">C</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pascal"><span class="nav-number">4.2.</span> <span class="nav-text">pascal</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">GCD递归定理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">辗转相除法算法概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%8F%8F%E8%BF%B0%EF%BC%9A"><span class="nav-number">2.1.</span> <span class="nav-text">算法描述：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.2.</span> <span class="nav-text">算法示例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">辗转相除法伪代码表示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">辗转相除法实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C"><span class="nav-number">4.1.</span> <span class="nav-text">C</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pascal"><span class="nav-number">4.2.</span> <span class="nav-text">pascal</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -194,9 +206,12 @@
       <span class="links-of-author-item">
         <a href="mailto:junyu_huang@outlook.com" title="E-Mail → mailto:junyu_huang@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/8257973" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;8257973" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i></a>
+      </span>
   </div>
   <div class="cc-license animated" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
 
         </div>
@@ -279,43 +294,65 @@
     
     <div class="post-body" itemprop="articleBody"><p>算法：辗转相除法（欧几里得算法）</p>
 <ul>
-<li><p>GCD递归定理</p>
+<li>
+<p>GCD递归定理</p>
 </li>
-<li><p>辗转相除法算法概述</p>
+<li>
+<p>辗转相除法算法概述</p>
 </li>
-<li><p>辗转相除法伪代码</p>
+<li>
+<p>辗转相除法伪代码</p>
 </li>
-<li><p>辗转相除法代码实现</p>
+<li>
+<p>辗转相除法代码实现</p>
 </li>
 </ul>
 <span id="more"></span>
-
 <p>对于两个数的最大公约数的求解，在我们的笔算过程中，通常是使用一个短除法，本质上其实也就是进行一个质因数分解的过程，但对于一个较大的数来说，将其进行质因数分解是一件非常耗时的过程，这显然不是一个好的做法，因此基于数论基础，我们有了辗转相除法，也叫做欧几里得算法。</p>
-<p>该算法的一个更容易理解的几何解释是，假设有一块 $a*b$ 的地面需要铺设正方形砖块，问应该如何取砖块的长度。在此选取过程中，我们每次取该矩形剩余部分的短边作为砖块边长，铺设至无法再铺设为止，如此循环，当某砖块长度恰好能够铺满地面不留余地，则该长度为所取长度，也就是 $a$ 和 $b$ 的最大公约数[^1]。</p>
-<h1 id="GCD递归定理"><a href="#GCD递归定理" class="headerlink" title="GCD递归定理"></a>GCD递归定理</h1><p>在叙述该算法之前，先了解辗转相除法的实现前提也就是GCD递归定理：</p>
+<p>该算法的一个更容易理解的几何解释是，假设有一块 $a*b$ 的地面需要铺设正方形砖块，问应该如何取砖块的长度。在此选取过程中，我们每次取该矩形剩余部分的短边作为砖块边长，铺设至无法再铺设为止，如此循环，当某砖块长度恰好能够铺满地面不留余地，则该长度为所取长度，也就是 $a$ 和 $b$ 的最大公约数<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。</p>
+<h1>GCD递归定理</h1>
+<p>在叙述该算法之前，先了解辗转相除法的实现前提也就是GCD递归定理：</p>
 <blockquote>
-<p>对任意非负整数$a$和任意正整数$b$,<br>$$<br>gcd(a,b) &#x3D; gcd(b,a \quad mod \quad b)<br>$$</p>
+<p>对任意非负整数$a$和任意正整数$b$,<br>
+$$<br>
+gcd(a,b) = gcd(b,a \quad mod \quad b)<br>
+$$</p>
 </blockquote>
-<h1 id="辗转相除法算法概述"><a href="#辗转相除法算法概述" class="headerlink" title="辗转相除法算法概述"></a>辗转相除法算法概述</h1><p>基于上面的GCD递归定理，我们便可以知道可以采用递归的方式，对两个整数的最大公约数进行相对较为高效的计算。</p>
-<h2 id="算法描述："><a href="#算法描述：" class="headerlink" title="算法描述："></a>算法描述：</h2><ol>
+<h1>辗转相除法算法概述</h1>
+<p>基于上面的GCD递归定理，我们便可以知道可以采用递归的方式，对两个整数的最大公约数进行相对较为高效的计算。</p>
+<h2 id="算法描述：">算法描述：</h2>
+<ol>
 <li>求两个数的余数；</li>
 <li>若余数为0，则较小数即为最大公约数；否则执行3；</li>
 <li>用较小的数替换较大的数，用余数替换较小的数；</li>
 <li>返回1。</li>
 </ol>
-<h2 id="算法示例"><a href="#算法示例" class="headerlink" title="算法示例"></a>算法示例</h2><p>$$<br>gcd(30,21) &#x3D; gcd(21,9) &#x3D; gcd(9,3) &#x3D; gcd(3,0) &#x3D; 3<br>$$</p>
-<h1 id="辗转相除法伪代码表示"><a href="#辗转相除法伪代码表示" class="headerlink" title="辗转相除法伪代码表示"></a>辗转相除法伪代码表示</h1><p>下面我们采用递归方式实现辗转相除法<a href="%E3%80%8A%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E3%80%8B%EF%BC%88%E7%AC%AC%E4%B8%89%E7%89%88%EF%BC%89">^2</a>。</p>
+<h2 id="算法示例">算法示例</h2>
+<p>$$<br>
+gcd(30,21) = gcd(21,9) = gcd(9,3) = gcd(3,0) = 3<br>
+$$</p>
+<h1>辗转相除法伪代码表示</h1>
+<p>下面我们采用递归方式实现辗转相除法<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>。</p>
 <p>GCD(a, b)</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> b == <span class="number">0</span></span><br><span class="line">  <span class="keyword">return</span> a</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  <span class="keyword">return</span> GCD(b, a mod b)</span><br></pre></td></tr></table></figure>
-
-<h1 id="辗转相除法实现"><a href="#辗转相除法实现" class="headerlink" title="辗转相除法实现"></a>辗转相除法实现</h1><h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">gcd</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (b == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> gcd(b, a % b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="pascal"><a href="#pascal" class="headerlink" title="pascal"></a>pascal</h2><figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">gcd</span><span class="params">(a, b : integer)</span> :</span>integer;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span> b = <span class="number">0</span> <span class="keyword">then</span></span><br><span class="line">        gcd := a</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        gcd := gcd(b, a <span class="keyword">mod</span> b);</span><br></pre></td></tr></table></figure>
-
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1>辗转相除法实现</h1>
+<h2 id="C">C</h2>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">gcd</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (b == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> gcd(b, a % b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="pascal">pascal</h2>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">gcd</span><span class="params">(a, b : integer)</span> :</span>integer;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span> b = <span class="number">0</span> <span class="keyword">then</span></span><br><span class="line">        gcd := a</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        gcd := gcd(b, a <span class="keyword">mod</span> b);</span><br></pre></td></tr></table></figure>
+<h1>参考资料</h1>
+<ul>
 <li>《Free Pascal 语言与基础算法》</li>
 </ul>
-<p>[^1]: The Secret Rules of Modern Living: Algorithms (2015)</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>The Secret Rules of Modern Living: Algorithms (2015) <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>《算法导论》（第三版） <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
     </div>
 
@@ -339,6 +376,23 @@
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
 </ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
 </div>
 
           <div class="post-tags">
@@ -378,32 +432,24 @@
 
 
 
-      <div class="tabs tabs-comment">
-        <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-changyan">changyan</a></li>
-            <li class="tab"><a href="#comment-disqus">disqus</a></li>
-            <li class="tab"><a href="#comment-livere">livere</a></li>
-            <li class="tab"><a href="#comment-utterances">utterances</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane changyan" id="comment-changyan">
-              <div class="comments" id="SOHUCS" sid="4d870a1a4963f88f19e7704c8e4b5cf2"></div>
-            </div>
-            <div class="tab-pane disqus" id="comment-disqus">
-              
+      <div class="comment-button-group">
+          <a class="btn comment-button comment-disqus">disqus</a>
+          <a class="btn comment-button comment-livere">livere</a>
+          <a class="btn comment-button comment-utterances">utterances</a>
+      </div>
+        <div class="comment-position comment-disqus">
+          
   <div class="comments" id="disqus_thread">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-            </div>
-            <div class="tab-pane livere" id="comment-livere">
-              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
-            </div>
-            <div class="tab-pane utterances" id="comment-utterances">
-              <div class="comments utterances-container"></div>
-            </div>
         </div>
-      </div>
+        <div class="comment-position comment-livere">
+          <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
+        </div>
+        <div class="comment-position comment-utterances">
+          <div class="comments utterances-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js" defer></script>
 </div>
   </main>
 
@@ -453,12 +499,11 @@
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyy677YK2","appkey":"5d6728fb7c0c99dba952d82907fb1777","count":false}</script>
-<script src="/js/third-party/comments/changyan.js" defer></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"junyuh","count":false,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js" defer></script>
 <script src="/js/third-party/comments/livere.js" defer></script>

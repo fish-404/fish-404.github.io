@@ -15,10 +15,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/yello/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":"ture","motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="图是一种比树形结构更复杂的非线性结构。在图结构中，允许多个结点之间相关，称为「多对多」关系。本文整理关于图的基本定义以及图的相关术语。">
 <meta property="og:type" content="article">
@@ -42,6 +44,9 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>数据结构-图的相关定义 | Junyu</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-498SG67TB7"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-498SG67TB7","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
 
@@ -61,12 +66,19 @@
 
 
 
+  <script src="/js/third-party/pace.js" defer></script>
 
   <script src="/js/third-party/addtoany.js" defer></script>
 
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
 
 
 
@@ -108,7 +120,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -159,7 +171,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">图的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">图的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -193,9 +205,12 @@
       <span class="links-of-author-item">
         <a href="mailto:junyu_huang@outlook.com" title="E-Mail → mailto:junyu_huang@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/8257973" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;8257973" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i></a>
+      </span>
   </div>
   <div class="cc-license animated" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
 
         </div>
@@ -271,37 +286,43 @@
     
     <div class="post-body" itemprop="articleBody"><p>图是一种比树形结构更复杂的非线性结构。在图结构中，允许多个结点之间相关，称为「多对多」关系。本文整理关于图的基本定义以及图的相关术语。</p>
 <span id="more"></span>
-
-<h1 id="图的定义"><a href="#图的定义" class="headerlink" title="图的定义"></a>图的定义</h1><p>在图中，通常将数据元素称为<strong>顶点</strong>(Vertex)，顶点之间的关系称为<strong>边</strong>(Edge)。</p>
-<p><strong>图</strong>(Graph)由有限点集$V$和有限边集$E$组成，记为<br>$$<br>G &#x3D; (V, E)<br>$$</p>
+<h1>图的定义</h1>
+<p>在图中，通常将数据元素称为<strong>顶点</strong>(Vertex)，顶点之间的关系称为<strong>边</strong>(Edge)。</p>
+<p><strong>图</strong>(Graph)由有限点集$V$和有限边集$E$组成，记为<br>
+$$<br>
+G = (V, E)<br>
+$$</p>
 <p>顶点总数$|V|$记为$n$，边的总数$E$记为$e$。</p>
 <ol>
 <li>有向图</li>
 </ol>
-<p>   用$&lt;v, w&gt;$表示从顶点$v$指向顶点$w$的<strong>有向边</strong>，也称为<strong>弧</strong>(Arc)，$v$为<strong>起点</strong>，$w$为<strong>终点</strong>，起点与终点次序不能颠倒。当图中的边均为有向边，则称图为<strong>有向图</strong>(Digraph)。</p>
+<p>用$&lt;v, w&gt;$表示从顶点$v$指向顶点$w$的<strong>有向边</strong>，也称为<strong>弧</strong>(Arc)，$v$为<strong>起点</strong>，$w$为<strong>终点</strong>，起点与终点次序不能颠倒。当图中的边均为有向边，则称图为<strong>有向图</strong>(Digraph)。</p>
 <ol start="2">
 <li>无向图</li>
 </ol>
-<p>   若边集$E$是对称的，即当$&lt;v,w&gt;\in E$ ，有$&lt;w,v&gt;\in E$，则称为<strong>无向图</strong>。此时用无序对$(v,w)$代替有序对$&lt;v,w&gt;$和$&lt;w,v&gt;$，称为<strong>无向边</strong>，简称<strong>边</strong>。</p>
+<p>若边集$E$是对称的，即当$&lt;v,w&gt;\in E$ ，有$&lt;w,v&gt;\in E$，则称为<strong>无向图</strong>。此时用无序对$(v,w)$代替有序对$&lt;v,w&gt;$和$&lt;w,v&gt;$，称为<strong>无向边</strong>，简称<strong>边</strong>。</p>
 <ol start="3">
 <li>子图</li>
 </ol>
-<p>   若图$G &#x3D; (V, E), G’ &#x3D; (V’, E’)$，当$V’\subseteq V, E’ \subseteq E$，则称$G’$为$G$的子图。</p>
+<p>若图$G = (V, E), G’ = (V’, E’)$，当$V’\subseteq V, E’ \subseteq E$，则称$G’$为$G$的子图。</p>
 <ol start="4">
-<li><p>完全图</p>
+<li>
+<p>完全图</p>
 <p>包含所有可能的边的图称为<strong>完全图</strong>。</p>
 <ul>
-<li>无向完全图包含$n(n-1)&#x2F;2$条边。</li>
+<li>无向完全图包含$n(n-1)/2$条边。</li>
 <li>有向完全图包含$n(n - 1)$条弧。</li>
 </ul>
 </li>
-<li><p>邻接顶点</p>
+<li>
+<p>邻接顶点</p>
 <ul>
 <li>在无向图中，若存在边$(v, w)$，则称$v$和$w$互为<strong>邻接顶点</strong>(Adjacent Verices)，或称$v$和$w$相邻接。</li>
 <li>在有向图中，若存在弧$&lt;v, w&gt;$，则称$w$是$v$的邻接顶点，但$v$未必是$w$的邻接顶点。</li>
 </ul>
 </li>
-<li><p>度</p>
+<li>
+<p>度</p>
 <p>在图中，顶点的<strong>度</strong>(Degree)指依附于该顶点的边数。</p>
 <p>对于有向图，又分为<strong>出度</strong>(OutDegree)和<strong>入度</strong>(InDegree)。</p>
 <ul>
@@ -310,11 +331,13 @@
 <li>有向图顶点的度为出度和入度之和。</li>
 </ul>
 </li>
-<li><p>权</p>
+<li>
+<p>权</p>
 <p>当图中的边或弧具有附加属性信息时，将此信息称为<strong>权</strong>(Weight)。</p>
 <p>带权的图称为<strong>带权图</strong>，简称为<strong>网</strong>(Network)。</p>
 </li>
-<li><p>路径</p>
+<li>
+<p>路径</p>
 <p>如果顶点序列$(v_1, v_2, \cdots, v_n)$从$v_i$到$v_{i+1}(1 \le i &lt;n)$的边（弧）均存在，则称顶点序列$(v_1, v_2, \cdots, v_n)$构成一条长度为$n-1$的<strong>路径</strong>。</p>
 <ul>
 <li><strong>路径长度</strong>：路径包含的边数。</li>
@@ -322,15 +345,18 @@
 <li><strong>回路</strong>：一条路径将某个顶点连接到自身。</li>
 </ul>
 </li>
-<li><p>连通图和强连通图</p>
+<li>
+<p>连通图和强连通图</p>
 <ul>
-<li><p><strong>连通图</strong></p>
+<li>
+<p><strong>连通图</strong></p>
 <p>在无向图中，若顶点$v$到顶点$w$有路径，则称$v$和$w$是连通的。若图中任意两个顶点都是连通的，则称该图为<strong>连通图</strong>(Connected Graph)。</p>
 <ul>
 <li><strong>连通分量</strong>(Connected Component)：无向图中的极大连通子图。</li>
 </ul>
 </li>
-<li><p><strong>强连通图</strong></p>
+<li>
+<p><strong>强连通图</strong></p>
 <p>在有向图中，若图中任意两个顶点$v$和$w$，既有$v$到$w$的路径，又有$w$到$v$的路径，则称该图为<strong>强连通图</strong>(Strongly Connected Graph)。</p>
 <ul>
 <li><strong>强连通分量</strong>(Strongly Connected Component)：有向图中的极大强连通子图。</li>
@@ -338,11 +364,13 @@
 </li>
 </ul>
 </li>
-<li><p>生成树</p>
+<li>
+<p>生成树</p>
 <p>连通图的<strong>生成树</strong>(Spanning Tree)是含有所有顶点且只有$n-1$条边的连通子图。</p>
 </li>
 </ol>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1>参考资料</h1>
+<ul>
 <li>《数据结构》（高教版，吴伟民，李小妹）</li>
 </ul>
 
@@ -368,6 +396,23 @@
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
 </ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
 </div>
 
           <div class="post-tags">
@@ -406,32 +451,24 @@
 
 
 
-      <div class="tabs tabs-comment">
-        <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-changyan">changyan</a></li>
-            <li class="tab"><a href="#comment-disqus">disqus</a></li>
-            <li class="tab"><a href="#comment-livere">livere</a></li>
-            <li class="tab"><a href="#comment-utterances">utterances</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane changyan" id="comment-changyan">
-              <div class="comments" id="SOHUCS" sid="d7ea184594e0694cd50b1e513a759a24"></div>
-            </div>
-            <div class="tab-pane disqus" id="comment-disqus">
-              
+      <div class="comment-button-group">
+          <a class="btn comment-button comment-disqus">disqus</a>
+          <a class="btn comment-button comment-livere">livere</a>
+          <a class="btn comment-button comment-utterances">utterances</a>
+      </div>
+        <div class="comment-position comment-disqus">
+          
   <div class="comments" id="disqus_thread">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-            </div>
-            <div class="tab-pane livere" id="comment-livere">
-              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
-            </div>
-            <div class="tab-pane utterances" id="comment-utterances">
-              <div class="comments utterances-container"></div>
-            </div>
         </div>
-      </div>
+        <div class="comment-position comment-livere">
+          <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
+        </div>
+        <div class="comment-position comment-utterances">
+          <div class="comments utterances-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js" defer></script>
 </div>
   </main>
 
@@ -481,12 +518,11 @@
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyy677YK2","appkey":"5d6728fb7c0c99dba952d82907fb1777","count":false}</script>
-<script src="/js/third-party/comments/changyan.js" defer></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"junyuh","count":false,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js" defer></script>
 <script src="/js/third-party/comments/livere.js" defer></script>

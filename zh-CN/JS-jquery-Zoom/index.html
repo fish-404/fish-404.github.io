@@ -15,10 +15,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/yello/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":"ture","motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="本文介绍如何使用 Jquery Zoom 放大图片。">
 <meta property="og:type" content="article">
@@ -42,6 +44,9 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>JS-jQuery Zoom 使用 | Junyu</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-498SG67TB7"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-498SG67TB7","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
 
@@ -61,12 +66,19 @@
 
 
 
+  <script src="/js/third-party/pace.js" defer></script>
 
   <script src="/js/third-party/addtoany.js" defer></script>
 
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
 
 
 
@@ -108,7 +120,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -159,7 +171,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E7%94%A8-zoom%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">启用 zoom：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A6%81%E7%94%A8-zoom"><span class="nav-number">1.2.</span> <span class="nav-text">禁用 zoom</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7%E5%80%BC%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">属性值配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#url"><span class="nav-number">2.1.</span> <span class="nav-text">url</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#on"><span class="nav-number">2.2.</span> <span class="nav-text">on</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#duration"><span class="nav-number">2.3.</span> <span class="nav-text">duration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#target"><span class="nav-number">2.4.</span> <span class="nav-text">target</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#touch"><span class="nav-number">2.5.</span> <span class="nav-text">touch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#magnify"><span class="nav-number">2.5.1.</span> <span class="nav-text">magnify</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#callback-onZoomIn-onZoomOut"><span class="nav-number">2.6.</span> <span class="nav-text">callback&#x2F;onZoomIn&#x2F;onZoomOut</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E7%94%A8-zoom%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">启用 zoom：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A6%81%E7%94%A8-zoom"><span class="nav-number">1.2.</span> <span class="nav-text">禁用 zoom</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">属性值配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#url"><span class="nav-number">2.1.</span> <span class="nav-text">url</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#on"><span class="nav-number">2.2.</span> <span class="nav-text">on</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#duration"><span class="nav-number">2.3.</span> <span class="nav-text">duration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#target"><span class="nav-number">2.4.</span> <span class="nav-text">target</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#touch"><span class="nav-number">2.5.</span> <span class="nav-text">touch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#magnify"><span class="nav-number">2.5.1.</span> <span class="nav-text">magnify</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#callback-onZoomIn-onZoomOut"><span class="nav-number">2.6.</span> <span class="nav-text">callback&#x2F;onZoomIn&#x2F;onZoomOut</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -193,9 +205,12 @@
       <span class="links-of-author-item">
         <a href="mailto:junyu_huang@outlook.com" title="E-Mail → mailto:junyu_huang@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/8257973" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;8257973" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i></a>
+      </span>
   </div>
   <div class="cc-license animated" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
 
         </div>
@@ -271,49 +286,49 @@
     
     <div class="post-body" itemprop="articleBody"><p>本文介绍如何使用 <a target="_blank" rel="noopener" href="https://www.jacklmoore.com/zoom/">Jquery Zoom</a> 放大图片。</p>
 <span id="more"></span>
-
-<h1 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- jQuery Required 1.7+ --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<h1>基本使用</h1>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- jQuery Required 1.7+ --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><code>&lt;img&gt;</code> 标签需置于某个合法的 HTML 标签内，如 <code>&lt;div&gt; &lt;figure&gt; ...</code> ， 而使用 <code>zoom()</code> 的元素应该是 <code>&lt;img&gt;</code> 的 <code>Parent Elemnt</code> 。</p>
-<h2 id="启用-zoom："><a href="#启用-zoom：" class="headerlink" title="启用 zoom："></a>启用 zoom：</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">figure</span> <span class="attr">id</span>=<span class="string">&quot;example&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://example.com/example.png&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">figure</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="启用-zoom：">启用 zoom：</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">figure</span> <span class="attr">id</span>=<span class="string">&quot;example&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://example.com/example.png&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">figure</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 最简单的启用方式 */</span></span><br><span class="line">$(<span class="string">&#x27;#example&#x27;</span>).<span class="title function_">zoom</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 通常需要配置 zoom 参数 */</span></span><br><span class="line">$(<span class="string">&#x27;#example&#x27;</span>).<span class="title function_">zoom</span>(&#123;</span><br><span class="line">    <span class="attr">property1</span>: value1, </span><br><span class="line">    <span class="attr">property2</span>: value2,</span><br><span class="line">    ... </span><br><span class="line">    <span class="attr">propertyN</span>: valueN</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="禁用-zoom"><a href="#禁用-zoom" class="headerlink" title="禁用 zoom"></a>禁用 zoom</h2><p>以下是zoom的禁用方式。</p>
+<h2 id="禁用-zoom">禁用 zoom</h2>
+<p>以下是zoom的禁用方式。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;#example&#x27;</span>).<span class="title function_">trigger</span>(<span class="string">&#x27;zoom.destroy&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
 <p>比如你可以使用一个checkbox来控制zoom的启用和关闭。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;input:checkbox&quot;</span>).<span class="title function_">change</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">if</span> ($(<span class="string">&quot;input:checked&quot;</span>).<span class="property">length</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    $(<span class="string">&#x27;#example&#x27;</span>).<span class="title function_">trigger</span>(<span class="string">&#x27;zoom.destroy&#x27;</span>); </span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">   	$(<span class="string">&#x27;#example&#x27;</span>).<span class="title function_">zoom</span>(&#123;</span><br><span class="line"></span><br><span class="line">        <span class="attr">magnify</span>: <span class="number">2</span></span><br><span class="line">    &#125;); </span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h1 id="属性值配置"><a href="#属性值配置" class="headerlink" title="属性值配置"></a>属性值配置</h1><h2 id="url"><a href="#url" class="headerlink" title="url"></a>url</h2><p><code>zoom</code> 图片源。</p>
+<h1>属性值配置</h1>
+<h2 id="url">url</h2>
+<p><code>zoom</code> 图片源。</p>
 <p>值 ： <code>false</code> | URL</p>
 <p>默认取 <code>&lt;img&gt;</code> 中的 <code>src</code> 作为放大图片源。当填写具体 <code>url</code> 时将取该 <code>url</code> 作为放大图片源。</p>
 <p>使用时可以将像素较低的图片放在 <code>&lt;img src=&quot;&quot;&gt;</code> 中，像素较高的放在 <code>zoom</code> 属性中。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;#example&#x27;</span>).<span class="title function_">zoom</span>(&#123;</span><br><span class="line">    <span class="attr">url</span>: <span class="string">&quot;https://example.com/example.png&quot;</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="on"><a href="#on" class="headerlink" title="on"></a>on</h2><p>触发 <code>zoom</code> 的方式。</p>
+<h2 id="on">on</h2>
+<p>触发 <code>zoom</code> 的方式。</p>
 <ul>
-<li><code>&#39;mouseover&#39;</code>: 默认值，鼠标经过时放大；</li>
-<li><code>&#39;grab&#39;</code> ：鼠标左键保持按下时放大点击的地方，挪出图片区域或松开后复原；</li>
-<li><code>&#39;click&#39;</code> :  鼠标左键点击后保持放大状态，经过时放大经过地方，挪出图片区域保持放大, 跟随鼠标移动的动作放大图片，再次点击后复原；</li>
-<li><code>&#39;toggle&#39;</code>：仅放大鼠标左键点击的地方，再次点击时复原。</li>
+<li><code>'mouseover'</code>: 默认值，鼠标经过时放大；</li>
+<li><code>'grab'</code> ：鼠标左键保持按下时放大点击的地方，挪出图片区域或松开后复原；</li>
+<li><code>'click'</code> :  鼠标左键点击后保持放大状态，经过时放大经过地方，挪出图片区域保持放大, 跟随鼠标移动的动作放大图片，再次点击后复原；</li>
+<li><code>'toggle'</code>：仅放大鼠标左键点击的地方，再次点击时复原。</li>
 </ul>
 <p>建议使用不同触发事件时配合使用不同的 <code>cursor</code> <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/cursor">CSS 样式</a> 作为指示。</p>
-<h2 id="duration"><a href="#duration" class="headerlink" title="duration"></a>duration</h2><p>渐入渐出时，数值越大渐出越缓慢，默认为120。</p>
+<h2 id="duration">duration</h2>
+<p>渐入渐出时，数值越大渐出越缓慢，默认为120。</p>
 <p>内部调用的是 jQuery 的 <a target="_blank" rel="noopener" href="https://api.jquery.com/fadeTo/">.fadeTo()</a> ，单位是毫秒。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;#example&#x27;</span>).<span class="title function_">zoom</span>(&#123;</span><br><span class="line">    <span class="attr">duration</span>: <span class="number">1000</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="target"><a href="#target" class="headerlink" title="target"></a>target</h2><p>CSS Selector. 通过设定该属性，可以使图片不在原图片显示区域放大，而在选定的 HTML Element 上呈现放大图像，原图像保持不变。</p>
+<h2 id="target">target</h2>
+<p>CSS Selector. 通过设定该属性，可以使图片不在原图片显示区域放大，而在选定的 HTML Element 上呈现放大图像，原图像保持不变。</p>
 <p>下面的代码将会把放大的图像显示在 <code>id</code> 为 <code>myTarget</code> 的 <code>div</code> 中，而原来的图像保持不变。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">figure</span> <span class="attr">id</span>=<span class="string">&quot;example&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://example.com/example.png&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">figure</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;myTarget&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;#example&#x27;</span>).<span class="title function_">zoom</span>(&#123;</span><br><span class="line">    <span class="attr">target</span>: <span class="string">&#x27;#myTarget&#x27;</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h2><p>是否启用 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Touch_events">touch events</a>, 默认启用。</p>
-<h3 id="magnify"><a href="#magnify" class="headerlink" title="magnify"></a>magnify</h3><p>放大倍数。默认值为1，即不放大。</p>
+<h2 id="touch">touch</h2>
+<p>是否启用 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Touch_events">touch events</a>, 默认启用。</p>
+<h3 id="magnify">magnify</h3>
+<p>放大倍数。默认值为1，即不放大。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;#example&#x27;</span>).<span class="title function_">zoom</span>(&#123;</span><br><span class="line">    <span class="attr">magnify</span>: <span class="number">2</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="callback-onZoomIn-onZoomOut"><a href="#callback-onZoomIn-onZoomOut" class="headerlink" title="callback&#x2F;onZoomIn&#x2F;onZoomOut"></a>callback&#x2F;onZoomIn&#x2F;onZoomOut</h2><p>三个属性用法一样：</p>
+<h2 id="callback-onZoomIn-onZoomOut">callback/onZoomIn/onZoomOut</h2>
+<p>三个属性用法一样：</p>
 <ul>
 <li><code>callback</code> ：图片加载完成后的回调函数</li>
 <li><code>onZoomIn</code> ：图片放大时调用的函数</li>
@@ -321,8 +336,8 @@
 </ul>
 <p>下面代码将在图片放大时将测试文本变为红色，图片恢复时将测试文本变为黑色。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;#example&#x27;</span>).<span class="title function_">zoom</span>(&#123;</span><br><span class="line">    <span class="attr">onZoomIn</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        $(<span class="string">&#x27;#testZoomStatus&#x27;</span>).<span class="title function_">css</span>(<span class="string">&#x27;color&#x27;</span>, <span class="string">&#x27;red&#x27;</span>);</span><br><span class="line">  &#125;, </span><br><span class="line">    <span class="attr">onZoomOut</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        $(<span class="string">&#x27;#testZoomStatus&#x27;</span>).<span class="title function_">css</span>(<span class="string">&#x27;color&#x27;</span>, <span class="string">&#x27;black&#x27;</span>);     </span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://www.jacklmoore.com/zoom/">jQuery Zoom</a></p>
+<h1>参考资料</h1>
+<p><a target="_blank" rel="noopener" href="https://www.jacklmoore.com/zoom/">jQuery Zoom</a></p>
 
     </div>
 
@@ -346,6 +361,23 @@
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
 </ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
 </div>
 
           <div class="post-tags">
@@ -384,32 +416,24 @@
 
 
 
-      <div class="tabs tabs-comment">
-        <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-changyan">changyan</a></li>
-            <li class="tab"><a href="#comment-disqus">disqus</a></li>
-            <li class="tab"><a href="#comment-livere">livere</a></li>
-            <li class="tab"><a href="#comment-utterances">utterances</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane changyan" id="comment-changyan">
-              <div class="comments" id="SOHUCS" sid="5b17e76536ee08cabf3a14223a495462"></div>
-            </div>
-            <div class="tab-pane disqus" id="comment-disqus">
-              
+      <div class="comment-button-group">
+          <a class="btn comment-button comment-disqus">disqus</a>
+          <a class="btn comment-button comment-livere">livere</a>
+          <a class="btn comment-button comment-utterances">utterances</a>
+      </div>
+        <div class="comment-position comment-disqus">
+          
   <div class="comments" id="disqus_thread">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-            </div>
-            <div class="tab-pane livere" id="comment-livere">
-              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
-            </div>
-            <div class="tab-pane utterances" id="comment-utterances">
-              <div class="comments utterances-container"></div>
-            </div>
         </div>
-      </div>
+        <div class="comment-position comment-livere">
+          <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
+        </div>
+        <div class="comment-position comment-utterances">
+          <div class="comments utterances-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js" defer></script>
 </div>
   </main>
 
@@ -459,12 +483,11 @@
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyy677YK2","appkey":"5d6728fb7c0c99dba952d82907fb1777","count":false}</script>
-<script src="/js/third-party/comments/changyan.js" defer></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"junyuh","count":false,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js" defer></script>
 <script src="/js/third-party/comments/livere.js" defer></script>

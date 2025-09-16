@@ -15,10 +15,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/yello/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":"ture","motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="本文将介绍如何在 VirtualBox 中安装 Ubuntu Server，并配置网络和 SSH 访问。">
 <meta property="og:type" content="article">
@@ -65,6 +67,9 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>VirtualBox 安装 Ubuntu Server（安装_配置网络_SSH） | Junyu</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-498SG67TB7"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-498SG67TB7","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
 
@@ -84,12 +89,19 @@
 
 
 
+  <script src="/js/third-party/pace.js" defer></script>
 
   <script src="/js/third-party/addtoany.js" defer></script>
 
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
 
 
 
@@ -131,7 +143,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -182,7 +194,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-VitrualBox"><span class="nav-number">1.</span> <span class="nav-text">安装 VitrualBox</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD-Ubuntu-%E9%95%9C%E5%83%8F"><span class="nav-number">2.</span> <span class="nav-text">下载 Ubuntu 镜像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VirtualBox%E5%85%A8%E5%B1%80%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%AE%9A"><span class="nav-number">3.</span> <span class="nav-text">VirtualBox全局网络设定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">虚拟机配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE"><span class="nav-number">4.1.</span> <span class="nav-text">虚拟机基础配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"><span class="nav-number">4.2.</span> <span class="nav-text">网络配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F"><span class="nav-number">5.</span> <span class="nav-text">安装系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C"><span class="nav-number">6.</span> <span class="nav-text">配置网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA-ping-%E5%AE%BF%E4%B8%BB%E6%9C%BA"><span class="nav-number">6.1.</span> <span class="nav-text">虚拟机 ping 宿主机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BF%9E%E9%80%9A%E4%BA%92%E8%81%94%E7%BD%91"><span class="nav-number">6.2.</span> <span class="nav-text">配置虚拟机连通互联网</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-SSH-%E8%AE%BF%E9%97%AE"><span class="nav-number">7.</span> <span class="nav-text">配置 SSH 访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">8.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">安装 VitrualBox</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">下载 Ubuntu 镜像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">VirtualBox全局网络设定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">虚拟机配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE"><span class="nav-number">4.1.</span> <span class="nav-text">虚拟机基础配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"><span class="nav-number">4.2.</span> <span class="nav-text">网络配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">安装系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">6.</span> <span class="nav-text">配置网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA-ping-%E5%AE%BF%E4%B8%BB%E6%9C%BA"><span class="nav-number">6.1.</span> <span class="nav-text">虚拟机 ping 宿主机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BF%9E%E9%80%9A%E4%BA%92%E8%81%94%E7%BD%91"><span class="nav-number">6.2.</span> <span class="nav-text">配置虚拟机连通互联网</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">7.</span> <span class="nav-text">配置 SSH 访问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">8.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -216,9 +228,12 @@
       <span class="links-of-author-item">
         <a href="mailto:junyu_huang@outlook.com" title="E-Mail → mailto:junyu_huang@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/8257973" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;8257973" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i></a>
+      </span>
   </div>
   <div class="cc-license animated" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
 
         </div>
@@ -294,45 +309,72 @@
     
     <div class="post-body" itemprop="articleBody"><p>本文将介绍如何在 VirtualBox 中安装 Ubuntu Server，并配置网络和 SSH 访问。</p>
 <span id="more"></span>
-
-<h1 id="安装-VitrualBox"><a href="#安装-VitrualBox" class="headerlink" title="安装 VitrualBox"></a>安装 VitrualBox</h1><ol>
-<li>下载 VitrualBox 安装软件<br>下载地址：<a target="_blank" rel="noopener" href="https://www.virtualbox.org/wiki/Downloads">Downloads – Oracle VirtualBox</a></li>
-<li>如果安装时弹出以下错误，需要在微软的服务支持中找到安装包安装 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170">Latest supported Visual C++ Redistributable downloads | Microsoft Learn</a><br><img src="/images/cnblog/3643699-20250719172412948-702184005.png" alt="VirtualBox安装报错"><br><img src="/images/cnblog/3643699-20250719172557024-358531801.png" alt="C++依赖图示"></li>
+<h1>安装 VitrualBox</h1>
+<ol>
+<li>下载 VitrualBox 安装软件<br>
+下载地址：<a target="_blank" rel="noopener" href="https://www.virtualbox.org/wiki/Downloads">Downloads – Oracle VirtualBox</a></li>
+<li>如果安装时弹出以下错误，需要在微软的服务支持中找到安装包安装 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170">Latest supported Visual C++ Redistributable downloads | Microsoft Learn</a><br>
+<img src="/images/cnblog/3643699-20250719172412948-702184005.png" alt="VirtualBox安装报错"><br>
+<img src="/images/cnblog/3643699-20250719172557024-358531801.png" alt="C++依赖图示"></li>
 <li>安装完成后重新进行VituralBox的安装，记得安装网络相关的组件（默认会安装）</li>
 </ol>
-<h1 id="下载-Ubuntu-镜像"><a href="#下载-Ubuntu-镜像" class="headerlink" title="下载 Ubuntu 镜像"></a>下载 Ubuntu 镜像</h1><p>选择合适的版本进行下载，本文使用的是Ubuntu 24.04.2 LTS<br>下载地址：<a target="_blank" rel="noopener" href="https://ubuntu.com/download/server">Get Ubuntu Server | Download | Ubuntu</a></p>
-<h1 id="VirtualBox全局网络设定"><a href="#VirtualBox全局网络设定" class="headerlink" title="VirtualBox全局网络设定"></a>VirtualBox全局网络设定</h1><ol>
-<li>点击工具旁边的列表，选择网络<br><img src="/images/cnblog/3643699-20250720113614539-1925563591.png" alt="image"></li>
-<li>设置Host-only，选择手动配置网卡<br><img src="/images/cnblog/3643699-20250720114044887-1330707441.png" alt="image"></li>
-</ol>
-<h1 id="虚拟机配置"><a href="#虚拟机配置" class="headerlink" title="虚拟机配置"></a>虚拟机配置</h1><h2 id="虚拟机基础配置"><a href="#虚拟机基础配置" class="headerlink" title="虚拟机基础配置"></a>虚拟机基础配置</h2><ol>
-<li>设置虚拟机名称，虚拟光盘选择刚刚下载的镜像文件<br><img src="/images/cnblog/3643699-20250719194125661-778412755.png" alt="image"></li>
-<li>根据你的使用需求分配内存和处理器（可以把使用需求描述发给AI，让AI给出硬件配置）<br><img src="/images/cnblog/3643699-20250719194308934-513876306.png" alt="image"></li>
-<li>设置虚拟硬盘（配置参数也是按需设定，可以让AI辅助生成）<br><img src="/images/cnblog/3643699-20250719194329851-1528542320.png" alt="image"></li>
-</ol>
-<h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><p>网卡1和网卡2不需要按这个顺序，只要有两个这个网络设定就可以</p>
+<h1>下载 Ubuntu 镜像</h1>
+<p>选择合适的版本进行下载，本文使用的是Ubuntu 24.04.2 LTS<br>
+下载地址：<a target="_blank" rel="noopener" href="https://ubuntu.com/download/server">Get Ubuntu Server | Download | Ubuntu</a></p>
+<h1>VirtualBox全局网络设定</h1>
 <ol>
-<li>设置网卡1为网络地址转换（NAT），用于访问互联网<br><img src="/images/cnblog/3643699-20250720114939997-723812010.png" alt="image"></li>
-<li>设置网卡2为仅主机网络，其他设定按默认即可<br><img src="/images/cnblog/3643699-20250720115527201-1403369457.png" alt="image"></li>
+<li>点击工具旁边的列表，选择网络<br>
+<img src="/images/cnblog/3643699-20250720113614539-1925563591.png" alt="image"></li>
+<li>设置Host-only，选择手动配置网卡<br>
+<img src="/images/cnblog/3643699-20250720114044887-1330707441.png" alt="image"></li>
 </ol>
-<h1 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h1><ol>
+<h1>虚拟机配置</h1>
+<h2 id="虚拟机基础配置">虚拟机基础配置</h2>
+<ol>
+<li>设置虚拟机名称，虚拟光盘选择刚刚下载的镜像文件<br>
+<img src="/images/cnblog/3643699-20250719194125661-778412755.png" alt="image"></li>
+<li>根据你的使用需求分配内存和处理器（可以把使用需求描述发给AI，让AI给出硬件配置）<br>
+<img src="/images/cnblog/3643699-20250719194308934-513876306.png" alt="image"></li>
+<li>设置虚拟硬盘（配置参数也是按需设定，可以让AI辅助生成）<br>
+<img src="/images/cnblog/3643699-20250719194329851-1528542320.png" alt="image"></li>
+</ol>
+<h2 id="网络配置">网络配置</h2>
+<p>网卡1和网卡2不需要按这个顺序，只要有两个这个网络设定就可以</p>
+<ol>
+<li>设置网卡1为网络地址转换（NAT），用于访问互联网<br>
+<img src="/images/cnblog/3643699-20250720114939997-723812010.png" alt="image"></li>
+<li>设置网卡2为仅主机网络，其他设定按默认即可<br>
+<img src="/images/cnblog/3643699-20250720115527201-1403369457.png" alt="image"></li>
+</ol>
+<h1>安装系统</h1>
+<ol>
 <li>启动虚拟机</li>
-<li>选择第一个，安装 Ubuntu Server<br><img src="/images/cnblog/3643699-20250720115201392-469023671.png" alt="image"></li>
+<li>选择第一个，安装 Ubuntu Server<br>
+<img src="/images/cnblog/3643699-20250720115201392-469023671.png" alt="image"></li>
 <li>语言选择英语</li>
-<li>键盘布局我使用了检测系统检测出来是图片的这个<br><img src="/images/cnblog/3643699-20250720115633897-1192508262.png" alt="image"></li>
-<li>选择安装模式，建议你选择第一个，第二个安装完连 <code>ping</code>, <code>vi</code>这类基础命令都没有<br><img src="/images/cnblog/3643699-20250720115722764-1596255386.png" alt="image"></li>
-<li>配置网络，可以看到图上有2张网卡，1张是NAT，一张是Host-only，对应我们上面的网络设置<br><img src="/images/cnblog/3643699-20250720115948478-1678625414.png" alt="image"></li>
-<li>选择那张Host-only的，选择手动分配IP<br><img src="/images/cnblog/3643699-20250720120045638-1490767169.png" alt="image"><br><img src="/images/cnblog/3643699-20250720120117210-412917166.png" alt="image"></li>
-<li>配置Subnet 与Host-Only一致，如果不确定如何配置，可以直接问AI，它会输出所有配置<br><img src="/images/cnblog/3643699-20250720120310875-1799346530.png" alt="image"></li>
-<li>这时候网络可能还未通，所以镜像会有问题，可以先不管他<br><img src="/images/cnblog/3643699-20250720120612032-1870840288.png" alt="image"></li>
+<li>键盘布局我使用了检测系统检测出来是图片的这个<br>
+<img src="/images/cnblog/3643699-20250720115633897-1192508262.png" alt="image"></li>
+<li>选择安装模式，建议你选择第一个，第二个安装完连 <code>ping</code>, <code>vi</code>这类基础命令都没有<br>
+<img src="/images/cnblog/3643699-20250720115722764-1596255386.png" alt="image"></li>
+<li>配置网络，可以看到图上有2张网卡，1张是NAT，一张是Host-only，对应我们上面的网络设置<br>
+<img src="/images/cnblog/3643699-20250720115948478-1678625414.png" alt="image"></li>
+<li>选择那张Host-only的，选择手动分配IP<br>
+<img src="/images/cnblog/3643699-20250720120045638-1490767169.png" alt="image"><br>
+<img src="/images/cnblog/3643699-20250720120117210-412917166.png" alt="image"></li>
+<li>配置Subnet 与Host-Only一致，如果不确定如何配置，可以直接问AI，它会输出所有配置<br>
+<img src="/images/cnblog/3643699-20250720120310875-1799346530.png" alt="image"></li>
+<li>这时候网络可能还未通，所以镜像会有问题，可以先不管他<br>
+<img src="/images/cnblog/3643699-20250720120612032-1870840288.png" alt="image"></li>
 <li>存储配置选择 Use an entire disk</li>
 <li>跳过 Ubuntu Pro</li>
 <li>选择 Install openSSH</li>
 <li>选择 Reboot Now</li>
 </ol>
 <p>这时候可以创建一个快照</p>
-<h1 id="配置网络"><a href="#配置网络" class="headerlink" title="配置网络"></a>配置网络</h1><p>进入系统后发现还是不能 ping 通互联网的网络，比如 baidu.com，也 ping 不通宿主机 192.168.56.1，但宿主机可以 ping 通虚拟机 192.168.56.22</p>
-<h2 id="虚拟机-ping-宿主机"><a href="#虚拟机-ping-宿主机" class="headerlink" title="虚拟机 ping 宿主机"></a>虚拟机 ping 宿主机</h2><ol>
+<h1>配置网络</h1>
+<p>进入系统后发现还是不能 ping 通互联网的网络，比如 <a target="_blank" rel="noopener" href="http://baidu.com">baidu.com</a>，也 ping 不通宿主机 192.168.56.1，但宿主机可以 ping 通虚拟机 192.168.56.22</p>
+<h2 id="虚拟机-ping-宿主机">虚拟机 ping 宿主机</h2>
+<ol>
 <li>使用以下语句先暂时关闭宿主机的防火墙(使用管理员身份打开 cmd)</li>
 </ol>
 <figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh advfirewall <span class="built_in">set</span> allprofiles <span class="keyword">state</span> off</span><br></pre></td></tr></table></figure>
@@ -345,16 +387,24 @@
 <li>恢复防火墙</li>
 </ol>
 <figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh advfirewall <span class="built_in">set</span> allprofiles <span class="keyword">state</span> <span class="keyword">on</span></span><br></pre></td></tr></table></figure>
-<h2 id="配置虚拟机连通互联网"><a href="#配置虚拟机连通互联网" class="headerlink" title="配置虚拟机连通互联网"></a>配置虚拟机连通互联网</h2><ol>
-<li>使用 <code>ip route</code> 查看路由情况<br><img src="/images/cnblog/3643699-20250719231647454-1015375365.png" alt="image"><br>发现因为路由问题导致无法访问互联网</li>
+<h2 id="配置虚拟机连通互联网">配置虚拟机连通互联网</h2>
+<ol>
+<li>使用 <code>ip route</code> 查看路由情况<br>
+<img src="/images/cnblog/3643699-20250719231647454-1015375365.png" alt="image"><br>
+发现因为路由问题导致无法访问互联网</li>
 <li>编辑路由配置</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> vim /etc/netplan/50-cloud-init.yaml</span><br></pre></td></tr></table></figure>
-<p>配置前的路由情况：<br><img src="/images/cnblog/3643699-20250720121916136-1068483522.png" alt="image"><br>编辑为：<br><img src="/images/cnblog/3643699-20250720122033123-1401949685.png" alt="image"><br>3. 应用配置</p>
+<p>配置前的路由情况：<br>
+<img src="/images/cnblog/3643699-20250720121916136-1068483522.png" alt="image"><br>
+编辑为：<br>
+<img src="/images/cnblog/3643699-20250720122033123-1401949685.png" alt="image"><br>
+3. 应用配置</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> netplan apply</span><br></pre></td></tr></table></figure>
 <p>这时候应该就可以 ping 通互联网了</p>
 <p>可以再建立一个快照</p>
-<h1 id="配置-SSH-访问"><a href="#配置-SSH-访问" class="headerlink" title="配置 SSH 访问"></a>配置 SSH 访问</h1><p>在虚拟机中使用复制粘贴不方便，我尝试使用 VitrualBox 的增强功能，似乎需要图形界面支持，一直无法成功，故换用主机 SSH 连接的方式</p>
+<h1>配置 SSH 访问</h1>
+<p>在虚拟机中使用复制粘贴不方便，我尝试使用 VitrualBox 的增强功能，似乎需要图形界面支持，一直无法成功，故换用主机 SSH 连接的方式</p>
 <ol>
 <li>设置开机SSH自启动</li>
 </ol>
@@ -364,14 +414,18 @@
 </ol>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo</span> ufw <span class="literal">allow</span> <span class="number">22</span></span><br></pre></td></tr></table></figure>
 <ol start="3">
-<li><p>在刚刚配置网卡的地方配置 VirtualBox 网络（端口转发），主机端口可自由设置<br><img src="/images/cnblog/3643699-20250720122654113-383512891.png" alt="image"></p>
+<li>
+<p>在刚刚配置网卡的地方配置 VirtualBox 网络（端口转发），主机端口可自由设置<br>
+<img src="/images/cnblog/3643699-20250720122654113-383512891.png" alt="image"></p>
 </li>
-<li><p>现在就可以使用SSH工具访问了</p>
+<li>
+<p>现在就可以使用SSH工具访问了</p>
 </li>
 </ol>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssh</span> username@<span class="number">127.0.0.1</span> -p <span class="number">4869</span></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://www.zhangshengrong.com/p/O3aAk6ZKX4/">virtualbox虚拟机NAT模式下不能连接外网的解决方法 &#x2F; 张生荣</a></li>
+<h1>参考资料</h1>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.zhangshengrong.com/p/O3aAk6ZKX4/">virtualbox虚拟机NAT模式下不能连接外网的解决方法 / 张生荣</a></li>
 </ul>
 
     </div>
@@ -396,6 +450,23 @@
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
 </ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
 </div>
 
           <div class="post-tags">
@@ -435,32 +506,24 @@
 
 
 
-      <div class="tabs tabs-comment">
-        <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-changyan">changyan</a></li>
-            <li class="tab"><a href="#comment-disqus">disqus</a></li>
-            <li class="tab"><a href="#comment-livere">livere</a></li>
-            <li class="tab"><a href="#comment-utterances">utterances</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane changyan" id="comment-changyan">
-              <div class="comments" id="SOHUCS" sid="0dcc3adf735f369324f3ac63feea5c28"></div>
-            </div>
-            <div class="tab-pane disqus" id="comment-disqus">
-              
+      <div class="comment-button-group">
+          <a class="btn comment-button comment-disqus">disqus</a>
+          <a class="btn comment-button comment-livere">livere</a>
+          <a class="btn comment-button comment-utterances">utterances</a>
+      </div>
+        <div class="comment-position comment-disqus">
+          
   <div class="comments" id="disqus_thread">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-            </div>
-            <div class="tab-pane livere" id="comment-livere">
-              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
-            </div>
-            <div class="tab-pane utterances" id="comment-utterances">
-              <div class="comments utterances-container"></div>
-            </div>
         </div>
-      </div>
+        <div class="comment-position comment-livere">
+          <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
+        </div>
+        <div class="comment-position comment-utterances">
+          <div class="comments utterances-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js" defer></script>
 </div>
   </main>
 
@@ -510,12 +573,11 @@
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyy677YK2","appkey":"5d6728fb7c0c99dba952d82907fb1777","count":false}</script>
-<script src="/js/third-party/comments/changyan.js" defer></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"junyuh","count":false,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js" defer></script>
 <script src="/js/third-party/comments/livere.js" defer></script>

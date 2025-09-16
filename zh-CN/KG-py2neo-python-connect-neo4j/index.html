@@ -15,10 +15,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/yello/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":"ture","motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="本文简述在 python 中使用 py2neo 连接 Neo4j 及连接时可能遇到的问题和解决方法。">
 <meta property="og:type" content="article">
@@ -43,6 +45,9 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>Neo4j之python连接失败解决(py2neo) | Junyu</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-498SG67TB7"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-498SG67TB7","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
 
@@ -62,12 +67,19 @@
 
 
 
+  <script src="/js/third-party/pace.js" defer></script>
 
   <script src="/js/third-party/addtoany.js" defer></script>
 
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
 
 
 
@@ -109,7 +121,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -193,9 +205,12 @@
       <span class="links-of-author-item">
         <a href="mailto:junyu_huang@outlook.com" title="E-Mail → mailto:junyu_huang@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/8257973" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;8257973" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i></a>
+      </span>
   </div>
   <div class="cc-license animated" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
 
         </div>
@@ -271,36 +286,26 @@
     
     <div class="post-body" itemprop="articleBody"><p>本文简述在 python 中使用 py2neo 连接 Neo4j 及连接时可能遇到的问题和解决方法。</p>
 <span id="more"></span>
-
 <p>使用 <code>pip</code> 工具安装 py2neo 。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install py2neo</span><br></pre></td></tr></table></figure>
-
 <p>若已安装 pip 仍提示 <code>pip : command not found</code> ，可以切换到到 Python 的安装目录<code>&lt;Installation floder&gt;\Scripts</code>目录下，使用以下命令安装：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./pip install py2neo</span><br></pre></td></tr></table></figure>
-
 <p>由于网络原因，有可能多次下载失败，这种情况可以选择到  <a target="_blank" rel="noopener" href="https://pypi.org">PyPI</a> 手动下载<a target="_blank" rel="noopener" href="https://pypi.org/project/py2neo/#files"> py2neo package</a> ，再使用 <code>pip</code> 进行安装：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install THE_PACKAGE_PATH</span><br></pre></td></tr></table></figure>
-
 <p>导入 py2neo :</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="keyword">import</span> py2neo</span><br></pre></td></tr></table></figure>
-
 <p>调用 <code>py2neo.Graph()</code> 函数连接Neo4j中已有的图：</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="keyword">graph</span>=py2neo.<span class="keyword">Graph</span>(<span class="string">&quot;bolt://localhost:7687&quot;</span>)</span><br></pre></td></tr></table></figure>
-
 <p>注：这里的端口是一般情况下的默认端口号，在该端口被占用的情况下Neo4j启用的访问端口可能并不是此端口号。</p>
 <p>此时并不能看出连接是否成功，可以使用查询语句查看是否能查询到结果，若连接成功，则此时可以使用图实例所提供的各项功能，py2neo 中提供了对节点、关系，以及各类操作的方法，也可以调用 Cypher 语句进行操作。</p>
 <p>这里我们通过调用 <code>len()</code> 函数对节点进行计数来查看连接状态：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="built_in">len</span>(graph.nodes)</span><br></pre></td></tr></table></figure>
-
 <p>若连接不成功，可能看到以下错误提示</p>
 <figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last): </span><br><span class="line">    File <span class="string">&quot;E:<span class="char escape_">\P</span>ython<span class="char escape_">\l</span>ib<span class="char escape_">\s</span>ite-packages<span class="char escape_">\p</span>y2neo<span class="char escape_">\d</span>atabase.py&quot;</span>, line <span class="number">828</span>, <span class="keyword">in</span> run entities<span class="operator">=</span>entities))</span><br><span class="line">    File <span class="string">&quot;E:<span class="char escape_">\P</span>ython<span class="char escape_">\l</span>ib<span class="char escape_">\s</span>ite-packages<span class="char escape_">\p</span>y2neo<span class="char escape_">\i</span>nternal<span class="char escape_">\c</span>onnectors.py&quot;</span>, line <span class="number">292</span>, <span class="keyword">in</span> run return self._run_1(statement, parameters, graph, keys, entities)</span><br><span class="line">    File <span class="string">&quot;E:<span class="char escape_">\P</span>ython<span class="char escape_">\l</span>ib<span class="char escape_">\s</span>ite-packages<span class="char escape_">\p</span>y2neo<span class="char escape_">\i</span>nternal<span class="char escape_">\c</span>onnectors.py&quot;</span>, line <span class="number">241</span>, <span class="keyword">in</span> _run_1cx <span class="operator">=</span> self.pool.acquire()</span><br><span class="line">    File <span class="string">&quot;E:<span class="char escape_">\P</span>ython<span class="char escape_">\l</span>ib<span class="char escape_">\s</span>ite-packages<span class="char escape_">\n</span>eobolt<span class="char escape_">\d</span>irect.py&quot;</span>, line <span class="number">715</span>, <span class="keyword">in</span> acquire return self.acquire_direct(self.address)</span><br><span class="line">    File <span class="string">&quot;E:<span class="char escape_">\P</span>ython<span class="char escape_">\l</span>ib<span class="char escape_">\s</span>ite-packages<span class="char escape_">\n</span>eobolt<span class="char escape_">\d</span>irect.py&quot;</span>, line <span class="number">608</span>, <span class="keyword">in</span> acquire_direct connection <span class="operator">=</span> self.connector(address, error_handler<span class="operator">=</span>self.connection_error_handler)</span><br><span class="line">    File <span class="string">&quot;E:<span class="char escape_">\P</span>ython<span class="char escape_">\l</span>ib<span class="char escape_">\s</span>ite-packages<span class="char escape_">\p</span>y2neo<span class="char escape_">\i</span>nternal<span class="char escape_">\c</span>onnectors.py&quot;</span>, line <span class="number">227</span>, <span class="keyword">in</span> connector encrypted<span class="operator">=</span>cx_data[<span class="string">&quot;secure&quot;</span>], <span class="operator">*</span><span class="operator">*</span>kwargs)</span><br><span class="line">    File <span class="string">&quot;E:<span class="char escape_">\P</span>ython<span class="char escape_">\l</span>ib<span class="char escape_">\s</span>ite-packages<span class="char escape_">\n</span>eobolt<span class="char escape_">\d</span>irect.py&quot;</span>, line <span class="number">972</span>, <span class="keyword">in</span> connect raise last_error </span><br><span class="line">    File <span class="string">&quot;E:<span class="char escape_">\P</span>ython<span class="char escape_">\l</span>ib<span class="char escape_">\s</span>ite-packages<span class="char escape_">\n</span>eobolt<span class="char escape_">\d</span>irect.py&quot;</span>, line <span class="number">964</span>, <span class="keyword">in</span> connect connection <span class="operator">=</span> _handshake(s, address, der_encoded_server_certificate, <span class="operator">*</span><span class="operator">*</span>config)</span><br><span class="line">    File <span class="string">&quot;E:<span class="char escape_">\P</span>ython<span class="char escape_">\l</span>ib<span class="char escape_">\s</span>ite-packages<span class="char escape_">\n</span>eobolt<span class="char escape_">\d</span>irect.py&quot;</span>, line <span class="number">932</span>, <span class="keyword">in</span> _handshake connection.hello()</span><br><span class="line">    File <span class="string">&quot;E:<span class="char escape_">\P</span>ython<span class="char escape_">\l</span>ib<span class="char escape_">\s</span>ite-packages<span class="char escape_">\n</span>eobolt<span class="char escape_">\d</span>irect.py&quot;</span>, line <span class="number">249</span>, <span class="keyword">in</span> hello self.sync()</span><br><span class="line">    File <span class="string">&quot;E:<span class="char escape_">\P</span>ython<span class="char escape_">\l</span>ib<span class="char escape_">\s</span>ite-packages<span class="char escape_">\n</span>eobolt<span class="char escape_">\d</span>irect.py&quot;</span>, line <span class="number">527</span>, <span class="keyword">in</span> sync detail_delta, summary_delta <span class="operator">=</span> self.fetch()</span><br><span class="line">    File <span class="string">&quot;E:<span class="char escape_">\P</span>ython<span class="char escape_">\l</span>ib<span class="char escape_">\s</span>ite-packages<span class="char escape_">\n</span>eobolt<span class="char escape_">\d</span>irect.py&quot;</span>, line <span class="number">419</span>, <span class="keyword">in</span> fetch    return self._fetch()</span><br><span class="line">    File <span class="string">&quot;E:<span class="char escape_">\P</span>ython<span class="char escape_">\l</span>ib<span class="char escape_">\s</span>ite-packages<span class="char escape_">\n</span>eobolt<span class="char escape_">\d</span>irect.py&quot;</span>, line <span class="number">461</span>, <span class="keyword">in</span> _fetch  response.on_failure(summary_metadata <span class="keyword">or</span> &#123;&#125;)</span><br><span class="line">    File <span class="string">&quot;E:<span class="char escape_">\P</span>ython<span class="char escape_">\l</span>ib<span class="char escape_">\s</span>ite-packages<span class="char escape_">\n</span>eobolt<span class="char escape_">\d</span>irect.py&quot;</span>, line <span class="number">774</span>, <span class="keyword">in</span> on_failure raise AuthError(message)</span><br><span class="line">neobolt.exceptions.<span class="params">AuthError:</span> The client is unauthorized due to authentication failure.                                                                             During handling of the above exception, another exception <span class="params">occurred:</span>                 Traceback (most recent call last):</span><br><span class="line">    File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> <span class="symbol">&lt;module&gt;</span></span><br><span class="line">    File <span class="string">&quot;E:<span class="char escape_">\P</span>ython<span class="char escape_">\l</span>ib<span class="char escape_">\s</span>ite-packages<span class="char escape_">\p</span>y2neo<span class="char escape_">\m</span>atching.py&quot;</span>, line <span class="number">196</span>, <span class="keyword">in</span> __len__  return len(self.match())</span><br><span class="line">    File <span class="string">&quot;E:<span class="char escape_">\P</span>ython<span class="char escape_">\l</span>ib<span class="char escape_">\s</span>ite-packages<span class="char escape_">\p</span>y2neo<span class="char escape_">\m</span>atching.py&quot;</span>, line <span class="number">80</span>, <span class="keyword">in</span> __len__ return self.graph.evaluate(<span class="operator">*</span>self._query_and_parameters(count<span class="operator">=</span>True))</span><br><span class="line">    File <span class="string">&quot;E:<span class="char escape_">\P</span>ython<span class="char escape_">\l</span>ib<span class="char escape_">\s</span>ite-packages<span class="char escape_">\p</span>y2neo<span class="char escape_">\d</span>atabase.py&quot;</span>, line <span class="number">395</span>, <span class="keyword">in</span> evaluate return self.begin(autocommit<span class="operator">=</span>True).evaluate(cypher, parameters, <span class="operator">*</span><span class="operator">*</span>kwparameters)</span><br><span class="line">    File <span class="string">&quot;E:<span class="char escape_">\P</span>ython<span class="char escape_">\l</span>ib<span class="char escape_">\s</span>ite-packages<span class="char escape_">\p</span>y2neo<span class="char escape_">\d</span>atabase.py&quot;</span>, line <span class="number">876</span>, <span class="keyword">in</span> evaluate return self.run(cypher, parameters, <span class="operator">*</span><span class="operator">*</span>kwparameters).evaluate(<span class="number">0</span>)</span><br><span class="line">    File <span class="string">&quot;E:<span class="char escape_">\P</span>ython<span class="char escape_">\l</span>ib<span class="char escape_">\s</span>ite-packages<span class="char escape_">\p</span>y2neo<span class="char escape_">\d</span>atabase.py&quot;</span>, line <span class="number">830</span>, <span class="keyword">in</span> run raise GraphError.hydrate(&#123;<span class="string">&quot;code&quot;</span>: error.code, <span class="string">&quot;message&quot;</span>: error.message&#125;)</span><br><span class="line">    File <span class="string">&quot;E:<span class="char escape_">\P</span>ython<span class="char escape_">\l</span>ib<span class="char escape_">\s</span>ite-packages<span class="char escape_">\p</span>y2neo<span class="char escape_">\d</span>atabase.py&quot;</span>, line <span class="number">676</span>, <span class="keyword">in</span> hydrate_, classification, category, title <span class="operator">=</span> code.split(<span class="string">&quot;.&quot;</span>)                                   <span class="params">AttributeError:</span> &#x27;NoneType&#x27; object has no attribute &#x27;split&#x27;                     </span><br></pre></td></tr></table></figure>
-
 <p>可以看到是身份验证失败而产生的错误。这是由于连接时未设置用户名和密码导致的，默认用户名为 <code>neo4j</code>，密码为<code>password</code>，而 Neo4j 默认密码为 <code>neo4j</code> ，因此导致了认证失败，同时在第一次开启图数据库时 Neo4j 会提示设立身份验证方式，此时设置的密码将用于登录，若使用 Neo4j Browser，并不会在每一次登陆时都提示身份验证，因此并未注意到这一点。在 Neo4j Browser 中使用 <code>server user list</code> 可以看到此时有名为 <code>neo4j</code> 的使用者。可以使用 <code>server user add</code> 命令添加一个用户，用此用户作为 <code>Graph()</code> 的 <code>auth</code> 项参数登录即可。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;graph=py2neo.Graph(<span class="string">&quot;bolt://localhost:7687&quot;</span>, auth=(<span class="string">&#x27;username&#x27;</span>, <span class="string">&#x27;password&#x27;</span>))</span><br></pre></td></tr></table></figure>
-
 <p>注：在查找此问题的解决方式时看到有提议用 <code>neo4j-admin</code> 工具修改初始密码，在 Windows 下，此工具并不是直接以 <code>*.exe</code> 的可执行文件出现，而是 <code>*.bat</code> 的批处理文件，并且在 Neo4j Desktop 版本下此工具不是位于 <code>&lt;Installation Folder&gt;/bin</code> ，而应该切换至 <code>&lt;Database Folder&gt;/bin</code> 目录下，运行以下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./neo4j-admin.bat YOURCOMMAND</span><br></pre></td></tr></table></figure>
-
 <p>但在此操作应该是在数据库未建立时，否则，将会提示此时的权限已经转移到 <code>&lt;Database Folder&gt;/data/dbms/</code> 下的 <code>auth</code> 文件中，如果要重设密码应该移除 <code>auth</code> 和 <code>role</code> 相关文件或者重设该数据库，所以并不能使用此方式，新建一个用户应该是一个比较好的选择。</p>
 <ul>
 <li><strong>参考资料</strong>：<a target="_blank" rel="noopener" href="https://py2neo.org/v4/index.html">The Py2neo v4 Handbook</a></li>
@@ -328,6 +333,23 @@
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
 </ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
 </div>
 
           <div class="post-tags">
@@ -367,32 +389,24 @@
 
 
 
-      <div class="tabs tabs-comment">
-        <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-changyan">changyan</a></li>
-            <li class="tab"><a href="#comment-disqus">disqus</a></li>
-            <li class="tab"><a href="#comment-livere">livere</a></li>
-            <li class="tab"><a href="#comment-utterances">utterances</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane changyan" id="comment-changyan">
-              <div class="comments" id="SOHUCS" sid="f89ce1c3cf447de04be9d1c1f1575a3a"></div>
-            </div>
-            <div class="tab-pane disqus" id="comment-disqus">
-              
+      <div class="comment-button-group">
+          <a class="btn comment-button comment-disqus">disqus</a>
+          <a class="btn comment-button comment-livere">livere</a>
+          <a class="btn comment-button comment-utterances">utterances</a>
+      </div>
+        <div class="comment-position comment-disqus">
+          
   <div class="comments" id="disqus_thread">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-            </div>
-            <div class="tab-pane livere" id="comment-livere">
-              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
-            </div>
-            <div class="tab-pane utterances" id="comment-utterances">
-              <div class="comments utterances-container"></div>
-            </div>
         </div>
-      </div>
+        <div class="comment-position comment-livere">
+          <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
+        </div>
+        <div class="comment-position comment-utterances">
+          <div class="comments utterances-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js" defer></script>
 </div>
   </main>
 
@@ -442,12 +456,11 @@
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyy677YK2","appkey":"5d6728fb7c0c99dba952d82907fb1777","count":false}</script>
-<script src="/js/third-party/comments/changyan.js" defer></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"junyuh","count":false,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js" defer></script>
 <script src="/js/third-party/comments/livere.js" defer></script>

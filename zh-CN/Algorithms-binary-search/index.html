@@ -15,17 +15,19 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/yello/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":"ture","motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="算法：二分搜索算法（折半查找算法）时间复杂度：$O(log ; n)$  二分搜索算法概述 二分搜索算法伪代码 二分搜索算法实现">
+    <meta name="description" content="算法：二分搜索算法（折半查找算法） 时间复杂度：$O(log ; n)$  二分搜索算法概述 二分搜索算法伪代码 二分搜索算法实现">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法-二分搜索算法">
 <meta property="og:url" content="https://junyuh.netlify.app/zh-CN/Algorithms-binary-search/index.html">
 <meta property="og:site_name" content="Junyu">
-<meta property="og:description" content="算法：二分搜索算法（折半查找算法）时间复杂度：$O(log ; n)$  二分搜索算法概述 二分搜索算法伪代码 二分搜索算法实现">
+<meta property="og:description" content="算法：二分搜索算法（折半查找算法） 时间复杂度：$O(log ; n)$  二分搜索算法概述 二分搜索算法伪代码 二分搜索算法实现">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://idea-instructions.com/binary-search.png">
 <meta property="article:published_time" content="2018-07-30T16:00:00.000Z">
@@ -45,6 +47,9 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>算法-二分搜索算法 | Junyu</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-498SG67TB7"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-498SG67TB7","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
 
@@ -64,12 +69,19 @@
 
 
 
+  <script src="/js/third-party/pace.js" defer></script>
 
   <script src="/js/third-party/addtoany.js" defer></script>
 
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
 
 
 
@@ -111,7 +123,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -162,7 +174,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">二分搜索算法概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">二分搜索算法描述</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95%E4%BC%AA%E4%BB%A3%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">二分搜索算法伪代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.</span> <span class="nav-text">二分查找算法实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">二分搜索算法概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">二分搜索算法描述</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">二分搜索算法伪代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">二分查找算法实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -196,9 +208,12 @@
       <span class="links-of-author-item">
         <a href="mailto:junyu_huang@outlook.com" title="E-Mail → mailto:junyu_huang@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/8257973" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;8257973" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i></a>
+      </span>
   </div>
   <div class="cc-license animated" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
 
         </div>
@@ -279,33 +294,36 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>算法：二分搜索算法（折半查找算法）<br>时间复杂度：$O(log ; n)$</p>
+    <div class="post-body" itemprop="articleBody"><p>算法：二分搜索算法（折半查找算法）<br>
+时间复杂度：$O(log ; n)$</p>
 <ul>
 <li>二分搜索算法概述</li>
 <li>二分搜索算法伪代码</li>
 <li>二分搜索算法实现</li>
 </ul>
 <span id="more"></span>
-
-<h1 id="二分搜索算法概述"><a href="#二分搜索算法概述" class="headerlink" title="二分搜索算法概述"></a>二分搜索算法概述</h1><p>二分搜索算法，也称折半查找算法，即在一个有序数组中查找某一个特定元素。整个搜索过程从中间开始，如果要查找的元素即中间元素，那么搜索过程结束；反之根据中间元素与要查找元素的关系在数组对应的那一半查找，例如查找元素大于中间元素，则在整个数组较大元素的那一半查找，反复进行这个过程，直到找到元素，或者数组为空，查找不到元素。</p>
+<h1>二分搜索算法概述</h1>
+<p>二分搜索算法，也称折半查找算法，即在一个有序数组中查找某一个特定元素。整个搜索过程从中间开始，如果要查找的元素即中间元素，那么搜索过程结束；反之根据中间元素与要查找元素的关系在数组对应的那一半查找，例如查找元素大于中间元素，则在整个数组较大元素的那一半查找，反复进行这个过程，直到找到元素，或者数组为空，查找不到元素。</p>
 <p>这里有一张非常形象的算法描述图：</p>
 <p><img src="https://idea-instructions.com/binary-search.png" alt="Binary Search"></p>
-<h2 id="二分搜索算法描述"><a href="#二分搜索算法描述" class="headerlink" title="二分搜索算法描述"></a>二分搜索算法描述</h2><p>给定一个数组 $A_0, A_1… A_{n-1}$， $A_0 \le A_1 \le \cdot \le A_{n - 1}$，待查找元素为<code>searchnum</code>：</p>
+<h2 id="二分搜索算法描述">二分搜索算法描述</h2>
+<p>给定一个数组 $A_0, A_1… A_{n-1}$， $A_0 \le A_1 \le \cdot \le A_{n - 1}$，待查找元素为<code>searchnum</code>：</p>
 <ol>
 <li>用<code>left</code>，<code>right</code>分别表示左右端点，即要查找的范围；</li>
-<li>用<code>middle</code>表示中间点，$middle &#x3D; \lfloor (left + right) &#x2F; 2 \rfloor$；</li>
+<li>用<code>middle</code>表示中间点，$middle = \lfloor (left + right) / 2 \rfloor$；</li>
 <li>若<code>left &gt; right</code>，搜索失败；</li>
 <li>若 $A_{middle}$ &gt;<code> searchnum</code>，<code>right = middle - 1</code>，返回3；</li>
 <li>若 $A_{middle}$ &lt; <code>searchnum</code>，<code>left = middle + 1</code>，返回3；</li>
-<li>若 $A_{middle}$ &#x3D; <code>searchnum</code>，搜索结束，返回<code>middle</code>。</li>
+<li>若 $A_{middle}$ = <code>searchnum</code>，搜索结束，返回<code>middle</code>。</li>
 </ol>
-<h1 id="二分搜索算法伪代码"><a href="#二分搜索算法伪代码" class="headerlink" title="二分搜索算法伪代码"></a>二分搜索算法伪代码</h1><div class="tabs" id="pseudo-code"><ul class="nav-tabs"><li class="tab active"><a href="#pseudo-code-1">迭代版本</a></li><li class="tab"><a href="#pseudo-code-2">递归版本</a></li></ul><div class="tab-content"><div class="tab-pane active" id="pseudo-code-1"><p>BINARY-SEARCH-WHILE(A, searchnum, left, right)</p>
+<h1>二分搜索算法伪代码</h1>
+<div class="tabs" id="pseudo-code"><ul class="nav-tabs"><li class="tab active"><a href="#pseudo-code-1">迭代版本</a></li><li class="tab"><a href="#pseudo-code-2">递归版本</a></li></ul><div class="tab-content"><div class="tab-pane active" id="pseudo-code-1"><p>BINARY-SEARCH-WHILE(A, searchnum, left, right)</p>
 <figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> left &lt;= right</span><br><span class="line">  middle = (left + right) <span class="keyword">div</span> <span class="number">2</span></span><br><span class="line">  <span class="keyword">case</span></span><br><span class="line">    A_middle &lt; searchnum : left = middle + <span class="number">1</span></span><br><span class="line">    A_middle &gt; searchnum : right = middle - <span class="number">1</span></span><br><span class="line">    A_middle = searchnum : return middle</span><br><span class="line">return FAILED</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="pseudo-code-2"><p>BINARY-SEARCH-RECURSION(A, searchnum, left, right)</p>
 <figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> left &lt;= right</span><br><span class="line">  middle = (left + right) <span class="keyword">div</span> <span class="number">2</span></span><br><span class="line">  <span class="keyword">case</span></span><br><span class="line">    A_middle &lt; searchnum :</span><br><span class="line">      return (A, searchnum, middle + <span class="number">1</span>, right)</span><br><span class="line">    A_middle &gt; searchnum :</span><br><span class="line">      return (A, searchnum, left, middle - <span class="number">1</span>)</span><br><span class="line">    A_middle = searchnum :</span><br><span class="line">      return middle</span><br></pre></td></tr></table></figure></div></div></div>
-
-<h1 id="二分查找算法实现"><a href="#二分查找算法实现" class="headerlink" title="二分查找算法实现"></a>二分查找算法实现</h1><div class="tabs" id="binarysearch-realize"><ul class="nav-tabs"><li class="tab active"><a href="#binarysearch-realize-1">C 迭代</a></li><li class="tab"><a href="#binarysearch-realize-2">C 递归</a></li><li class="tab"><a href="#binarysearch-realize-3">Pascal 迭代</a></li><li class="tab"><a href="#binarysearch-realize-4">Pascal 递归</a></li></ul><div class="tab-content"><div class="tab-pane active" id="binarysearch-realize-1"><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">binarySearch</span><span class="params">(arrType * a, arrType searchnum, <span class="type">int</span> left, <span class="type">int</span> right)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> middle;</span><br><span class="line">    <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">        middle = (left + right) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (a[middle] &gt; searchnum)</span><br><span class="line">            right = middle - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (a[middle] &lt; searchnum)</span><br><span class="line">            left = middle + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (a[middle] == searchnum)</span><br><span class="line">            <span class="keyword">return</span> middle;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="binarysearch-realize-2"><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">binarySearch</span><span class="params">(arrType * a, arrType searchnum, <span class="type">int</span> left, <span class="type">int</span> right)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> middle;</span><br><span class="line">    <span class="keyword">if</span> (left &lt;= right) &#123;</span><br><span class="line">        middle = (left + right) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (a[middle] &gt; searchnum)</span><br><span class="line">            <span class="keyword">return</span> binarySearch(a, searchnum, left, middle - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (a[middle] &lt; searchnum)</span><br><span class="line">            <span class="keyword">return</span> binarySearch(a, searchnum, middle + <span class="number">1</span>, right);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (a[middle] == searchnum)</span><br><span class="line">            <span class="keyword">return</span> middle;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="binarysearch-realize-3"><figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 外部定义全局变量：</span></span><br><span class="line"><span class="keyword">var</span></span><br><span class="line">    a : <span class="keyword">array</span>[<span class="number">1</span>..n] <span class="keyword">of</span> integer;</span><br><span class="line">    searchnum, result :integer;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">procedure</span> <span class="title">binarySearch</span><span class="params">(left, right :integer)</span>;</span></span><br><span class="line"><span class="keyword">var</span></span><br><span class="line">    middle : integer;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">while</span> (left &lt;= right) <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">begin</span></span><br><span class="line">            middle := (left + right) <span class="keyword">div</span> <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (a[middle] &gt; searchnum) <span class="keyword">then</span></span><br><span class="line">                right := middle  - <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (a[middle] &lt; searchnum) <span class="keyword">then</span></span><br><span class="line">                left := middle + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">begin</span></span><br><span class="line">                    result := middle;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">end</span>;</span><br><span class="line">        <span class="keyword">end</span>;</span><br><span class="line">    <span class="keyword">if</span> left &gt; right <span class="keyword">then</span></span><br><span class="line">        result := -<span class="number">1</span>;</span><br><span class="line"><span class="keyword">end</span>;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="binarysearch-realize-4"><figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 外部定义全局变量：</span></span><br><span class="line"><span class="keyword">var</span></span><br><span class="line">    a : <span class="keyword">array</span>[<span class="number">1</span>..n] <span class="keyword">of</span> integer;</span><br><span class="line">    searchnum, result :integer;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">procedure</span> <span class="title">binarySearch</span><span class="params">(left, right :integer)</span>;</span></span><br><span class="line"><span class="keyword">var</span></span><br><span class="line">    middle : integer;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span> left &lt;= right <span class="keyword">then</span></span><br><span class="line">        <span class="keyword">begin</span></span><br><span class="line">            middle := (left + right) <span class="keyword">div</span> <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (a[middle] &gt; searchnum) <span class="keyword">then</span></span><br><span class="line">                binarySearch(left, middle - <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (a[middle] &lt; searchnum) <span class="keyword">then</span></span><br><span class="line">                binarySearch(middle + <span class="number">1</span>, right)</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                result := middle;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        result := -<span class="number">1</span>;</span><br><span class="line"><span class="keyword">end</span>;</span><br></pre></td></tr></table></figure></div></div></div>
-
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ol>
+<h1>二分查找算法实现</h1>
+<div class="tabs" id="binarysearch-realize"><ul class="nav-tabs"><li class="tab active"><a href="#binarysearch-realize-1">C 迭代</a></li><li class="tab"><a href="#binarysearch-realize-2">C 递归</a></li><li class="tab"><a href="#binarysearch-realize-3">Pascal 迭代</a></li><li class="tab"><a href="#binarysearch-realize-4">Pascal 递归</a></li></ul><div class="tab-content"><div class="tab-pane active" id="binarysearch-realize-1"><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">binarySearch</span><span class="params">(arrType * a, arrType searchnum, <span class="type">int</span> left, <span class="type">int</span> right)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> middle;</span><br><span class="line">    <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">        middle = (left + right) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (a[middle] &gt; searchnum)</span><br><span class="line">            right = middle - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (a[middle] &lt; searchnum)</span><br><span class="line">            left = middle + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (a[middle] == searchnum)</span><br><span class="line">            <span class="keyword">return</span> middle;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="binarysearch-realize-2"><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">binarySearch</span><span class="params">(arrType * a, arrType searchnum, <span class="type">int</span> left, <span class="type">int</span> right)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> middle;</span><br><span class="line">    <span class="keyword">if</span> (left &lt;= right) &#123;</span><br><span class="line">        middle = (left + right) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (a[middle] &gt; searchnum)</span><br><span class="line">            <span class="keyword">return</span> binarySearch(a, searchnum, left, middle - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (a[middle] &lt; searchnum)</span><br><span class="line">            <span class="keyword">return</span> binarySearch(a, searchnum, middle + <span class="number">1</span>, right);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (a[middle] == searchnum)</span><br><span class="line">            <span class="keyword">return</span> middle;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="binarysearch-realize-3"><figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 外部定义全局变量：</span></span><br><span class="line"><span class="keyword">var</span></span><br><span class="line">    a : <span class="keyword">array</span>[<span class="number">1</span>..n] <span class="keyword">of</span> integer;</span><br><span class="line">    searchnum, result :integer;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">procedure</span> <span class="title">binarySearch</span><span class="params">(left, right :integer)</span>;</span></span><br><span class="line"><span class="keyword">var</span></span><br><span class="line">    middle : integer;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">while</span> (left &lt;= right) <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">begin</span></span><br><span class="line">            middle := (left + right) <span class="keyword">div</span> <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (a[middle] &gt; searchnum) <span class="keyword">then</span></span><br><span class="line">                right := middle  - <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (a[middle] &lt; searchnum) <span class="keyword">then</span></span><br><span class="line">                left := middle + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">begin</span></span><br><span class="line">                    result := middle;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">end</span>;</span><br><span class="line">        <span class="keyword">end</span>;</span><br><span class="line">    <span class="keyword">if</span> left &gt; right <span class="keyword">then</span></span><br><span class="line">        result := -<span class="number">1</span>;</span><br><span class="line"><span class="keyword">end</span>;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="binarysearch-realize-4"><figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 外部定义全局变量：</span></span><br><span class="line"><span class="keyword">var</span></span><br><span class="line">    a : <span class="keyword">array</span>[<span class="number">1</span>..n] <span class="keyword">of</span> integer;</span><br><span class="line">    searchnum, result :integer;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">procedure</span> <span class="title">binarySearch</span><span class="params">(left, right :integer)</span>;</span></span><br><span class="line"><span class="keyword">var</span></span><br><span class="line">    middle : integer;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span> left &lt;= right <span class="keyword">then</span></span><br><span class="line">        <span class="keyword">begin</span></span><br><span class="line">            middle := (left + right) <span class="keyword">div</span> <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (a[middle] &gt; searchnum) <span class="keyword">then</span></span><br><span class="line">                binarySearch(left, middle - <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (a[middle] &lt; searchnum) <span class="keyword">then</span></span><br><span class="line">                binarySearch(middle + <span class="number">1</span>, right)</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                result := middle;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        result := -<span class="number">1</span>;</span><br><span class="line"><span class="keyword">end</span>;</span><br></pre></td></tr></table></figure></div></div></div>
+<h1>参考资料</h1>
+<ol>
 <li>Yan, Weimin., Wu, Weimin. 数据结构: C语言版. China: 清华大学出版社, 1997.《数据结构基础（C语言版）》第二版</li>
 <li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95">二分搜索算法 - 维基百科，自由的百科全书</a></li>
 </ol>
@@ -332,6 +350,23 @@
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
 </ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
 </div>
 
           <div class="post-tags">
@@ -371,32 +406,24 @@
 
 
 
-      <div class="tabs tabs-comment">
-        <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-changyan">changyan</a></li>
-            <li class="tab"><a href="#comment-disqus">disqus</a></li>
-            <li class="tab"><a href="#comment-livere">livere</a></li>
-            <li class="tab"><a href="#comment-utterances">utterances</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane changyan" id="comment-changyan">
-              <div class="comments" id="SOHUCS" sid="85841346702729468aa57c8c5cae77af"></div>
-            </div>
-            <div class="tab-pane disqus" id="comment-disqus">
-              
+      <div class="comment-button-group">
+          <a class="btn comment-button comment-disqus">disqus</a>
+          <a class="btn comment-button comment-livere">livere</a>
+          <a class="btn comment-button comment-utterances">utterances</a>
+      </div>
+        <div class="comment-position comment-disqus">
+          
   <div class="comments" id="disqus_thread">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-            </div>
-            <div class="tab-pane livere" id="comment-livere">
-              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
-            </div>
-            <div class="tab-pane utterances" id="comment-utterances">
-              <div class="comments utterances-container"></div>
-            </div>
         </div>
-      </div>
+        <div class="comment-position comment-livere">
+          <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
+        </div>
+        <div class="comment-position comment-utterances">
+          <div class="comments utterances-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js" defer></script>
 </div>
   </main>
 
@@ -446,12 +473,11 @@
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyy677YK2","appkey":"5d6728fb7c0c99dba952d82907fb1777","count":false}</script>
-<script src="/js/third-party/comments/changyan.js" defer></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"junyuh","count":false,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js" defer></script>
 <script src="/js/third-party/comments/livere.js" defer></script>

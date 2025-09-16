@@ -15,10 +15,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/yello/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":"ture","motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="本文整理 LaTeX 中常用的数学符号及一些数学元素的表达，以便查阅。">
 <meta property="og:type" content="article">
@@ -42,6 +44,9 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>LaTeX-常用数学符号 | Junyu</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-498SG67TB7"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-498SG67TB7","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
 
@@ -61,12 +66,19 @@
 
 
 
+  <script src="/js/third-party/pace.js" defer></script>
 
   <script src="/js/third-party/addtoany.js" defer></script>
 
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
 
 
 
@@ -108,7 +120,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -159,7 +171,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E7%AC%A6%E5%8F%B7"><span class="nav-number">1.</span> <span class="nav-text">数学符号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D%E8%A1%A8"><span class="nav-number">1.1.</span> <span class="nav-text">希腊字母表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E5%86%99%E5%AD%97%E6%AF%8D"><span class="nav-number">1.1.1.</span> <span class="nav-text">小写字母</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E5%86%99%E5%AD%97%E6%AF%8D"><span class="nav-number">1.1.2.</span> <span class="nav-text">大写字母</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%B7"><span class="nav-number">1.2.</span> <span class="nav-text">运算符号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%85%83%E5%85%B3%E7%B3%BB%E7%AC%A6"><span class="nav-number">1.2.1.</span> <span class="nav-text">二元关系符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.2.2.</span> <span class="nav-text">二元运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%AF%E5%88%86"><span class="nav-number">1.2.3.</span> <span class="nav-text">积分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E5%8F%B7"><span class="nav-number">1.2.4.</span> <span class="nav-text">根号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E6%A0%87"><span class="nav-number">1.2.5.</span> <span class="nav-text">上下标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%95%B0"><span class="nav-number">1.2.6.</span> <span class="nav-text">分数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E5%92%8C%EF%BC%8C%E6%B1%82%E7%A7%AF"><span class="nav-number">1.2.7.</span> <span class="nav-text">求和，求积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%8F%E5%AF%BC"><span class="nav-number">1.2.8.</span> <span class="nav-text">偏导</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E7%AC%A6%E5%8F%B7"><span class="nav-number">1.3.</span> <span class="nav-text">其他符号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%AD%E5%A4%B4"><span class="nav-number">1.3.1.</span> <span class="nav-text">箭头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E9%9F%B3"><span class="nav-number">1.3.2.</span> <span class="nav-text">注音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9C%81%E7%95%A5%E5%8F%B7"><span class="nav-number">1.3.3.</span> <span class="nav-text">省略号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E7%B2%97%E4%BD%93%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.3.4.</span> <span class="nav-text">数学粗体表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E7%AC%A6%E5%8F%B7-1"><span class="nav-number">1.3.5.</span> <span class="nav-text">其他符号</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5"><span class="nav-number">2.</span> <span class="nav-text">矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E6%AE%B5%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">分段函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">数学符号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D%E8%A1%A8"><span class="nav-number">1.1.</span> <span class="nav-text">希腊字母表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E5%86%99%E5%AD%97%E6%AF%8D"><span class="nav-number">1.1.1.</span> <span class="nav-text">小写字母</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E5%86%99%E5%AD%97%E6%AF%8D"><span class="nav-number">1.1.2.</span> <span class="nav-text">大写字母</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%B7"><span class="nav-number">1.2.</span> <span class="nav-text">运算符号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%85%83%E5%85%B3%E7%B3%BB%E7%AC%A6"><span class="nav-number">1.2.1.</span> <span class="nav-text">二元关系符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.2.2.</span> <span class="nav-text">二元运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%AF%E5%88%86"><span class="nav-number">1.2.3.</span> <span class="nav-text">积分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E5%8F%B7"><span class="nav-number">1.2.4.</span> <span class="nav-text">根号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E6%A0%87"><span class="nav-number">1.2.5.</span> <span class="nav-text">上下标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%95%B0"><span class="nav-number">1.2.6.</span> <span class="nav-text">分数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E5%92%8C%EF%BC%8C%E6%B1%82%E7%A7%AF"><span class="nav-number">1.2.7.</span> <span class="nav-text">求和，求积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%8F%E5%AF%BC"><span class="nav-number">1.2.8.</span> <span class="nav-text">偏导</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E7%AC%A6%E5%8F%B7"><span class="nav-number">1.3.</span> <span class="nav-text">其他符号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%AD%E5%A4%B4"><span class="nav-number">1.3.1.</span> <span class="nav-text">箭头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E9%9F%B3"><span class="nav-number">1.3.2.</span> <span class="nav-text">注音</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9C%81%E7%95%A5%E5%8F%B7"><span class="nav-number">1.3.3.</span> <span class="nav-text">省略号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E7%B2%97%E4%BD%93%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.3.4.</span> <span class="nav-text">数学粗体表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E7%AC%A6%E5%8F%B7-2"><span class="nav-number">1.3.5.</span> <span class="nav-text">其他符号</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">分段函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -193,9 +205,12 @@
       <span class="links-of-author-item">
         <a href="mailto:junyu_huang@outlook.com" title="E-Mail → mailto:junyu_huang@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/8257973" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;8257973" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i></a>
+      </span>
   </div>
   <div class="cc-license animated" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
 
         </div>
@@ -271,10 +286,12 @@
     
     <div class="post-body" itemprop="articleBody"><p>本文整理 LaTeX 中常用的数学符号及一些数学元素的表达，以便查阅。</p>
 <span id="more"></span>
-
 <p>下列所有表示均在<strong>数学模式</strong>下。</p>
 <p>更新：一个LaTeX 数学符号快速搜索工具：<a target="_blank" rel="noopener" href="https://latex.guide/">LaTeX Search: Find LaTeX commands</a></p>
-<h1 id="数学符号"><a href="#数学符号" class="headerlink" title="数学符号"></a>数学符号</h1><h2 id="希腊字母表"><a href="#希腊字母表" class="headerlink" title="希腊字母表"></a>希腊字母表</h2><h3 id="小写字母"><a href="#小写字母" class="headerlink" title="小写字母"></a>小写字母</h3><table>
+<h1>数学符号</h1>
+<h2 id="希腊字母表">希腊字母表</h2>
+<h3 id="小写字母">小写字母</h3>
+<table>
 <thead>
 <tr>
 <th>希腊字母</th>
@@ -285,7 +302,8 @@
 <th>符号表示</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>$\alpha$</td>
 <td><code>\alpha</code></td>
 <td>$\iota$</td>
@@ -365,8 +383,10 @@
 <td>$\omega$</td>
 <td><code>\omega</code></td>
 </tr>
-</tbody></table>
-<h3 id="大写字母"><a href="#大写字母" class="headerlink" title="大写字母"></a>大写字母</h3><p><em>注意</em> ：大写字母表示符号第一个字母需<strong>大写</strong>。</p>
+</tbody>
+</table>
+<h3 id="大写字母">大写字母</h3>
+<p><em>注意</em> ：大写字母表示符号第一个字母需<strong>大写</strong>。</p>
 <table>
 <thead>
 <tr>
@@ -378,7 +398,8 @@
 <th>符号表示</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>$\Gamma$</td>
 <td><code>\Gamma</code></td>
 <td>$\Xi$</td>
@@ -410,8 +431,11 @@
 <td></td>
 <td></td>
 </tr>
-</tbody></table>
-<h2 id="运算符号"><a href="#运算符号" class="headerlink" title="运算符号"></a>运算符号</h2><h3 id="二元关系符"><a href="#二元关系符" class="headerlink" title="二元关系符"></a>二元关系符</h3><p>下列命令可加上<code>\not</code>命令，得到否定形式。</p>
+</tbody>
+</table>
+<h2 id="运算符号">运算符号</h2>
+<h3 id="二元关系符">二元关系符</h3>
+<p>下列命令可加上<code>\not</code>命令，得到否定形式。</p>
 <table>
 <thead>
 <tr>
@@ -423,12 +447,13 @@
 <th>命令</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>$&lt;$</td>
 <td><code>&lt;</code></td>
 <td>$&gt;$</td>
 <td><code>&gt;</code></td>
-<td>$&#x3D;$</td>
+<td>$=$</td>
 <td><code>=</code></td>
 </tr>
 <tr>
@@ -479,8 +504,10 @@
 <td>$\simeq$</td>
 <td><code>\simeq</code></td>
 </tr>
-</tbody></table>
-<h3 id="二元运算符"><a href="#二元运算符" class="headerlink" title="二元运算符"></a>二元运算符</h3><table>
+</tbody>
+</table>
+<h3 id="二元运算符">二元运算符</h3>
+<table>
 <thead>
 <tr>
 <th>符号</th>
@@ -491,7 +518,8 @@
 <th>命令</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>$\pm$</td>
 <td><code>\pm</code></td>
 <td>$\mp$</td>
@@ -523,8 +551,10 @@
 <td>$\circ$</td>
 <td><code>\circ</code></td>
 </tr>
-</tbody></table>
-<h3 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h3><table>
+</tbody>
+</table>
+<h3 id="积分">积分</h3>
+<table>
 <thead>
 <tr>
 <th>符号</th>
@@ -535,7 +565,8 @@
 <th>命令</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>$\int$</td>
 <td><code>\int</code></td>
 <td>$\iint$</td>
@@ -543,19 +574,27 @@
 <td>$\iiint$</td>
 <td><code>\iiint</code></td>
 </tr>
-</tbody></table>
-<h3 id="根号"><a href="#根号" class="headerlink" title="根号"></a>根号</h3><p>根号命令为<code>\sqrt[a]&#123;x&#125;</code>，$a$ 表示开根号的次数，$x$ 为指数，$\sqrt[a]{x}$。</p>
-<h3 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h3><ul>
+</tbody>
+</table>
+<h3 id="根号">根号</h3>
+<p>根号命令为<code>\sqrt[a]&#123;x&#125;</code>，$a$ 表示开根号的次数，$x$ 为指数，$\sqrt[a]{x}$。</p>
+<h3 id="上下标">上下标</h3>
+<ul>
 <li>上标：$x^a$ 用<code>x^a</code>产生，当指数超过一个字符时应使用大括号包含，如<code>x^&#123;abc&#125;</code>产生$x^{abc}$。</li>
 <li>下标：<code>x_a</code> 用<code>x_a</code>产生，同样地，当下标超过一个字符时也应该用大括号包含。</li>
 </ul>
-<h3 id="分数"><a href="#分数" class="headerlink" title="分数"></a>分数</h3><p>分数用<code>\frac&#123;a&#125;&#123;b&#125;</code>表示 $\frac{a}{b}$ 。</p>
-<h3 id="求和，求积"><a href="#求和，求积" class="headerlink" title="求和，求积"></a>求和，求积</h3><ul>
-<li>求和：求和符号$\sum$ 用<code>\sum</code>表示，在行间公式中当上下标将被压缩表示为$\sum_{i &#x3D; 1}^n$，若希望产生类似于手写模式则应该加上<code>\limits</code>命令，如<code>\sum\limits\_&#123;i = 1&#125;&#123;n&#125;</code>表示 $\sum\limits_{i &#x3D; 1}^{n}$ 。</li>
+<h3 id="分数">分数</h3>
+<p>分数用<code>\frac&#123;a&#125;&#123;b&#125;</code>表示 $\frac{a}{b}$ 。</p>
+<h3 id="求和，求积">求和，求积</h3>
+<ul>
+<li>求和：求和符号$\sum$ 用<code>\sum</code>表示，在行间公式中当上下标将被压缩表示为$\sum_{i = 1}^n$，若希望产生类似于手写模式则应该加上<code>\limits</code>命令，如<code>\sum\limits\_&#123;i = 1&#125;&#123;n&#125;</code>表示 $\sum\limits_{i = 1}^{n}$ 。</li>
 <li>求积：求积符号$\prod$ 用<code>\prod</code>表示，上下标规则与求和符号相同。</li>
 </ul>
-<h3 id="偏导"><a href="#偏导" class="headerlink" title="偏导"></a>偏导</h3><p>偏导符号$\partial$用<code>\partial</code>表示。</p>
-<h2 id="其他符号"><a href="#其他符号" class="headerlink" title="其他符号"></a>其他符号</h2><h3 id="箭头"><a href="#箭头" class="headerlink" title="箭头"></a>箭头</h3><table>
+<h3 id="偏导">偏导</h3>
+<p>偏导符号$\partial$用<code>\partial</code>表示。</p>
+<h2 id="其他符号">其他符号</h2>
+<h3 id="箭头">箭头</h3>
+<table>
 <thead>
 <tr>
 <th>符号</th>
@@ -566,7 +605,8 @@
 <th>命令</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>$\leftarrow$</td>
 <td><code>\leftarrow</code></td>
 <td>$\rightarrow$</td>
@@ -582,8 +622,10 @@
 <td>$\Leftrightarrow$</td>
 <td><code>\Leftrightarrow</code></td>
 </tr>
-</tbody></table>
-<h3 id="注音"><a href="#注音" class="headerlink" title="注音"></a>注音</h3><table>
+</tbody>
+</table>
+<h3 id="注音">注音</h3>
+<table>
 <thead>
 <tr>
 <th>符号</th>
@@ -594,7 +636,8 @@
 <th>命令</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>$\bar{x}$</td>
 <td><code>\bar&#123;x&#125;</code></td>
 <td>$\vec{x}$</td>
@@ -610,15 +653,19 @@
 <td>$\tilde{x}$</td>
 <td><code>\tilde&#123;x&#125;</code></td>
 </tr>
-</tbody></table>
-<h3 id="省略号"><a href="#省略号" class="headerlink" title="省略号"></a>省略号</h3><ul>
+</tbody>
+</table>
+<h3 id="省略号">省略号</h3>
+<ul>
 <li>下标省略号 ： $x_1, x_2, \dots, x_n$用<code>\dots</code>表示；</li>
 <li>中间省略号： $1, 2, \cdots, n$ 用<code>\cdots</code>表示；</li>
 <li>纵向省略号：$\vdots$ 用<code>\vdots</code>表示；</li>
 <li>斜向省略号：$\ddots$ 用<code>\ddots</code>表示。</li>
 </ul>
-<h3 id="数学粗体表示"><a href="#数学粗体表示" class="headerlink" title="数学粗体表示"></a>数学粗体表示</h3><p>使用<code>\mathbf</code>命令：$\mathbf{R}$ 由 <code>\mathbf&#123;R&#125;</code> 生成。</p>
-<h3 id="其他符号-1"><a href="#其他符号-1" class="headerlink" title="其他符号"></a>其他符号</h3><table>
+<h3 id="数学粗体表示">数学粗体表示</h3>
+<p>使用<code>\mathbf</code>命令：$\mathbf{R}$ 由 <code>\mathbf&#123;R&#125;</code> 生成。</p>
+<h3 id="其他符号-2">其他符号</h3>
+<table>
 <thead>
 <tr>
 <th>符号</th>
@@ -629,7 +676,8 @@
 <th>命令</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>$\lfloor$</td>
 <td><code>\lfloor</code></td>
 <td>$\rfloor$</td>
@@ -661,18 +709,21 @@
 <td>$\neg$</td>
 <td><code>\neg</code> or <code>\lnot</code></td>
 </tr>
-</tbody></table>
-<h1 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h1><p>使用 <code>\array</code>环境生成矩阵</p>
+</tbody>
+</table>
+<h1>矩阵</h1>
+<p>使用 <code>\array</code>环境生成矩阵</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;array&#125;[外部对齐]&#123;列对齐&#125;</span><br><span class="line">    行列内容</span><br><span class="line"><span class="keyword">\end</span>&#123;array&#125;</span><br></pre></td></tr></table></figure>
-
 <ul>
-<li>外部对齐参数：整个矩阵和周围对象的纵向关系：<ul>
+<li>外部对齐参数：整个矩阵和周围对象的纵向关系：
+<ul>
 <li>居顶：<code>t</code></li>
 <li>居中（缺省）：<code>c</code></li>
 <li>居底：<code>b</code></li>
 </ul>
 </li>
-<li>列对齐参数<ul>
+<li>列对齐参数
+<ul>
 <li>居左：<code>l</code></li>
 <li>居中：<code>c</code></li>
 <li>居右：<code>r</code></li>
@@ -681,22 +732,44 @@
 <li>换行：<code>\\</code></li>
 <li>列分隔：<code>&amp;</code></li>
 </ul>
-<p>示例：<br>$$<br>\begin{array}{ccc}<br>    x_1    &amp; x_2    &amp; \cdots \<br>    x_3    &amp; x_4    &amp; \cdots \<br>    \vdots &amp; \vdots &amp; \ddots \<br>\end{array}<br>$$</p>
+<p>示例：<br>
+$$<br>
+\begin{array}{ccc}<br>
+x_1    &amp; x_2    &amp; \cdots \<br>
+x_3    &amp; x_4    &amp; \cdots \<br>
+\vdots &amp; \vdots &amp; \ddots \<br>
+\end{array}<br>
+$$</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;array&#125;&#123;ccc&#125;    </span><br><span class="line">    x<span class="built_in">_</span>1    <span class="built_in">&amp;</span> x<span class="built_in">_</span>2    <span class="built_in">&amp;</span> <span class="keyword">\cdots</span> <span class="keyword">\\</span>    </span><br><span class="line">    x<span class="built_in">_</span>3    <span class="built_in">&amp;</span> x<span class="built_in">_</span>4    <span class="built_in">&amp;</span> <span class="keyword">\cdots</span> <span class="keyword">\\</span>    </span><br><span class="line">    <span class="keyword">\vdots</span> <span class="built_in">&amp;</span> <span class="keyword">\vdots</span> <span class="built_in">&amp;</span> <span class="keyword">\ddots</span> <span class="keyword">\\</span></span><br><span class="line"><span class="keyword">\end</span>&#123;array&#125;</span><br></pre></td></tr></table></figure>
-
 <p>(分隔符对齐非必要，仅出于个人使用习惯）</p>
 <p>使用<code>array</code>环境产生的矩阵没有旁边的各种分隔符，可以用以下环境替代产生分隔符：</p>
-<p>$$<br>\begin{pmatrix}<br>       a &amp; b \\<br>       c &amp; d<br>\end{pmatrix}<br>$$</p>
+<p>$$<br>
+\begin{pmatrix}<br>
+a &amp; b \\<br>
+c &amp; d<br>
+\end{pmatrix}<br>
+$$</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;pmatrix&#125;</span><br><span class="line">  a <span class="built_in">&amp;</span> b <span class="keyword">\\</span></span><br><span class="line">  c <span class="built_in">&amp;</span> d</span><br><span class="line"><span class="keyword">\end</span>&#123;pmatrix&#125;</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\begin{vmatrix}<br>  a &amp; b \\<br>  c &amp; d<br>\end{vmatrix}<br>$$</p>
+<p>$$<br>
+\begin{vmatrix}<br>
+a &amp; b \\<br>
+c &amp; d<br>
+\end{vmatrix}<br>
+$$</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;vmatrix&#125;</span><br><span class="line">  a <span class="built_in">&amp;</span> b <span class="keyword">\\</span></span><br><span class="line">  c <span class="built_in">&amp;</span> d</span><br><span class="line"><span class="keyword">\end</span>&#123;vmatrix&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="分段函数"><a href="#分段函数" class="headerlink" title="分段函数"></a>分段函数</h1><p>使用 <code>\cases</code>环境可以生成分段函数，同样可以用于方程组。</p>
-<p>示例：<br>$$<br>y&#x3D;<br>\begin{cases}<br>    -x, \quad x\leq 0 \\<br>    x, \quad x &gt; 0<br>\end{cases}<br>$$</p>
+<h1>分段函数</h1>
+<p>使用 <code>\cases</code>环境可以生成分段函数，同样可以用于方程组。</p>
+<p>示例：<br>
+$$<br>
+y=<br>
+\begin{cases}<br>
+-x, \quad x\leq 0 \\<br>
+x, \quad x &gt; 0<br>
+\end{cases}<br>
+$$</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">y= <span class="comment">% 换行是非必要的</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;cases&#125;</span><br><span class="line">    -x, <span class="keyword">\quad</span> x<span class="keyword">\leq</span> 0 <span class="keyword">\\</span></span><br><span class="line">    x, <span class="keyword">\quad</span> x &gt; 0</span><br><span class="line"><span class="keyword">\end</span>&#123;cases&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1>参考资料</h1>
+<ul>
 <li><a target="_blank" rel="noopener" href="http://www.ptep-online.com/ctan/lshort_chinese.pdf">一份不太简短的LATEX2ε介绍(PDF)</a></li>
 <li><a target="_blank" rel="noopener" href="http://dralpha.altervista.org/zh/tech/lnotes2.pdf">LATEX Notes雷太赫排版系统简介第二版v2.03 (PDF)</a></li>
 <li><a target="_blank" rel="noopener" href="http://mirrors.huaweicloud.com/repository/toolkit/CTAN/info/symbols/comprehensive/symbols-a4.pdf">The Comprehensive LATEX Symbol List (PDF)</a></li>
@@ -724,6 +797,23 @@
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
 </ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
 </div>
 
           <div class="post-tags">
@@ -762,32 +852,24 @@
 
 
 
-      <div class="tabs tabs-comment">
-        <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-changyan">changyan</a></li>
-            <li class="tab"><a href="#comment-disqus">disqus</a></li>
-            <li class="tab"><a href="#comment-livere">livere</a></li>
-            <li class="tab"><a href="#comment-utterances">utterances</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane changyan" id="comment-changyan">
-              <div class="comments" id="SOHUCS" sid="2c07a7c0660beefa6fa7c5b26779728e"></div>
-            </div>
-            <div class="tab-pane disqus" id="comment-disqus">
-              
+      <div class="comment-button-group">
+          <a class="btn comment-button comment-disqus">disqus</a>
+          <a class="btn comment-button comment-livere">livere</a>
+          <a class="btn comment-button comment-utterances">utterances</a>
+      </div>
+        <div class="comment-position comment-disqus">
+          
   <div class="comments" id="disqus_thread">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-            </div>
-            <div class="tab-pane livere" id="comment-livere">
-              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
-            </div>
-            <div class="tab-pane utterances" id="comment-utterances">
-              <div class="comments utterances-container"></div>
-            </div>
         </div>
-      </div>
+        <div class="comment-position comment-livere">
+          <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
+        </div>
+        <div class="comment-position comment-utterances">
+          <div class="comments utterances-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js" defer></script>
 </div>
   </main>
 
@@ -837,12 +919,11 @@
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyy677YK2","appkey":"5d6728fb7c0c99dba952d82907fb1777","count":false}</script>
-<script src="/js/third-party/comments/changyan.js" defer></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"junyuh","count":false,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js" defer></script>
 <script src="/js/third-party/comments/livere.js" defer></script>

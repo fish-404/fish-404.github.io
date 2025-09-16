@@ -15,10 +15,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/yello/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":"ture","motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="前些天有师弟问起关于C语言中转义序列的问题，尤其提到了\?这个转义字符，因为记得??似乎是三元字符集的开头，应该也算是特殊字符，但记得并不太清楚，于是搜寻了些资料，和转义序列的问题一并作整理和记录。">
 <meta property="og:type" content="article">
@@ -43,6 +45,9 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>C语言中的转义序列 | Junyu</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-498SG67TB7"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-498SG67TB7","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
 
@@ -62,12 +67,19 @@
 
 
 
+  <script src="/js/third-party/pace.js" defer></script>
 
   <script src="/js/third-party/addtoany.js" defer></script>
 
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
 
 
 
@@ -109,7 +121,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -160,7 +172,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AC%E4%B9%89%E5%BA%8F%E5%88%97-escape-sequence"><span class="nav-number">1.</span> <span class="nav-text">转义序列 (escape sequence)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E8%BD%AC%E4%B9%89%E5%BA%8F%E5%88%97-charatcter-escape"><span class="nav-number">1.1.</span> <span class="nav-text">字符转义序列 (charatcter escape)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E8%BD%AC%E4%B9%89%E5%BA%8F%E5%88%97-numberic-escape"><span class="nav-number">1.2.</span> <span class="nav-text">数字转义序列 (numberic escape)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AB%E8%BF%9B%E5%88%B6%E8%BD%AC%E4%B9%89%E5%BA%8F%E5%88%97"><span class="nav-number">1.2.1.</span> <span class="nav-text">八进制转义序列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E8%BD%AC%E4%B9%89%E5%BA%8F%E5%88%97"><span class="nav-number">1.2.2.</span> <span class="nav-text">十六进制转义序列</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E5%AD%97%E7%AC%A6%E5%BA%8F%E5%88%97-trigraph-sequence"><span class="nav-number">2.</span> <span class="nav-text">三字符序列 (trigraph sequence)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">转义序列 (escape sequence)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E8%BD%AC%E4%B9%89%E5%BA%8F%E5%88%97-charatcter-escape"><span class="nav-number">1.1.</span> <span class="nav-text">字符转义序列 (charatcter escape)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E8%BD%AC%E4%B9%89%E5%BA%8F%E5%88%97-numberic-escape"><span class="nav-number">1.2.</span> <span class="nav-text">数字转义序列 (numberic escape)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AB%E8%BF%9B%E5%88%B6%E8%BD%AC%E4%B9%89%E5%BA%8F%E5%88%97"><span class="nav-number">1.2.1.</span> <span class="nav-text">八进制转义序列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E8%BD%AC%E4%B9%89%E5%BA%8F%E5%88%97"><span class="nav-number">1.2.2.</span> <span class="nav-text">十六进制转义序列</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">三字符序列 (trigraph sequence)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -194,9 +206,12 @@
       <span class="links-of-author-item">
         <a href="mailto:junyu_huang@outlook.com" title="E-Mail → mailto:junyu_huang@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/8257973" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;8257973" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i></a>
+      </span>
   </div>
   <div class="cc-license animated" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
 
         </div>
@@ -272,119 +287,130 @@
     
     <div class="post-body" itemprop="articleBody"><p>前些天有师弟问起关于C语言中转义序列的问题，尤其提到了<code>\?</code>这个转义字符，因为记得<code>??</code>似乎是三元字符集的开头，应该也算是特殊字符，但记得并不太清楚，于是搜寻了些资料，和转义序列的问题一并作整理和记录。</p>
 <span id="more"></span>
-<h1 id="转义序列-escape-sequence"><a href="#转义序列-escape-sequence" class="headerlink" title="转义序列 (escape sequence)"></a>转义序列 (escape sequence)</h1><p>首先，我们知道，在C语言中，字符常量使用单引号括起来表示，但并不是所有的字符都可以直接由键盘输入而表示出来，比如换行符，也就无法用这样的方式来书写。通常来说有这样两种无法用这种方式表示的字符，一是非打印字符，如换行符，一是特殊字符，键盘上并没有直接的键位可以录入。这时候就需要用到转义序列来表示，字符转义序列和数字转义序列。</p>
-<h2 id="字符转义序列-charatcter-escape"><a href="#字符转义序列-charatcter-escape" class="headerlink" title="字符转义序列 (charatcter escape)"></a>字符转义序列 (charatcter escape)</h2><p>字符转义序列即我们常见的如<code>\n</code>表示换行符这样，下面给出字符转义序列表：</p>
+<h1>转义序列 (escape sequence)</h1>
+<p>首先，我们知道，在C语言中，字符常量使用单引号括起来表示，但并不是所有的字符都可以直接由键盘输入而表示出来，比如换行符，也就无法用这样的方式来书写。通常来说有这样两种无法用这种方式表示的字符，一是非打印字符，如换行符，一是特殊字符，键盘上并没有直接的键位可以录入。这时候就需要用到转义序列来表示，字符转义序列和数字转义序列。</p>
+<h2 id="字符转义序列-charatcter-escape">字符转义序列 (charatcter escape)</h2>
+<p>字符转义序列即我们常见的如<code>\n</code>表示换行符这样，下面给出字符转义序列表：</p>
 <table>
 <thead>
 <tr>
 <th>转义序列</th>
-<th align="left">描述</th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td><code>\&#39;</code></td>
-<td align="left">单引号</td>
+<tbody>
+<tr>
+<td><code>\'</code></td>
+<td style="text-align:left">单引号</td>
 </tr>
 <tr>
 <td><code>\&quot;</code></td>
-<td align="left">双引号</td>
+<td style="text-align:left">双引号</td>
 </tr>
 <tr>
 <td><code>\?</code></td>
-<td align="left">问号</td>
+<td style="text-align:left">问号</td>
 </tr>
 <tr>
 <td><code>\</code></td>
-<td align="left">反斜杠</td>
+<td style="text-align:left">反斜杠</td>
 </tr>
 <tr>
 <td><code>\a</code></td>
-<td align="left">响铃</td>
+<td style="text-align:left">响铃</td>
 </tr>
 <tr>
 <td><code>\b</code></td>
-<td align="left">退格</td>
+<td style="text-align:left">退格</td>
 </tr>
 <tr>
 <td><code>\f</code></td>
-<td align="left">换页</td>
+<td style="text-align:left">换页</td>
 </tr>
 <tr>
 <td><code>\n</code></td>
-<td align="left">换行</td>
+<td style="text-align:left">换行</td>
 </tr>
 <tr>
 <td><code>\r</code></td>
-<td align="left">回车</td>
+<td style="text-align:left">回车</td>
 </tr>
 <tr>
 <td><code>\t</code></td>
-<td align="left">水平制表符</td>
+<td style="text-align:left">水平制表符</td>
 </tr>
 <tr>
 <td><code>\v</code></td>
-<td align="left">垂直制表符</td>
+<td style="text-align:left">垂直制表符</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>这里我们看到前四个都是符号，而除了问号以外，其他三个符号因为在C语言中有其他的作用，为了避免两者混淆，我们需要用转义序列来表示，那么为什么问号也需要呢，这就是我们后面要提到的三元字符序列，这里先按下不表。</p>
-<h2 id="数字转义序列-numberic-escape"><a href="#数字转义序列-numberic-escape" class="headerlink" title="数字转义序列 (numberic escape)"></a>数字转义序列 (numberic escape)</h2><p>虽然字符转义序列已经可以表示出一些无法打印的字符，但并仍然没法包含所有无法打印的 ASCII 字符，而我们通过查阅 <a target="_blank" rel="noopener" href="http://www.asciitable.com/">ASCII 字符集</a>中字符编号，就可以使用数字转义序列来表示这些字符，就好比我们每个人都有一个身份证号，用身份证号就可以表示我们这个人的身份一样。</p>
-<h3 id="八进制转义序列"><a href="#八进制转义序列" class="headerlink" title="八进制转义序列"></a>八进制转义序列</h3><p>$\verb||NUMBER_{(8)}$</p>
+<h2 id="数字转义序列-numberic-escape">数字转义序列 (numberic escape)</h2>
+<p>虽然字符转义序列已经可以表示出一些无法打印的字符，但并仍然没法包含所有无法打印的 ASCII 字符，而我们通过查阅 <a target="_blank" rel="noopener" href="http://www.asciitable.com/">ASCII 字符集</a>中字符编号，就可以使用数字转义序列来表示这些字符，就好比我们每个人都有一个身份证号，用身份证号就可以表示我们这个人的身份一样。</p>
+<h3 id="八进制转义序列">八进制转义序列</h3>
+<p>$\verb||NUMBER_{(8)}$</p>
 <ul>
 <li>NUMBER 为一不超过三位数字的八进制数;</li>
 <li>NUMBER 需表示为无符号字符，最大值通常是$337_{(8)}$;</li>
 <li>转义序列中的八进制数不一定要用 0 开头.</li>
 </ul>
-<h3 id="十六进制转义序列"><a href="#十六进制转义序列" class="headerlink" title="十六进制转义序列"></a>十六进制转义序列</h3><p>$\verb|\x|NUMBER_{(16)}$</p>
+<h3 id="十六进制转义序列">十六进制转义序列</h3>
+<p>$\verb|\x|NUMBER_{(16)}$</p>
 <ul>
 <li>NUMBER 为一十六进制数;</li>
 <li>NUBMBER 需表示为无符号字符（若字符长度为 8 位，则不能超过 FF）;</li>
 <li>字符 x 必须为小写;</li>
-<li>NUMBER 不限大小写;<br>当作为字符常量使用时，转义序列必须用一对单引号括起来，而采用数字转义序列的方式来表示某个字符常量可能会使代码的可读性降低，可以使用<code>#define</code>宏定义的方式进行命名：</li>
+<li>NUMBER 不限大小写;<br>
+当作为字符常量使用时，转义序列必须用一对单引号括起来，而采用数字转义序列的方式来表示某个字符常量可能会使代码的可读性降低，可以使用<code>#define</code>宏定义的方式进行命名：</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> ESC <span class="string">&#x27;\33&#x27;</span> <span class="comment">/* ASCII escape character */</span></span></span><br></pre></td></tr></table></figure>
-
-<h1 id="三字符序列-trigraph-sequence"><a href="#三字符序列-trigraph-sequence" class="headerlink" title="三字符序列 (trigraph sequence)"></a>三字符序列 (trigraph sequence)</h1><p>前面我们提到了问号这个特殊字符也需要一个转义序列是由于三字符序列的存在。在欧洲的某些老式键盘提供的使欧洲语言所使用的古老字符，键盘上缺少 C 语言需要的字符，因此引入了三字符来解决这一问题。</p>
+<h1>三字符序列 (trigraph sequence)</h1>
+<p>前面我们提到了问号这个特殊字符也需要一个转义序列是由于三字符序列的存在。在欧洲的某些老式键盘提供的使欧洲语言所使用的古老字符，键盘上缺少 C 语言需要的字符，因此引入了三字符来解决这一问题。</p>
 <p>三字符序列是一种三字符码，所有的三字符都以<code>??</code>开始，下面是三字符序列表：</p>
 <table>
 <thead>
 <tr>
 <th>三字符序列</th>
-<th align="left">等价的 ASCII码</th>
+<th style="text-align:left">等价的 ASCII码</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>??=</code></td>
-<td align="left">#</td>
+<td style="text-align:left">#</td>
 </tr>
 <tr>
 <td><code>??(</code></td>
-<td align="left">[</td>
+<td style="text-align:left">[</td>
 </tr>
 <tr>
 <td><code>??/</code></td>
-<td align="left">\</td>
+<td style="text-align:left">\</td>
 </tr>
 <tr>
-<td><code>??&#39;</code></td>
-<td align="left">^</td>
+<td><code>??'</code></td>
+<td style="text-align:left">^</td>
 </tr>
 <tr>
 <td><code>??&lt;</code></td>
-<td align="left">{</td>
+<td style="text-align:left">{</td>
 </tr>
 <tr>
 <td><code>??!</code></td>
-<td align="left">}</td>
+<td style="text-align:left">}</td>
 </tr>
 <tr>
 <td><code>??&gt;</code></td>
-<td align="left">~</td>
+<td style="text-align:left">~</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>例如，我们在学习编程时学习的第一个程序 Hello, world 就可以用三字符写成下面的形式：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">??=include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> main(<span class="type">void</span>)</span><br><span class="line">??&lt;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello, world??/n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> ??&gt;</span><br></pre></td></tr></table></figure>
 <p>遵循 C89 或 C99 标准的编译器都必须能接受三字符，所以上面这段程序是能够通过编译并执行的，混杂三字符和正常字符表示也是可以的。这也就是说，我们在字符串中放置<code>??</code>，有一定几率会因为三字符而导致问题，因为编译器可能会将其视为三字符的开始标志。如果发生这种情况，我们可以在第二个<code>?</code>字符前面放置<code>\</code>把第二个字符<code>?</code>变成转义序列，即<code>?\?</code>，这样就不会被看作是三字符的开始了，这也是为什么在字符串中直接使用<code>?</code>是可以输出的，但转义序列中却包含<code>\?</code>。不过在我的几次尝试中，发现，编译器通常会在碰到疑似三字符出现的情况下出现 warning，提示你三字符被忽略，如果需要启用三字符，需要添加<code>-trigraphs</code>编译选项，添加了编译选项后就可以正常使用三字符了，虽然通常我们很少用及。</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1>参考资料</h1>
+<ul>
 <li>《C语言程序设计现代方法（第 2 版）》</li>
 <li><a target="_blank" rel="noopener" href="https://zh.cppreference.com/w/c/language/escape">转义序列 - cppreference.com</a></li>
 </ul>
@@ -411,6 +437,23 @@
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
 </ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
 </div>
 
           <div class="post-tags">
@@ -450,32 +493,24 @@
 
 
 
-      <div class="tabs tabs-comment">
-        <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-changyan">changyan</a></li>
-            <li class="tab"><a href="#comment-disqus">disqus</a></li>
-            <li class="tab"><a href="#comment-livere">livere</a></li>
-            <li class="tab"><a href="#comment-utterances">utterances</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane changyan" id="comment-changyan">
-              <div class="comments" id="SOHUCS" sid="1a1c30e113a1263e54cf5f7493793174"></div>
-            </div>
-            <div class="tab-pane disqus" id="comment-disqus">
-              
+      <div class="comment-button-group">
+          <a class="btn comment-button comment-disqus">disqus</a>
+          <a class="btn comment-button comment-livere">livere</a>
+          <a class="btn comment-button comment-utterances">utterances</a>
+      </div>
+        <div class="comment-position comment-disqus">
+          
   <div class="comments" id="disqus_thread">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-            </div>
-            <div class="tab-pane livere" id="comment-livere">
-              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
-            </div>
-            <div class="tab-pane utterances" id="comment-utterances">
-              <div class="comments utterances-container"></div>
-            </div>
         </div>
-      </div>
+        <div class="comment-position comment-livere">
+          <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
+        </div>
+        <div class="comment-position comment-utterances">
+          <div class="comments utterances-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js" defer></script>
 </div>
   </main>
 
@@ -525,12 +560,11 @@
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyy677YK2","appkey":"5d6728fb7c0c99dba952d82907fb1777","count":false}</script>
-<script src="/js/third-party/comments/changyan.js" defer></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"junyuh","count":false,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js" defer></script>
 <script src="/js/third-party/comments/livere.js" defer></script>

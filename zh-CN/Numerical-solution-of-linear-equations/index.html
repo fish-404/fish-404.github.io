@@ -15,10 +15,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/yello/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":"ture","motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="计算方法第三章线性方程的数值解法课程内容整理，尚未包含代码部分。">
 <meta property="og:type" content="article">
@@ -42,6 +44,9 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>计算方法-[3]线性方程组的数值解法 | Junyu</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-498SG67TB7"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-498SG67TB7","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
 
@@ -61,12 +66,19 @@
 
 
 
+  <script src="/js/third-party/pace.js" defer></script>
 
   <script src="/js/third-party/addtoany.js" defer></script>
 
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
 
 
 
@@ -108,7 +120,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -193,9 +205,12 @@
       <span class="links-of-author-item">
         <a href="mailto:junyu_huang@outlook.com" title="E-Mail → mailto:junyu_huang@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/8257973" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;8257973" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i></a>
+      </span>
   </div>
   <div class="cc-license animated" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
 
         </div>
@@ -271,43 +286,130 @@
     
     <div class="post-body" itemprop="articleBody"><p>计算方法第三章线性方程的数值解法课程内容整理，尚未包含代码部分。</p>
 <span id="more"></span>
-
-<h2 id="直接法"><a href="#直接法" class="headerlink" title="直接法"></a>直接法</h2><h3 id="高斯消去法-Gaussian-Elimination"><a href="#高斯消去法-Gaussian-Elimination" class="headerlink" title="高斯消去法(Gaussian Elimination)"></a>高斯消去法(Gaussian Elimination)</h3><p>$$<br>\mathbf{Ax} &#x3D; \mathbf{b} \Rightarrow<br>\begin{bmatrix}<br>a_{11} &amp; \cdots &amp; a_{1n} \\<br>       &amp; \ddots &amp; \vdots \\<br>       &amp;        &amp; a_{nn}^{(n-1)}<br>\end{bmatrix}\mathbf{x} &#x3D;<br>\begin{bmatrix}<br>b_1 \\<br>\vdots \\<br>b_n^{(n-1)}<br>\end{bmatrix}<br>$$</p>
+<h2 id="直接法">直接法</h2>
+<h3 id="高斯消去法-Gaussian-Elimination">高斯消去法(Gaussian Elimination)</h3>
+<p>$$<br>
+\mathbf{Ax} = \mathbf{b} \Rightarrow<br>
+\begin{bmatrix}<br>
+a_{11} &amp; \cdots &amp; a_{1n} \\<br>
+&amp; \ddots &amp; \vdots \\<br>
+&amp;        &amp; a_{nn}^{(n-1)}<br>
+\end{bmatrix}\mathbf{x} =<br>
+\begin{bmatrix}<br>
+b_1 \\<br>
+\vdots \\<br>
+b_n^{(n-1)}<br>
+\end{bmatrix}<br>
+$$</p>
 <ul>
 <li>消去：</li>
 </ul>
-<p>$$<br>l_{ik} &#x3D; a_{ik}^{(k)}&#x2F;a_{kk}^{(k)}  \<br>$$<br>$$<br>\begin{cases}<br>a_{ij}^{(k+1)} &#x3D; a_{ij}^{(k)} - l_{ik} a_{kj}^{(k)} \\<br>b_{i}^{(k+1)} &#x3D; b_{i}^{(k)} - l_{ik} b_{k}^{(k)}<br>\end{cases}<br>(k &#x3D; 1,2，\cdots, n - 1 ,  \quad i，j &#x3D; k + 1, k + 2, \cdots, n)<br>$$</p>
+<p>$$<br>
+l_{ik} = a_{ik}^{(k)}/a_{kk}^{(k)}  \<br>
+$$<br>
+$$<br>
+\begin{cases}<br>
+a_{ij}^{(k+1)} = a_{ij}^{(k)} - l_{ik} a_{kj}^{(k)} \\<br>
+b_{i}^{(k+1)} = b_{i}^{(k)} - l_{ik} b_{k}^{(k)}<br>
+\end{cases}<br>
+(k = 1,2，\cdots, n - 1 ,  \quad i，j = k + 1, k + 2, \cdots, n)<br>
+$$</p>
 <ul>
 <li>回代：</li>
 </ul>
-<p>$$<br>\begin{cases}<br>x_n &#x3D; b_n^{(n)} &#x2F; a^{(n)}_{nn}\\<br>x_i &#x3D; (b_i^{(i)} - \sum\limits^n_{j &#x3D; i+1})&#x2F;a_{ii}^{(i)}<br>\end{cases}<br>\quad i &#x3D; n - 1, n - 2, \cdots, 1<br>$$</p>
+<p>$$<br>
+\begin{cases}<br>
+x_n = b_n^{(n)} / a^{(n)}_{nn}\\<br>
+x_i = (b_i^{(i)} - \sum\limits^n_{j = i+1})/a_{ii}^{(i)}<br>
+\end{cases}<br>
+\quad i = n - 1, n - 2, \cdots, 1<br>
+$$</p>
 <ul>
 <li>复杂度 ： $O(n^3)$</li>
 </ul>
-<h3 id="列主元消去法"><a href="#列主元消去法" class="headerlink" title="列主元消去法"></a>列主元消去法</h3><p>主元素：$a_{kk}^{(k)}$ (作为除数的元素)</p>
+<h3 id="列主元消去法">列主元消去法</h3>
+<p>主元素：$a_{kk}^{(k)}$ (作为除数的元素)</p>
 <p>使用高斯消去法时，若除数很小，除法计算时将产生较大的舍入误差，影响后续消元。</p>
-<p>列主元消去法即改进的高斯消去法，在选取主元素时按列选取待消去的矩阵元素中 <strong>绝对值</strong> 最大的元素与当前行交换，成为新的主元素。即：<br>$$<br>if \quad \max_{k \le i\le n}|a_{i_k}| \ne 0 \quad and \quad i_k \ne k \\<br>then \quad i_k \leftrightarrow k<br>$$</p>
-<p>相比于高斯消去法，列主元消去法更稳定，但行列交换需花费较多时间，计算量高于高斯消去法 $O(n^2&#x2F;3)$。</p>
-<h3 id="高斯-若当消去法（Gauss-Jordan-Method"><a href="#高斯-若当消去法（Gauss-Jordan-Method" class="headerlink" title="高斯-若当消去法（Gauss-Jordan Method)"></a>高斯-若当消去法（Gauss-Jordan Method)</h3><p>$$<br>\mathbf{Ax} &#x3D; \mathbf{b} \Rightarrow<br>\begin{bmatrix}<br>a_{11} &amp;  &amp; \\<br>  &amp; \ddots &amp;\\<br>  &amp; &amp; a_{nn}^{(n-1)}<br>\end{bmatrix}\mathbf{x} &#x3D;<br>\begin{bmatrix}<br>b_1 \\<br>\vdots \\<br>b_n^{(n-1)}<br>\end{bmatrix}<br>$$</p>
+<p>列主元消去法即改进的高斯消去法，在选取主元素时按列选取待消去的矩阵元素中 <strong>绝对值</strong> 最大的元素与当前行交换，成为新的主元素。即：<br>
+$$<br>
+if \quad \max_{k \le i\le n}|a_{i_k}| \ne 0 \quad and \quad i_k \ne k \\<br>
+then \quad i_k \leftrightarrow k<br>
+$$</p>
+<p>相比于高斯消去法，列主元消去法更稳定，但行列交换需花费较多时间，计算量高于高斯消去法 $O(n^2/3)$。</p>
+<h3 id="高斯-若当消去法（Gauss-Jordan-Method">高斯-若当消去法（Gauss-Jordan Method)</h3>
+<p>$$<br>
+\mathbf{Ax} = \mathbf{b} \Rightarrow<br>
+\begin{bmatrix}<br>
+a_{11} &amp;  &amp; \\<br>
+&amp; \ddots &amp;\\<br>
+&amp; &amp; a_{nn}^{(n-1)}<br>
+\end{bmatrix}\mathbf{x} =<br>
+\begin{bmatrix}<br>
+b_1 \\<br>
+\vdots \\<br>
+b_n^{(n-1)}<br>
+\end{bmatrix}<br>
+$$</p>
 <ol>
 <li>将当前列主元 $a_{kk}^{(k)}$ 变为1</li>
 <li>将  $a_{kk}^{(k)}$ 所在列的上下元素变为0</li>
 </ol>
-<p>计算量比高斯消去法多$(n^3-3n^2 + 2n)&#x2F;6$ 次乘除。常用于求逆矩阵。</p>
+<p>计算量比高斯消去法多$(n^3-3n^2 + 2n)/6$ 次乘除。常用于求逆矩阵。</p>
 <ul>
 <li>高斯若当法求逆矩阵</li>
 </ul>
-<p>$$<br>[A|E] \Rightarrow[E| A^{-1}]<br>$$</p>
-<h3 id="LU-分解法"><a href="#LU-分解法" class="headerlink" title="LU 分解法"></a>LU 分解法</h3><p>$n$阶矩阵$A$,若其所有顺序主子式均不为0，则可将其分解为一个单位下三角矩阵$L$ 和一个上三角矩阵$U$的乘积，且这种分解唯一。<br>$$<br>\mathbf{A} &#x3D;<br>\begin{bmatrix}<br>1 &amp; &amp; &amp; \\<br>l_{21} &amp; 1 &amp; &amp; \\<br>\vdots &amp; \vdots &amp; \ddots &amp; \\<br>l_{n1} &amp; l_{n2} &amp; \cdots &amp; 1<br>\end{bmatrix}<br>\begin{bmatrix}<br>u_{11} &amp; u_{12} &amp; \cdots &amp; u_{1n} \\<br>       &amp; u_{22} &amp; \cdots &amp; u_{2n} \\<br>       &amp;        &amp; \ddots &amp; \vdots \\<br>       &amp;        &amp;        &amp; u_{nn}<br>\end{bmatrix}<br>$$</p>
-<p>求解过程：<br>$$<br>\mathbf{A}^{(k)} &#x3D; \mathbf{L}_{k-1} \mathbf{A}^{(k-1)}\\<br>\mathbf{U} &#x3D; \mathbf{A}^{(n)} &#x3D; \mathbf{L}_{n-1}\mathbf{A}^{(k-1)}\\<br>\mathbf{L}_k &#x3D;<br>\begin{bmatrix}<br>1 &amp;  &amp;  &amp;  \\<br>  &amp; 1 &amp; &amp; \\<br>  &amp; -l_{k+1, k} &amp; &amp; \\<br>  &amp; \vdots     &amp; \ddots\\<br>  &amp; -l_{n, k}  &amp;  0 &amp; 1<br>\end{bmatrix},<br>\quad l_{ik} &#x3D; \frac{a_{ik}^{(k)}}{a_{kk}^{(k)}}<br>\<br>$$<br>回代：<br>$$<br>\begin{cases}<br>y_i &#x3D; b_i - \sum \limits_{k &#x3D; 1}^{i-1} k_{ik}y_k, \quad i &#x3D; 1, 2, \cdots, n \\<br>x_i &#x3D; y_i - \sum \limits^{n}_{k &#x3D; i + 1}u_{ik}x_{k}&#x2F;u_{ii}, \quad i &#x3D; n, n-1, \cdots, 1<br>\end{cases}<br>$$</p>
-<h3 id="直接法求解的特点"><a href="#直接法求解的特点" class="headerlink" title="直接法求解的特点"></a>直接法求解的特点</h3><ol>
+<p>$$<br>
+[A|E] \Rightarrow[E| A^{-1}]<br>
+$$</p>
+<h3 id="LU-分解法">LU 分解法</h3>
+<p>$n$阶矩阵$A$,若其所有顺序主子式均不为0，则可将其分解为一个单位下三角矩阵$L$ 和一个上三角矩阵$U$的乘积，且这种分解唯一。<br>
+$$<br>
+\mathbf{A} =<br>
+\begin{bmatrix}<br>
+1 &amp; &amp; &amp; \\<br>
+l_{21} &amp; 1 &amp; &amp; \\<br>
+\vdots &amp; \vdots &amp; \ddots &amp; \\<br>
+l_{n1} &amp; l_{n2} &amp; \cdots &amp; 1<br>
+\end{bmatrix}<br>
+\begin{bmatrix}<br>
+u_{11} &amp; u_{12} &amp; \cdots &amp; u_{1n} \\<br>
+&amp; u_{22} &amp; \cdots &amp; u_{2n} \\<br>
+&amp;        &amp; \ddots &amp; \vdots \\<br>
+&amp;        &amp;        &amp; u_{nn}<br>
+\end{bmatrix}<br>
+$$</p>
+<p>求解过程：<br>
+$$<br>
+\mathbf{A}^{(k)} = \mathbf{L}_{k-1} \mathbf{A}^{(k-1)}\\<br>
+\mathbf{U} = \mathbf{A}^{(n)} = \mathbf{L}_{n-1}\mathbf{A}^{(k-1)}\\<br>
+\mathbf{L}_k =<br>
+\begin{bmatrix}<br>
+1 &amp;  &amp;  &amp;  \\<br>
+&amp; 1 &amp; &amp; \\<br>
+&amp; -l_{k+1, k} &amp; &amp; \\<br>
+&amp; \vdots     &amp; \ddots\\<br>
+&amp; -l_{n, k}  &amp;  0 &amp; 1<br>
+\end{bmatrix},<br>
+\quad l_{ik} = \frac{a_{ik}^{(k)}}{a_{kk}^{(k)}}<br>
+\<br>
+$$<br>
+回代：<br>
+$$<br>
+\begin{cases}<br>
+y_i = b_i - \sum \limits_{k = 1}^{i-1} k_{ik}y_k, \quad i = 1, 2, \cdots, n \\<br>
+x_i = y_i - \sum \limits^{n}_{k = i + 1}u_{ik}x_{k}/u_{ii}, \quad i = n, n-1, \cdots, 1<br>
+\end{cases}<br>
+$$</p>
+<h3 id="直接法求解的特点">直接法求解的特点</h3>
+<ol>
 <li>经过可预先确定的有限次<strong>算术运算</strong> 求出精确解；</li>
 <li>由于有舍入误差，只能得到近似解；</li>
 <li>需要对解进行误差分析；</li>
 <li>不适合用于求解病态方程组；</li>
 <li>一般适合于解矩阵 $A$ 为低阶稠密矩阵的方程组。</li>
 </ol>
-<h3 id="判断矩阵是否为病态矩阵"><a href="#判断矩阵是否为病态矩阵" class="headerlink" title="判断矩阵是否为病态矩阵"></a>判断矩阵是否为病态矩阵</h3><p>判断矩阵是否病态，常由经验得出：</p>
+<h3 id="判断矩阵是否为病态矩阵">判断矩阵是否为病态矩阵</h3>
+<p>判断矩阵是否病态，常由经验得出：</p>
 <ol>
 <li>行列式很大或很小（如某些行、列近似相关）；</li>
 <li>元素间相差大数量级，且无规则；</li>
@@ -315,71 +417,113 @@
 <li>特征值相差大数量级。</li>
 </ol>
 <p>使用直接法求解病态矩阵的方程组可能使解严重偏离真实值。</p>
-<h2 id="迭代法"><a href="#迭代法" class="headerlink" title="迭代法"></a>迭代法</h2><p>将待求解方程组改写成其等价形式$\mathbf{x &#x3D; Bx+g}$ ，以迭代序列的形式逼近方程的根。</p>
+<h2 id="迭代法">迭代法</h2>
+<p>将待求解方程组改写成其等价形式$\mathbf{x = Bx+g}$ ，以迭代序列的形式逼近方程的根。</p>
 <p>$\mathbf{L}$：下三角矩阵；</p>
 <p>$\mathbf{U}$：上三角矩阵；</p>
 <p>$\mathbf{D}$：对角矩阵。</p>
-<h3 id="雅可比迭代法-Jacobi-Iterative-Methods"><a href="#雅可比迭代法-Jacobi-Iterative-Methods" class="headerlink" title="雅可比迭代法(Jacobi Iterative Methods)"></a>雅可比迭代法(Jacobi Iterative Methods)</h3><p>$$<br>\mathbf{x}^{(k+1)} &#x3D; \mathbf{B}_J \mathbf{x}^{(k)} + \mathbf{g}_J \\<br>\begin{cases}<br>\mathbf{B}_J &#x3D; -\mathbf{D}^{-1}(\mathbf{L+U}) \\<br>\mathbf{g}_J &#x3D; \mathbf{D}^{-1} \mathbf{b}<br>\end{cases}<br>$$</p>
-<h3 id="高斯-塞尔德-Gauss-Seidel-Iterative-Methods"><a href="#高斯-塞尔德-Gauss-Seidel-Iterative-Methods" class="headerlink" title="高斯-塞尔德(Gauss-Seidel Iterative Methods)"></a>高斯-塞尔德(Gauss-Seidel Iterative Methods)</h3><p>$$<br>\mathbf{x}^{(k+1)} &#x3D; \mathbf{B}_S \mathbf{x}^{(k)} + \mathbf{g}_S\\<br>\begin{cases}<br>\mathbf{B}_S &#x3D; -\mathbf{(D+L)}^{-1}\mathbf{U} \\<br>\mathbf{g}_S &#x3D; \mathbf{(D+L)}^{-1} \mathbf{b}<br>\end{cases}<br>$$</p>
-<h3 id="迭代法的收敛性"><a href="#迭代法的收敛性" class="headerlink" title="迭代法的收敛性"></a>迭代法的收敛性</h3><p>迭代法收敛的充要条件是谱半径小于1。<br>$$<br>\rho(\mathbf{B}) &lt; 1<br>$$<br>谱半径(spectral radius)：$\rho(\mathbf{B}) &#x3D; \max\limits_{1\le i\le n}|\lambda_i|$，$\lambda\ _i$ 为$\mathbf{B}$的特征值。</p>
-<h4 id="特殊的迭代矩阵"><a href="#特殊的迭代矩阵" class="headerlink" title="特殊的迭代矩阵"></a>特殊的迭代矩阵</h4><ul>
+<h3 id="雅可比迭代法-Jacobi-Iterative-Methods">雅可比迭代法(Jacobi Iterative Methods)</h3>
+<p>$$<br>
+\mathbf{x}^{(k+1)} = \mathbf{B}_J \mathbf{x}^{(k)} + \mathbf{g}_J \\<br>
+\begin{cases}<br>
+\mathbf{B}_J = -\mathbf{D}^{-1}(\mathbf{L+U}) \\<br>
+\mathbf{g}_J = \mathbf{D}^{-1} \mathbf{b}<br>
+\end{cases}<br>
+$$</p>
+<h3 id="高斯-塞尔德-Gauss-Seidel-Iterative-Methods">高斯-塞尔德(Gauss-Seidel Iterative Methods)</h3>
+<p>$$<br>
+\mathbf{x}^{(k+1)} = \mathbf{B}_S \mathbf{x}^{(k)} + \mathbf{g}_S\\<br>
+\begin{cases}<br>
+\mathbf{B}_S = -\mathbf{(D+L)}^{-1}\mathbf{U} \\<br>
+\mathbf{g}_S = \mathbf{(D+L)}^{-1} \mathbf{b}<br>
+\end{cases}<br>
+$$</p>
+<h3 id="迭代法的收敛性">迭代法的收敛性</h3>
+<p>迭代法收敛的充要条件是谱半径小于1。<br>
+$$<br>
+\rho(\mathbf{B}) &lt; 1<br>
+$$<br>
+谱半径(spectral radius)：$\rho(\mathbf{B}) = \max\limits_{1\le i\le n}|\lambda_i|$，$\lambda\ _i$ 为$\mathbf{B}$的特征值。</p>
+<h4 id="特殊的迭代矩阵">特殊的迭代矩阵</h4>
+<ul>
 <li>若$\mathbf{A}$ 为严格对对角占优矩阵，则方程组的Jacobi和 Gauss-Seidel 迭代均收敛。</li>
 </ul>
 <p>严格对角占优矩阵 (strictly diagonally dominant matrix)</p>
-<p>$\mathbf{A}$的每一行对角线元素绝对值都严格大于同行其他元素绝对值之和：<br>$$<br>|a_{ii}|&gt;\sum\limits^n_{j &#x3D; 1\\j\ne i}|a_{ij}| \quad (i &#x3D;  1, 2, \cdots, n)<br>$$</p>
+<p>$\mathbf{A}$的每一行对角线元素绝对值都严格大于同行其他元素绝对值之和：<br>
+$$<br>
+|a_{ii}|&gt;\sum\limits^n_{j = 1\\j\ne i}|a_{ij}| \quad (i =  1, 2, \cdots, n)<br>
+$$</p>
 <ul>
 <li>若$\mathbf{A}$ 不可约，即不能通过出初等行变换变为上三角矩阵的形式，且按行弱对角占优，则方程组的 Jacobi 和 Gauss-Seidel迭代均收敛。</li>
 </ul>
-<p>弱对角占优；<br>$$<br>|a_{ii}|\ge\sum\limits^n_{j &#x3D; 1\\j\ne i}|a_{ij}| \quad (i &#x3D;  1, 2, \cdots , n)<br>$$<br>且至少有一个$i$使得大于号成立，则$\mathbf{A}$为弱对角占优矩阵。</p>
+<p>弱对角占优；<br>
+$$<br>
+|a_{ii}|\ge\sum\limits^n_{j = 1\\j\ne i}|a_{ij}| \quad (i =  1, 2, \cdots , n)<br>
+$$<br>
+且至少有一个$i$使得大于号成立，则$\mathbf{A}$为弱对角占优矩阵。</p>
 <ul>
 <li>若$\mathbf{A}$ 为对称正定矩阵，则 Gauss-Seidel迭代收敛。</li>
 </ul>
-<h3 id="迭代法的特点"><a href="#迭代法的特点" class="headerlink" title="迭代法的特点"></a>迭代法的特点</h3><ol>
+<h3 id="迭代法的特点">迭代法的特点</h3>
+<ol>
 <li>构造出合适的迭代格式可加快收敛速度；</li>
 <li>不容易构造能收敛到解的迭代函数；</li>
 </ol>
-<h3 id="迭代法的优点"><a href="#迭代法的优点" class="headerlink" title="迭代法的优点"></a>迭代法的优点</h3><ol>
+<h3 id="迭代法的优点">迭代法的优点</h3>
+<ol>
 <li>舍入误差影响小；</li>
 <li>对于高阶方程组计算量小于直接法；</li>
 <li>适合于求解系数矩阵问题</li>
 </ol>
-<h2 id="解线性方程组的误差分析"><a href="#解线性方程组的误差分析" class="headerlink" title="解线性方程组的误差分析"></a>解线性方程组的误差分析</h2><h3 id="范数"><a href="#范数" class="headerlink" title="范数"></a>范数</h3><h4 id="向量范数"><a href="#向量范数" class="headerlink" title="向量范数"></a>向量范数</h4><p>注：将向量看作矩阵时，应视为$n\times1$的列向量。</p>
+<h2 id="解线性方程组的误差分析">解线性方程组的误差分析</h2>
+<h3 id="范数">范数</h3>
+<h4 id="向量范数">向量范数</h4>
+<p>注：将向量看作矩阵时，应视为$n\times1$的列向量。</p>
 <p>$\mathbf{R}^n$ 空间的向量范数$||\cdot||$ 对任意$\mathbf{x, y} \in \mathbf{R}^n$ 满足：</p>
 <ul>
-<li><p>正定性(positive definite)： $||\mathbf{x}||\ge 0; \quad ||\mathbf{x}|| &#x3D; 0 \Leftrightarrow \mathbf{x} &#x3D; 0$</p>
+<li>
+<p>正定性(positive definite)： $||\mathbf{x}||\ge 0; \quad ||\mathbf{x}|| = 0 \Leftrightarrow \mathbf{x} = 0$</p>
 </li>
-<li><p>齐次性(homogeneous)：$||\alpha \mathbf{x}|| &#x3D; |\alpha| \cdot ||\mathbf{x}||$</p>
+<li>
+<p>齐次性(homogeneous)：$||\alpha \mathbf{x}|| = |\alpha| \cdot ||\mathbf{x}||$</p>
 </li>
-<li><p>三角不等式(triangle inequality)：$||\mathbf{x +y}|| \le||\mathbf{x}|| + ||\mathbf{y}||$</p>
+<li>
+<p>三角不等式(triangle inequality)：$||\mathbf{x +y}|| \le||\mathbf{x}|| + ||\mathbf{y}||$</p>
 </li>
 </ul>
 <p>常用向量范数：</p>
 <ul>
-<li>$||x||_1 &#x3D; \sum \limits_{i &#x3D; 1}^n |x_i|$</li>
-<li>$||x||_2 &#x3D; \sqrt{\sum \limits_{i &#x3D; 1}^n | x_i| ^2}$</li>
-<li>$||x||_p &#x3D; (\sum\limits_{i &#x3D; 1}^n |x_i|^p)^{1&#x2F;p}$</li>
-<li>$||x||_{\infty} &#x3D; \max\limits_{1\le i \le n}|x_i|$</li>
+<li>$||x||_1 = \sum \limits_{i = 1}^n |x_i|$</li>
+<li>$||x||_2 = \sqrt{\sum \limits_{i = 1}^n | x_i| ^2}$</li>
+<li>$||x||_p = (\sum\limits_{i = 1}^n |x_i|^p)^{1/p}$</li>
+<li>$||x||_{\infty} = \max\limits_{1\le i \le n}|x_i|$</li>
 </ul>
-<h4 id="矩阵范数"><a href="#矩阵范数" class="headerlink" title="矩阵范数"></a>矩阵范数</h4><p>$\mathbf{R}^{m\times n}$ 空间的矩阵范数$||\cdot||$ 对任意 $\mathbf{A,B} \in \mathbf{R}^{m\times n}$ 满足：</p>
+<h4 id="矩阵范数">矩阵范数</h4>
+<p>$\mathbf{R}^{m\times n}$ 空间的矩阵范数$||\cdot||$ 对任意 $\mathbf{A,B} \in \mathbf{R}^{m\times n}$ 满足：</p>
 <ul>
-<li>正定性：$||\mathbf{A}|| \ge 0; \quad ||\mathbf{A}|| &#x3D; 0 \Leftrightarrow \mathbf{A} &#x3D; 0$</li>
-<li>齐次性：$||\alpha \mathbf{A}|| &#x3D; |\alpha| \cdot ||\mathbf{A}||$</li>
+<li>正定性：$||\mathbf{A}|| \ge 0; \quad ||\mathbf{A}|| = 0 \Leftrightarrow \mathbf{A} = 0$</li>
+<li>齐次性：$||\alpha \mathbf{A}|| = |\alpha| \cdot ||\mathbf{A}||$</li>
 <li>三角不等式：$||\mathbf{A+B} || \le || \mathbf{A}|| + || \mathbf{B}||$</li>
-<li>相容(consistent)（当$m &#x3D; n$ 时）：$||\mathbf{AB}||\le ||\mathbf{A}|| \cdot || \mathbf{B}||$</li>
+<li>相容(consistent)（当$m = n$ 时）：$||\mathbf{AB}||\le ||\mathbf{A}|| \cdot || \mathbf{B}||$</li>
 </ul>
 <p>常用矩阵范数：</p>
 <ul>
-<li>行和范数： $||\mathbf{A}||_{\infty} &#x3D; \max \limits_{1\le i \le n} \sum \limits_{j&#x3D;1}^n |a_{ij}$</li>
-<li>列和范数：$||\mathbf{A}||_1  &#x3D; \max \limits_{1\le j\le n} \sum \limits_{i &#x3D; 1}^n |a_{ij}|$</li>
-<li>谱范数(spectral norm)：$||\mathbf{A}||_2 &#x3D; \sqrt{\rho(\mathbf{A^TA)}}$</li>
+<li>行和范数： $||\mathbf{A}||_{\infty} = \max \limits_{1\le i \le n} \sum \limits_{j=1}^n |a_{ij}$</li>
+<li>列和范数：$||\mathbf{A}||_1  = \max \limits_{1\le j\le n} \sum \limits_{i = 1}^n |a_{ij}|$</li>
+<li>谱范数(spectral norm)：$||\mathbf{A}||_2 = \sqrt{\rho(\mathbf{A^TA)}}$</li>
 </ul>
-<h3 id="条件数"><a href="#条件数" class="headerlink" title="条件数"></a>条件数</h3><p>矩阵$\mathbf{A}$的条件数记为$cond(\mathbf{A})$，越大则矩阵越病态，越难得到准确解。<br>$$<br>cond(\mathbf{A}) &#x3D; ||\mathbf{A}|| \cdot ||A^{-1}||<br>$$<br>性质：</p>
+<h3 id="条件数">条件数</h3>
+<p>矩阵$\mathbf{A}$的条件数记为$cond(\mathbf{A})$，越大则矩阵越病态，越难得到准确解。<br>
+$$<br>
+cond(\mathbf{A}) = ||\mathbf{A}|| \cdot ||A^{-1}||<br>
+$$<br>
+性质：</p>
 <ul>
-<li>若$\mathbf{A}$ 对称，则$cond(\mathbf{A})_2 &#x3D; \frac{max|\lambda|}{min|\lambda|}$</li>
+<li>若$\mathbf{A}$ 对称，则$cond(\mathbf{A})_2 = \frac{max|\lambda|}{min|\lambda|}$</li>
 <li>若$\mathbf{A}$ 可逆，则$cond(\mathbf{A})_p \ge 1$</li>
-<li>若$\mathbf{A}$ 可逆， $\alpha \in R$， 则$cond(\alpha \mathbf{A}) &#x3D; cond(\mathbf{A})$</li>
-<li>若$\mathbf{A}$ 正交， 则$cond(\mathbf{A})_2 &#x3D; 1$</li>
-<li>若$\mathbf{A}$ 可逆， $\mathbf{R}$ 正交， 则 $cond(\mathbf{RA})_2 &#x3D; cond(\mathbf{AR})_2 &#x3D; cond(\mathbf{A})_2$</li>
+<li>若$\mathbf{A}$ 可逆， $\alpha \in R$， 则$cond(\alpha \mathbf{A}) = cond(\mathbf{A})$</li>
+<li>若$\mathbf{A}$ 正交， 则$cond(\mathbf{A})_2 = 1$</li>
+<li>若$\mathbf{A}$ 可逆， $\mathbf{R}$ 正交， 则 $cond(\mathbf{RA})_2 = cond(\mathbf{AR})_2 = cond(\mathbf{A})_2$</li>
 </ul>
 
     </div>
@@ -404,6 +548,23 @@
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
 </ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
 </div>
 
           <div class="post-tags">
@@ -442,32 +603,24 @@
 
 
 
-      <div class="tabs tabs-comment">
-        <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-changyan">changyan</a></li>
-            <li class="tab"><a href="#comment-disqus">disqus</a></li>
-            <li class="tab"><a href="#comment-livere">livere</a></li>
-            <li class="tab"><a href="#comment-utterances">utterances</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane changyan" id="comment-changyan">
-              <div class="comments" id="SOHUCS" sid="6c6067cd365a14c65832c6f40c603276"></div>
-            </div>
-            <div class="tab-pane disqus" id="comment-disqus">
-              
+      <div class="comment-button-group">
+          <a class="btn comment-button comment-disqus">disqus</a>
+          <a class="btn comment-button comment-livere">livere</a>
+          <a class="btn comment-button comment-utterances">utterances</a>
+      </div>
+        <div class="comment-position comment-disqus">
+          
   <div class="comments" id="disqus_thread">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-            </div>
-            <div class="tab-pane livere" id="comment-livere">
-              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
-            </div>
-            <div class="tab-pane utterances" id="comment-utterances">
-              <div class="comments utterances-container"></div>
-            </div>
         </div>
-      </div>
+        <div class="comment-position comment-livere">
+          <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
+        </div>
+        <div class="comment-position comment-utterances">
+          <div class="comments utterances-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js" defer></script>
 </div>
   </main>
 
@@ -517,12 +670,11 @@
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyy677YK2","appkey":"5d6728fb7c0c99dba952d82907fb1777","count":false}</script>
-<script src="/js/third-party/comments/changyan.js" defer></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"junyuh","count":false,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js" defer></script>
 <script src="/js/third-party/comments/livere.js" defer></script>

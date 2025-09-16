@@ -15,10 +15,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/yello/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":"ture","motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="在查找一些技术资料的时候总会看到一些漂亮的博客，喜欢文字，也想自己搭建起一个博客来。尽管在网上搜索到了许多Github+Hexo的博客搭建教程，但仍然也遇到了不少问题，几经折腾，终于可以使用，于是决定先写一篇我在Win10下的搭建过程作为记录和分享。（也可以参考官方文档，官方文档也写得挺详细。）">
 <meta property="og:type" content="article">
@@ -43,6 +45,9 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>Blog-Hexo搭建 | Junyu</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-498SG67TB7"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-498SG67TB7","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
 
@@ -62,12 +67,19 @@
 
 
 
+  <script src="/js/third-party/pace.js" defer></script>
 
   <script src="/js/third-party/addtoany.js" defer></script>
 
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
 
 
 
@@ -109,7 +121,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -160,7 +172,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js%E7%8E%AF%E5%A2%83"><span class="nav-number">1.1.</span> <span class="nav-text">Node.js环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">1.2.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Coding"><span class="nav-number">1.2.1.</span> <span class="nav-text">Coding</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85HEXO"><span class="nav-number">1.3.</span> <span class="nav-text">安装HEXO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8npm%E5%AE%89%E8%A3%85Hexo"><span class="nav-number">1.3.1.</span> <span class="nav-text">使用npm安装Hexo</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BABlog"><span class="nav-number">2.</span> <span class="nav-text">开始搭建Blog</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99"><span class="nav-number">2.1.</span> <span class="nav-text">新建一个网站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0"><span class="nav-number">2.2.</span> <span class="nav-text">新建一篇文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6"><span class="nav-number">2.3.</span> <span class="nav-text">生成静态文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">2.4.</span> <span class="nav-text">启动服务器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8EGithub%E5%85%B3%E8%81%94"><span class="nav-number">3.</span> <span class="nav-text">与Github关联</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">3.1.</span> <span class="nav-text">修改站点配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E7%BD%91%E7%AB%99"><span class="nav-number">3.2.</span> <span class="nav-text">部署网站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E7%BC%96%E8%BE%91%E5%99%A8%E6%8E%A8%E8%8D%90"><span class="nav-number">3.3.</span> <span class="nav-text">Markdown 编辑器推荐</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js%E7%8E%AF%E5%A2%83"><span class="nav-number">1.1.</span> <span class="nav-text">Node.js环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">1.2.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Coding"><span class="nav-number">1.2.1.</span> <span class="nav-text">Coding</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85HEXO"><span class="nav-number">1.3.</span> <span class="nav-text">安装HEXO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8npm%E5%AE%89%E8%A3%85Hexo"><span class="nav-number">1.3.1.</span> <span class="nav-text">使用npm安装Hexo</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">开始搭建Blog</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99"><span class="nav-number">2.1.</span> <span class="nav-text">新建一个网站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0"><span class="nav-number">2.2.</span> <span class="nav-text">新建一篇文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6"><span class="nav-number">2.3.</span> <span class="nav-text">生成静态文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">2.4.</span> <span class="nav-text">启动服务器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">与Github关联</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">3.1.</span> <span class="nav-text">修改站点配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E7%BD%91%E7%AB%99"><span class="nav-number">3.2.</span> <span class="nav-text">部署网站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-%E7%BC%96%E8%BE%91%E5%99%A8%E6%8E%A8%E8%8D%90"><span class="nav-number">3.3.</span> <span class="nav-text">Markdown 编辑器推荐</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -194,9 +206,12 @@
       <span class="links-of-author-item">
         <a href="mailto:junyu_huang@outlook.com" title="E-Mail → mailto:junyu_huang@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/8257973" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;8257973" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i></a>
+      </span>
   </div>
   <div class="cc-license animated" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
 
         </div>
@@ -279,47 +294,57 @@
     
     <div class="post-body" itemprop="articleBody"><p>在查找一些技术资料的时候总会看到一些漂亮的博客，喜欢文字，也想自己搭建起一个博客来。尽管在网上搜索到了许多Github+Hexo的博客搭建教程，但仍然也遇到了不少问题，几经折腾，终于可以使用，于是决定先写一篇我在Win10下的搭建过程作为记录和分享。（也可以参考<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/index.html">官方文档</a>，官方文档也写得挺详细。）</p>
 <span id="more"></span>
-
-<h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h1><ol>
+<h1>环境准备</h1>
+<ol>
 <li>Node.js环境</li>
 <li>Git</li>
 </ol>
-<h2 id="Node-js环境"><a href="#Node-js环境" class="headerlink" title="Node.js环境"></a>Node.js环境</h2><p>在<a target="_blank" rel="noopener" href="https://nodejs.org/en/">官网</a>下载与电脑系统相匹配的Node.js并安装。</p>
+<h2 id="Node-js环境">Node.js环境</h2>
+<p>在<a target="_blank" rel="noopener" href="https://nodejs.org/en/">官网</a>下载与电脑系统相匹配的Node.js并安装。</p>
 <p>也可以前往Nodejs的<a target="_blank" rel="noopener" href="http://nodejs.cn/">中文网</a></p>
-<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p>前往<a target="_blank" rel="noopener" href="https://git-scm.com/">官网</a>下载与你的电脑相对应版本的Git。安装完成后，你将会看到Git Bash在你的右键菜单中。</p>
+<h2 id="Git">Git</h2>
+<p>前往<a target="_blank" rel="noopener" href="https://git-scm.com/">官网</a>下载与你的电脑相对应版本的Git。安装完成后，你将会看到Git Bash在你的右键菜单中。</p>
 <p>前往<a target="_blank" rel="noopener" href="https://github.com/">Github官网</a>注册Github帐号，完成后创建一个仓库（New repository）。仓库名为<code>yourgitname.github.io</code></p>
 <p>将电脑中的Git与Github帐号设置一致。</p>
-<h3 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h3><p>在<a target="_blank" rel="noopener" href="https://coding.net/">Coding</a> 注册账号，新建项目，之后创建Coding-pages分支，并设置为默认分支，在左侧开启coding-page服务.</p>
-<h2 id="安装HEXO"><a href="#安装HEXO" class="headerlink" title="安装HEXO"></a>安装HEXO</h2><p>在电脑中新建一个文件夹，进入文件夹，右键，选择命令行或者直接选择<code>Git Bash Here</code> ，打开命令行窗口。</p>
-<h3 id="使用npm安装Hexo"><a href="#使用npm安装Hexo" class="headerlink" title="使用npm安装Hexo"></a>使用npm安装Hexo</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install -g hexo-cli</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="开始搭建Blog"><a href="#开始搭建Blog" class="headerlink" title="开始搭建Blog"></a>开始搭建Blog</h1><h2 id="新建一个网站"><a href="#新建一个网站" class="headerlink" title="新建一个网站"></a>新建一个网站</h2><p>安装完成后，初始化文件夹，无参数默认当前路径</p>
+<h3 id="Coding">Coding</h3>
+<p>在<a target="_blank" rel="noopener" href="https://coding.net/">Coding</a> 注册账号，新建项目，之后创建Coding-pages分支，并设置为默认分支，在左侧开启coding-page服务.</p>
+<h2 id="安装HEXO">安装HEXO</h2>
+<p>在电脑中新建一个文件夹，进入文件夹，右键，选择命令行或者直接选择<code>Git Bash Here</code> ，打开命令行窗口。</p>
+<h3 id="使用npm安装Hexo">使用npm安装Hexo</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install -g hexo-cli</span></span><br></pre></td></tr></table></figure>
+<h1>开始搭建Blog</h1>
+<h2 id="新建一个网站">新建一个网站</h2>
+<p>安装完成后，初始化文件夹，无参数默认当前路径</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">初始化目录</span></span><br><span class="line">hexo init [foldername]</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入目录</span></span><br><span class="line">cd [foldername]</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装依赖</span></span><br><span class="line">npm install</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装部署插件</span></span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<h2 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章"></a>新建一篇文章</h2><p>如果没有设置layout，默认为<code>default_layout</code> 参数（也就是<code>post</code>）</p>
+<h2 id="新建一篇文章">新建一篇文章</h2>
+<p>如果没有设置layout，默认为<code>default_layout</code> 参数（也就是<code>post</code>）</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo new [layout] &lt;title&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo generate</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">可以简写为</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo g</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="启动服务器"><a href="#启动服务器" class="headerlink" title="启动服务器"></a>启动服务器</h2><p>默认访问网址为<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a>，这时候别人是看不到你的网站的。</p>
+<h2 id="生成静态文件">生成静态文件</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo generate</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">可以简写为</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo g</span></span><br></pre></td></tr></table></figure>
+<h2 id="启动服务器">启动服务器</h2>
+<p>默认访问网址为<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a>，这时候别人是看不到你的网站的。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo server</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="与Github关联"><a href="#与Github关联" class="headerlink" title="与Github关联"></a>与Github关联</h1><h2 id="修改站点配置文件"><a href="#修改站点配置文件" class="headerlink" title="修改站点配置文件"></a>修改站点配置文件</h2><p>打开<code>_config.yml</code> 文件，修改deploy</p>
+<h1>与Github关联</h1>
+<h2 id="修改站点配置文件">修改站点配置文件</h2>
+<p>打开<code>_config.yml</code> 文件，修改deploy</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/Yourgitname/your_reperoryname.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line">  <span class="comment"># ssh形式</span></span><br><span class="line">  <span class="comment">#repo : git@github.com:yourgitname/yourreperoryname.github.io.git</span></span><br><span class="line">  <span class="comment">#此处为之前创建仓库的仓库地址，在创建完成后有一个界面可以复制，或者直接复制网址加上.git</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@git.coding.net:codingname/projectname.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">coding-pages</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h2><p>部署成功后，就可以通过yourgitname.github.io这个地址看到自己的博客了。Coding 的地址则是youcodingname.coding.me&#x2F;projectname</p>
+<h2 id="部署网站">部署网站</h2>
+<p>部署成功后，就可以通过yourgitname.github.io这个地址看到自己的博客了。Coding <a target="_blank" rel="noopener" href="http://xn--youcodingname-vz2vi60dlha643uep5c.coding.me/projectname">的地址则是youcodingname.coding.me/projectname</a></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo deploy</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">可以简写为</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo d</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Markdown-编辑器推荐"><a href="#Markdown-编辑器推荐" class="headerlink" title="Markdown 编辑器推荐"></a>Markdown 编辑器推荐</h2><p>文件采用 Markdown 标记方式来实现文章的格式化，推荐两个编辑器：</p>
+<h2 id="Markdown-编辑器推荐">Markdown 编辑器推荐</h2>
+<p>文件采用 Markdown 标记方式来实现文章的格式化，推荐两个编辑器：</p>
 <ul>
-<li><p><a target="_blank" rel="noopener" href="https://www.typora.io/">Typora</a> (支持更多的导出格式)</p>
+<li>
+<p><a target="_blank" rel="noopener" href="https://www.typora.io/">Typora</a> (支持更多的导出格式)</p>
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://marktext.app/">Mark Text</a>（支持多标签页方式打开文件，可绿色安装不写注册表）</p>
+<li>
+<p><a target="_blank" rel="noopener" href="https://marktext.app/">Mark Text</a>（支持多标签页方式打开文件，可绿色安装不写注册表）</p>
 </li>
 </ul>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<h1>参考资料</h1>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249">GitHub+Hexo搭建个人网站详细教程</a></li>
-<li><a target="_blank" rel="noopener" href="https://github.com/niices/blog/issues/7">Hexo部署个人博客到Github Page和Coding Page并绑定域名#7·niices&#x2F;blog</a> </li>
+<li><a target="_blank" rel="noopener" href="https://github.com/niices/blog/issues/7">Hexo部署个人博客到Github Page和Coding Page并绑定域名#7·niices/blog</a></li>
 <li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/setup.html">建站|Hexo</a></li>
 </ul>
 
@@ -345,6 +370,23 @@
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
 </ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
 </div>
 
           <div class="post-tags">
@@ -381,32 +423,24 @@
 
 
 
-      <div class="tabs tabs-comment">
-        <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-changyan">changyan</a></li>
-            <li class="tab"><a href="#comment-disqus">disqus</a></li>
-            <li class="tab"><a href="#comment-livere">livere</a></li>
-            <li class="tab"><a href="#comment-utterances">utterances</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane changyan" id="comment-changyan">
-              <div class="comments" id="SOHUCS" sid="acc9bdbc62f75bcdf8ae56796bfc23ad"></div>
-            </div>
-            <div class="tab-pane disqus" id="comment-disqus">
-              
+      <div class="comment-button-group">
+          <a class="btn comment-button comment-disqus">disqus</a>
+          <a class="btn comment-button comment-livere">livere</a>
+          <a class="btn comment-button comment-utterances">utterances</a>
+      </div>
+        <div class="comment-position comment-disqus">
+          
   <div class="comments" id="disqus_thread">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-            </div>
-            <div class="tab-pane livere" id="comment-livere">
-              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
-            </div>
-            <div class="tab-pane utterances" id="comment-utterances">
-              <div class="comments utterances-container"></div>
-            </div>
         </div>
-      </div>
+        <div class="comment-position comment-livere">
+          <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
+        </div>
+        <div class="comment-position comment-utterances">
+          <div class="comments utterances-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js" defer></script>
 </div>
   </main>
 
@@ -456,12 +490,11 @@
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyy677YK2","appkey":"5d6728fb7c0c99dba952d82907fb1777","count":false}</script>
-<script src="/js/third-party/comments/changyan.js" defer></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"junyuh","count":false,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js" defer></script>
 <script src="/js/third-party/comments/livere.js" defer></script>

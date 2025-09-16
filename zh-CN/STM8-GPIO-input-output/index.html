@@ -15,10 +15,12 @@
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/yello/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":"ture","motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="本文对STM8单片机进行简要介绍，并对GPIO输入输出模式进行介绍，对GPIO的相关寄存器配置进行介绍。">
 <meta property="og:type" content="article">
@@ -42,6 +44,9 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>STM8-认识GPIO及输入输出模式 | Junyu</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-498SG67TB7"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-498SG67TB7","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
 
 
 
@@ -61,12 +66,19 @@
 
 
 
+  <script src="/js/third-party/pace.js" defer></script>
 
   <script src="/js/third-party/addtoany.js" defer></script>
 
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
 
 
 
@@ -108,7 +120,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -159,7 +171,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GPIO%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">GPIO简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">输入模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%82%AC%E6%B5%AE%E8%BE%93%E5%85%A5"><span class="nav-number">2.1.</span> <span class="nav-text">悬浮输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E6%8B%89%E8%BE%93%E5%85%A5"><span class="nav-number">2.2.</span> <span class="nav-text">上拉输入</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">输出模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E6%8C%BD%E8%BE%93%E5%87%BA"><span class="nav-number">3.1.</span> <span class="nav-text">推挽输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E6%BC%8F%E8%BE%93%E5%87%BA"><span class="nav-number">3.2.</span> <span class="nav-text">开漏输出</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%EF%BC%9A%E4%BF%9D%E6%8A%A4%E4%BA%8C%E6%9E%81%E7%AE%A1"><span class="nav-number">4.</span> <span class="nav-text">补充：保护二极管</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E5%AF%84%E5%AD%98%E5%99%A8%E9%85%8D%E7%BD%AE"><span class="nav-number">5.</span> <span class="nav-text">输入输出寄存器配置</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">GPIO简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">输入模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%82%AC%E6%B5%AE%E8%BE%93%E5%85%A5"><span class="nav-number">2.1.</span> <span class="nav-text">悬浮输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E6%8B%89%E8%BE%93%E5%85%A5"><span class="nav-number">2.2.</span> <span class="nav-text">上拉输入</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">输出模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E6%8C%BD%E8%BE%93%E5%87%BA"><span class="nav-number">3.1.</span> <span class="nav-text">推挽输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E6%BC%8F%E8%BE%93%E5%87%BA"><span class="nav-number">3.2.</span> <span class="nav-text">开漏输出</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">补充：保护二极管</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">输入输出寄存器配置</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -193,9 +205,12 @@
       <span class="links-of-author-item">
         <a href="mailto:junyu_huang@outlook.com" title="E-Mail → mailto:junyu_huang@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/8257973" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;8257973" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i></a>
+      </span>
   </div>
   <div class="cc-license animated" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
 
         </div>
@@ -271,10 +286,11 @@
     
     <div class="post-body" itemprop="articleBody"><p>本文对STM8单片机进行简要介绍，并对GPIO输入输出模式进行介绍，对GPIO的相关寄存器配置进行介绍。</p>
 <span id="more"></span>
-
 <p>本STM8系列实验基于STM8S105C6芯片。相关参考手册可以访问<a target="_blank" rel="noopener" href="http://www.st.com/content/st_com/en/products/microcontrollers/stm8-8-bit-mcus/stm8s-series/stm8s103-105/stm8s105c6.html">ST官网</a>获取。</p>
-<h1 id="GPIO简介"><a href="#GPIO简介" class="headerlink" title="GPIO简介"></a>GPIO简介</h1><p>GPIO(General purpose input&#x2F;output ports)，即通用输入&#x2F;输出口，用于芯片与外部的数据传输。一个I&#x2F;O端口包含8个引脚，每个引脚可以被独立配置为数字输入或数字输出，部分引脚有模拟输入，外部中断等功能。打个也许不太恰当的比方，当我们的手接近火焰时会有缩手反射的现象，这个过程需要神经中枢的参与，手就像是外设，而单片机就像是神经中枢，手对于外界火焰的感知就好比输入，而神经中枢对输入的处理就好比单片机的软件处理，神经中枢所产生的神经冲动而导致缩手反射就好比输出。一个强大的系统离不开输入输出和中枢系统的协调配合。GPIO的配置是单片机编程中最基本，最常用的配置。LQFP48(7×7)封装的STM8S105C6可用I&#x2F;O端口共38个(参考STM8&#x2F;STM32选型手册)。不同型号的STM8芯片的可用I&#x2F;O端口数量不一样，更多的I&#x2F;O端口可以连接更多的外设，但也不要盲目求多，适用即可，比所用的预留一些即可，过多也是资源的浪费。</p>
-<h1 id="输入模式"><a href="#输入模式" class="headerlink" title="输入模式"></a>输入模式</h1><p>STM8S系列芯片的GPIO输入模式有四种：</p>
+<h1>GPIO简介</h1>
+<p>GPIO(General purpose input/output ports)，即通用输入/输出口，用于芯片与外部的数据传输。一个I/O端口包含8个引脚，每个引脚可以被独立配置为数字输入或数字输出，部分引脚有模拟输入，外部中断等功能。打个也许不太恰当的比方，当我们的手接近火焰时会有缩手反射的现象，这个过程需要神经中枢的参与，手就像是外设，而单片机就像是神经中枢，手对于外界火焰的感知就好比输入，而神经中枢对输入的处理就好比单片机的软件处理，神经中枢所产生的神经冲动而导致缩手反射就好比输出。一个强大的系统离不开输入输出和中枢系统的协调配合。GPIO的配置是单片机编程中最基本，最常用的配置。LQFP48(7×7)封装的STM8S105C6可用I/O端口共38个(参考STM8/STM32选型手册)。不同型号的STM8芯片的可用I/O端口数量不一样，更多的I/O端口可以连接更多的外设，但也不要盲目求多，适用即可，比所用的预留一些即可，过多也是资源的浪费。</p>
+<h1>输入模式</h1>
+<p>STM8S系列芯片的GPIO输入模式有四种：</p>
 <ul>
 <li>悬浮不带中断输入</li>
 <li>悬浮中断输入</li>
@@ -282,18 +298,25 @@
 <li>上拉中断输入</li>
 </ul>
 <p>这里中断我们暂且不提，将输入方式分为悬浮输入和上拉输入。区分方式是从GPIO的内部结构来划分。</p>
-<h2 id="悬浮输入"><a href="#悬浮输入" class="headerlink" title="悬浮输入"></a>悬浮输入</h2><p>悬浮输入，也叫浮空输入，顾名思义，即引脚悬空。这种方式的输入阻抗很高。当悬浮输入的引脚上加上信号时，单片机所得到的信号并不确定是高电平或是低电平，是一个不确定的信号。因而常用于模拟信号转换为数字信号的信号输入方式，例如ADC。</p>
-<h2 id="上拉输入"><a href="#上拉输入" class="headerlink" title="上拉输入"></a>上拉输入</h2><p>上拉输入也很好理解，即在引脚处接一个上拉电阻到内部电源。这种方式的优点是可以增强驱动能力，增强抗干扰性，同时上拉电阻也起到了一个限流的作用。根据ST官方提供的STM8S105XX系列数据手册，内部电源$ V_DD $ 通常为5.0V，在此条件下，上拉电阻的取值最小为30kΩ，最大为80kΩ，典型值为55kΩ（不知道为什么中文版的数据手册典型值为45kΩ）。可以计算得出此时电流的大小是μA级别，这是因为我们的上拉电阻取值很大，所以限流作用就相对较小，这也被称之为弱上拉输入模式，即Weak Pull-up(WPU)。</p>
-<h1 id="输出模式"><a href="#输出模式" class="headerlink" title="输出模式"></a>输出模式</h1><p>STM8S系列输出模式有两种：</p>
+<h2 id="悬浮输入">悬浮输入</h2>
+<p>悬浮输入，也叫浮空输入，顾名思义，即引脚悬空。这种方式的输入阻抗很高。当悬浮输入的引脚上加上信号时，单片机所得到的信号并不确定是高电平或是低电平，是一个不确定的信号。因而常用于模拟信号转换为数字信号的信号输入方式，例如ADC。</p>
+<h2 id="上拉输入">上拉输入</h2>
+<p>上拉输入也很好理解，即在引脚处接一个上拉电阻到内部电源。这种方式的优点是可以增强驱动能力，增强抗干扰性，同时上拉电阻也起到了一个限流的作用。根据ST官方提供的STM8S105XX系列数据手册，内部电源$ V_DD $ 通常为5.0V，在此条件下，上拉电阻的取值最小为30kΩ，最大为80kΩ，典型值为55kΩ（不知道为什么中文版的数据手册典型值为45kΩ）。可以计算得出此时电流的大小是μA级别，这是因为我们的上拉电阻取值很大，所以限流作用就相对较小，这也被称之为弱上拉输入模式，即Weak Pull-up(WPU)。</p>
+<h1>输出模式</h1>
+<p>STM8S系列输出模式有两种：</p>
 <ul>
 <li>推挽输出</li>
 <li>开漏输出</li>
 </ul>
-<h2 id="推挽输出"><a href="#推挽输出" class="headerlink" title="推挽输出"></a>推挽输出</h2><p>推挽输出(Push-pull output)，也称为互补输出，推拉式输出。推挽输出模式导通损耗小，效率高。在此模式下，N-MOS、P-MOS两个MOS均被接入电路，通过输出控制寄存器控制两个MOS管的导通或关闭。正常工作状态下，仅有一个MOS管导通，另一个MOS管截止，从而可以自如地控制高低数字信号的输出。</p>
-<h2 id="开漏输出"><a href="#开漏输出" class="headerlink" title="开漏输出"></a>开漏输出</h2><p>开漏输出(Open drain output)，有时简称为OD输出。相比推挽输出，GPIO结构中的P-MOS管没有被接入，无法输出高电平状态，需要外接上拉电阻。在没有外接上拉电阻，引脚悬空的状态下，端口引脚状态将不确定。上拉电阻阻值的大小会引起输出信号上升沿时间的变化，上拉电阻越小，上升沿时间越短，速度越快。开漏输出模式吸收电流能力强（一般在20mA以内），适用于电流型驱动。用作电流型驱动时，驱动电流由外部电源经上拉电阻给引脚连接的电路或器件，单片机内部几乎不需要提供驱动电流，减少了单片机自身功耗。利用开漏输出模式通过上拉电阻外接不同的电源还可以实现电平信号标准的转换。将多个开漏模式引脚连在一起，可以构成线与结构。</p>
+<h2 id="推挽输出">推挽输出</h2>
+<p>推挽输出(Push-pull output)，也称为互补输出，推拉式输出。推挽输出模式导通损耗小，效率高。在此模式下，N-MOS、P-MOS两个MOS均被接入电路，通过输出控制寄存器控制两个MOS管的导通或关闭。正常工作状态下，仅有一个MOS管导通，另一个MOS管截止，从而可以自如地控制高低数字信号的输出。</p>
+<h2 id="开漏输出">开漏输出</h2>
+<p>开漏输出(Open drain output)，有时简称为OD输出。相比推挽输出，GPIO结构中的P-MOS管没有被接入，无法输出高电平状态，需要外接上拉电阻。在没有外接上拉电阻，引脚悬空的状态下，端口引脚状态将不确定。上拉电阻阻值的大小会引起输出信号上升沿时间的变化，上拉电阻越小，上升沿时间越短，速度越快。开漏输出模式吸收电流能力强（一般在20mA以内），适用于电流型驱动。用作电流型驱动时，驱动电流由外部电源经上拉电阻给引脚连接的电路或器件，单片机内部几乎不需要提供驱动电流，减少了单片机自身功耗。利用开漏输出模式通过上拉电阻外接不同的电源还可以实现电平信号标准的转换。将多个开漏模式引脚连在一起，可以构成线与结构。</p>
 <p>需要注意的是，有部分引脚具有“真正的”开漏输出功能。所谓“真正的”开漏输出指的是除了无P-MOS以外，也没有连接电源的保护二极管，即不存在任何电路连接到内部电源。在此模式下，必须加上拉电阻。</p>
-<h1 id="补充：保护二极管"><a href="#补充：保护二极管" class="headerlink" title="补充：保护二极管"></a>补充：保护二极管</h1><p>GPIO引脚内部通常还会有一对反向连接电源地的保护二极管。以防止外部管脚输入电压过高或过低损坏引脚电路。通常为锗二极管，肖特基势垒二极管。</p>
-<h1 id="输入输出寄存器配置"><a href="#输入输出寄存器配置" class="headerlink" title="输入输出寄存器配置"></a>输入输出寄存器配置</h1><p>简单地了解了输入输出模式，接下来我们将介绍如何配置相应的输入输出模式。查阅对应芯片系列的Reference manual（建议看原版，或者中英对照），查阅GPIO章节，与之相关的几个寄存器分别是<code>Px_DDR</code>,<code>Px_IDR</code>,<code>Px_ODR</code>,<code>Px_CR1</code>,<code>Px_CR2</code>，手册中详细地描述了每个寄存器的配置过程及功能。</p>
+<h1>补充：保护二极管</h1>
+<p>GPIO引脚内部通常还会有一对反向连接电源地的保护二极管。以防止外部管脚输入电压过高或过低损坏引脚电路。通常为锗二极管，肖特基势垒二极管。</p>
+<h1>输入输出寄存器配置</h1>
+<p>简单地了解了输入输出模式，接下来我们将介绍如何配置相应的输入输出模式。查阅对应芯片系列的Reference manual（建议看原版，或者中英对照），查阅GPIO章节，与之相关的几个寄存器分别是<code>Px_DDR</code>,<code>Px_IDR</code>,<code>Px_ODR</code>,<code>Px_CR1</code>,<code>Px_CR2</code>，手册中详细地描述了每个寄存器的配置过程及功能。</p>
 <ul>
 <li>输出数据寄存器        ODR</li>
 <li>数据方向寄存器               DDR</li>
@@ -304,12 +327,13 @@
 <p>如果我们需要IO输出一个低电平，需要如何操作呢？</p>
 <ul>
 <li>将DDR置1选择输出模式</li>
-<li>配置CR1,CR2选择输出模式<ul>
+<li>配置CR1,CR2选择输出模式
+<ul>
 <li>CR1：选择开漏输出或是推挽输出（有些翻译为上拉输出）</li>
 <li>CR2：配置输出速率</li>
 </ul>
 </li>
-<li>写ODR寄存器，STM8将通过锁存器输出对应的数值到I&#x2F;O</li>
+<li>写ODR寄存器，STM8将通过锁存器输出对应的数值到I/O</li>
 </ul>
 
     </div>
@@ -334,6 +358,23 @@
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
 </ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
 </div>
 
           <div class="post-tags">
@@ -372,32 +413,24 @@
 
 
 
-      <div class="tabs tabs-comment">
-        <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-changyan">changyan</a></li>
-            <li class="tab"><a href="#comment-disqus">disqus</a></li>
-            <li class="tab"><a href="#comment-livere">livere</a></li>
-            <li class="tab"><a href="#comment-utterances">utterances</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane changyan" id="comment-changyan">
-              <div class="comments" id="SOHUCS" sid="58bc02e73a9481d10a3beaa8125144b1"></div>
-            </div>
-            <div class="tab-pane disqus" id="comment-disqus">
-              
+      <div class="comment-button-group">
+          <a class="btn comment-button comment-disqus">disqus</a>
+          <a class="btn comment-button comment-livere">livere</a>
+          <a class="btn comment-button comment-utterances">utterances</a>
+      </div>
+        <div class="comment-position comment-disqus">
+          
   <div class="comments" id="disqus_thread">
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-            </div>
-            <div class="tab-pane livere" id="comment-livere">
-              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
-            </div>
-            <div class="tab-pane utterances" id="comment-utterances">
-              <div class="comments utterances-container"></div>
-            </div>
         </div>
-      </div>
+        <div class="comment-position comment-livere">
+          <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
+        </div>
+        <div class="comment-position comment-utterances">
+          <div class="comments utterances-container"></div>
+        </div><script data-pjax src="/js/comments-buttons.js" defer></script>
 </div>
   </main>
 
@@ -447,12 +480,11 @@
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyy677YK2","appkey":"5d6728fb7c0c99dba952d82907fb1777","count":false}</script>
-<script src="/js/third-party/comments/changyan.js" defer></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"junyuh","count":false,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js" defer></script>
 <script src="/js/third-party/comments/livere.js" defer></script>
