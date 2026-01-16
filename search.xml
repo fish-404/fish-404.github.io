@@ -5911,6 +5911,10 @@ $$</p>
 <p>现在你就可以在编辑工具栏中看到这个新添加的按钮了，并且你可以在 <code>$:/ControlPanel</code> 的 Appearance &gt; Toolbars &gt; Editor Toolbar 选项卡里面控制这个按钮的显示或隐藏。</p>
 </li>
 </ol>
+<h1>参考资料</h1>
+<ul>
+<li><a href="https://tiddlywiki.com/#How%20to%20create%20dynamic%20editor%20toolbar%20buttons:%5B%5BHow%20to%20create%20dynamic%20editor%20toolbar%20buttons%5D%5D%20%5B%5BKeyboard%20Shortcut%20Descriptor%5D%5D">TiddlyWiki v5.3.8 — a non-linear personal web notebook</a></li>
+</ul>
 ]]></content>
       <categories>
         <category>技术杂谈</category>

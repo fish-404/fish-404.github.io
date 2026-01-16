@@ -170,7 +170,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">方法</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -328,6 +328,10 @@
 <p>现在你就可以在编辑工具栏中看到这个新添加的按钮了，并且你可以在 <code>$:/ControlPanel</code> 的 Appearance &gt; Toolbars &gt; Editor Toolbar 选项卡里面控制这个按钮的显示或隐藏。</p>
 </li>
 </ol>
+<h1>参考资料</h1>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://tiddlywiki.com/#How%20to%20create%20dynamic%20editor%20toolbar%20buttons:%5B%5BHow%20to%20create%20dynamic%20editor%20toolbar%20buttons%5D%5D%20%5B%5BKeyboard%20Shortcut%20Descriptor%5D%5D">TiddlyWiki v5.3.8 — a non-linear personal web notebook</a></li>
+</ul>
 
     </div>
 
@@ -401,13 +405,10 @@
 
 
       <div class="comment-button-group">
-          <a class="btn comment-button comment-utterances">utterances</a>
           <a class="btn comment-button comment-disqus">disqus</a>
           <a class="btn comment-button comment-livere">livere</a>
+          <a class="btn comment-button comment-utterances">utterances</a>
       </div>
-        <div class="comment-position comment-utterances">
-          <div class="comments utterances-container"></div>
-        </div>
         <div class="comment-position comment-disqus">
           
   <div class="comments" id="disqus_thread">
@@ -417,6 +418,9 @@
         </div>
         <div class="comment-position comment-livere">
           <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
+        </div>
+        <div class="comment-position comment-utterances">
+          <div class="comments utterances-container"></div>
         </div><script data-pjax src="/js/comments-buttons.js" defer></script>
 </div>
   </main>
@@ -472,11 +476,11 @@
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"fish-404/fish-404.github.io","issue_term":"pathname","theme":"github-light"}</script>
-<script src="/js/third-party/comments/utterances.js" defer></script>
 <script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"junyuh","count":false,"i18n":{"disqus":"disqus"}}</script>
 <script src="/js/third-party/comments/disqus.js" defer></script>
 <script src="/js/third-party/comments/livere.js" defer></script>
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"fish-404/fish-404.github.io","issue_term":"pathname","theme":"github-light"}</script>
+<script src="/js/third-party/comments/utterances.js" defer></script>
 
 </body>
 </html>
