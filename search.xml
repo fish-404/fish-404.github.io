@@ -5842,4 +5842,78 @@ $$</li>
         <tag>Numerical methods</tag>
       </tags>
   </entry>
+  <entry>
+    <title>缓冲区计算问题</title>
+    <url>/zh-CN/buffer-calculate/</url>
+    <content><![CDATA[<p>本文主要讲解缓冲区计算问题，包括单缓冲区和双缓冲区的情况。</p>
+<span id="more"></span>
+<p>题目：假设磁盘块与缓冲区大小相同，每个盘块读入缓冲区的时间为 $16 μs$，由缓冲区送至用户区的时间是 $5 μs$，在用户区内系统对每块数据的处理时间为 $1 μs$。若用户需要将大小为10个磁盘块的 Doc1 文件逐块从磁盘读入缓冲区，并送至用户区进行处理，那么采用单缓冲区需要花费的时间为（1）$μs$；采用双缓冲区需要花费的时间为（2）$μs$。</p>
+<h1>单缓冲区</h1>
+<p>对于单缓冲区的情况，数据尚未进入用户区时，缓冲区为繁忙状态，即使磁盘块到缓冲区这一步已经完成，两者是不能并行的，即图中绿色和蓝色的部分，这两个流程是不能并行的。计算时先按照时间比例作出一个完整流程的时间图，即包括磁盘块读入缓冲区的时间、缓冲区读入用户区的时间、用户区处理数据的时间，这三个步骤构成一个完整的流程。</p>
+<p>缓冲区读入用户区后，在用户区处理数据的时间内，缓冲区为空闲状态，此时磁盘块读入缓冲区的步骤可以与用户区处理数据并行。即图中第二段蓝色与第一段紫色可以同时进行，作图第二个完整流程。此时我们以 2 个作业任务进行分析，就可以找到其中的规律。<br>
+如果多作图几个流程，可以很容易看出，红底部分为一个周期，如何判断一个周期，即去掉第一个流程中不能并行的部分（磁盘块读入缓冲区的部分，图中蓝色部分），去掉最后一个流程的不能并行的部分（缓冲区读入用户区，用户区处理数据，绿色和紫色部分）。</p>
+<p>这时候计算就很容易了，计算出周期的时间 $16+5=21μs$，首尾的两个流程会凑成一个周期，中间共 $10-1=9$ 个周期，再加上首尾这一个完整周期的时间就得到总时间。</p>
+<p>$$</p>
+<p>（10-1）* （16+5）+16+5+1=211 \mu s</p>
+<p>$$</p>
+<p><img src="/images/cnblog/single-buffer.png" alt="单缓冲区计算示意图"></p>
+<h1>双缓冲区</h1>
+<p>对于双缓冲区的情况，在缓冲区读入用户区数据的过程中，因为有一个缓冲区为空闲，所以此时可以并行处理磁盘块到缓冲区的流程（图中深蓝色的部分）。这个步骤的时间比较长，而缓冲区读入用户区这个过程是需要等待缓冲区从磁盘块读入完整后才能进行的，所以深绿色部分必须在深蓝色部分之后，但它可以与浅蓝色部分并行，即另一块缓冲区此时是空闲状态的。这种情况下建议画出 3 个完整流程，就可以看出周期规律。同样地，第一个周期的磁盘块读入缓冲区流程无可并行者（浅蓝色），最后一个流程的缓冲区至用户区，用户区数据处理部分也一样无法与其他并行处理（图中最后一段绿色和紫色部分，当然此处也可能是深绿色部分，即另一个缓冲区为最后一个处理流程，类似地，不作图补充）。</p>
+<p>在这种情况下，一个周期时间长度实际上是由磁盘块读入缓冲区的时间来决定的，即当前周期长度变成了 $16μs$（并非绝对，需根据数据比例作图确定）。此时计算过程与上面单缓冲区其实是一致的。</p>
+<p>$$<br>
+(10-1)*16+16+15+1=166 \mu s<br>
+$$</p>
+<p><img src="/images/cnblog/double-buffer.png" alt="双缓冲区计算示意图"></p>
+<h1>总结</h1>
+<p>计算缓冲区时间问题的关键在于根据比例画出步骤图示，确定缓冲区周期，确定好缓冲区周期后，双缓冲区和单缓冲区的时间计算其实是一致的。</p>
+<h1>参考资料</h1>
+<p><a href="https://blog.csdn.net/qq_41929714/article/details/128952748" title="1.2.6存储结构-磁盘管理：单缓冲区与双缓冲区读取、流水线周期、计算流水线执行时间">1.2.6存储结构-磁盘管理：单缓冲区与双缓冲区读取、流水线周期、计算流水线执行时间</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>如何为 TiddlyWiki 编辑栏添加块引用按钮</title>
+    <url>/zh-CN/tiddlywiki-add-editor-button/</url>
+    <content><![CDATA[<p>本文详述如何为 TiddlyWiki 编辑栏添加块引用按钮。</p>
+<span id="more"></span>
+<h1>背景</h1>
+<p>我利用 TiddlyWiki 来记录读书笔记，更希望使用带双引号的块状引用格式来呈现。TiddlyWiki 提供了默认的引用按钮，但是默认的引用格式是没有双引号的，但它提供了一个 <code>.tc-big-quote</code> 的语法来实现带双引号的块状引用。但如果每一次使用都要输入这个有一点麻烦，所以希望添加一个按钮来快速添加这个语法块。该方法也适用于添加其他语法较复杂的输出块按钮。</p>
+<h1>方法</h1>
+<p>创建一个新按钮的最简单方式，就是 Clone 一个现有的按钮 tiddler，然后修改这个 tiddler。</p>
+<ol>
+<li>
+<p>克隆按钮 tiddler</p>
+<ul>
+<li>找到一个现有的按钮 tiddler，例如 <code>$:/core/ui/EditorToolbar/quote</code></li>
+<li>Clone 出一个新的 tiddler，修改 tiddler的标题为 <code>$:/core/ui/EditorToolbar/bigquote</code></li>
+</ul>
+</li>
+<li>
+<p>修改 tiddler 调用引用块语法</p>
+ <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;<span class="variable">$action</span>-sendmessage</span><br><span class="line">    <span class="variable">$message</span>=<span class="string">&quot;tm-edit-text-operation&quot;</span></span><br><span class="line">    <span class="variable">$param</span>=<span class="string">&quot;wrap-lines&quot;</span></span><br><span class="line">    <span class="attribute">prefix</span>=<span class="string">&quot;</span></span><br><span class="line"><span class="string">&lt;&lt;&lt;&quot;</span></span><br><span class="line">    <span class="attribute">suffix</span>=<span class="string">&quot;&lt;&lt;&lt;&quot;</span></span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+<p>以上是 <code>quote</code> 的调用语法块，<code>$message</code> 保持不变，这个相当于调用一个语法函数，以便在我们的调用文本前后添加指定的语法符号。<code>$param</code> 保持不变，这个参数使用 <code>wrap-lines</code> 来实现文本块前后添加指定语法符号。其中 <code>prefix</code> 指要添加在文本前面的语法符号，<code>suffix</code> 指要添加在文本后面的语法符号。这里我们要调用 <code>.tc-big-quote</code>的语法，只需要将<code>prefix</code>的语法变为 <code>&lt;&lt;&lt;.tc-big-quote</code> 即可。</p>
+ <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;<span class="variable">$action</span>-sendmessage</span><br><span class="line">    <span class="variable">$message</span>=<span class="string">&quot;tm-edit-text-operation&quot;</span></span><br><span class="line">    <span class="variable">$param</span>=<span class="string">&quot;wrap-lines&quot;</span></span><br><span class="line">    <span class="attribute">prefix</span>=<span class="string">&quot;</span></span><br><span class="line"><span class="string">&lt;&lt;&lt;.tc-big-quote&quot;</span></span><br><span class="line">    <span class="attribute">suffix</span>=<span class="string">&quot;&lt;&lt;&lt;&quot;</span></span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>修改 tiddler 相关的属性设置</p>
+<ul>
+<li><code>caption</code>: 这个属性用于设置在 <code>$:/ControlPanel</code> 这个 tiddler 中设置的按钮名字，也用于设置快捷键时区分按钮名字。如果你希望在多语言中该按钮也有正确的对应显示，你应该使用类似于 <code>&#123;&#123;$:/language/Buttons/bigquote/Caption&#125;&#125;</code> 这样的字段来显示标题，以便翻译人员可以添加翻译，创建一个名为 <code>$:/language/Buttons/bigquote/Caption</code> 的 tiddler，并在其中写入英文的按钮标题。当然最简单的方式是使用固定文本作为标题，建议你可以先用这个进行尝试，在进行多语言的 tiddler 替换。</li>
+<li><code>conditon</code>: 这个属性用于填入一个 tiddler filter expression, 用于判断是否显示该按钮。如果不设置该属性，默认会显示该按钮。通常不需要修改我们复制出来的这个 tiddler 的设置。</li>
+<li><code>description</code>: 这个属性用于设置在 <code>$:/ControlPanel</code> 中的描述，同时这个描述也会显示在当你鼠标悬停在按钮中的提示信息。如果你也希望在多语言中该描述也有正确的对应显示，你应该使用类似于 <code>&#123;&#123;$:/language/Buttons/bigquote/Hint&#125;&#125;</code> 这样的字段来显示描述，以便翻译人员可以添加翻译，创建一个名为 <code>$:/language/Buttons/bigquote/Hint</code> 的 tiddler，并在其中写入英文的按钮描述。当然最简单的方式是使用固定文本作为描述，建议你可以先用这个进行尝试，在进行多语言的 tiddler 替换。</li>
+<li><code>icon</code>：这个属性用于设置按钮的图标。我这里采用和 quote 一样的图标，因为实际上我是要禁用 quote 按钮，而启用 bigquote 按钮。</li>
+<li><code>shortcut</code>: 这个属性用于设置按钮的快捷键。我这里没有使用快捷键。如果你需要使用快捷键，最兼容性的做法实际上需要创建三个 tiddler，分别是 <code>$:/config/shorcuts-not-mac/bigquote</code>, <code>$:/config/shorcuts-mac/bigquote</code>, <code>$:/cofig/ShortcutInfo/bigquote</code>。在前两个 tiddler 中分别键入对应不同系统的快捷键设置，最后一个 tiddler 中键入 <code>&#123;&#123;$:/language/Buttons/bigquote/Hint&#125;&#125;</code> ，也就是对应的刚刚上面的 <code>description</code> 字段，如果你上面采用的是 tidder 变量的形式这里就可以跟随，如果不是，那么在上面修改 <code>description</code>的时候，这里也应该一并修改。</li>
+<li><code>list-before</code>: 这个属性可以调整这个按钮的显示位置，默认会显示在最末尾，你可以通过填入该字段来调整按钮的显示位置。例如填入 <code>$:/core/ui/EditorToolbar/more</code>， 这个按钮就会显示在 more 按钮的前面。</li>
+</ul>
+</li>
+<li>
+<p>保存 tiddler，注意复制出来的 tidder 是有个 <code>$:/tags/EditorToolbar</code> 标签的，这个标签不能移除，必须保留</p>
+</li>
+<li>
+<p>现在你就可以在编辑工具栏中看到这个新添加的按钮了，并且你可以在 <code>$:/ControlPanel</code> 的 Appearance &gt; Toolbars &gt; Editor Toolbar 选项卡里面控制这个按钮的显示或隐藏。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术杂谈</category>
+      </categories>
+  </entry>
 </search>

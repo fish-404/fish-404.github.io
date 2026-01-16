@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.ico/apple-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.ico/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.ico/andiroid-icon-192x192.png" color="#222">
+  <link rel="manifest" href="/images/logo.ico/manifest.json">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/yello/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"junyuh.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":true,"storage":true,"lazyload":true,"nav":null},"stickytabs":"ture","motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="本文主要讲解缓冲区计算问题，包括单缓冲区和双缓冲区的情况。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="缓冲区计算问题">
+<meta property="og:url" content="https://junyuh.netlify.app/zh-CN/buffer-calculate/index.html">
+<meta property="og:site_name" content="Junyu">
+<meta property="og:description" content="本文主要讲解缓冲区计算问题，包括单缓冲区和双缓冲区的情况。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://junyuh.netlify.app/images/cnblog/single-buffer.png">
+<meta property="og:image" content="https://junyuh.netlify.app/images/cnblog/double-buffer.png">
+<meta property="article:published_time" content="2025-11-16T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-11-16T16:00:00.000Z">
+<meta property="article:author" content="Junyu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://junyuh.netlify.app/images/cnblog/single-buffer.png">
+
+
+<link rel="canonical" href="https://junyuh.netlify.app/zh-CN/buffer-calculate/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://junyuh.netlify.app/zh-CN/buffer-calculate/","path":"zh-CN/buffer-calculate/","title":"缓冲区计算问题"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>缓冲区计算问题 | Junyu</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-498SG67TB7"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-498SG67TB7","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/comments.js" defer></script><script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js" defer></script>
+
+  <script src="/js/third-party/addtoany.js" defer></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Junyu</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">55</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">单缓冲区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">双缓冲区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Junyu</p>
+  <div class="site-description" itemprop="description">Be curious, be passionate.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fish-404" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fish-404" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:junyu_huang@outlook.com" title="E-Mail → mailto:junyu_huang@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/users/8257973" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;8257973" rel="noopener me" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://junyuh.netlify.app/zh-CN/buffer-calculate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Junyu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Junyu">
+      <meta itemprop="description" content="Be curious, be passionate.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="缓冲区计算问题 | Junyu">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          缓冲区计算问题
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-11-17 00:00:00" itemprop="dateCreated datePublished" datetime="2025-11-17T00:00:00+08:00">2025-11-17</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>本文主要讲解缓冲区计算问题，包括单缓冲区和双缓冲区的情况。</p>
+<span id="more"></span>
+<p>题目：假设磁盘块与缓冲区大小相同，每个盘块读入缓冲区的时间为 $16 μs$，由缓冲区送至用户区的时间是 $5 μs$，在用户区内系统对每块数据的处理时间为 $1 μs$。若用户需要将大小为10个磁盘块的 Doc1 文件逐块从磁盘读入缓冲区，并送至用户区进行处理，那么采用单缓冲区需要花费的时间为（1）$μs$；采用双缓冲区需要花费的时间为（2）$μs$。</p>
+<h1>单缓冲区</h1>
+<p>对于单缓冲区的情况，数据尚未进入用户区时，缓冲区为繁忙状态，即使磁盘块到缓冲区这一步已经完成，两者是不能并行的，即图中绿色和蓝色的部分，这两个流程是不能并行的。计算时先按照时间比例作出一个完整流程的时间图，即包括磁盘块读入缓冲区的时间、缓冲区读入用户区的时间、用户区处理数据的时间，这三个步骤构成一个完整的流程。</p>
+<p>缓冲区读入用户区后，在用户区处理数据的时间内，缓冲区为空闲状态，此时磁盘块读入缓冲区的步骤可以与用户区处理数据并行。即图中第二段蓝色与第一段紫色可以同时进行，作图第二个完整流程。此时我们以 2 个作业任务进行分析，就可以找到其中的规律。<br>
+如果多作图几个流程，可以很容易看出，红底部分为一个周期，如何判断一个周期，即去掉第一个流程中不能并行的部分（磁盘块读入缓冲区的部分，图中蓝色部分），去掉最后一个流程的不能并行的部分（缓冲区读入用户区，用户区处理数据，绿色和紫色部分）。</p>
+<p>这时候计算就很容易了，计算出周期的时间 $16+5=21μs$，首尾的两个流程会凑成一个周期，中间共 $10-1=9$ 个周期，再加上首尾这一个完整周期的时间就得到总时间。</p>
+<p>$$</p>
+<p>（10-1）* （16+5）+16+5+1=211 \mu s</p>
+<p>$$</p>
+<p><img src="/images/cnblog/single-buffer.png" alt="单缓冲区计算示意图"></p>
+<h1>双缓冲区</h1>
+<p>对于双缓冲区的情况，在缓冲区读入用户区数据的过程中，因为有一个缓冲区为空闲，所以此时可以并行处理磁盘块到缓冲区的流程（图中深蓝色的部分）。这个步骤的时间比较长，而缓冲区读入用户区这个过程是需要等待缓冲区从磁盘块读入完整后才能进行的，所以深绿色部分必须在深蓝色部分之后，但它可以与浅蓝色部分并行，即另一块缓冲区此时是空闲状态的。这种情况下建议画出 3 个完整流程，就可以看出周期规律。同样地，第一个周期的磁盘块读入缓冲区流程无可并行者（浅蓝色），最后一个流程的缓冲区至用户区，用户区数据处理部分也一样无法与其他并行处理（图中最后一段绿色和紫色部分，当然此处也可能是深绿色部分，即另一个缓冲区为最后一个处理流程，类似地，不作图补充）。</p>
+<p>在这种情况下，一个周期时间长度实际上是由磁盘块读入缓冲区的时间来决定的，即当前周期长度变成了 $16μs$（并非绝对，需根据数据比例作图确定）。此时计算过程与上面单缓冲区其实是一致的。</p>
+<p>$$<br>
+(10-1)*16+16+15+1=166 \mu s<br>
+$$</p>
+<p><img src="/images/cnblog/double-buffer.png" alt="双缓冲区计算示意图"></p>
+<h1>总结</h1>
+<p>计算缓冲区时间问题的关键在于根据比例画出步骤图示，确定缓冲区周期，确定好缓冲区周期后，双缓冲区和单缓冲区的时间计算其实是一致的。</p>
+<h1>参考资料</h1>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41929714/article/details/128952748" title="1.2.6存储结构-磁盘管理：单缓冲区与双缓冲区读取、流水线周期、计算流水线执行时间">1.2.6存储结构-磁盘管理：单缓冲区与双缓冲区读取、流水线周期、计算流水线执行时间</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Junyu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://junyuh.netlify.app/zh-CN/buffer-calculate/" title="缓冲区计算问题">https://junyuh.netlify.app/zh-CN/buffer-calculate/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+
+        
+  <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_douban"></a>
+      <a class="a2a_button_wechat"></a>
+      <a class="a2a_button_evernote"></a>
+      <a class="a2a_button_pocket"></a>
+  </div>
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/zh-CN/Blog-hexo-next-i18n-support/" rel="prev" title="Hexo NexT 多语言支持">
+                  <i class="fa fa-angle-left"></i> Hexo NexT 多语言支持
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/zh-CN/tiddlywiki-add-editor-button/" rel="next" title="如何为 TiddlyWiki 编辑栏添加块引用按钮">
+                  如何为 TiddlyWiki 编辑栏添加块引用按钮 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="comment-button-group">
+          <a class="btn comment-button comment-utterances">utterances</a>
+          <a class="btn comment-button comment-disqus">disqus</a>
+          <a class="btn comment-button comment-livere">livere</a>
+      </div>
+        <div class="comment-position comment-utterances">
+          <div class="comments utterances-container"></div>
+        </div>
+        <div class="comment-position comment-disqus">
+          
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+        </div>
+        <div class="comment-position comment-livere">
+          <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC82MDg5MS8zNzM2MQ=="></div>
+        </div><script data-pjax src="/js/comments-buttons.js" defer></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+  <div class="languages">
+    <label class="lang-select-label">
+      <i class="fa fa-language"></i>
+      <span>简体中文</span>
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </label>
+    <select class="lang-select" data-canonical="" aria-label="选择语言">
+      
+        <option value="zh-CN" data-href="/zh-CN/buffer-calculate/" selected="">
+          简体中文
+        </option>
+      
+        <option value="en" data-href="/en/buffer-calculate/" selected="">
+          English
+        </option>
+      
+    </select>
+  </div>
+
+  <div class="copyright">
+    &copy; 2018 – 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-paw"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Junyu</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"fish-404/fish-404.github.io","issue_term":"pathname","theme":"github-light"}</script>
+<script src="/js/third-party/comments/utterances.js" defer></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"junyuh","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js" defer></script>
+<script src="/js/third-party/comments/livere.js" defer></script>
+
+</body>
+</html>
