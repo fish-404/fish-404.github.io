@@ -5920,4 +5920,67 @@ $$</p>
         <category>技术杂谈</category>
       </categories>
   </entry>
+  <entry>
+    <title>NVIDIA 深度学习新手入门 Assessment</title>
+    <url>/zh-CN/NVIDIADeepLearningStart/</url>
+    <content><![CDATA[<p>本文详解 NVIDIA 深度学习新手入门 Assessment 中的代码补全。</p>
+<span id="more"></span>
+<h1>加载 ImageNet 预训练的基础模型</h1>
+<p>第一个FIXME，填入 DEFAULT, 参考迁移学习的 Notebook，此处填入 DEFAULT 即在 ImageNet 上预训练权重载入模型。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> torchvision.models <span class="keyword">import</span> vgg16</span><br><span class="line"><span class="keyword">from</span> torchvision.models <span class="keyword">import</span> VGG16_Weights</span><br><span class="line"></span><br><span class="line">weights = VGG16_Weights.DEFAULT</span><br><span class="line">vgg_model = vgg16(weights=weights)</span><br></pre></td></tr></table></figure>
+<h1>冻结基础模型</h1>
+<p>通过设置 <code>requires_grad_(False)</code> 来冻结基础模型的参数，防止在训练过程中被更新。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">vgg_model.requires_grad_(<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<h1>向模型添加新层</h1>
+<p><code>nn.Linear(500, N_CLASSES)</code>是模型的最终输出层，我们需要做一个六分类的任务，所以输出层的维度为 6。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">N_CLASSES = <span class="number">6</span></span><br><span class="line"></span><br><span class="line">my_model = nn.Sequential(</span><br><span class="line">    vgg_model.features,</span><br><span class="line">    vgg_model.avgpool,</span><br><span class="line">    nn.Flatten(),</span><br><span class="line">    vgg_model.classifier[<span class="number">0</span>:<span class="number">3</span>],</span><br><span class="line">    nn.Linear(<span class="number">4096</span>, <span class="number">500</span>),</span><br><span class="line">    nn.ReLU(),</span><br><span class="line">    nn.Linear(<span class="number">500</span>, N_CLASSES)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h1>编译模型</h1>
+<p>这里填入 <code>nn.CrossEntropyLoss()</code> 作为损失函数，因为我们是一个六分类任务，所以选择交叉熵损失函数。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">loss_function = nn.CrossEntropyLoss()</span><br></pre></td></tr></table></figure>
+<h1>扩充数据</h1>
+<p>这里我先是使用了 O5b Notebook 中的扩充数据代码，但是效果不是很好，原因出在图片的饱和度上，hue值太高导致图片失真，对于水果的新鲜程度和水果的分类来说，颜色是一个重要参考依据，因此这里的饱和度设置不能过高，会误导模型的训练。你也可以将你需要训练的任务描述给AI，让它帮你生成一段扩充数据的代码段，再在此基础上进行微调。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">IMG_WIDTH, IMG_HEIGHT = (<span class="number">224</span>, <span class="number">224</span>)</span><br><span class="line"></span><br><span class="line">random_trans = transforms.Compose([</span><br><span class="line">    transforms.RandomRotation(<span class="number">25</span>),</span><br><span class="line">    transforms.RandomResizedCrop((IMG_WIDTH, IMG_HEIGHT), scale=(<span class="number">.7</span>, <span class="number">1</span>), ratio=(<span class="number">1</span>, <span class="number">1</span>)),</span><br><span class="line">    transforms.RandomHorizontalFlip(p=<span class="number">0.5</span>),</span><br><span class="line">    transforms.ColorJitter(brightness=<span class="number">.2</span>, contrast=<span class="number">.2</span>, saturation=<span class="number">.2</span>, hue=<span class="number">.05</span>), </span><br><span class="line">    transforms.Normalize(mean=[<span class="number">0.485</span>, <span class="number">0.456</span>, <span class="number">0.406</span>], std=[<span class="number">0.229</span>, <span class="number">0.224</span>, <span class="number">0.225</span>])</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<h1>加载数据集</h1>
+<h2 id="batch-size-选择">batch_size 选择</h2>
+<p>参考 05b Notebook 中的代码设置，这里设置 <code>batch_size</code> 为 32，使用 2 的幂次方可以提高训练效率，在中小型数据集上通常采用 32 作为 batch size。</p>
+<p>参考教程中的讲解：</p>
+<blockquote>
+<p>如果我们的数据集是一副卡，那么 <a href="https://pytorch.org/tutorials/beginner/basics/data_tutorial.html#preparing-your-data-for-training-with-dataloaders">DataLoader</a> 就定义了我们如何从这副牌中抽卡来训练 AI 模型。我们可以一次性将整个数据集展示给我们的模型。这不仅需要大量的计算资源，而且<a href="https://arxiv.org/pdf/1804.07612">研究表明</a>使用较小的数据批次（batch）对模型训练更有效。</p>
+<p>例如，如果我们的 <code>batch_size</code> 是 32，我们将洗牌并抽取 32 张卡片来训练我们的模型。由于模型在验证时不进行学习，因此不需要洗牌，但我们仍然会使用 <code>batch_size</code> 以防止内存错误。</p>
+<p>批大小是模型开发者决定的，最佳值取决于具体的问题。研究表明，对于许多机器学习问题 32 或 64 就足够了，这也是一些机器学习框架的默认值，因此我们在这就用 32。</p>
+</blockquote>
+<h2 id="shuffle-选择">shuffle 选择</h2>
+<p>通常在训练集中设置 <code>shuffle=True</code>，而在验证集中设置 <code>shuffle=False</code>。</p>
+<ul>
+<li>训练集中设置 <code>shuffle=True</code> 是为了在每个 epoch 开始时随机打乱数据，这有助于模型学习到更泛化的特征。</li>
+<li>验证集中设置 <code>shuffle=False</code> 是为了保持验证数据的顺序，这有助于我们在评估模型性能时进行比较。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">n = <span class="number">32</span></span><br><span class="line"></span><br><span class="line">train_path = <span class="string">&quot;data/fruits/train/&quot;</span></span><br><span class="line">train_data = MyDataset(train_path)</span><br><span class="line">train_loader = DataLoader(train_data, batch_size=n, shuffle=<span class="literal">True</span>)</span><br><span class="line">train_N = <span class="built_in">len</span>(train_loader.dataset)</span><br><span class="line"></span><br><span class="line">valid_path = <span class="string">&quot;data/fruits/valid/&quot;</span></span><br><span class="line">valid_data = MyDataset(valid_path)</span><br><span class="line">valid_loader = DataLoader(valid_data, batch_size=n, shuffle=<span class="literal">False</span>)</span><br><span class="line">valid_N = <span class="built_in">len</span>(valid_loader.dataset)</span><br></pre></td></tr></table></figure>
+<h1>训练模型</h1>
+<p>首次训练模型因为增强数据集的 <code>hue</code> 设置问题，模型准确率只有85%左右，要通过 Assessment，需要模型准确率在 92% 以上。调整增强数据集 <code>transformer</code> 的操作后，模型准确率提升到了90%左右。仍达不到标准要求，因此参考 Notebook 中的操作，再对模型进行微调。</p>
+<p>参考 05b Notebook 中的讲解和代码，这时候我们需要解冻模型，以便对新添加的层进行训练。因此设置 <code>vgg_model.requires_grad_(True)</code>。</p>
+<blockquote>
+<p>模型的新层经过训练后，我们还有一个可选的技巧，用于进一步改进模型。这个技巧称为<a href="https://developers.google.com/machine-learning/glossary#f">微调</a>。要执行此操作，我们需要先解冻整个模型，然后以极小的<a href="https://developers.google.com/machine-learning/glossary#learning-rate">学习率</a> 重新训练模型。这会让预训练的基础层以非常小的步伐进行微调，从而进一步改进模型的性能。</p>
+<p>请注意，只有在包含冻结层和新层的模型经过充分训练后才能执行此步骤，这一点很重要。否则，由于我们先前添加到模型中的新的池化层和分类层是随机地初始化的，我们需要对它们的参数进行大量的更新才能实现准确的图像分类。而通过<a href="https://developers.google.com/machine-learning/glossary#backpropagation">反向传播过程</a>，在整个模型解冻的状态下，这种对最后两层的大量更新也可能导致预训练层中出现大量更新，从而破坏那些重要的预训练特征。现在这最后2层已经过训练且已收敛，因此再次训练时对模型整体的更新都要小得多（尤其是学习率非常小时），不会破坏前面那些层所预学到的特征。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">vgg_model.requires_grad_(<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p>模型微调完成后，模型准确率提升到了92%左右，符合要求。运行评估 cell 进行验证即可获得本节课的证书。</p>
+<h1>参考资料</h1>
+<ol>
+<li><a href="https://docs.pytorch.org/vision/main/models/generated/torchvision.models.vgg16.html#torchvision.models.VGG16_Weights">vgg16 — Torchvision main documentation</a></li>
+<li><a href="https://docs.pytorch.org/docs/stable/generated/torch.Tensor.requires_grad_.html">torch.Tensor.requires_grad_ — PyTorch 2.10 documentation</a></li>
+<li><a href="https://www.codegenes.net/blog/new-pytorch-variable-requires-grad/">Understanding <code>requires_grad</code> in PyTorch — codegenes.net</a></li>
+<li>[<a href="https://machinelearningmastery.com/how-to-choose-loss-functions-when-training-deep-learning-neural-networks/">How to Choose Loss Functions When Training Deep Learning Neural Networks - MachineLearningMastery.com</a>]</li>
+<li><a href="https://www.geeksforgeeks.org/deep-learning/pytorch-loss-functions/">PyTorch Loss Functions - GeeksforGeeks</a></li>
+<li><a href="https://docs.pytorch.org/docs/stable/nn.html#loss-functions">torch.nn — PyTorch 2.10 documentation</a></li>
+<li><a href="https://docs.pytorch.org/vision/stable/transforms.html#transforms">Transforming images, videos, boxes and more — Torchvision 0.25 documentation</a></li>
+<li><a href="https://docs.pytorch.org/vision/stable/auto_examples/transforms/plot_transforms_getting_started.html">Getting started with transforms v2 — Torchvision 0.25 documentation</a></li>
+<li><a href="https://docs.pytorch.org/vision/stable/transforms.html#v2-api-reference-recommended">Transforming images, videos, boxes and more — Torchvision 0.25 documentation</a></li>
+<li><a href="https://www.geeksforgeeks.org/deep-learning/pytorch-dataloader/">PyTorch DataLoader - GeeksforGeeks</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术杂谈</category>
+      </categories>
+  </entry>
 </search>
